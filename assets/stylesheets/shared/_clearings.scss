@@ -7,17 +7,13 @@
 .site-header:before,
 .site-header:after,
 .site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
+.site-content:after {
 	@include clearfix;
 }
 
 .clear:after,
 .entry-content:after,
 .comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
+.site-header:after {
 	@include clearfix-after;
 }
