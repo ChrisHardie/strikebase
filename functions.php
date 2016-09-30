@@ -49,16 +49,6 @@ function strikebase_setup() {
 		'menu-1' => esc_html__( 'Top', 'strikebase' ),
 		) );
 
-	/**
-	 * Add support for core custom logo.
-	 */
-	add_theme_support( 'custom-logo', array(
-		'height'      => 200,
-		'width'       => 200,
-		'flex-width'  => true,
-		'flex-height' => true,
-	) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -70,12 +60,6 @@ function strikebase_setup() {
 		'gallery',
 		'caption',
 	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'strikebase_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif;
 add_action( 'after_setup_theme', 'strikebase_setup' );
@@ -93,19 +77,6 @@ function strikebase_content_width() {
 add_action( 'after_setup_theme', 'strikebase_content_width', 0 );
 
 /**
- * Return early if Custom Logos are not available.
- *
- * @todo Remove after WP 4.7
- */
-function strikebase_the_custom_logo() {
-	if ( ! function_exists( 'the_custom_logo' ) ) {
-		return;
-	} else {
-		the_custom_logo();
-	}
-}
-
-/**
  * Enqueue scripts and styles.
  */
 function strikebase_scripts() {
@@ -114,17 +85,8 @@ function strikebase_scripts() {
 	wp_enqueue_script( 'strikebase-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'strikebase-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'strikebase_scripts' );
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.

@@ -26,11 +26,13 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<?php get_template_part( 'components/header/site', 'branding' ); ?>
+		<h1 class="site-title">STRIKEBASE</h1>
 
-		<?php strikebase_the_custom_logo(); ?>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'strikebase' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'top-menu' ) ); ?>
+		</nav>
 
-		<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
 
 	</header>
 	<div id="content" class="site-content">
