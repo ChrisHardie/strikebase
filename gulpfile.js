@@ -38,7 +38,7 @@ gulp.task( 'scripts', function() {
 		.pipe( jshint() )
 		.pipe( jshint.reporter( 'default' ) )
 		//.pipe( concat( 'main.js' ) )
-		.pipe( gulp.dest( 'assets/js' ) );
+		//.pipe( gulp.dest( 'assets/js' ) );
 		//.pipe( notify( { message: 'Scripts task complete' } ) );
 });
 
