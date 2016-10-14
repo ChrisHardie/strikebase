@@ -44,11 +44,6 @@ function strikebase_setup() {
 
 	add_image_size( 'strikebase-featured-image', 640, 9999 );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Top', 'strikebase' ),
-		) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
