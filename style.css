@@ -318,6 +318,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   letter-spacing: -0.025em; }
 
+h2 {
+  font-size: 2.1em; }
+
 p {
   margin-bottom: 1.5em; }
 
@@ -426,6 +429,13 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
+label,
+.label {
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase; }
+
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
@@ -486,11 +496,18 @@ li > ol {
   margin-bottom: 0;
   margin-left: 1.5em; }
 
+dl {
+  border-bottom: 2px solid;
+  padding-bottom: 10px; }
+
 dt {
-  font-weight: bold; }
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase; }
 
 dd {
-  margin: 0 1.5em 1.5em; }
+  margin: 0 0 5px; }
 
 /*--------------------------------------------------------------
 # Tables
@@ -509,7 +526,7 @@ thead {
   border-bottom: 2px solid; }
 
 th {
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 500;
   letter-spacing: 0.025em;
   text-transform: uppercase;

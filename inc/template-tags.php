@@ -7,13 +7,59 @@
 
 /*
  * Display the project status.
- *
  */
 function strikebase_show_project_status() {
-	$terms = get_terms( 'project-status' );
-	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-	    foreach ( $terms as $term ) {
-	        echo $term->name; // Needs a separator just in case we have more than one.
-	    }
-	}
+	echo strikebase_list_terms( 'project-status' );
+}
+
+/*
+ * Display the project genre.
+ */
+function strikebase_show_project_genre() {
+	echo strikebase_list_terms( 'project-genre' );
+}
+
+/*
+ * Display the project type.
+ */
+function strikebase_show_project_type() {
+	echo strikebase_list_terms( 'project-type' );
+}
+
+/*
+ * Display the project host.
+ */
+function strikebase_show_project_host() {
+	echo strikebase_list_terms( 'project-host' );
+}
+
+/*
+ * Reusable snippet of code to output a list of terms.
+ * Mostly used to list out custom taxonomies and do the comma thing sensibly.
+ *
+ */
+function strikebase_list_terms( $taxonomy ) {
+	$terms = get_terms( $taxonomy );
+
+	// Make sure we have some terms.
+	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
+		$i = 1;
+		$return = '';
+
+		// Loopity-loop.
+		foreach ( $terms as $term ) :
+			$return .= $term->name;
+
+			// Just in case we have more than one, use a comma to separate.
+			if ( $i < count( $terms ) ) :
+				$return .= ', ';
+			endif;
+
+			$i++;
+		endforeach;
+
+		return $return;
+	endif;
+
+	return false;
 }

@@ -14,10 +14,7 @@ thead {
 }
 
 th {
-  font-size: 0.9em;
-  font-weight: 500;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
+  @include small-caps;
   text-align: left;
 }
 
