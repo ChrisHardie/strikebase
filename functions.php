@@ -94,11 +94,11 @@ add_action( 'wp_enqueue_scripts', 'strikebase_scripts' );
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Load custom template tags.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
  * Create a projects CPT.
  */
 require get_template_directory() . '/inc/cpt/projects.php';
-
-/**
- * Pull in taxonomies for projects.
- */
-require get_template_directory() . '/inc/taxonomies/project-status.php';
