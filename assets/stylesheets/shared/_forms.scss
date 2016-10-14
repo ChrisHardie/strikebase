@@ -49,3 +49,8 @@ textarea {
 	padding-left: 3px;
 	width: 100%;
 }
+
+label,
+.label {
+  @include small-caps;
+}

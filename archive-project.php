@@ -14,17 +14,12 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
 			<table>
 				<thead>
-					<th><?php esc_html_e( 'Project', 'strikebase' ); ?></td>
-					<th><?php esc_html_e( 'Status', 'strikebase' ); ?></td>
+					<th><?php esc_html_e( 'Project', 'strikebase' ); ?></th>
+					<th><?php esc_html_e( 'Status', 'strikebase' ); ?></th>
+					<th><?php esc_html_e( 'Launch date', 'strikebase' ); ?></th>
+					<th><?php esc_html_e( 'Last contact', 'strikebase' ); ?></th>
 				</thead>
 			<?php
 			/* Start the Loop */

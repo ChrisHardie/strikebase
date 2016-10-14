@@ -44,11 +44,6 @@ function strikebase_setup() {
 
 	add_image_size( 'strikebase-featured-image', 640, 9999 );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Top', 'strikebase' ),
-		) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -77,10 +72,38 @@ function strikebase_content_width() {
 add_action( 'after_setup_theme', 'strikebase_content_width', 0 );
 
 /**
+ * Register Google Fonts
+ */
+function strikebase_fonts_url() {
+    $fonts_url = '';
+
+    /* Translators: If there are characters in your language that are not
+	 * supported by Francois One, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$francois = esc_html_x( 'on', 'Francois One font: on or off', 'strikebase' );
+
+	if ( 'off' !== $francois ) {
+		$font_families = array();
+		$font_families[] = 'Francois One';
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+	}
+
+	return $fonts_url;
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function strikebase_scripts() {
 	wp_enqueue_style( 'strikebase-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'strikebase-fonts', strikebase_fonts_url(), array(), null );
 
 	wp_enqueue_script( 'strikebase-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 

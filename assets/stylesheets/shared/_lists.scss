@@ -16,10 +16,15 @@ li > ol {
 	margin-left: 1.5em;
 }
 
+dl {
+  border-bottom: 2px solid;
+  padding-bottom: $size__site-gutter/2;
+}
+
 dt {
-	font-weight: bold;
+	@include small-caps;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 0 $size__site-gutter/4;
 }
