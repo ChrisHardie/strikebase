@@ -13,14 +13,15 @@ body {
 }
 
 /*--------------------------------------------------------------
-## Single Column / No Active Sidebar
+## Basic site structure
 --------------------------------------------------------------*/
-.no-sidebar .site-main {
-  margin: 0;
+.site {
+	padding: $size__site-gutter/2;
 }
 
-.no-sidebar .content-area {
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
+.site-main {
+	margin: 0 auto;
+	max-width: $size__site-width;
 }
+
+@import "masthead";
