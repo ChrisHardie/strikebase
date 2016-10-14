@@ -26,7 +26,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<h1 class="site-title">STRIKEBASE</h1>
+		<h1 class="site-title">StrikeBase</h1>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'strikebase' ); ?></button>
