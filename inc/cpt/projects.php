@@ -2,6 +2,7 @@
 /**
  * Projects CPT
  *
+ * @package strikebase
  */
 class Strikebase_Project {
 	/**
@@ -11,7 +12,7 @@ class Strikebase_Project {
 	/**
 	 * Class variables
 	 */
-	private $cpt = 'projects';
+	private $cpt = 'project';
 	/**
 	 * Instantiate the singleton
 	 */
