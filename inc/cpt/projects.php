@@ -32,7 +32,7 @@ class Strikebase_Project {
 	 */
 	private function __construct() {
 		add_action( 'init', array( $this, 'register_CPT' ) );
-        add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'register_taxonomies' ) );
 	}
 
 	/**
