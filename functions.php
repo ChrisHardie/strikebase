@@ -92,3 +92,13 @@ add_action( 'wp_enqueue_scripts', 'strikebase_scripts' );
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load custom template tags.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Create a projects CPT.
+ */
+require get_template_directory() . '/inc/cpt/projects.php';
