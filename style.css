@@ -496,14 +496,23 @@ dd {
 # Tables
 --------------------------------------------------------------*/
 table {
-  margin: 0 0 1.5em;
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  margin: 1.5em auto;
+  max-width: 800px;
   width: 100%; }
 
 table a {
   text-decoration: none; }
 
 thead {
-  border-bottom: 2px solid;
+  border-bottom: 2px solid; }
+
+th {
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
   text-align: left; }
 
 tr {
