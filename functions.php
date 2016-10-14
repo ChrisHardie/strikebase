@@ -97,3 +97,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Create a projects CPT.
  */
 require get_template_directory() . '/inc/cpt/projects.php';
+
+/**
+ * Pull in taxonomies for projects.
+ */
+require get_template_directory() . '/inc/taxonomies/project-status.php';

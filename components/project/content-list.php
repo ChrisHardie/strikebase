@@ -8,12 +8,16 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header">
+	<td class="entry-title">
 		<a href="<?php echo esc_url( get_permalink() ); ?>">
-			<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+			<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?>
 		</a>
-	</header><!-- .entry-header -->
+	</td>
 
-</article><!-- #post-## -->
+	<td class="project-status">
+		<?php strikebase_show_project_status(); ?>
+	</td>
+
+</tr><!-- #post-## -->

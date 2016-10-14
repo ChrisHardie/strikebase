@@ -21,13 +21,21 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
+			<table>
+				<thead>
+					<th><?php esc_html_e( 'Project', 'strikebase' ); ?></td>
+					<th><?php esc_html_e( 'Status', 'strikebase' ); ?></td>
+				</thead>
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 				get_template_part( 'components/project/content', 'list' );
 			endwhile;
 			the_posts_navigation();
-		else :
+			?>
+
+			</table>
+		<?php else :
 			get_template_part( 'components/project/content', 'none' );
 		endif; ?>
 
