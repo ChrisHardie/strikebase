@@ -16,8 +16,16 @@
 		</a>
 	</td>
 
-	<td class="project-status">
+	<td class="strikebase-project-status">
 		<?php strikebase_show_project_status(); ?>
+	</td>
+
+	<td class="strikebase-project-launch-date">
+		18 July 2016
+	</td>
+
+	<td class="strikebase-project-last-contact">
+		22 October 2016
 	</td>
 
 </tr><!-- #post-## -->

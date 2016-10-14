@@ -2,3 +2,24 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
+table a {
+  text-decoration: none;
+}
+
+thead {
+  border-bottom: 2px solid;
+  text-align: left;
+}
+
+tr {
+  border-bottom: 1px solid;
+}
+
+td, th {
+  padding: $size__site-gutter/4;
+}
+
+tr:nth-of-type(even) {
+  background-color: #eee;
+}
