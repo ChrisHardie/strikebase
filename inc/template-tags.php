@@ -42,6 +42,13 @@ function strikebase_show_person_type() {
 }
 
 /*
+ * Display the type of person.
+ */
+function strikebase_show_person_type() {
+	echo strikebase_list_terms( 'person-type' );
+}
+
+/*
  * Display the organization name.
  */
 function strikebase_show_organization() {
