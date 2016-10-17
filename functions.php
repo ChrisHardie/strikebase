@@ -124,9 +124,11 @@ require get_template_directory() . '/inc/template-tags.php';
 /**
  * Create a projects CPT.
  */
-require get_template_directory() . '/inc/cpt/projects.php';
+require get_template_directory() . '/inc/cpt/projects/class-projects-post-type.php';
+require get_template_directory() . '/inc/cpt/projects/class-projects-custom-fields.php';
 
 /**
  * Create a people CPT.
  */
-require get_template_directory() . '/inc/cpt/people.php';
+require get_template_directory() . '/inc/cpt/people/class-people-post-type.php';
+require get_template_directory() . '/inc/cpt/people/class-people-custom-fields.php';
