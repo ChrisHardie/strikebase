@@ -12,9 +12,7 @@
 
 
 	<td class="entry-title">
-		<a href="<?php echo esc_url( get_term_link( $term ) ); ?>">
-			<?php echo $term->name; ?>
-		</a>
+		<?php echo $term->name; ?>
 	</td>
 
 	<td class="strikebase-person-organization">
