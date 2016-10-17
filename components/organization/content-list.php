@@ -18,7 +18,7 @@
 	</td>
 
 	<td class="strikebase-person-organization">
-		Person 1, person 2
+		<?php strikebase_list_people( $term->slug ); ?>
 	</td>
 
 	<td class="strikebase-person-project">

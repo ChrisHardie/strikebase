@@ -85,3 +85,45 @@ function strikebase_list_terms( $taxonomy ) {
 
 	return false;
 }
+
+/*
+ * This lists the people who belong to a specific organisation.
+ * @TODO show gravatars!
+ */
+function strikebase_list_people( $organization ) {
+
+	// Query posts for people who belong to the org (taxonomy) specified
+	$args = array(
+		'post_type' => 'person',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'organization',
+				'field'    => 'slug',
+				'terms'    => $organization,
+			),
+		),
+	);
+	$the_query = new WP_Query( $args );
+
+	// Loopity-loop!
+	if ( $the_query->have_posts() ) :
+		$return = '';
+
+		while ( $the_query->have_posts() ) :
+			$the_query->the_post();
+			$return .= get_the_title();
+
+			// Use a comma as a separator.
+			if ( $the_query->current_post + 1 < $the_query->post_count ) :
+				$return .= ', ';
+			endif;
+
+		endwhile;
+
+		wp_reset_postdata();
+		echo $return;
+		
+	else :
+		return false;
+	endif;
+}
