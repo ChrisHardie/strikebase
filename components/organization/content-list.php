@@ -18,11 +18,11 @@
 	</td>
 
 	<td class="strikebase-person-organization">
-		<?php strikebase_list_people( $term->slug ); ?>
+		<?php strikebase_list_org_attachments( $term->slug, 'person' ); ?>
 	</td>
 
 	<td class="strikebase-person-project">
-		Project 1, project 2
+		<?php strikebase_list_org_attachments( $term->slug, 'project' ); ?>
 	</td>
 
 	<td class="strikebase-person-last-contact">

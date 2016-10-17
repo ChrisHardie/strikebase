@@ -82,11 +82,11 @@ function strikebase_list_terms( $taxonomy ) {
  * This lists the people who belong to a specific organisation.
  * @TODO show gravatars!
  */
-function strikebase_list_people( $organization ) {
+function strikebase_list_org_attachments( $organization, $post_type ) {
 
 	// Query posts for people who belong to the org (taxonomy) specified
 	$args = array(
-		'post_type' => 'person',
+		'post_type' => $post_type,
 		'tax_query' => array(
 			array(
 				'taxonomy' => 'organization',
