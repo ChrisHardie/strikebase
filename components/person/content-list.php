@@ -17,7 +17,7 @@
 	</td>
 
 	<td class="strikebase-person-organization">
-		<?php strikebase_show_organization(); ?>
+		<?php strikebase_show_organization( get_the_ID() ); ?>
 	</td>
 
 	<td class="strikebase-person-project">

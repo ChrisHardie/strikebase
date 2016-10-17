@@ -17,7 +17,7 @@
 	</td>
 
 	<td class="strikebase-project-status">
-		<?php strikebase_show_project_status(); ?>
+		<?php strikebase_show_project_status( get_the_ID() ); ?>
 	</td>
 
 	<td class="strikebase-project-launch-date">
