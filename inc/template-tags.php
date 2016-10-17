@@ -34,6 +34,7 @@ function strikebase_show_project_host() {
 }
 
 /*
+<<<<<<< HEAD
  * Display the type of person.
  */
 function strikebase_show_person_type() {

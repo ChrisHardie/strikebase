@@ -125,3 +125,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * Create a projects CPT.
  */
 require get_template_directory() . '/inc/cpt/projects.php';
+
+/**
+ * Create a people CPT.
+ */
+require get_template_directory() . '/inc/cpt/people.php';
