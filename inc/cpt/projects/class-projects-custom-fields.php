@@ -1,6 +1,6 @@
 <?php
 /**
- * People CPT Custom Fields
+ * Project CPT Custom Fields
  *
  * @package strikebase
  */
@@ -37,7 +37,7 @@ class Strikebase_Project_Fields {
 	/**
 	 * Add custom fields for Person post type
 	 *
-	 * @action fm_post_person
+	 * @action fm_post_project
 	 * @return null
 	 */
 	public function add_project_fields() {
@@ -49,24 +49,68 @@ class Strikebase_Project_Fields {
 					'name'  => 'people',
 					'label' => esc_html__( 'People', 'strikebase' ),
 					'children' => array(
-						'username' => new Fieldmanager_Textfield( array(
-							'name'  => 'username',
-							'label' => esc_html__( 'Username', 'strikebase' ),
+						'strikers' => new Fieldmanager_Textfield( array(
+							'name'  => 'strikers',
+							'label' => esc_html__( 'Strikers', 'strikebase' ),
 						) ),
-						'email' => new Fieldmanager_TextArea( array(
-							'name'  => 'email',
-							'label' => esc_html__( 'Email Address(s)', 'strikebase' ),
+						'influencers' => new Fieldmanager_Textfield( array(
+							'name'  => 'influencers',
+							'label' => esc_html__( 'Influencers', 'strikebase' ),
 						) ),
-						'phone' => new Fieldmanager_TextArea( array(
-							'name'  => 'phone',
-							'label' => esc_html__( 'Phone Number(s)', 'strikebase' ),
+						'referrer' => new Fieldmanager_Textfield( array(
+							'name'  => 'referrer',
+							'label' => esc_html__( 'Referrer', 'strikebase' ),
+						) ),
+					)
+				) ),
+				'links' => new Fieldmanager_Group( array(
+					'name'  => 'links',
+					'label' => esc_html__( 'Links', 'strikebase' ),
+					'children' => array(
+						'staging_site' => new Fieldmanager_Textfield( array(
+							'name'  => 'staging_site',
+							'label' => esc_html__( 'Staging Site', 'strikebase' ),
+						) ),
+						'production_site' => new Fieldmanager_Textfield( array(
+							'name'  => 'production_site',
+							'label' => esc_html__( 'Production Site', 'strikebase' ),
+						) ),
+						'code_repo' => new Fieldmanager_Textfield( array(
+							'name'  => 'code_repo',
+							'label' => esc_html__( 'Code Repository', 'strikebase' ),
+						) ),
+					)
+				) ),
+				'dates' => new Fieldmanager_Group( array(
+					'name'  => 'dates',
+					'label' => esc_html__( 'Dates', 'strikebase' ),
+					'children' => array(
+						'date_received' => new Fieldmanager_Datepicker( array(
+							'name'  => 'date_received',
+							'label' => esc_html__( 'Date Received', 'strikebase' ),
+						) ),
+						'date_started' => new Fieldmanager_Datepicker( array(
+							'name'  => 'date_started',
+							'label' => esc_html__( 'Date Started', 'strikebase' ),
+						) ),
+						'est_launch' => new Fieldmanager_Datepicker( array(
+							'name'  => 'est_launch',
+							'label' => esc_html__( 'Estimated Launch Date', 'strikebase' ),
+						) ),
+						'launch' => new Fieldmanager_Datepicker( array(
+							'name'  => 'launch',
+							'label' => esc_html__( 'Actual Launch Date', 'strikebase' ),
+						) ),
+						'last_contacted' => new Fieldmanager_Datepicker( array(
+							'name'  => 'last_contacted',
+							'label' => esc_html__( 'Date of Last Contact', 'strikebase' ),
 						) ),
 					)
 				) ),
 			)
 		) );
 
-		$person_fields->add_meta_box( esc_html__( 'Contact Info', 'strikebase' ), $this->cpt );
+		$person_fields->add_meta_box( esc_html__( 'Project Info', 'strikebase' ), $this->cpt );
 	}
 
 }
