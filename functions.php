@@ -7,6 +7,16 @@
  * @package strikebase
  */
 
+/**
+ * Load VIP config and required plugins, if we're in a VIP context.
+ */
+if ( function_exists('wpcom_is_vip') ) :
+	// Standard VIP configuration.
+	require_once WP_CONTENT_DIR . '/themes/vip/plugins/vip-init.php';
+	// Load Fieldmanager plugin.
+	wpcom_vip_load_plugin( 'fieldmanager' );
+endif;
+
 if ( ! function_exists( 'strikebase_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
