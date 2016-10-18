@@ -35,13 +35,13 @@ class Strikebase_Project_Fields {
 	}
 
 	/**
-	 * Add custom fields for Person post type
+	 * Add custom fields for Project post type
 	 *
 	 * @action fm_post_project
 	 * @return null
 	 */
 	public function add_project_fields() {
-		$person_fields = new Fieldmanager_Group( array(
+		$project_fields = new Fieldmanager_Group( array(
 			'name'     => 'person_contact_info',
 			//'label'    => esc_html__( 'Contact Info', 'strikebase' ),
 			'children' => array(
@@ -103,14 +103,14 @@ class Strikebase_Project_Fields {
 						) ),
 						'last_contacted' => new Fieldmanager_Datepicker( array(
 							'name'  => 'last_contacted',
-							'label' => esc_html__( 'Date of Last Contact', 'strikebase' ),
+							'label' => esc_html__( 'Date Last Contacted', 'strikebase' ),
 						) ),
 					)
 				) ),
 			)
 		) );
 
-		$person_fields->add_meta_box( esc_html__( 'Project Info', 'strikebase' ), $this->cpt );
+		$project_fields->add_meta_box( esc_html__( 'Project Info', 'strikebase' ), $this->cpt );
 	}
 
 }

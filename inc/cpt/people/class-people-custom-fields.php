@@ -47,7 +47,7 @@ class Strikebase_Person_Fields {
 			'children' => array(
 				'username' => new Fieldmanager_Textfield( array(
 					'name'  => 'username',
-					'label' => esc_html__( 'Username', 'strikebase' ),
+					'label' => esc_html__( 'WordPress.com Username', 'strikebase' ),
 				) ),
 				'email' => new Fieldmanager_TextArea( array(
 					'name'  => 'email',
@@ -59,11 +59,11 @@ class Strikebase_Person_Fields {
 				) ),
 				'time_zone' => new Fieldmanager_Textfield( array(
 					'name'  => 'time_zone',
-					'label' => esc_html__( 'Time Zone', 'strikebase' ),
+					'label' => esc_html__( 'Timezone', 'strikebase' ),
 				) ),
 				'social_media' => new Fieldmanager_TextArea( array(
 					'name'  => 'social_media',
-					'label' => esc_html__( 'Social Media', 'strikebase' ),
+					'label' => esc_html__( 'Social Media Accounts', 'strikebase' ),
 				) ),
 				'last_contacted' => new Fieldmanager_Datepicker( array(
 					'name'  => 'last_contacted',
