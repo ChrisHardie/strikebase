@@ -34,7 +34,6 @@ function strikebase_show_project_host() {
 }
 
 /*
-<<<<<<< HEAD
  * Display the type of person.
  */
 function strikebase_show_person_type() {
@@ -77,4 +76,48 @@ function strikebase_list_terms( $taxonomy ) {
 	endif;
 
 	return false;
+}
+
+/*
+ * This lists the people who belong to a specific organisation.
+ * @TODO show gravatars!
+ */
+function strikebase_list_org_attachments( $organization, $post_type ) {
+
+	// Query posts for people who belong to the org (taxonomy) specified
+	$args = array(
+		'post_type' => $post_type,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'organization',
+				'field'    => 'slug',
+				'terms'    => $organization,
+			),
+		),
+	);
+	$the_query = new WP_Query( $args );
+
+	// Loopity-loop!
+	if ( $the_query->have_posts() ) :
+		$return = '';
+
+		while ( $the_query->have_posts() ) :
+			$the_query->the_post();
+			$return .= '<a href="' . esc_url( get_the_permalink() ) . '">';
+			$return .= get_the_title();
+			$return .= '</a>';
+
+			// Use a comma as a separator.
+			if ( $the_query->current_post + 1 < $the_query->post_count ) :
+				$return .= ', ';
+			endif;
+
+		endwhile;
+
+		wp_reset_postdata();
+		echo $return;
+
+	else :
+		return false;
+	endif;
 }

@@ -14,9 +14,15 @@
 		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<dl class="strikebase-project-info">
+	<dl class="strikebase-person-info">
+		<dt><?php esc_html_e( 'Type', 'strikebase' ); ?></dt>
+		<dd><?php strikebase_show_person_type(); ?></dd>
+
 		<dt><?php esc_html_e( 'Organization', 'strikebase' ); ?></dt>
 		<dd><?php strikebase_show_organization(); ?></dd>
+
+		<dt><?php esc_html_e( 'Projects', 'strikebase' ); ?></dt>
+		<dd>Project 1, Project 2</dd>
 	</dl>
 
 	<div class="entry-content">
