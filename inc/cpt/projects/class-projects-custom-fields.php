@@ -67,15 +67,15 @@ class Strikebase_Project_Fields {
 					'name'  => 'links',
 					'label' => esc_html__( 'Links', 'strikebase' ),
 					'children' => array(
-						'staging_site' => new Fieldmanager_Textfield( array(
+						'staging_site' => new Fieldmanager_Link( array(
 							'name'  => 'staging_site',
 							'label' => esc_html__( 'Staging Site', 'strikebase' ),
 						) ),
-						'production_site' => new Fieldmanager_Textfield( array(
+						'production_site' => new Fieldmanager_Link( array(
 							'name'  => 'production_site',
 							'label' => esc_html__( 'Production Site', 'strikebase' ),
 						) ),
-						'code_repo' => new Fieldmanager_Textfield( array(
+						'code_repo' => new Fieldmanager_Link( array(
 							'name'  => 'code_repo',
 							'label' => esc_html__( 'Code Repository', 'strikebase' ),
 						) ),
