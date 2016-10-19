@@ -16,16 +16,16 @@
 
 	<dl class="strikebase-project-info">
 		<dt><?php esc_html_e( 'Status', 'strikebase' ); ?></dt>
-		<dd><?php strikebase_show_project_status(); ?></dd>
+		<dd><?php strikebase_show_project_status( get_the_ID() ); ?></dd>
 
 		<dt><?php esc_html_e( 'Genre', 'strikebase' ); ?></dt>
-		<dd><?php strikebase_show_project_genre(); ?></dd>
+		<dd><?php strikebase_show_project_genre( get_the_ID() ); ?></dd>
 
 		<dt><?php esc_html_e( 'Hosted on', 'strikebase' ); ?></dt>
-		<dd><?php strikebase_show_project_host(); ?></dd>
+		<dd><?php strikebase_show_project_host( get_the_ID() ); ?></dd>
 
 		<dt><?php esc_html_e( 'Type of project', 'strikebase' ); ?></dt>
-		<dd><?php strikebase_show_project_type(); ?></dd>
+		<dd><?php strikebase_show_project_type( get_the_ID() ); ?></dd>
 	</dl>
 
 	<div class="entry-content">

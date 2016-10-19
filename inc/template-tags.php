@@ -8,43 +8,43 @@
 /*
  * Display the project status.
  */
-function strikebase_show_project_status() {
-	echo strikebase_list_terms( 'project-status' );
+function strikebase_show_project_status( $post_ID ) {
+	echo strikebase_list_terms( $post_ID, 'project-status' );
 }
 
 /*
  * Display the project genre.
  */
-function strikebase_show_project_genre() {
-	echo strikebase_list_terms( 'project-genre' );
+function strikebase_show_project_genre( $post_ID ) {
+	echo strikebase_list_terms( $post_ID, 'project-genre' );
 }
 
 /*
  * Display the project type.
  */
-function strikebase_show_project_type() {
-	echo strikebase_list_terms( 'project-type' );
+function strikebase_show_project_type( $post_ID ) {
+	echo strikebase_list_terms( $post_ID, 'project-type' );
 }
 
 /*
  * Display the project host.
  */
-function strikebase_show_project_host() {
-	echo strikebase_list_terms( 'project-host' );
+function strikebase_show_project_host( $post_ID ) {
+	echo strikebase_list_terms( $post_ID, 'project-host' );
 }
 
 /*
  * Display the type of person.
  */
-function strikebase_show_person_type() {
-	echo strikebase_list_terms( 'person-type' );
+function strikebase_show_person_type( $post_ID ) {
+	echo strikebase_list_terms( $post_ID, 'person-type' );
 }
 
 /*
  * Display the organization name.
  */
-function strikebase_show_organization() {
-	echo strikebase_list_terms( 'organization' );
+function strikebase_show_organization( $post_ID ) {
+	echo strikebase_list_terms( $post_ID, 'organization' );
 }
 
 /*
@@ -52,8 +52,8 @@ function strikebase_show_organization() {
  * Mostly used to list out custom taxonomies and do the comma thing sensibly.
  *
  */
-function strikebase_list_terms( $taxonomy ) {
-	$terms = get_terms( $taxonomy );
+function strikebase_list_terms( $post_ID, $taxonomy ) {
+	$terms = wp_get_post_terms( $post_ID, $taxonomy );
 
 	// Make sure we have some terms.
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
