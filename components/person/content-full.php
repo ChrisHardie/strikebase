@@ -16,7 +16,7 @@
 
 	<dl class="strikebase-person-info">
 		<dt><?php esc_html_e( 'Type', 'strikebase' ); ?></dt>
-		<dd><?php strikebase_show_person_type(); ?></dd>
+		<dd><?php strikebase_show_person_type( get_the_ID() ); ?></dd>
 
 		<dt><?php esc_html_e( 'Organization', 'strikebase' ); ?></dt>
 		<dd><?php strikebase_show_organization( get_the_ID() ); ?></dd>
