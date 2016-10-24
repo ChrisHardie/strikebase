@@ -28,6 +28,42 @@
 		<dd><?php strikebase_show_project_type( get_the_ID() ); ?></dd>
 	</dl>
 
+	<dl class="strikebase-people">
+		<?php
+		$people = strikebase_get_post_meta( get_the_ID(), 'people' );
+		foreach ( $people as $key => $value ) :
+			if ( $value ) :
+				echo '<dt>' . $key . '</dt>';
+				echo '<dd>' . $value . '</dd>';
+			endif;
+		endforeach;
+		?>
+	</dl>
+
+	<dl class="strikebase-dates">
+		<?php
+		$dates = strikebase_get_post_meta( get_the_ID(), 'dates' );
+		foreach ( $dates as $key => $value ) :
+			if ( $value ) :
+				echo '<dt>' . $key . '</dt>';
+				echo '<dd>' . $value . '</dd>';
+			endif;
+		endforeach;
+		?>
+	</dl>
+
+	<dl class="strikebase-links">
+		<?php
+		$links = strikebase_get_post_meta( get_the_ID(), 'links' );
+		foreach ( $links as $key => $value ) :
+			if ( $value ) :
+				echo '<dt>' . $key . '</dt>';
+				echo '<dd><a href="' . $value . '">' . $value . '</a></dd>';
+			endif;
+		endforeach;
+		?>
+	</dl>
+
 	<div class="entry-content">
 		<div class="label"><?php esc_html_e( 'Notes', 'strikebase' ); ?></div>
 		<?php the_content(); ?>

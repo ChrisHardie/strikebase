@@ -48,6 +48,15 @@ function strikebase_show_organization( $post_ID ) {
 }
 
 /*
+ * Get an array of custom metadata attached to a given post.
+ */
+function strikebase_get_post_meta( $post_ID, $key ) {
+	$metas = get_post_meta( get_the_ID(), 'project_info', false );
+	$array = $metas[0][$key];
+	return $array;
+}
+
+/*
  * Reusable snippet of code to output a list of terms.
  * Mostly used to list out custom taxonomies and do the comma thing sensibly.
  *
