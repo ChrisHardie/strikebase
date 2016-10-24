@@ -44,8 +44,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Galleries
 --------------------------------------------------------------*/
-@import "variables/variables-base";
-@import "mixins/mixins-base";
+@import "variables/colors";
+@import "variables/typography";
+@import "variables/structure";
+@import "mixins/typography";
+@import "mixins/breakpoints";
 
 /*--------------------------------------------------------------
 # Normalize
