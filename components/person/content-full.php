@@ -22,7 +22,26 @@
 		<dd><?php strikebase_show_organization( get_the_ID() ); ?></dd>
 
 		<dt><?php esc_html_e( 'Projects', 'strikebase' ); ?></dt>
-		<dd>Project 1, Project 2</dd>
+		<dd><strong>[LIST PROJECTS HERE]</strong></dd>
+	</dl>
+
+	<dl class="strikebase-contact-info">
+		<?php
+		$contact_info = strikebase_get_person_meta( get_the_ID() );
+
+		foreach ( $contact_info as $key => $value ) :
+			if ( $value ) :
+				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+
+				if ( 'last_contacted' === $key ) :
+					echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
+				else :
+					echo '<dd>' . $value . '</dd>';
+				endif;
+
+			endif;
+		endforeach;
+		?>
 	</dl>
 
 	<div class="entry-content">

@@ -21,11 +21,16 @@
 	</td>
 
 	<td class="strikebase-person-project">
-		Project 1, project 2
+		<strong>[LIST PROJECTS HERE]</strong>
 	</td>
 
-	<td class="strikebase-person-last-contact">
-		22 October 2016
+	<td class="strikebase-project-last-contact">
+		<?php
+		$dates = strikebase_get_person_meta( get_the_ID() );
+		if ( $dates['last_contacted'] ) :
+			echo strikebase_formatted_date( $dates['last_contacted'] );
+		endif;
+		?>
 	</td>
 
 </tr><!-- #post-## -->

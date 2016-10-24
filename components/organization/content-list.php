@@ -24,7 +24,7 @@
 	</td>
 
 	<td class="strikebase-person-last-contact">
-		22 October 2016
+		<strong>[LAST CONTACT DATE]</strong>
 	</td>
 
 </tr><!-- #post-## -->

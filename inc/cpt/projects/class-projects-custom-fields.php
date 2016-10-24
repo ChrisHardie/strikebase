@@ -42,8 +42,7 @@ class Strikebase_Project_Fields {
 	 */
 	public function add_project_fields() {
 		$project_fields = new Fieldmanager_Group( array(
-			'name'     => 'person_contact_info',
-			//'label'    => esc_html__( 'Contact Info', 'strikebase' ),
+			'name'     => 'project_info',
 			'children' => array(
 				'people' => new Fieldmanager_Group( array(
 					'name'  => 'people',
