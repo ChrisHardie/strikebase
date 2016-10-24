@@ -22,7 +22,7 @@
 
 	<td class="strikebase-project-launch-date">
 		<?php
-		$dates = strikebase_get_post_meta( get_the_ID(), 'dates' );
+		$dates = strikebase_get_project_meta( get_the_ID(), 'dates' );
 		if ( $dates['launch'] ) :
 			echo strikebase_formatted_date( $dates['launch'] );
 		elseif ( $dates['est_launch'] ) :

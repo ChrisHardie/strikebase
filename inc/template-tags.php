@@ -48,9 +48,9 @@ function strikebase_show_organization( $post_ID ) {
 }
 
 /*
- * Get an array of custom metadata attached to a given post.
+ * Get an array of custom metadata attached to a given project.
  */
-function strikebase_get_post_meta( $post_ID, $key ) {
+function strikebase_get_project_meta( $post_ID, $key ) {
 	$metas = get_post_meta( get_the_ID(), 'project_info', false );
 	if ( $metas ) :
 		$array = $metas[0][$key];

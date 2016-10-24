@@ -30,7 +30,7 @@
 
 	<dl class="strikebase-people">
 		<?php
-		$people = strikebase_get_post_meta( get_the_ID(), 'people' );
+		$people = strikebase_get_project_meta( get_the_ID(), 'people' );
 		foreach ( $people as $key => $value ) :
 			if ( $value ) :
 				echo '<dt>' . $key . '</dt>';
@@ -42,7 +42,7 @@
 
 	<dl class="strikebase-dates">
 		<?php
-		$dates = strikebase_get_post_meta( get_the_ID(), 'dates' );
+		$dates = strikebase_get_project_meta( get_the_ID(), 'dates' );
 		foreach ( $dates as $key => $value ) :
 			if ( $value ) :
 				echo '<dt>' . $key . '</dt>';
@@ -54,7 +54,7 @@
 
 	<dl class="strikebase-links">
 		<?php
-		$links = strikebase_get_post_meta( get_the_ID(), 'links' );
+		$links = strikebase_get_project_meta( get_the_ID(), 'links' );
 		foreach ( $links as $key => $value ) :
 			if ( $value ) :
 				echo '<dt>' . $key . '</dt>';
