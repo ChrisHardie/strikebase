@@ -67,7 +67,7 @@ function strikebase_simplify_URL( $URL ) {
 	if ( substr($simple_URL, 0, 7) == 'http://' ) {
 		$simple_URL = substr($simple_URL, 7);
 	}
-	
+
 	if ( substr($simple_URL, 0, 8) == 'https://' ) {
 		$simple_URL = substr($simple_URL, 8);
 	}
@@ -78,6 +78,18 @@ function strikebase_simplify_URL( $URL ) {
 	}
 
 	return $simple_URL;
+}
+
+/*
+ * Output a nice human-parseable date.
+ */
+function strikebase_formatted_date( $date, $date_format=null ) {
+	if ( ! $date_format ) :
+		// If we haven't explicitly set a date format, pull it from WordPress options
+		$date_format = get_option( 'date_format' );
+	endif;
+	$formatted_date = date( $date_format, $date );
+	return $formatted_date;
 }
 
 /*

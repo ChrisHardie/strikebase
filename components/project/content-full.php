@@ -46,7 +46,7 @@
 		foreach ( $dates as $key => $value ) :
 			if ( $value ) :
 				echo '<dt>' . $key . '</dt>';
-				echo '<dd>' . $value . '</dd>';
+				echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
 			endif;
 		endforeach;
 		?>
