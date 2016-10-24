@@ -21,11 +21,23 @@
 	</td>
 
 	<td class="strikebase-project-launch-date">
-		18 July 2016
+		<?php
+		$dates = strikebase_get_post_meta( get_the_ID(), 'dates' );
+		if ( $dates['launch'] ) :
+			echo strikebase_formatted_date( $dates['launch'] );
+		elseif ( $dates['est_launch'] ) :
+			echo strikebase_formatted_date( $dates['est_launch'] );
+			esc_html_e( ' (estimated)', 'strikebase' );
+		endif;
+		?>
 	</td>
 
 	<td class="strikebase-project-last-contact">
-		22 October 2016
+		<?php
+		if ( $dates['last_contacted'] ) :
+			echo strikebase_formatted_date( $dates['last_contacted'] );
+		endif;
+		?>
 	</td>
 
 </tr><!-- #post-## -->

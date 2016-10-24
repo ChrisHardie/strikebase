@@ -52,8 +52,12 @@ function strikebase_show_organization( $post_ID ) {
  */
 function strikebase_get_post_meta( $post_ID, $key ) {
 	$metas = get_post_meta( get_the_ID(), 'project_info', false );
-	$array = $metas[0][$key];
-	return $array;
+	if ( $metas ) :
+		$array = $metas[0][$key];
+		return $array;
+	else :
+		return false;
+	endif;
 }
 
 /*
