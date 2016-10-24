@@ -61,6 +61,19 @@ function strikebase_get_project_meta( $post_ID, $key ) {
 }
 
 /*
+ * Get an array of custom metadata attached to a given person.
+ */
+function strikebase_get_person_meta( $post_ID ) {
+	$metas = get_post_meta( get_the_ID(), 'person_contact_info', false );
+	if ( $metas ) :
+		$array = $metas[0];
+		return $array;
+	else :
+		return false;
+	endif;
+}
+
+/*
  * Simplify a URL.
  */
 function strikebase_simplify_URL( $URL ) {

@@ -25,6 +25,25 @@
 		<dd>Project 1, Project 2</dd>
 	</dl>
 
+	<dl class="strikebase-contact-info">
+		<?php
+		$contact_info = strikebase_get_person_meta( get_the_ID() );
+
+		foreach ( $contact_info as $key => $value ) :
+			if ( $value ) :
+				echo '<dt>' . $key . '</dt>';
+
+				if ( 'last_contacted' === $key ) :
+					echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
+				else :
+					echo '<dd>' . $value . '</dd>';
+				endif;
+
+			endif;
+		endforeach;
+		?>
+	</dl>
+
 	<div class="entry-content">
 		<div class="label"><?php esc_html_e( 'Notes', 'strikebase' ); ?></div>
 		<?php the_content(); ?>
