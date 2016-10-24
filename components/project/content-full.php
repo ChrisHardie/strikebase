@@ -58,7 +58,7 @@
 		foreach ( $links as $key => $value ) :
 			if ( $value ) :
 				echo '<dt>' . $key . '</dt>';
-				echo '<dd><a href="' . $value . '">' . $value . '</a></dd>';
+				echo '<dd><a href="' . $value . '">' . strikebase_simplify_URL( $value ) . '</a></dd>';
 			endif;
 		endforeach;
 		?>

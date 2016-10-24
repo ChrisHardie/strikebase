@@ -57,6 +57,30 @@ function strikebase_get_post_meta( $post_ID, $key ) {
 }
 
 /*
+ * Simplify a URL.
+ */
+function strikebase_simplify_URL( $URL ) {
+	// Remove extra slashes.
+	$simple_URL = trim( $URL, '/' );
+
+	// If protocol is included, strip it out.
+	if ( substr($simple_URL, 0, 7) == 'http://' ) {
+		$simple_URL = substr($simple_URL, 7);
+	}
+	
+	if ( substr($simple_URL, 0, 8) == 'https://' ) {
+		$simple_URL = substr($simple_URL, 8);
+	}
+
+	// Remove the 'www.' prefix.
+	if ( substr($simple_URL, 0, 4) == 'www.') {
+		$simple_URL = substr($simple_URL, 4);
+	}
+
+	return $simple_URL;
+}
+
+/*
  * Reusable snippet of code to output a list of terms.
  * Mostly used to list out custom taxonomies and do the comma thing sensibly.
  *
@@ -99,8 +123,8 @@ function strikebase_list_org_attachments( $organization, $post_type ) {
 		'tax_query' => array(
 			array(
 				'taxonomy' => 'organization',
-				'field'    => 'slug',
-				'terms'    => $organization,
+				'field'	 => 'slug',
+				'terms'	 => $organization,
 			),
 		),
 	);
