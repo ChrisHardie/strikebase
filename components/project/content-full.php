@@ -33,7 +33,7 @@
 		$people = strikebase_get_project_meta( get_the_ID(), 'people' );
 		foreach ( $people as $key => $value ) :
 			if ( $value ) :
-				echo '<dt>' . $key . '</dt>';
+				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
 				echo '<dd>' . $value . '</dd>';
 			endif;
 		endforeach;
@@ -45,7 +45,7 @@
 		$dates = strikebase_get_project_meta( get_the_ID(), 'dates' );
 		foreach ( $dates as $key => $value ) :
 			if ( $value ) :
-				echo '<dt>' . $key . '</dt>';
+				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
 				echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
 			endif;
 		endforeach;
@@ -57,7 +57,7 @@
 		$links = strikebase_get_project_meta( get_the_ID(), 'links' );
 		foreach ( $links as $key => $value ) :
 			if ( $value ) :
-				echo '<dt>' . $key . '</dt>';
+				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
 				echo '<dd><a href="' . $value . '">' . strikebase_simplify_URL( $value ) . '</a></dd>';
 			endif;
 		endforeach;

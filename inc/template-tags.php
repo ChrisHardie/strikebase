@@ -110,6 +110,32 @@ function strikebase_formatted_date( $date, $date_format=null ) {
 }
 
 /*
+ * Tweak the display of a given label for a custom meta key.
+ * In some cases, these labels aren't quite as descriptive as they should be,
+ * so we're going to manually fine-tune them.
+ */
+function strikebase_nice_key( $key ) {
+	// Replace underscores with a space.
+	$nice_key = str_replace( '_', ' ', $key );
+
+	// Expand "launch", "est launch", and "last contacted".
+	if ( 'est_launch' === $key ) :
+		$nice_key = 'Estimated Launch Date';
+	elseif ( 'launch' === $key ) :
+		$nice_key = 'Launch Date';
+	elseif ( 'last_contacted' === $key ) :
+		$nice_key = 'Last Contacted On';
+	endif;
+
+	// Expand "username".
+	if ( 'username' === $key ) :
+		$nice_key = 'WordPress.com Username';
+	endif;
+
+	return $nice_key;
+}
+
+/*
  * Reusable snippet of code to output a list of terms.
  * Mostly used to list out custom taxonomies and do the comma thing sensibly.
  *
