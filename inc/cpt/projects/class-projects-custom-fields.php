@@ -43,18 +43,38 @@ class Strikebase_Project_Fields {
 	public function add_project_fields() {
 		$project_fields = new Fieldmanager_Group( array(
 			'name'     => 'project_info',
+			'serialize_data' => 'false',
 			'children' => array(
 				'people' => new Fieldmanager_Group( array(
 					'name'  => 'people',
 					'label' => esc_html__( 'People', 'strikebase' ),
+					'serialize_data' => 'false',
 					'children' => array(
-						'strikers' => new Fieldmanager_Textfield( array(
+						'strikers' => new Fieldmanager_Select( array(
 							'name'  => 'strikers',
 							'label' => esc_html__( 'Strikers', 'strikebase' ),
+							'limit' => 0,
+							'add_more_label' => esc_html__( 'Add Striker', 'strikebase' ),
+							'datasource' => new Fieldmanager_Datasource_Post( array(
+								'query_args' => array(
+									'post_type' => 'person',
+									'posts_per_page' => -1,
+									'orderby' => 'title'
+								),
+							) ),
 						) ),
-						'influencers' => new Fieldmanager_Textfield( array(
+						'influencers' => new Fieldmanager_Select( array(
 							'name'  => 'influencers',
 							'label' => esc_html__( 'Influencers', 'strikebase' ),
+							'limit' => 0,
+							'add_more_label' => esc_html__( 'Add Influencer', 'strikebase' ),
+							'datasource' => new Fieldmanager_Datasource_Post( array(
+								'query_args' => array(
+									'post_type' => 'person',
+									'posts_per_page' => -1,
+									'orderby' => 'title'
+								),
+							) ),
 						) ),
 						'referrer' => new Fieldmanager_Textfield( array(
 							'name'  => 'referrer',
