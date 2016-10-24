@@ -21,7 +21,7 @@
 	</td>
 
 	<td class="strikebase-person-project">
-		Project 1, project 2
+		<strong>[LIST PROJECTS HERE]</strong>
 	</td>
 
 	<td class="strikebase-project-last-contact">

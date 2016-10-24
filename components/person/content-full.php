@@ -22,7 +22,7 @@
 		<dd><?php strikebase_show_organization( get_the_ID() ); ?></dd>
 
 		<dt><?php esc_html_e( 'Projects', 'strikebase' ); ?></dt>
-		<dd>Project 1, Project 2</dd>
+		<dd><strong>[LIST PROJECTS HERE]</strong></dd>
 	</dl>
 
 	<dl class="strikebase-contact-info">
