@@ -57,9 +57,17 @@ class Strikebase_Project_Fields {
 							'add_more_label' => esc_html__( 'Add Striker', 'strikebase' ),
 							'datasource' => new Fieldmanager_Datasource_Post( array(
 								'query_args' => array(
-									'post_type' => 'person',
+									'post_type'      => 'person',
 									'posts_per_page' => -1,
-									'orderby' => 'title'
+									'orderby'        => 'title',
+									'order'          => 'ASC',
+									'tax_query'      => array(
+												array(
+													'taxonomy' => 'person-type',
+													'field'    => 'slug',
+													'terms'    => 'striker',
+												),
+									),
 								),
 							) ),
 						) ),
@@ -70,9 +78,17 @@ class Strikebase_Project_Fields {
 							'add_more_label' => esc_html__( 'Add Influencer', 'strikebase' ),
 							'datasource' => new Fieldmanager_Datasource_Post( array(
 								'query_args' => array(
-									'post_type' => 'person',
+									'post_type'      => 'person',
 									'posts_per_page' => -1,
-									'orderby' => 'title'
+									'orderby'        => 'title',
+									'order'          => 'ASC',
+									'tax_query'      => array(
+												array(
+													'taxonomy' => 'person-type',
+													'field'    => 'slug',
+													'terms'    => 'influencer',
+												),
+									),
 								),
 							) ),
 						) ),
