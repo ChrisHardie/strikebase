@@ -50,7 +50,7 @@ class Strikebase_Project_Fields {
 					'label' => esc_html__( 'People', 'strikebase' ),
 					'serialize_data' => 'false',
 					'children' => array(
-						'strikers' => new Fieldmanager_Autocomplete( array(
+						'strikers' => new Fieldmanager_Select( array(
 							'name'  => 'strikers',
 							'label' => esc_html__( 'Strikers', 'strikebase' ),
 							'limit' => 0,
