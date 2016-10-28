@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/a8cteam51/strikebase.png?label=ready&title=Ready)](https://waffle.io/a8cteam51/strikebase)
 ## StrikeBase
 
 Contributors:
