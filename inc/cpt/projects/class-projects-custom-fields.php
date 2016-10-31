@@ -136,9 +136,9 @@ class Strikebase_Project_Fields {
 							'name'  => 'launch',
 							'label' => esc_html__( 'Actual Launch Date', 'strikebase' ),
 						) ),
-						'last_contacted' => new Fieldmanager_Datepicker( array(
-							'name'  => 'last_contacted',
-							'label' => esc_html__( 'Date Last Contacted', 'strikebase' ),
+						'last_check_in' => new Fieldmanager_Datepicker( array(
+							'name'  => 'last_check_in',
+							'label' => esc_html__( 'Date of last check-in', 'strikebase' ),
 						) ),
 					)
 				) ),

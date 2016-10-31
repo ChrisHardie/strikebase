@@ -19,7 +19,7 @@ get_header(); ?>
 					<th><?php esc_html_e( 'Project', 'strikebase' ); ?></th>
 					<th><?php esc_html_e( 'Status', 'strikebase' ); ?></th>
 					<th><?php esc_html_e( 'Launch date', 'strikebase' ); ?></th>
-					<th><?php esc_html_e( 'Last contact', 'strikebase' ); ?></th>
+					<th><?php esc_html_e( 'Last check-in', 'strikebase' ); ?></th>
 				</thead>
 			<?php
 			/* Start the Loop */

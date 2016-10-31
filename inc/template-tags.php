@@ -123,8 +123,8 @@ function strikebase_nice_key( $key ) {
 		$nice_key = 'Estimated Launch Date';
 	elseif ( 'launch' === $key ) :
 		$nice_key = 'Launch Date';
-	elseif ( 'last_contacted' === $key ) :
-		$nice_key = 'Last Contacted On';
+	elseif ( 'last_check_in' === $key ) :
+		$nice_key = 'Last Check-in';
 	endif;
 
 	// Expand "username".
