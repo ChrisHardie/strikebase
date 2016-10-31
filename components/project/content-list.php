@@ -34,8 +34,8 @@
 
 	<td class="strikebase-project-last-contact">
 		<?php
-		if ( $dates['last_contacted'] ) :
-			echo strikebase_formatted_date( $dates['last_contacted'] );
+		if ( $dates AND array_key_exists( 'last_check_in', $dates ) ) :
+			echo strikebase_formatted_date( $dates['last_check_in'] );
 		endif;
 		?>
 	</td>

@@ -61,10 +61,6 @@ class Strikebase_Person_Fields {
 					'name'  => 'time_zone',
 					'label' => esc_html__( 'Timezone', 'strikebase' ),
 				) ),
-				'last_contacted' => new Fieldmanager_Datepicker( array(
-					'name'  => 'last_contacted',
-					'label' => esc_html__( 'Date Last Contacted', 'strikebase' ),
-				) ),
 
 				// Social media accounts.
 				'social_media' => new Fieldmanager_Group( array(

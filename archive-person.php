@@ -19,7 +19,6 @@ get_header(); ?>
 					<th><?php esc_html_e( 'Name', 'strikebase' ); ?></th>
 					<th><?php esc_html_e( 'Organization', 'strikebase' ); ?></th>
 					<th><?php esc_html_e( 'Projects', 'strikebase' ); ?></th>
-					<th><?php esc_html_e( 'Last contact', 'strikebase' ); ?></th>
 				</thead>
 			<?php
 			/* Start the Loop */

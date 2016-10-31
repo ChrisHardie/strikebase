@@ -24,13 +24,4 @@
 		<strong>[LIST PROJECTS HERE]</strong>
 	</td>
 
-	<td class="strikebase-project-last-contact">
-		<?php
-		$dates = strikebase_get_person_meta( get_the_ID() );
-		if ( $dates['last_contacted'] ) :
-			echo strikebase_formatted_date( $dates['last_contacted'] );
-		endif;
-		?>
-	</td>
-
 </tr><!-- #post-## -->
