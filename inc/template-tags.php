@@ -132,7 +132,41 @@ function strikebase_nice_key( $key ) {
 		$nice_key = 'WordPress.com Username';
 	endif;
 
+	// Expand "social media".
+	if ( 'social_media' === $key ) :
+		$nice_key = 'Social Media Accounts';
+	endif;
+
 	return $nice_key;
+}
+
+/*
+ * Output social media links in a linky way.
+ * This is going to assume the username alone is entered,
+ * and we'll build the relevant URL around that.
+ * @TODO: Add SVG icons!
+ */
+function strikebase_convert_social_links( $key, $value ) {
+	// Remove @ symbol if it exists.
+	$value = str_replace( '@', '', $value );
+
+	switch ( $key ) :
+		case 'twitter':
+			$URL = 'https://twitter.com/' . $value;
+			break;
+		case 'facebook':
+			$URL = 'https://facebook.com/' . $value;
+			break;
+		case 'instagram':
+			$URL = 'https://instagram.com/' . $value;
+			break;
+		case 'youtube':
+			$URL = 'https://youtube.com/user/' . $value;
+			break;
+	endswitch;
+
+	$link = $key . ': <a href="' . $URL . '">@' . $value . '</a>';
+	return $link;
 }
 
 /*
