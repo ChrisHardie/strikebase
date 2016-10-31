@@ -22,7 +22,30 @@
 		<dd><?php strikebase_show_organization( get_the_ID() ); ?></dd>
 
 		<dt><?php esc_html_e( 'Projects', 'strikebase' ); ?></dt>
-		<dd><strong>[LIST PROJECTS HERE]</strong></dd>
+		<?php
+		$projects = strikebase_get_project_meta( get_the_ID(), 'people' );
+
+		var_dump( get_the_ID() );
+
+		if ( $projects ) :
+			foreach ( $projects as $key => $value ) :
+				if ( $value ) :
+					echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+					if ( is_array( $value ) ) :
+						// If our value is an array, loop through it as well!
+						foreach ( $value as $person ) :
+							if ( get_the_title() === get_the_title( $person ) ) :
+								echo '<dd>' . get_the_title( $person ) . '</dd>';
+							endif;
+						endforeach;
+					else :
+						// Otherwise just output the value.
+						echo '<dd>' . $value . '</dd>';
+					endif;
+				endif;
+			endforeach;
+		endif;
+		?>
 	</dl>
 
 	<dl class="strikebase-contact-info">

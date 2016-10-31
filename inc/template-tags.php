@@ -64,17 +64,22 @@ function strikebase_get_project_meta( $post_ID, $key ) {
  * Output project post metadata fields to template
  */
 function strikebase_output_project_meta( $section ) {
-	$metadata = strikebase_get_project_meta( get_the_ID(), $section );
+	$project_metadata = strikebase_get_project_meta( get_the_ID(), $section );
+
+	if ( ! $project_metadata ) {
+		return;
+	}
 
 	echo '<dl class="strikebase-"' . $section  . '>';
 
-	foreach ( $metadata as $key => $value ) :
+	foreach ( $project_metadata as $key => $value ) :
 		if ( $value ) :
 
 		switch( $section ) :
-			case 'people';
+			case 'people':
 				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
 				if ( is_array( $value ) ) :
+					// If our value is an array, loop through it as well!
 					foreach ( $value as $person ) :
 						echo '<dd>' . get_the_title( $person ) . '</dd>';
 					endforeach;
@@ -91,7 +96,7 @@ function strikebase_output_project_meta( $section ) {
 				echo '<dd><a href="' . $value . '">' . strikebase_simplify_URL( $value ) . '</a></dd>';
 				break;
 			default:
-				return;
+				echo '<dd>' . $value . '</dd>';
 		endswitch;
 
 		endif;
@@ -111,6 +116,13 @@ function strikebase_get_person_meta( $post_ID ) {
 	else :
 		return false;
 	endif;
+}
+
+/*
+ * Output person post metadata fields to template
+ * @todo: Add functionality here to combine template output.
+ */
+function strikebase_output_person_meta( $section ) {
 }
 
 /*
