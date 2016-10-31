@@ -37,7 +37,17 @@
 					if ( 'last_contacted' === $key ) :
 						echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
 					else :
-						echo '<dd>' . $value . '</dd>';
+						if ( is_array( $value ) ) :
+							// If our value is an array, loop through it as well!
+							foreach ( $value as $sub_key => $sub_value ) :
+								if ( $sub_value ) :
+									echo '<dd>' . strikebase_nice_key( $sub_key ) . ': ' . $sub_value . '</dd>';
+								endif;
+							endforeach;
+						else :
+							// Otherwise just output the value.
+							echo '<dd>' . $value . '</dd>';
+						endif;
 					endif;
 
 				endif;
