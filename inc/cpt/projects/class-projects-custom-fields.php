@@ -92,6 +92,27 @@ class Strikebase_Project_Fields {
 								),
 							) ),
 						) ),
+						'contractors' => new Fieldmanager_Autocomplete( array(
+							'name'  => 'contractors',
+							'label' => esc_html__( 'Contractors', 'strikebase' ),
+							'limit' => 0,
+							'add_more_label' => esc_html__( 'Add Contractor', 'strikebase' ),
+							'datasource' => new Fieldmanager_Datasource_Post( array(
+								'query_args' => array(
+									'post_type'      => 'person',
+									'posts_per_page' => -1,
+									'orderby'        => 'title',
+									'order'          => 'ASC',
+									'tax_query'      => array(
+												array(
+													'taxonomy' => 'person-type',
+													'field'    => 'slug',
+													'terms'    => 'contractor',
+												),
+									),
+								),
+							) ),
+						) ),
 						'referrer' => new Fieldmanager_Textfield( array(
 							'name'  => 'referrer',
 							'label' => esc_html__( 'Referrer', 'strikebase' ),

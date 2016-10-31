@@ -61,9 +61,30 @@ class Strikebase_Person_Fields {
 					'name'  => 'time_zone',
 					'label' => esc_html__( 'Timezone', 'strikebase' ),
 				) ),
-				'social_media' => new Fieldmanager_TextArea( array(
+
+				// Social media accounts.
+				'social_media' => new Fieldmanager_Group( array(
 					'name'  => 'social_media',
 					'label' => esc_html__( 'Social Media Accounts', 'strikebase' ),
+					'serialize_data' => 'false',
+					'children' => array(
+						'twitter' => new Fieldmanager_Textfield( array(
+							'name'  => 'twitter',
+							'label' => esc_html__( 'Twitter', 'strikebase' ),
+						) ),
+						'facebook' => new Fieldmanager_Textfield( array(
+							'name'  => 'facebook',
+							'label' => esc_html__( 'Facebook', 'strikebase' ),
+						) ),
+						'youtube' => new Fieldmanager_Textfield( array(
+							'name'  => 'youtube',
+							'label' => esc_html__( 'Youtube', 'strikebase' ),
+						) ),
+						'instagram' => new Fieldmanager_Textfield( array(
+							'name'  => 'instagram',
+							'label' => esc_html__( 'Instagram', 'strikebase' ),
+						) )
+					)
 				) ),
 			)
 		) );

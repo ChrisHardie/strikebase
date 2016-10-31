@@ -33,6 +33,21 @@
 			foreach ( $contact_info as $key => $value ) :
 				if ( $value ) :
 					echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+					if ( is_array( $value ) ) :
+						// If our value is an array, loop through it as well!
+						foreach ( $value as $sub_key => $sub_value ) :
+							if ( $sub_value ) :
+								if ( 'social_media' === $key ) :
+									echo '<dd>' . strikebase_convert_social_links( $sub_key, $sub_value ) . '</dd>';
+								else:
+									echo '<dd>' . strikebase_nice_key( $sub_key ) . ': ' . $sub_value . '</dd>';
+								endif;
+							endif;
+						endforeach;
+					else :
+						// Otherwise just output the value.
+						echo '<dd>' . $value . '</dd>';
+					endif;
 				endif;
 			endforeach;
 		endif;
