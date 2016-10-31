@@ -65,10 +65,6 @@ class Strikebase_Person_Fields {
 					'name'  => 'social_media',
 					'label' => esc_html__( 'Social Media Accounts', 'strikebase' ),
 				) ),
-				'last_contacted' => new Fieldmanager_Datepicker( array(
-					'name'  => 'last_contacted',
-					'label' => esc_html__( 'Date Last Contacted', 'strikebase' ),
-				) ),
 			)
 		) );
 

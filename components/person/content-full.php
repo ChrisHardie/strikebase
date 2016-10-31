@@ -33,13 +33,6 @@
 			foreach ( $contact_info as $key => $value ) :
 				if ( $value ) :
 					echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
-
-					if ( 'last_contacted' === $key ) :
-						echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
-					else :
-						echo '<dd>' . $value . '</dd>';
-					endif;
-
 				endif;
 			endforeach;
 		endif;
