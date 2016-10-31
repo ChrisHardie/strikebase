@@ -61,6 +61,46 @@ function strikebase_get_project_meta( $post_ID, $key ) {
 }
 
 /*
+ * Output project post metadata fields to template
+ */
+function strikebase_output_project_meta( $section ) {
+	$metadata = strikebase_get_project_meta( get_the_ID(), $section );
+
+	echo '<dl class="strikebase-"' . $section  . '>';
+
+	foreach ( $metadata as $key => $value ) :
+		if ( $value ) :
+
+		switch( $section ) :
+			case 'people';
+				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+				if ( is_array( $value ) ) :
+					foreach ( $value as $person ) :
+						echo '<dd>' . get_the_title( $person ) . '</dd>';
+					endforeach;
+				else:
+					echo '<dd>' . $value . '</dd>';
+				endif;
+				break;
+			case 'dates':
+				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+				echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
+				break;
+			case 'links':
+				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+				echo '<dd><a href="' . $value . '">' . strikebase_simplify_URL( $value ) . '</a></dd>';
+				break;
+			default:
+				return;
+		endswitch;
+
+		endif;
+	endforeach;
+
+	echo '</dl>';
+}
+
+/*
  * Get an array of custom metadata attached to a given person.
  */
 function strikebase_get_person_meta( $post_ID ) {

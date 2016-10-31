@@ -28,41 +28,11 @@
 		<dd><?php strikebase_show_project_type( get_the_ID() ); ?></dd>
 	</dl>
 
-	<dl class="strikebase-people">
-		<?php
-		$people = strikebase_get_project_meta( get_the_ID(), 'people' );
-		foreach ( $people as $key => $value ) :
-			if ( $value ) :
-				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
-				echo '<dd>' . $value . '</dd>';
-			endif;
-		endforeach;
-		?>
-	</dl>
-
-	<dl class="strikebase-dates">
-		<?php
-		$dates = strikebase_get_project_meta( get_the_ID(), 'dates' );
-		foreach ( $dates as $key => $value ) :
-			if ( $value ) :
-				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
-				echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
-			endif;
-		endforeach;
-		?>
-	</dl>
-
-	<dl class="strikebase-links">
-		<?php
-		$links = strikebase_get_project_meta( get_the_ID(), 'links' );
-		foreach ( $links as $key => $value ) :
-			if ( $value ) :
-				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
-				echo '<dd><a href="' . $value . '">' . strikebase_simplify_URL( $value ) . '</a></dd>';
-			endif;
-		endforeach;
-		?>
-	</dl>
+	<?php
+		strikebase_output_project_meta( 'people' );
+		strikebase_output_project_meta( 'dates' );
+		strikebase_output_project_meta( 'links' );
+	?>
 
 	<div class="entry-content">
 		<div class="label"><?php esc_html_e( 'Notes', 'strikebase' ); ?></div>
