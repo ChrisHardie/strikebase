@@ -41,7 +41,11 @@
 							// If our value is an array, loop through it as well!
 							foreach ( $value as $sub_key => $sub_value ) :
 								if ( $sub_value ) :
-									echo '<dd>' . strikebase_nice_key( $sub_key ) . ': ' . $sub_value . '</dd>';
+									if ( 'social_media' === $key ) :
+										echo '<dd>' . strikebase_convert_social_links( $sub_key, $sub_value ) . '</dd>';
+									else:
+										echo '<dd>' . strikebase_nice_key( $sub_key ) . ': ' . $sub_value . '</dd>';
+									endif;
 								endif;
 							endforeach;
 						else :
