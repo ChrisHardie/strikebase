@@ -150,18 +150,6 @@ function strikebase_simplify_URL( $URL ) {
 }
 
 /*
- * Output a nice human-parseable date.
- */
-function strikebase_formatted_date( $date, $date_format=null ) {
-	if ( ! $date_format ) :
-		// If we haven't explicitly set a date format, pull it from WordPress options
-		$date_format = get_option( 'date_format' );
-	endif;
-	$formatted_date = date( $date_format, $date );
-	return $formatted_date;
-}
-
-/*
  * Tweak the display of a given label for a custom meta key.
  * In some cases, these labels aren't quite as descriptive as they should be,
  * so we're going to manually fine-tune them.

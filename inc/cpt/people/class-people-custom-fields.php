@@ -34,14 +34,6 @@ class Strikebase_Person_Fields {
 		add_action( 'fm_post_person', array( $this, 'add_person_fields' ) );
 	}
 
-	/*
-	 * Get a list of all the timezones PHP supports.
-	 */
-	private function get_timezones() {
-		$timezone_list = DateTimeZone::listIdentifiers( DateTimeZone::ALL );
-		return $tzlist;
-	}
-
 	/**
 	 * Add custom fields for Person post type
 	 *
@@ -65,11 +57,11 @@ class Strikebase_Person_Fields {
 					'name'  => 'phone',
 					'label' => esc_html__( 'Phone Number(s)', 'strikebase' ),
 				) ),
-				'time_zone' => new Fieldmanager_Autocomplete( array(
+				'time_zone' => new Fieldmanager_Select( array(
 					'name'  => 'time_zone',
 					'label' => esc_html__( 'Time Zone', 'strikebase' ),
 					'datasource'  => new Fieldmanager_Datasource( array(
-						'options' => self::get_timezones(),
+						'options' => strikebase_get_timezones(),
 					) ),
 				) ),
 

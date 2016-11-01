@@ -132,6 +132,11 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
+ * Load custom date & time functionality.
+ */
+require get_template_directory() . '/inc/date-and-time.php';
+
+/**
  * Create a projects CPT.
  */
 require get_template_directory() . '/inc/cpt/projects/class-projects-post-type.php';
