@@ -21,7 +21,7 @@ get_header(); ?>
 
 			if ( $terms ) : ?>
 
-			<table>
+			<table class="strikebase-organization-list">
 				<thead>
 					<th><?php esc_html_e( 'Organization', 'strikebase' ); ?></th>
 					<th><?php esc_html_e( 'People', 'strikebase' ); ?></th>
