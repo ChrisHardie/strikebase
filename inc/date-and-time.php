@@ -52,8 +52,27 @@ function strikebase_format_GMT_offset( $offset ) {
  * Format the name of a timezone in a more human-friendly way.
  */
 function strikebase_format_timezone_name( $timezone_name ) {
-	$timezone_name = str_replace( '/', ', ', $timezone_name );
-	$timezone_name = str_replace( '_', ' ', $timezone_name );
-	$timezone_name = str_replace( 'St ', 'St. ', $timezone_name );
-	return $timezone_name;
+
+	// Separate out continent and region data, if they exist.
+	$timezone_pieces = explode( '/', $timezone_name );
+	if ( 2 === count( $timezone_pieces ) ) :
+		$continent = $timezone_pieces[0];
+		$formatted_timezone_name = $timezone_pieces[1];
+		// $formatted_timezone_name = $timezone_pieces[1] . ' ('. $continent .')';
+	elseif ( 3 === count( $timezone_pieces ) ) :
+			$continent = $timezone_pieces[0];
+			$region = $timezone_pieces[1];
+			$formatted_timezone_name = $timezone_pieces[2] . ', '. $region;
+			// $formatted_timezone_name = $timezone_pieces[2] . ', '. $region  . ' ('. $continent .')';
+	else:
+		$formatted_timezone_name = $timezone_name;
+	endif;
+
+	// Replace any underscores with spaces.
+	$formatted_timezone_name = str_replace( '_', ' ', $formatted_timezone_name );
+
+	// Swap "St" for "St.".
+	$formatted_timezone_name = str_replace( 'St ', 'St. ', $formatted_timezone_name );
+
+	return $formatted_timezone_name;
 }
