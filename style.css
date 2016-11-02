@@ -541,6 +541,9 @@ td, th {
 tr:nth-of-type(even) {
   background-color: #eee; }
 
+.strikebase-person-project span {
+  display: block; }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
