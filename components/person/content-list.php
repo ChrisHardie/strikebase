@@ -35,7 +35,7 @@
 				$projects = strikebase_get_project_meta( get_the_ID(), 'people' );
 
 				if ( $projects ) {
-					if ( in_array( $person_page_id, $projects['influencers'] ) ) {
+					if ( is_array( $projects['influencers'] ) && in_array( $person_page_id, $projects['influencers'] ) ) {
 						echo '<span>' . get_the_title() . '</span>';
 					}
 				}
