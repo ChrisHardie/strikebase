@@ -584,6 +584,9 @@ tr:nth-of-type(even) {
   .strikebase-organization-list td:nth-of-type(4):before {
     content: "Last check-in: "; } }
 
+.strikebase-person-project span {
+  display: block; }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
