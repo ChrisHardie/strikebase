@@ -97,5 +97,19 @@ tr:nth-of-type(even) {
 }
 
 td span {
-	display: block;
+	@include mobile {
+		display: inline;
+
+		&::after {
+			content: ', ';
+		}
+
+		&:last-of-type::after {
+			display: none;
+		}
+	}
+
+	@include tablet {
+		display: block;
+	}
 }
