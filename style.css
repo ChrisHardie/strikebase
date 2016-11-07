@@ -687,6 +687,10 @@ body {
 .site-title {
   font-size: 3em; }
 
+/* Center-align page headers on archive pages. */
+.archive .page-header {
+  text-align: center; }
+
 /*--------------------------------------------------------------
 ## People & projects CPT
 --------------------------------------------------------------*/
