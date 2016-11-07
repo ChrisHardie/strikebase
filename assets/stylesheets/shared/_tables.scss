@@ -6,28 +6,94 @@ table {
 }
 
 table a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 thead {
-  border-bottom: 2px solid;
+	border-bottom: 2px solid;
 }
 
 th {
-  @include small-caps;
-  text-align: left;
+	@include small-caps;
+	text-align: left;
 }
 
 tr {
-  border-bottom: 1px solid;
+	border-bottom: 1px solid;
 }
 
 td, th {
-  padding: $size__site-gutter/4;
+	padding: $size__site-gutter/4;
 }
 
 tr:nth-of-type(even) {
-  background-color: #eee;
+	background-color: #eee;
+}
+
+/* On mobiles, rearrange data tables so they're easier to read. */
+@include mobile {
+
+	table {
+		margin: 0 -$size__site-gutter/2;
+		width: calc(100% + #{$size__site-gutter});
+	}
+
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	thead {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	td {
+		font-weight: 400;
+		padding: 0 $size__site-gutter/2;
+
+		&:first-of-type {
+			padding-top: $size__site-gutter/2;
+		}
+
+		&:last-of-type {
+			padding-bottom: $size__site-gutter/2;
+		}
+
+		&::before {
+			display: inline-block;
+			font-weight: 200;
+			white-space: nowrap;
+		}
+	}
+
+	td:first-of-type {
+		font-weight: 600;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	// Data labels for project listing.
+	.strikebase-project-list {
+		td:nth-of-type(2):before { content: "Status: "; }
+		td:nth-of-type(3):before { content: "Launch date: "; }
+		td:nth-of-type(4):before { content: "Last check-in: "; }
+	}
+
+	// Data labels for people listing.
+	.strikebase-people-list {
+		td:nth-of-type(2):before { content: "Organization: "; }
+		td:nth-of-type(3):before { content: "Projects: "; }
+	}
+
+	// Data labels for org listing.
+	.strikebase-organization-list {
+		td:nth-of-type(2):before { content: "People: "; }
+		td:nth-of-type(3):before { content: "Projects: "; }
+		td:nth-of-type(4):before { content: "Last check-in: "; }
+	}
 }
 
 .strikebase-person-project span {

@@ -14,7 +14,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<table>
+			<table class="strikebase-people-list">
 				<thead>
 					<th><?php esc_html_e( 'Name', 'strikebase' ); ?></th>
 					<th><?php esc_html_e( 'Organization', 'strikebase' ); ?></th>

@@ -14,7 +14,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<table>
+			<table class="strikebase-project-list">
 				<thead>
 					<th><?php esc_html_e( 'Project', 'strikebase' ); ?></th>
 					<th><?php esc_html_e( 'Status', 'strikebase' ); ?></th>

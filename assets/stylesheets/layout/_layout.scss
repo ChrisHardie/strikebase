@@ -22,3 +22,27 @@ body {
 }
 
 @import "masthead";
+
+/*--------------------------------------------------------------
+## People & projects CPT
+--------------------------------------------------------------*/
+
+// Use flexbox to implement a two-column layout for people and projects on tablets and up.
+article {
+	align-content: space-between;
+	align-items: baseline;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	.entry-header {
+		width: 100%;
+	}
+}
+
+@include tablet {
+	.strikebase-column {
+		width: calc(50% - #{$size__site-gutter*2});
+	}
+}
