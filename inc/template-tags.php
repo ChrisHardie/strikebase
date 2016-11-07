@@ -43,8 +43,8 @@ function strikebase_show_person_type( $post_ID ) {
 /*
  * Display the organization name.
  */
-function strikebase_show_organization( $post_ID ) {
-	echo strikebase_list_terms( $post_ID, 'organization' );
+function strikebase_show_organization( $post_ID, $format ) {
+	echo strikebase_list_terms( $post_ID, 'organization', $format );
 }
 
 /*
@@ -243,7 +243,7 @@ function strikebase_convert_social_links( $key, $value ) {
  * Mostly used to list out custom taxonomies and do the comma thing sensibly.
  *
  */
-function strikebase_list_terms( $post_ID, $taxonomy ) {
+function strikebase_list_terms( $post_ID, $taxonomy, $format = 'comma' ) {
 	$terms = wp_get_post_terms( $post_ID, $taxonomy );
 
 	// Make sure we have some terms.
@@ -253,11 +253,17 @@ function strikebase_list_terms( $post_ID, $taxonomy ) {
 
 		// Loopity-loop.
 		foreach ( $terms as $term ) :
-			$return .= $term->name;
 
-			// Just in case we have more than one, use a comma to separate.
-			if ( $i < count( $terms ) ) :
-				$return .= ', ';
+			if ( $format === 'comma' ) :
+				// Output the term without any wrapping tags.
+				$return .= $term->name;
+				// Use a comma to separate items in list.
+				if ( $i < count( $terms ) ) :
+					$return .= ', ';
+				endif;
+			else :
+				// Wrap items in the format selected.
+				$return .= '<'. $format .'>' . $term->name . '</' . $format . '>';
 			endif;
 
 			$i++;
