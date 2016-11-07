@@ -126,6 +126,35 @@ function strikebase_output_person_meta( $section ) {
 }
 
 /*
+ * List the projects a given person is attached to.
+ *
+ */
+function strikebase_list_person_projects( $person, $format = 'dd' ) {
+	// Custom query setup
+	global $person_page_id;
+	$person_page_id = get_the_id();
+	$query_args = array( 'post_type' => 'project', 'posts_per_page' => -1 );
+	$project_query = new WP_Query( $query_args );
+
+	// Custom query loop
+	if ( $project_query->have_posts() ) {
+		while ( $project_query->have_posts() ) {
+			$project_query->the_post();
+			$projects = strikebase_get_project_meta( get_the_ID(), 'people' );
+
+			if ( $projects ) {
+				if ( is_array( $projects['influencers'] ) && in_array( $person_page_id, $projects['influencers'] ) ) {
+					echo '<'. $format .'>' . get_the_title() . '</' . $format . '>';
+				}
+			}
+		}
+		wp_reset_postdata();
+	} else {
+		echo '<'. $format .'>' . esc_html_e( 'No associated projects.', 'strikebase' ) . '</' . $format . '>';
+	}
+}
+
+/*
  * Simplify a URL.
  */
 function strikebase_simplify_URL( $URL ) {
