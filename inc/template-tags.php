@@ -43,8 +43,8 @@ function strikebase_show_person_type( $post_ID ) {
 /*
  * Display the organization name.
  */
-function strikebase_show_organization( $post_ID ) {
-	echo strikebase_list_terms( $post_ID, 'organization' );
+function strikebase_show_organization( $post_ID, $format ) {
+	echo strikebase_list_terms( $post_ID, 'organization', $format );
 }
 
 /*
@@ -123,6 +123,35 @@ function strikebase_get_person_meta( $post_ID ) {
  * @todo: Add functionality here to combine template output.
  */
 function strikebase_output_person_meta( $section ) {
+}
+
+/*
+ * List the projects a given person is attached to.
+ *
+ */
+function strikebase_list_person_projects( $person, $format = 'dd' ) {
+	// Custom query setup
+	global $person_page_id;
+	$person_page_id = get_the_id();
+	$query_args = array( 'post_type' => 'project', 'posts_per_page' => -1 );
+	$project_query = new WP_Query( $query_args );
+
+	// Custom query loop
+	if ( $project_query->have_posts() ) {
+		while ( $project_query->have_posts() ) {
+			$project_query->the_post();
+			$projects = strikebase_get_project_meta( get_the_ID(), 'people' );
+
+			if ( $projects ) {
+				if ( is_array( $projects['influencers'] ) && in_array( $person_page_id, $projects['influencers'] ) ) {
+					echo '<'. $format .'>' . get_the_title() . '</' . $format . '>';
+				}
+			}
+		}
+		wp_reset_postdata();
+	} else {
+		echo '<'. $format .'>' . esc_html_e( 'No associated projects.', 'strikebase' ) . '</' . $format . '>';
+	}
 }
 
 /*
@@ -214,7 +243,7 @@ function strikebase_convert_social_links( $key, $value ) {
  * Mostly used to list out custom taxonomies and do the comma thing sensibly.
  *
  */
-function strikebase_list_terms( $post_ID, $taxonomy ) {
+function strikebase_list_terms( $post_ID, $taxonomy, $format = 'comma' ) {
 	$terms = wp_get_post_terms( $post_ID, $taxonomy );
 
 	// Make sure we have some terms.
@@ -224,11 +253,17 @@ function strikebase_list_terms( $post_ID, $taxonomy ) {
 
 		// Loopity-loop.
 		foreach ( $terms as $term ) :
-			$return .= $term->name;
 
-			// Just in case we have more than one, use a comma to separate.
-			if ( $i < count( $terms ) ) :
-				$return .= ', ';
+			if ( $format === 'comma' ) :
+				// Output the term without any wrapping tags.
+				$return .= $term->name;
+				// Use a comma to separate items in list.
+				if ( $i < count( $terms ) ) :
+					$return .= ', ';
+				endif;
+			else :
+				// Wrap items in the format selected.
+				$return .= '<'. $format .'>' . $term->name . '</' . $format . '>';
 			endif;
 
 			$i++;

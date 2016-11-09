@@ -584,8 +584,17 @@ tr:nth-of-type(even) {
   .strikebase-organization-list td:nth-of-type(4):before {
     content: "Last check-in: "; } }
 
-.strikebase-person-project span {
-  display: block; }
+@media (max-width: 639px) {
+  td span {
+    display: inline; }
+    td span::after {
+      content: ', '; }
+    td span:last-of-type::after {
+      display: none; } }
+
+@media (min-width: 640px) {
+  td span {
+    display: block; } }
 
 /*--------------------------------------------------------------
 # Navigation

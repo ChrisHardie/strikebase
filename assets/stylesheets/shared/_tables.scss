@@ -96,6 +96,20 @@ tr:nth-of-type(even) {
 	}
 }
 
-.strikebase-person-project span {
-	display: block;
+td span {
+	@include mobile {
+		display: inline;
+
+		&::after {
+			content: ', ';
+		}
+
+		&:last-of-type::after {
+			display: none;
+		}
+	}
+
+	@include tablet {
+		display: block;
+	}
 }
