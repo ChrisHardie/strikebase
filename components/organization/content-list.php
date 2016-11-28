@@ -24,7 +24,7 @@
 	</td>
 
 	<td class="strikebase-person-last-contact">
-		<strong>[LAST CONTACT DATE]</strong>
+		<?php strikebase_show_checkin_date( $term->slug ); ?>
 	</td>
 
 </tr><!-- #post-## -->
