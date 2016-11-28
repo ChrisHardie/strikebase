@@ -631,24 +631,8 @@ tr:nth-of-type(even) {
     display: block;
     text-decoration: none; }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden; }
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%; }
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%; }
+.strikebase-pagination {
+  text-align: center; }
 
 /*--------------------------------------------------------------
 # Links
@@ -719,22 +703,12 @@ article {
   article .entry-header {
     width: 100%; }
 
+.entry-content {
+  max-width: 100%; }
+
 @media (min-width: 640px) {
   .strikebase-column {
     width: calc(50% - 40px); } }
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
-  display: none; }
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-  display: block; }
 
 /*--------------------------------------------------------------
 # Media

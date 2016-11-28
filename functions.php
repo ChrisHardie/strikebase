@@ -137,6 +137,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/date-and-time.php';
 
 /**
+ * Load extra misc functionality.
+ */
+require get_template_directory() . '/inc/extras.php';
+
+/**
  * Create a projects CPT.
  */
 require get_template_directory() . '/inc/cpt/projects/class-projects-post-type.php';

@@ -20,15 +20,17 @@ get_header(); ?>
 					<th><?php esc_html_e( 'Organization', 'strikebase' ); ?></th>
 					<th><?php esc_html_e( 'Projects', 'strikebase' ); ?></th>
 				</thead>
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-				get_template_part( 'components/person/content', 'list' );
-			endwhile;
-			the_posts_navigation();
-			?>
 
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
+					get_template_part( 'components/person/content', 'list' );
+				endwhile;
+				?>
 			</table>
+
+			<?php strikebase_numeric_pagination(); ?>
+
 		<?php else :
 			get_template_part( 'components/person/content', 'none' );
 		endif; ?>
