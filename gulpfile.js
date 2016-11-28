@@ -60,13 +60,24 @@ gulp.task( 'icons', function() {
 		.pipe( gulp.dest( 'assets/svg' ) );
 });
 
+// Generate style guide assets.
+gulp.task( 'style-guide', function() {
+	return gulp.src( 'assets/style-guide/stylesheets/style-guide.scss' )
+		.pipe( sass( { style: 'expanded' } ).on( 'error', sass.logError ) )
+		.on( 'error', function ( err ) {
+			console.error( 'Error!', err.message );
+		} )
+		.pipe( gulp.dest( 'assets/style-guide' ) )
+});
+
 // Watch files for changes
 gulp.task( 'watch', function() {
 	livereload.listen();
 	gulp.watch( 'assets/stylesheets/**/*.scss', ['styles'] );
 	gulp.watch( 'assets/js/**/*.js', ['scripts'] );
 	gulp.watch( 'assets/svg/icons/*', ['icons'] );
+	gulp.watch( 'assets/style-guide/stylesheets/*.scss', ['style-guide'] );
 });
 
 // Default Task
-gulp.task( 'default', ['styles', 'scripts', 'icons', 'watch'] );
+gulp.task( 'default', ['styles', 'scripts', 'icons', 'style-guide', 'watch'] );
