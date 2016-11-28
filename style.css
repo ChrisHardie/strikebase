@@ -719,6 +719,9 @@ article {
   article .entry-header {
     width: 100%; }
 
+.entry-content {
+  max-width: 100%; }
+
 @media (min-width: 640px) {
   .strikebase-column {
     width: calc(50% - 40px); } }
