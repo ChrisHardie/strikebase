@@ -73,10 +73,9 @@ gulp.task( 'style-guide', function() {
 // Watch files for changes
 gulp.task( 'watch', function() {
 	livereload.listen();
-	gulp.watch( 'assets/stylesheets/**/*.scss', ['styles'] );
+	gulp.watch( 'assets/**/*.scss', ['styles', 'style-guide'] );
 	gulp.watch( 'assets/js/**/*.js', ['scripts'] );
 	gulp.watch( 'assets/svg/icons/*', ['icons'] );
-	gulp.watch( 'assets/style-guide/stylesheets/*.scss', ['style-guide'] );
 });
 
 // Default Task

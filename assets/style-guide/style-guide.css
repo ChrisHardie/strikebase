@@ -89,56 +89,56 @@ body {
 
 /* Mixin to output classes */
 .color-text-main {
-  background: #222; }
+  background: #3D3012; }
   .color-text-main .hex-code {
     color: #fff; }
     .color-text-main .hex-code::before {
-      content: "#222"; }
+      content: "#3D3012"; }
 
 .color-primary {
-  background: #227791; }
+  background: #3B5345; }
   .color-primary .hex-code {
     color: #fff; }
     .color-primary .hex-code::before {
-      content: "#227791"; }
+      content: "#3B5345"; }
 
 .color-secondary {
-  background: #2c99ba; }
+  background: #50715e; }
   .color-secondary .hex-code {
     color: #fff; }
     .color-secondary .hex-code::before {
-      content: "#2c99ba"; }
+      content: "#50715e"; }
 
 .color-tertiary {
-  background: #185568; }
+  background: #26352c; }
   .color-tertiary .hex-code {
     color: #fff; }
     .color-tertiary .hex-code::before {
-      content: "#185568"; }
+      content: "#26352c"; }
 
 .color-accent {
-  background: #913c22; }
+  background: #A6302C; }
   .color-accent .hex-code {
     color: #000; }
     .color-accent .hex-code::before {
-      content: "#913c22"; }
+      content: "#A6302C"; }
 
 .color-highlight {
-  background: #d46745; }
+  background: #f7d47d; }
   .color-highlight .hex-code {
     color: #000; }
     .color-highlight .hex-code::before {
-      content: "#d46745"; }
+      content: "#f7d47d"; }
 
 .adjectives h3 {
   display: inline;
-  color: #227791;
+  color: #3B5345;
   font-family: "Francois One", courier;
   font-size: 2.1rem;
   padding-right: 0.2em; }
 
 .adjectives h3:nth-of-type(odd) {
-  color: #913c22; }
+  color: #A6302C; }
 
 .headings {
   text-align: left; }
