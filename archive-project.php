@@ -26,10 +26,11 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
 				get_template_part( 'components/project/content', 'list' );
 			endwhile;
-			the_posts_navigation();
 			?>
-
 			</table>
+
+			<?php strikebase_numeric_pagination(); ?>
+
 		<?php else :
 			get_template_part( 'components/project/content', 'none' );
 		endif; ?>
