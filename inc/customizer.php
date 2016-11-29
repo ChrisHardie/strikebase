@@ -1,8 +1,8 @@
 <?php
 /**
- * Just One Tree Theme Customizer.
+ * Strikebase Theme Customizer.
  *
- * @package Just_One_Tree
+ * @package strikebase
  */
 
 /**
