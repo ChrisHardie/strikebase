@@ -713,8 +713,32 @@ article {
 /*--------------------------------------------------------------
 ## Dashboard
 --------------------------------------------------------------*/
+@media (min-width: 640px) {
+  .widget {
+    width: calc(50% - 40px); } }
+
+.strikebase-check-ins-widget ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0; }
+
+.strikebase-check-ins-widget li {
+  border-bottom: 2px solid;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px; }
+  @media (max-width: 639px) {
+    .strikebase-check-ins-widget li {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      .strikebase-check-ins-widget li span {
+        width: 100%; } }
+
 .strikebase-overdue-check-in {
-  color: red; }
+  background: #f6eeee;
+  color: #cc0000; }
 
 /*--------------------------------------------------------------
 # Media
