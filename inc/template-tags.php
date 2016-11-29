@@ -276,12 +276,12 @@ function strikebase_list_terms( $post_ID, $taxonomy, $format = 'comma' ) {
 }
 
 /*
- * This lists the people who belong to a specific organisation.
+ * This lists the people or projects who/that belong to a specific organisation.
  * @TODO show gravatars!
  */
 function strikebase_list_org_attachments( $organization, $post_type ) {
 
-	// Query posts for people who belong to the org (taxonomy) specified
+	// Query posts for the CPTs that belong to the org (taxonomy) specified.
 	$args = array(
 		'post_type' => $post_type,
 		'tax_query' => array(
@@ -314,6 +314,53 @@ function strikebase_list_org_attachments( $organization, $post_type ) {
 		wp_reset_postdata();
 		echo $return;
 
+	else :
+		return false;
+	endif;
+}
+
+/*
+ * Show the last check-in date for an organisation.
+ *
+ */
+function strikebase_show_checkin_date( $organization ) {
+
+	// Query posts for the projects that belong to the org (taxonomy) specified.
+	$args = array(
+		'post_type' => 'project',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'organization',
+				'field'	 => 'slug',
+				'terms'	 => $organization,
+			),
+		),
+	);
+	$the_query = new WP_Query( $args );
+
+	// To find the check-in date for an organisation, we'll need to get
+	// all the projects attached to the org, and the check-in dates of those projects.
+	// Then, we'll just output the most recent date.
+	if ( $the_query->have_posts() ) :
+		// Create an empty array.
+		$project_checkins = array();
+
+		while ( $the_query->have_posts() ) :
+			$the_query->the_post();
+			// Get the check-in date and add it to our array.
+			$project_dates = strikebase_get_project_meta( get_the_ID(), 'dates' );
+			$project_checkins[] = $project_dates['last_check_in'];
+		endwhile;
+
+		wp_reset_postdata();
+
+		// Sort the array so our most recent check-in is first.
+		sort( $project_checkins );
+
+		// Now get the last check-in date and output it.
+		$latest_checkin = array_slice( $project_checkins, -1 )[0];
+		echo strikebase_formatted_date( $latest_checkin );
+		return true;
 	else :
 		return false;
 	endif;
