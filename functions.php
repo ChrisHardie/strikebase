@@ -142,6 +142,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/date-and-time.php';
 
 /**
+ * Load custom functionality related to client check-ins.
+ */
+require get_template_directory() . '/inc/check-ins.php';
+
+/**
  * Load extra misc functionality.
  */
 require get_template_directory() . '/inc/extras.php';

@@ -19,14 +19,14 @@ function strikebase_customize_register( $wp_customize ) {
 		'title'           => esc_html__( 'Custom Options', 'strikebase' ),
 		'description'     => __( 'Custom options for the site.', 'strikebase' ),
 	) );
-	$wp_customize->add_setting( 'strikebase_checkin_interval', array(
+	$wp_customize->add_setting( 'strikebase_check_in_interval', array(
 		'type'              => 'theme_mod', // or 'option'
 		'capability'        => 'edit_theme_options',
 		'default'           => '6',
 		'transport'         => 'refresh', // or postMessage
 		'sanitize_callback' => 'strikebase_sanitize_numeric_value',
 	) );
-	$wp_customize->add_control( 'strikebase_checkin_interval', array(
+	$wp_customize->add_control( 'strikebase_check_in_interval', array(
 		'label'     => esc_html__( 'Check-in interval (in months)', 'strikebase' ),
 		'section'   => 'strikebase_general_settings',
 		'type'      => 'number',
