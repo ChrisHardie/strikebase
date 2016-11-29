@@ -1,0 +1,41 @@
+@include tablet {
+	.widget {
+		width: calc(50% - #{$size__site-gutter*2});
+	}
+}
+
+.widget-title {
+	@include font-size(1.8);
+	margin-bottom: 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.strikebase-check-ins-widget {
+	ul {
+		list-style-type: none;
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	li {
+		border-bottom: 2px solid;
+		display: flex;
+		justify-content: space-between;
+		padding: $size__site-gutter/2;
+
+			@include mobile {
+				flex-wrap: wrap;
+
+				span,
+				a {
+					width: 100%;
+				}
+			}
+	}
+}
+
+.strikebase-overdue-check-in {
+	background: lighten( desaturate($color__red, 70%), 55%);
+	color: $color__red;
+}

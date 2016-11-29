@@ -127,6 +127,11 @@ add_action( 'wp_enqueue_scripts', 'strikebase_scripts' );
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Load Customizer stuff.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
  * Load custom template tags.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -135,6 +140,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Load custom date & time functionality.
  */
 require get_template_directory() . '/inc/date-and-time.php';
+
+/**
+ * Load custom functionality related to client check-ins.
+ */
+require get_template_directory() . '/inc/check-ins.php';
 
 /**
  * Load extra misc functionality.
