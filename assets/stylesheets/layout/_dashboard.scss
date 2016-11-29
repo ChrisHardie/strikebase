@@ -4,6 +4,13 @@
 	}
 }
 
+.widget-title {
+	@include font-size(1.8);
+	margin-bottom: 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
 .strikebase-check-ins-widget {
 	ul {
 		list-style-type: none;

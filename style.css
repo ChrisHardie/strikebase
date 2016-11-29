@@ -717,6 +717,13 @@ article {
   .widget {
     width: calc(50% - 40px); } }
 
+.widget-title {
+  font-size: 28.8px;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase; }
+
 .strikebase-check-ins-widget ul {
   list-style-type: none;
   margin-left: 0;

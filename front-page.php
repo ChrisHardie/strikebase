@@ -10,8 +10,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<h1 class="aligncenter">Why, hello!</h1>
-
 			<section class="widget strikebase-check-ins-widget">
 				<h3 class="widget-title">Client check-ins</h3>
 
