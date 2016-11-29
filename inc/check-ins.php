@@ -28,7 +28,7 @@ function strikebase_get_check_ins( $return='all' ) {
 
 			// Get the date of our last check-in.
 			$project_dates = strikebase_get_project_meta( get_the_ID(), 'dates' );
-			
+
 			if ( isset( $project_dates['last_check_in'] ) ) :
 				$last_check_in = $project_dates['last_check_in'];
 			endif;
@@ -42,6 +42,7 @@ function strikebase_get_check_ins( $return='all' ) {
 			if ( ! $last_check_in ) :
 				// Set due date to today, and add to the overdue array.
 				$project_array['next_check_in'] = time();
+				$project_array['class'] = 'overdue';
 				$overdue_check_ins[] = $project_array;
 
 			else :
@@ -56,9 +57,11 @@ function strikebase_get_check_ins( $return='all' ) {
 				// Depending on whether the project is overdue or not, add it to the proper array.
 				if ( time() >= $next_check_in ) :
 					// Add to the 'overdue' array.
+					$project_array['class'] = 'overdue';
 					$overdue_check_ins[] = $project_array;
 				else :
 					// Add to the 'upcoming' array.
+					$project_array['class'] = 'upcoming';
 					$upcoming_check_ins[] = $project_array;
 				endif;
 
