@@ -75,9 +75,11 @@ function strikebase_get_check_ins( $return='all' ) {
 		function compareOrder( $a, $b ) {
 			return $a['next_check_in'] - $b['next_check_in'];
 		}
-
 		usort( $upcoming_check_ins, 'compareOrder' );
 		usort( $overdue_check_ins, 'compareOrder' );
+
+		// Limit upcoming check-ins to the first three.
+		$upcoming_check_ins = array_slice( $upcoming_check_ins, 0, 3 );
 
 		// Finally, return the arrays!
 		if ( 'upcoming' === $return ) :
