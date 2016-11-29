@@ -27,7 +27,8 @@
 			@include mobile {
 				flex-wrap: wrap;
 
-				span {
+				span,
+				a {
 					width: 100%;
 				}
 			}

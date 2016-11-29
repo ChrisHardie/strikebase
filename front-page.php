@@ -19,7 +19,7 @@ get_header(); ?>
 
 					foreach ( $check_ins as $check_in ) :
 						echo '<li class="strikebase-' . $check_in['class'] . '-check-in">';
-						echo '<span>' . $check_in['title'] . '</span>';
+						echo '<a href="'. $check_in['permalink'] .'">' . $check_in['title'] . '</a>';
 						echo '<span>' . strikebase_formatted_date( $check_in['next_check_in'] ) . '</span>';
 						echo '</li>';
 					endforeach;

@@ -37,6 +37,7 @@ function strikebase_get_check_ins( $return='all' ) {
 			$project_array = array(
 				'title'         => get_the_title(),
 				'id'            => get_the_ID(),
+				'permalink'     => get_the_permalink(),
 			);
 
 			if ( ! $last_check_in ) :

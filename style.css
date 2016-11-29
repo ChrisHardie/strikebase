@@ -740,7 +740,8 @@ article {
     .strikebase-check-ins-widget li {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-      .strikebase-check-ins-widget li span {
+      .strikebase-check-ins-widget li span,
+      .strikebase-check-ins-widget li a {
         width: 100%; } }
 
 .strikebase-overdue-check-in {
