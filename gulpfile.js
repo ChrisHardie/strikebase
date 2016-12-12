@@ -4,6 +4,7 @@ var gulp = require( 'gulp' );
 // Include Plugins
 var sass = require( 'gulp-sass' );
 var autoprefixer = require( 'gulp-autoprefixer' );
+var babel = require("gulp-babel");
 var imagemin = require( 'gulp-imagemin' );
 var pngquant = require( 'imagemin-pngquant' );
 var jshint = require( 'gulp-jshint' );
@@ -33,11 +34,27 @@ gulp.task( 'styles', function() {
 });
 
 // Scripts
+/**
+ * @TODO
+ * Optional: Abstract jshint out into separate process
+ * and run it on main JS dir after everything has been
+ * transpiled from React.
+ *
+ * Currently running task on React project directory only.
+ */
 gulp.task( 'scripts', function() {
-	return gulp.src( 'assets/js/*.js' )
+	return gulp.src( 'assets/js/src/**/*.js' )
+		.pipe( sourcemaps.init() )
 		.pipe( jshint() )
 		.pipe( jshint.reporter( 'default' ) )
+<<<<<<< 140ae37e20204a4420638cecda21e7b946ca4ef1
 		.pipe( livereload() );
+=======
+		.pipe( concat( 'main.js' ) )
+		.pipe( sourcemaps.write( './', { includeContent: false, sourceRoot: 'source' } ) )
+		.pipe( gulp.dest( 'assets/js' ) );
+		.pipe( notify( { message: 'Scripts task complete' } ) );
+>>>>>>> Added Babel config for ES6 transpiling. Updated Gulp script task.
 });
 
 // Minify our icons and make them into an inline sprite
