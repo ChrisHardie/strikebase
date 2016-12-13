@@ -18,6 +18,11 @@ var svgmin = require( 'gulp-svgmin' );
 var cheerio = require( 'gulp-cheerio' );
 var svgstore = require( 'gulp-svgstore' );
 
+// Custom task functions
+var bundleApp = function() {
+
+};
+
 // Styles tasks
 gulp.task( 'styles', function() {
 	return gulp.src( 'assets/stylesheets/style.scss' )
@@ -45,14 +50,20 @@ gulp.task( 'styles', function() {
 gulp.task( 'scripts', function() {
 	return gulp.src( 'assets/js/src/**/*.js' )
 		.pipe( sourcemaps.init() )
+<<<<<<< ca78ed63b3f4b215d0081cd5095e00b4a466e847
 		.pipe( jshint() )
 		.pipe( jshint.reporter( 'default' ) )
 <<<<<<< 140ae37e20204a4420638cecda21e7b946ca4ef1
 		.pipe( livereload() );
 =======
+=======
+		// .pipe( jshint() )
+		// .pipe( jshint.reporter( 'default' ) )
+>>>>>>> Added placeholder React component and transpile process. Still need to add Webpack to serve to browser.
 		.pipe( concat( 'main.js' ) )
+		.pipe( babel() )
 		.pipe( sourcemaps.write( './', { includeContent: false, sourceRoot: 'source' } ) )
-		.pipe( gulp.dest( 'assets/js' ) );
+		.pipe( gulp.dest( 'assets/js' ) )
 		.pipe( notify( { message: 'Scripts task complete' } ) );
 >>>>>>> Added Babel config for ES6 transpiling. Updated Gulp script task.
 });
