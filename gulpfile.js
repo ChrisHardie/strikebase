@@ -50,6 +50,7 @@ gulp.task( 'styles', function() {
 gulp.task( 'scripts', function() {
 	return gulp.src( 'assets/js/src/**/*.js' )
 		.pipe( sourcemaps.init() )
+<<<<<<< 805bd5a700436e739ffe157e9e4f1a4c87812426
 <<<<<<< ca78ed63b3f4b215d0081cd5095e00b4a466e847
 		.pipe( jshint() )
 		.pipe( jshint.reporter( 'default' ) )
@@ -66,6 +67,15 @@ gulp.task( 'scripts', function() {
 		.pipe( gulp.dest( 'assets/js' ) )
 		.pipe( notify( { message: 'Scripts task complete' } ) );
 >>>>>>> Added Babel config for ES6 transpiling. Updated Gulp script task.
+=======
+		.pipe( jshint() )
+		.pipe( jshint.reporter( 'default' ) )
+		.pipe( concat( 'bundle.js' ) )
+		.pipe( babel() )
+		.pipe( sourcemaps.write( './', { includeContent: false, sourceRoot: 'source' } ) )
+		.pipe( gulp.dest( 'assets/js' ) )
+		// .pipe( notify( { message: 'Scripts task complete' } ) );
+>>>>>>> Temporarily added browserify task to NPM script to be able to serve to browser.
 });
 
 // Minify our icons and make them into an inline sprite

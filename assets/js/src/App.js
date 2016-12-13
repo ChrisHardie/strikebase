@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 class App extends React.Component {
 	render() {
 		return (
-			<div className="container">
+			<main id="main" className="site-main" role="main">
 				<h2>Bonjour, Le React!</h2>
-			</div>
+			</main>
 		)
 	}
 }
