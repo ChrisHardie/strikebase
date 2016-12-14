@@ -1,5 +1,17 @@
+/**
+ * External Dependencies
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+/**
+ * Internal Dependencies
+ */
+
+/**
+ * Stylesheets
+ */
+import '../../stylesheets/style.scss';
 
 class App extends React.Component {
 	render() {

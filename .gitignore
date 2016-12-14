@@ -1,5 +1,45 @@
 *.map
-node_modules/*
 *.tmp
 .svn
+
+# Sass
+.sass-cache/
+*.css.map
+
+# Node
+npm-debug.log*
+# Runtime data
+pids
+*.pid
+*.seed
+# node-waf configuration
+.lock-wscript
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+# Dependency directory
+node_modules
+# Optional npm cache directory
+.npm
+# Optional REPL history
+.node_repl_history
+
+# Vim
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+# persistent undo
+*.un~
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+
+# PhpStorm
 .idea
+
+# Logs
+logs
+*.log
+error.log
+access.log
