@@ -64,9 +64,9 @@ gulp.task( 'icons', function() {
 gulp.task( 'style-guide', function() {
 	return gulp.src( 'assets/style-guide/stylesheets/style-guide.scss' )
 		.pipe( sass( { style: 'expanded' } ).on( 'error', sass.logError ) )
-		.on( 'error', function ( err ) {
-			console.error( 'Error!', err.message );
-		} )
+		.on( 'error', notify.onError( function( err ) {
+			return "Stylesheet Error in " + err.message;
+		} ) )
 		.pipe( gulp.dest( 'assets/style-guide' ) )
 });
 
