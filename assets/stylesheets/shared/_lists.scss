@@ -17,14 +17,16 @@ li > ol {
 }
 
 dl {
-  border-bottom: 2px solid;
-  padding-bottom: $size__site-gutter/2;
+	border-bottom: 2px solid;
+	padding-bottom: $size__site-gutter/2;
 }
 
 dt {
+	color: $color__secondary;
 	@include small-caps;
+	font-weight: 600;
 }
 
 dd {
-	margin: 0 0 $size__site-gutter/4;
+	margin: 0 0 $size__site-gutter/2;
 }
