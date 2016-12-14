@@ -677,6 +677,26 @@ body {
   padding-bottom: 20px;
   text-align: center; }
 
+.strikebase-logo {
+  max-width: 300px; }
+  .strikebase-logo .mound {
+    fill: #3B5345; }
+  .strikebase-logo .flagpole {
+    fill: #3D3012; }
+  .strikebase-logo .flag-shape {
+    fill: #3B5345; }
+  .strikebase-logo .bolt {
+    fill: #A6302C; }
+  .strikebase-logo .circle {
+    fill: #F1B51D; }
+  .strikebase-logo .logotype {
+    font-size: 99.76px;
+    font-family: FrancoisOne-Regular, Francois One; }
+  .strikebase-logo .strike {
+    fill: #A6302C; }
+  .strikebase-logo .base {
+    fill: #3B5345; }
+
 .site-title {
   font-size: 3em; }
 
