@@ -6,13 +6,11 @@ const path = require( 'path' );
 module.exports = {
   entry: {
     app: [
-	  // 'webpack-dev-server/client?http://localhost:8881/',
       './assets/js/src/App.js'
     ]
   },
 
   output: {
-    // path: path.resolve( __dirname, 'assets' ),
 	path: __dirname,
     publicPath: '/',
     filename: '/assets/js/main.js',
