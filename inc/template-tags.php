@@ -365,3 +365,22 @@ function strikebase_show_checkin_date( $organization ) {
 		return false;
 	endif;
 }
+
+/*
+ * Get an array of custom metadata attached to a given project.
+ */
+function strikebase_is_pre_team_project( $post_ID ) {
+	$metas = get_post_meta( get_the_ID(), 'project_info', false );
+	if ( $metas && array_key_exists( 'pre-team', $metas[0] ) ) :
+			$pre_team = $metas[0]['pre-team'];
+
+		if ( 'yes' === $pre_team ) :
+			return true;
+		else :
+			return false;
+		endif;
+
+	else :
+		return false;
+	endif;
+}

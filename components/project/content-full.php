@@ -27,6 +27,10 @@
 
 			<dt><?php esc_html_e( 'Type of project', 'strikebase' ); ?></dt>
 			<dd><?php strikebase_show_project_type( get_the_ID() ); ?></dd>
+
+			<?php if ( strikebase_is_pre_team_project( get_the_ID() ) ) : ?>
+				<dt>Pre-Team 51 Project</dt>
+			<?php endif; ?>
 		</dl>
 
 		<?php strikebase_output_project_meta( 'people' ); ?>

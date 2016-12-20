@@ -45,6 +45,12 @@ class Strikebase_Project_Fields {
 			'name'     => 'project_info',
 			'serialize_data' => 'false',
 			'children' => array(
+				'pre-team' => new Fieldmanager_Checkbox( array(
+					'name' => 'pre-team',
+					'label' => esc_html__( 'Pre-Team 51', 'strikebase' ),
+					'checked_value' => 'yes',
+					'unchecked_value' => 'no',
+				) ),
 				'people' => new Fieldmanager_Group( array(
 					'name'  => 'people',
 					'label' => esc_html__( 'People', 'strikebase' ),

@@ -25,6 +25,7 @@
 
 			<dt><?php esc_html_e( 'Projects', 'strikebase' ); ?></dt>
 			<?php strikebase_list_person_projects( get_the_ID() ); ?>
+
 		</dl>
 
 		<dl class="strikebase-contact-info">
