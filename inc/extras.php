@@ -58,3 +58,12 @@ function strikebase_numeric_pagination( $page_count = 9, $query = null ) {
 
 	echo '</div>';
 }
+
+/*
+ * Get gravatar for a given email address.
+ *
+ */
+function strikebase_get_gravatar( $email ) {
+	$hash = md5( strtolower( trim( $email ) ) );
+	return "//www.gravatar.com/avatar/" . $hash;
+}
