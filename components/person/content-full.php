@@ -35,10 +35,10 @@
 
 		</dl>
 
-		<dl class="strikebase-contact-info">
-			<?php
-
-			if ( $contact_info ) :
+		<section class="strikebase-card strikebase-contact-info">
+			<h2 class="strikebase-card-title">Contact information</h2>
+			<dl class="strikebase-contact-info">
+				<?php
 				if ( $contact_info ) :
 					foreach ( $contact_info as $key => $value ) :
 						if ( $value ) :
@@ -61,9 +61,10 @@
 						endif;
 					endforeach;
 				endif;
-			endif;
-			?>
-		</dl>
+				?>
+			</dl>
+		</section>
+
 
 	</div><!-- .strikebase-column -->
 

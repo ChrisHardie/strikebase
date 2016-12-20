@@ -65,44 +65,45 @@ function strikebase_get_project_meta( $post_ID, $key ) {
  */
 function strikebase_output_project_meta( $section ) {
 	$project_metadata = strikebase_get_project_meta( get_the_ID(), $section );
-
 	if ( ! $project_metadata ) {
 		return;
 	}
+	?>
 
-	echo '<dl class="strikebase-"' . $section  . '>';
+	<section class="strikebase-card">
+		<h2 class="strikebase-card-title"><?php echo $section; ?></h2>
 
-	foreach ( $project_metadata as $key => $value ) :
-		if ( $value ) :
-
-		switch( $section ) :
-			case 'people':
-				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
-				if ( is_array( $value ) ) :
-					// If our value is an array, loop through it as well!
-					foreach ( $value as $person ) :
-						echo '<dd>' . get_the_title( $person ) . '</dd>';
-					endforeach;
-				else:
-					echo '<dd>' . $value . '</dd>';
+		<dl class="strikebase-<?php echo $section; ?>">
+			<?php foreach ( $project_metadata as $key => $value ) :
+				if ( $value ) :
+					switch( $section ) :
+						case 'people':
+							echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+							if ( is_array( $value ) ) :
+								// If our value is an array, loop through it as well!
+								foreach ( $value as $person ) :
+									echo '<dd>' . get_the_title( $person ) . '</dd>';
+								endforeach;
+							else:
+								echo '<dd>' . $value . '</dd>';
+							endif;
+							break;
+						case 'dates':
+							echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+							echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
+							break;
+						case 'links':
+							echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+							echo '<dd><a href="' . $value . '">' . strikebase_simplify_URL( $value ) . '</a></dd>';
+							break;
+						default:
+							echo '<dd>' . $value . '</dd>';
+					endswitch;
 				endif;
-				break;
-			case 'dates':
-				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
-				echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
-				break;
-			case 'links':
-				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
-				echo '<dd><a href="' . $value . '">' . strikebase_simplify_URL( $value ) . '</a></dd>';
-				break;
-			default:
-				echo '<dd>' . $value . '</dd>';
-		endswitch;
-
-		endif;
-	endforeach;
-
-	echo '</dl>';
+			endforeach; ?>
+		</dl>
+	</section>
+<?php
 }
 
 /*
