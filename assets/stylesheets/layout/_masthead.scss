@@ -2,14 +2,13 @@
 	border-bottom: 2px solid;
 	padding-bottom: $size__site-gutter;
 	text-align: center;
-	//transform: rotate(-2deg);
 }
 
 .strikebase-logo {
 	max-width: 300px;
 
 	.mound {
-		fill: $color__green;
+		fill: $color__neutral;
 	}
 
 	.flagpole {
@@ -29,8 +28,10 @@
 	}
 
 	.logotype {
-		font-size:99.76px;font-family:FrancoisOne-Regular, Francois One;
+		font-family: $font__headings;
+		font-size: 100px;
 	}
+
 	.strike {
 		fill: $color__red;
 	}
@@ -38,9 +39,4 @@
 	.base {
 		fill: $color__green;
 	}
-}
-
-.site-title {
-  font-size: 3em;
-  //transform: rotate(2deg);
 }
