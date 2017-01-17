@@ -32,8 +32,12 @@
 
 			<dt><?php esc_html_e( 'Projects', 'strikebase' ); ?></dt>
 			<?php strikebase_list_person_projects( get_the_ID() ); ?>
-
 		</dl>
+
+		<div class="entry-content">
+			<div class="label"><?php esc_html_e( 'Notes', 'strikebase' ); ?></div>
+			<?php the_content(); ?>
+		</div><!-- .entry-content -->
 
 		<section class="strikebase-card strikebase-contact-info">
 			<h2 class="strikebase-card-title">Contact information</h2>
