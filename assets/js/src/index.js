@@ -2,25 +2,19 @@
  * External Dependencies
  */
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router';
 
 /**
  * Internal Dependencies
  */
+import App from 'components/App';
 
-/**
- * Stylesheets
- */
-import '../../stylesheets/style.scss';
 
-class App extends React.Component {
-	render() {
-		return (
-			<main id="main" className="site-main" role="main">
-				<h2>Bonjour, Le React!</h2>
-			</main>
-		)
-	}
-}
+render(
+	<Router>
+		<Route path="/" component={ App } />
+	</Router>,
+	document.getElementById( 'primary' )
+);
 
-ReactDOM.render( <App/>, document.getElementById( 'primary' ) );
