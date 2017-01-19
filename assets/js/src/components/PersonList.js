@@ -4,13 +4,13 @@
 import React from 'react';
 
 
-const Dashboard = () => {
+const PersonList = () => {
 	return (
 		<div>
 			<h2>Bonjour!</h2>
-			<p>Welcome to the Dashboard.</p>
+			<p>Welcome to the People Archive.</p>
 		</div>
 	)
 };
 
-export default Dashboard;
+export default PersonList;

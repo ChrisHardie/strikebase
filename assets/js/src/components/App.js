@@ -13,11 +13,17 @@ import Header from './Header';
  */
 import '../../../stylesheets/style.scss';
 
-const App = ( { children, history } ) => {
+const App = ( { children } ) => {
 	return (
 		<div id="page" className="site">
 			<Header />
-			{ children }
+			<div id="content" className="site-content">
+				<div id="primary" className="content-area">
+					<main className="site-main" role="main">
+						{ children }
+					</main>
+				</div>
+			</div>
 		</div>
 	)
 };
