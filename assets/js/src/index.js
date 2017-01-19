@@ -3,18 +3,21 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 /**
  * Internal Dependencies
  */
 import App from './components/App';
+import Dashboard from './components/Dashboard';
 
 
 render(
-	<Router>
-		<Route path="/" component={ App } />
+	<Router history={ browserHistory }>
+		<Route path="/" component={ App }>
+			<IndexRoute component={ Dashboard } />
+		</Route>
 	</Router>,
-	document.getElementById( 'primary' )
+	document.getElementById( 'page' )
 );
 
