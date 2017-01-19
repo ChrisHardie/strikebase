@@ -10,16 +10,14 @@ import React from 'react';
 /**
  * Stylesheets
  */
-import '../../stylesheets/style.scss';
+import '../../../stylesheets/style.scss';
 
 const App = () => {
-	render() {
-		return (
-			<main id="main" className="site-main" role="main">
-				<h2>Bonjour, Le React!</h2>
-			</main>
-		)
-	}
+	return (
+		<main id="main" className="site-main" role="main">
+			<h2>Bonjour, Le React!</h2>
+		</main>
+	)
 };
 
 export default App;
