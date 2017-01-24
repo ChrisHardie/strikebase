@@ -152,13 +152,16 @@ require get_template_directory() . '/inc/check-ins.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * Create a projects CPT.
+ * Load CPTs
  */
-require get_template_directory() . '/inc/cpt/projects/class-projects-post-type.php';
-require get_template_directory() . '/inc/cpt/projects/class-projects-custom-fields.php';
+require get_template_directory() . '/inc/custom-post-types/custom-post-types-register.php';
 
 /**
- * Create a people CPT.
+ * Load Custom Fields
  */
-require get_template_directory() . '/inc/cpt/people/class-people-post-type.php';
-require get_template_directory() . '/inc/cpt/people/class-people-custom-fields.php';
+require get_template_directory() . '/inc/custom-fields/custom-fields-register.php';
+
+/**
+ * Load Custom Taxonomies
+ */
+require get_template_directory() . '/inc/custom-taxonomies/custom-taxonomies-register.php';
