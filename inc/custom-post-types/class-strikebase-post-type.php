@@ -7,7 +7,7 @@ abstract class Strikebase_Post_Type {
 	/**
 	 * Singleton holder
 	 */
-	protected static $__instances = array();
+	private static $__instances = array();
 	/**
 	 * Name of the post type
 	 *
@@ -30,7 +30,7 @@ abstract class Strikebase_Post_Type {
 	/**
 	 * Constructor
 	 */
-	protected function __construct() {
+	private function __construct() {
 		// Create the post type
 		add_action( 'init', array( $this, 'create_post_type' ) );
 	}

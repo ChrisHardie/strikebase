@@ -20,7 +20,7 @@ class Strikebase_Post_Type_Person extends Strikebase_Post_Type {
 	 * @return null
 	 */
 	public function create_post_type() {
-		$cpt_name = array(
+		$cpt_args = array(
 			'labels'              => array(
 				'name'               => __( 'People', 'strikebase' ),
 				'singular_name'      => __( 'Person', 'strikebase' ),
@@ -58,7 +58,7 @@ class Strikebase_Post_Type_Person extends Strikebase_Post_Type {
 				'revisions',
 			),
 		);
-		register_post_type( $this->cpt_name, $cpt_name );
+		register_post_type( $this->cpt_name, $cpt_args );
 	}
 }
 

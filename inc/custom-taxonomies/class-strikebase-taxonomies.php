@@ -7,7 +7,7 @@ abstract class Strikebase_Taxonomies {
 	/**
 	 * Singleton holder
 	 */
-	protected static $__instances = array();
+	private static $__instances = array();
 	/**
 	 * Name of the post type
 	 *
@@ -30,7 +30,7 @@ abstract class Strikebase_Taxonomies {
 	/**
 	 * Constructor
 	 */
-	protected function __construct() {
+	private function __construct() {
 		// Create the post type
 		add_action( 'init', array( $this, 'create_taxonomies' ) );
 	}
