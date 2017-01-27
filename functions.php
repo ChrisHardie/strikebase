@@ -154,14 +154,14 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Load CPTs
  */
-require get_template_directory() . '/inc/custom-post-types/custom-post-types-register.php';
+require get_template_directory() . '/inc/custom-post-types/register-post-types.php';
 
 /**
  * Load Custom Fields
  */
-require get_template_directory() . '/inc/custom-fields/custom-fields-register.php';
+require get_template_directory() . '/inc/custom-fields/register-fields.php';
 
 /**
  * Load Custom Taxonomies
  */
-require get_template_directory() . '/inc/custom-taxonomies/custom-taxonomies-register.php';
+require get_template_directory() . '/inc/custom-taxonomies/register-taxonomies.php';
