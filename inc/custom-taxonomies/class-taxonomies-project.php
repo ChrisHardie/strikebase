@@ -7,11 +7,11 @@
  */
 class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 	/**
-	 * Name of the taxonomy group
+	 * Name of the post type(s) the taxonomy group is attached to
 	 *
-	 * @var string
+	 * @var array
 	 */
-	protected $tax_group = 'project';
+	protected $post_types = array( 'project' );
 
 	/**
 	 * Create and register Taxonomies
@@ -50,7 +50,7 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 			'show_in_nav_menus' => true,
 			'show_tagcloud'     => true,
 		);
-		register_taxonomy( 'project-status', array( $this->tax_group ), $status_args );
+		register_taxonomy( 'project-status', $this->post_types, $status_args );
 		// Project genres
 		$genre_labels = array(
 			'name'                       => _x( 'Project Genre(s)', 'Taxonomy General Name', 'strikebase' ),
@@ -81,7 +81,7 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 			'show_in_nav_menus' => true,
 			'show_tagcloud'     => true,
 		);
-		register_taxonomy( 'project-genre', array( $this->tax_group ), $genre_args );
+		register_taxonomy( 'project-genre', $this->post_types, $genre_args );
 		// Project types
 		$type_labels = array(
 			'name'                       => _x( 'Project Type', 'Taxonomy General Name', 'strikebase' ),
@@ -112,7 +112,7 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 			'show_in_nav_menus' => true,
 			'show_tagcloud'     => true,
 		);
-		register_taxonomy( 'project-type', array( $this->tax_group ), $type_args );
+		register_taxonomy( 'project-type', $this->post_types, $type_args );
 		// Project hosts
 		$host_labels = array(
 			'name'                       => _x( 'Project Host', 'Taxonomy General Name', 'strikebase' ),
@@ -143,7 +143,7 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 			'show_in_nav_menus' => true,
 			'show_tagcloud'     => true,
 		);
-		register_taxonomy( 'project-host', array( $this->tax_group ), $host_args );
+		register_taxonomy( 'project-host', $this->post_types, $host_args );
 	}
 }
 

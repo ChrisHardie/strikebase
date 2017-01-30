@@ -7,11 +7,11 @@
  */
 class Strikebase_Taxonomies_Shared extends Strikebase_Taxonomies {
 	/**
-	 * Name of the taxonomy group
+	 * Name of the post type(s) the taxonomy group is attached to
 	 *
-	 * @var string
+	 * @var array
 	 */
-	protected $tax_group = array( 'person', 'project' );
+	protected $post_types = array( 'person', 'project' );
 
 	/**
 	 * Create and register Taxonomies
@@ -50,7 +50,7 @@ class Strikebase_Taxonomies_Shared extends Strikebase_Taxonomies {
 			'show_in_nav_menus' => true,
 			'show_tagcloud'     => false,
 		);
-		register_taxonomy( 'organization', $this->tax_group, $organization_args );
+		register_taxonomy( 'organization', $this->post_types, $organization_args );
 	}
 }
 

@@ -36,7 +36,7 @@ abstract class Strikebase_Post_Type {
 	}
 
 	/**
-	 * Initilalizes the post type by running the create_fields function from the
+	 * Initializes the post type by running the create_fields function from the
 	 * sub-classes in the init hook.
 	 *
 	 * Note that the constructor for this class (and sub-classes) relies on

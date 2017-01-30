@@ -7,11 +7,11 @@
  */
 class Strikebase_Project_Fields extends Strikebase_Fields {
 	/**
-	 * Name of the post type for fields to be applied
+	 * Name of the post type(s) for fields to be applied
 	 *
-	 * @var string
+	 * @var array
 	 */
-	protected $post_type = 'project';
+	protected $post_types = array( 'project' );
 
 	/**
 	 * Create and register custom fields
@@ -150,7 +150,7 @@ class Strikebase_Project_Fields extends Strikebase_Fields {
 				) ),
 			),
 		) );
-		$project_fields->add_meta_box( esc_html__( 'Project Info', 'strikebase' ), $this->post_type );
+		$project_fields->add_meta_box( esc_html__( 'Project Info', 'strikebase' ), $this->post_types );
 	}
 }
 

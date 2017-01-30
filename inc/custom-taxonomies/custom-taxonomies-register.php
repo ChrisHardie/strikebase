@@ -1,6 +1,9 @@
 <?php
 /**
  * Init Custom Taxonomies
+ *
+ * @action after_theme_setup
+ * @returns null
  */
 function strikebase_taxonomies_init() {
 	// General class

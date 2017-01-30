@@ -7,11 +7,11 @@
  */
 class Strikebase_Person_Fields extends Strikebase_Fields {
 	/**
-	 * Name of the post type for fields to be applied
+	 * Name of the post type(s) for fields to be applied
 	 *
-	 * @var string
+	 * @var array
 	 */
-	protected $post_type = 'person';
+	protected $post_types = array( 'person' );
 
 	/**
 	 * Create and register custom fields
@@ -69,7 +69,7 @@ class Strikebase_Person_Fields extends Strikebase_Fields {
 				) ),
 			),
 		) );
-		$person_fields->add_meta_box( esc_html__( 'Contact Info', 'strikebase' ), $this->post_type );
+		$person_fields->add_meta_box( esc_html__( 'Contact Info', 'strikebase' ), $this->post_types );
 	}
 }
 

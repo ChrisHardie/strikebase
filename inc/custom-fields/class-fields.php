@@ -17,9 +17,9 @@ abstract class Strikebase_Fields {
 	 *
 	 * Set to null but overridden by sub-classes to generate field groups
 	 *
-	 * @var string
+	 * @var array
 	 */
-	protected $post_type = null;
+	protected $post_types = null;
 
 	/**
 	 * Creates an instance of this class
@@ -36,7 +36,7 @@ abstract class Strikebase_Fields {
 	}
 
 	/**
-	 * Initilalizes the field group by running the create_fields function from the
+	 * Initializes the field group by running the create_fields function from the
 	 * sub-classes in the init hook.
 	 *
 	 * Note that the constructor for this class (and sub-classes) relies on
