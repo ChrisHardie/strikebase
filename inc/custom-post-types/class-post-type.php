@@ -5,18 +5,26 @@
  */
 abstract class Strikebase_Post_Type {
 	/**
-	 * Singleton holder
+	 * Instances of this class
+	 *
+	 * Used by sub-classes to track instances
+	 *
+	 * @var array
 	 */
 	private static $__instances = array();
 	/**
 	 * Name of the post type
+	 *
+	 * Set to null but overridden by sub-classes to generate field groups
 	 *
 	 * @var string
 	 */
 	protected $cpt_name = null;
 
 	/**
-	 * Instantiate the singleton
+	 * Creates an instance of this class
+	 *
+	 * @return Strikebase_Post_Type (or sub-class instance, in this case)
 	 */
 	public static function get_instance() {
 		$class = get_called_class();
@@ -28,7 +36,11 @@ abstract class Strikebase_Post_Type {
 	}
 
 	/**
-	 * Constructor
+	 * Initilalizes the post type by running the create_fields function from the
+	 * sub-classes in the init hook.
+	 *
+	 * Note that the constructor for this class (and sub-classes) relies on
+	 * the Singleton Pattern
 	 */
 	private function __construct() {
 		// Create the post type
@@ -36,7 +48,9 @@ abstract class Strikebase_Post_Type {
 	}
 
 	/**
-	 * Create the post type
+	 * Creates/defines post type labels and arguments
+	 *
+	 * Note: Because this is an Abstract parent class, this method must be defined in all child classes.
 	 */
 	abstract public function create_post_type();
 }

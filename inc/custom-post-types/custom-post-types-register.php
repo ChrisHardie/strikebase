@@ -1,7 +1,9 @@
 <?php
-
 /**
- * Init Custom Post Types
+ * Init/require CPTs
+ *
+ * @action after_theme_setup
+ * @returns null
  */
 function strikebase_post_types_init() {
 	// General class
@@ -10,4 +12,5 @@ function strikebase_post_types_init() {
 	require_once( get_template_directory() . '/inc/custom-post-types/class-post-type-person.php' );
 	require_once( get_template_directory() . '/inc/custom-post-types/class-post-type-project.php' );
 }
+
 add_action( 'after_setup_theme', 'strikebase_post_types_init' );
