@@ -5,18 +5,26 @@
  */
 abstract class Strikebase_Fields {
 	/**
-	 * Singleton holder
+	 * Instances of this class
+	 *
+	 * Used by sub-classes to track instances
+	 *
+	 * @var array
 	 */
 	private static $__instances = array();
 	/**
-	 * Name of the post type
+	 * Name of the post type(s) field group is attached to
+	 *
+	 * Set to null but overridden by sub-classes to generate field groups
 	 *
 	 * @var string
 	 */
-	protected $field_name = null;
+	protected $post_type = null;
 
 	/**
-	 * Instantiate the singleton
+	 * Creates an instance of this class
+	 *
+	 * @return Strikebase_Fields (or sub-class instance, in this case)
 	 */
 	public static function get_instance() {
 		$class = get_called_class();
@@ -28,7 +36,11 @@ abstract class Strikebase_Fields {
 	}
 
 	/**
-	 * Constructor
+	 * Initilalizes the field group by running the create_fields function from the
+	 * sub-classes in the init hook.
+	 *
+	 * Note that the constructor for this class (and sub-classes) relies on
+	 * the Singleton Pattern
 	 */
 	private function __construct() {
 		// Create the post type
@@ -36,7 +48,10 @@ abstract class Strikebase_Fields {
 	}
 
 	/**
-	 * Create the post type
+	 * Creates custom field group using the Fieldmanager plugin - https://github.com/alleyinteractive/wordpress-fieldmanager.
+	 * Adds meta boxes to field group post type.
+	 *
+	 * Note: Because this is an Abstract parent class, this method must be defined in all child classes.
 	 */
 	abstract public function create_fields();
 }

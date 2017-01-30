@@ -7,14 +7,14 @@
  */
 class Strikebase_Person_Fields extends Strikebase_Fields {
 	/**
-	 * Name of the taxonomy group
+	 * Name of the post type for fields to be applied
 	 *
 	 * @var string
 	 */
-	protected $field_group = 'person';
+	protected $post_type = 'person';
 
 	/**
-	 * Create and register Taxonomies
+	 * Create and register custom fields
 	 *
 	 * @action init
 	 * @return null
@@ -69,7 +69,7 @@ class Strikebase_Person_Fields extends Strikebase_Fields {
 				) ),
 			),
 		) );
-		$person_fields->add_meta_box( esc_html__( 'Contact Info', 'strikebase' ), $this->field_group );
+		$person_fields->add_meta_box( esc_html__( 'Contact Info', 'strikebase' ), $this->post_type );
 	}
 }
 

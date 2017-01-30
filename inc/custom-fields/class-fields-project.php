@@ -7,14 +7,14 @@
  */
 class Strikebase_Project_Fields extends Strikebase_Fields {
 	/**
-	 * Name of the taxonomy group
+	 * Name of the post type for fields to be applied
 	 *
 	 * @var string
 	 */
-	protected $field_group = 'project';
+	protected $post_type = 'project';
 
 	/**
-	 * Create and register Taxonomies
+	 * Create and register custom fields
 	 *
 	 * @action init
 	 * @return null
@@ -150,7 +150,7 @@ class Strikebase_Project_Fields extends Strikebase_Fields {
 				) ),
 			),
 		) );
-		$project_fields->add_meta_box( esc_html__( 'Project Info', 'strikebase' ), $this->field_group );
+		$project_fields->add_meta_box( esc_html__( 'Project Info', 'strikebase' ), $this->post_type );
 	}
 }
 

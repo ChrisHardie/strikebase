@@ -1,6 +1,9 @@
 <?php
 /**
- * Init Custom Fields
+ * Init/require Custom Fields
+ *
+ * @action after_theme_setup
+ * @returns null
  */
 function strikebase_fields_init() {
 	// General class
