@@ -2,6 +2,8 @@
 
 /**
  * Abstract Singleton class for CPT inheritance
+ *
+ * This class creates the structure used by it's child (custom post type) classes
  */
 abstract class Strikebase_Post_Type {
 	/**
@@ -40,7 +42,7 @@ abstract class Strikebase_Post_Type {
 	 * sub-classes in the init hook.
 	 *
 	 * Note that the constructor for this class (and sub-classes) relies on
-	 * the Singleton Pattern
+	 * the Singleton Pattern - https://code.tutsplus.com/articles/design-patterns-in-wordpress-the-singleton-pattern--wp-31621
 	 */
 	private function __construct() {
 		// Create the post type
