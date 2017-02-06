@@ -11,18 +11,6 @@
 	margin-right: auto;
 }
 
-// Clearfix
-@mixin clearfix() {
-	content: "";
-	display: table;
-	table-layout: fixed;
-}
-
-// Clear after (not all clearfix need this also)
-@mixin clearfix-after() {
-	clear: both;
-}
-
 // Format text in small-caps. (Mostly used for labels.)
 @mixin small-caps() {
 	font-size: 0.8em;
