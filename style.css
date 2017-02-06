@@ -655,6 +655,10 @@ a {
 .strikebase-card {
   background-color: white;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
+  @media (max-width: 639px) {
+    .strikebase-card {
+      margin-left: -20px;
+      width: calc(100% + 40px); } }
   .strikebase-card h2 {
     background: #574a2b;
     color: white;
@@ -689,7 +693,7 @@ body {
 .site-main {
   margin: 0 auto;
   max-width: 1040px;
-  padding: 10px; }
+  padding: 20px; }
 
 .site-header {
   border-bottom: 2px solid;
@@ -741,6 +745,10 @@ article {
 
 .entry-content {
   max-width: 100%; }
+
+@media (max-width: 639px) {
+  .strikebase-column {
+    width: 100%; } }
 
 @media (min-width: 640px) {
   .strikebase-column {

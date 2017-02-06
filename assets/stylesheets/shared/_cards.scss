@@ -2,6 +2,11 @@
 	background-color: lighten($color__white, 10%);
 	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 
+	@include mobile {
+		margin-left: -#{$size__site-gutter};
+		width: calc(100% + #{$size__site-gutter*2});
+	}
+
 	h2 {
 		background: desaturate($color__neutral, 20%);
 		color: lighten($color__white, 10%);

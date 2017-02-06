@@ -18,7 +18,7 @@ body {
 .site-main {
 	margin: 0 auto;
 	max-width: $size__site-width;
-	padding: $size__site-gutter/2;
+	padding: $size__site-gutter;
 }
 
 @import "masthead";
@@ -48,6 +48,12 @@ article {
 
 .entry-content {
 	max-width: 100%;
+}
+
+@include mobile {
+	.strikebase-column {
+		width: 100%;
+	}
 }
 
 @include tablet {
