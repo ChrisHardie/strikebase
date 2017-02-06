@@ -20,7 +20,9 @@
 
 			<div id="logo">
 				<div>
-					<img src="../svg/strikebase.svg" />
+					<?php echo file_get_contents( '../svg/strikebase.svg' );
+
+					?>
 				</div>
 			</div>
 
