@@ -26,7 +26,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<h1 class="site-title">StrikeBase</h1>
+		<h1 class="site-title">Strikebase</h1>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<ul>

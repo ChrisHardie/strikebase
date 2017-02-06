@@ -1,4 +1,4 @@
-=== StrikeBase ===
+=== Strikebase ===
 
 Contributors:
 Tags:
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Custom theme for StrikeBase, a repository of people & projects.
+Custom theme for Strikebase, a repository of people & projects.
 
 == Installation ==
 
@@ -23,7 +23,7 @@ Custom theme for StrikeBase, a repository of people & projects.
 
 = Does this theme support any plugins? =
 
-StrikeBase includes support for Jetpack's Infinite Scroll as well as other features.
+Strikebase includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
 
