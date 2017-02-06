@@ -322,7 +322,7 @@ h2 {
   font-size: 2.1em; }
 
 p {
-  margin-bottom: 1.5em; }
+  margin: 0 0 20px; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -431,10 +431,13 @@ textarea {
 
 label,
 .label {
+  color: #50715e;
   font-size: 0.8em;
   font-weight: 500;
   letter-spacing: 0.025em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-top: 20px; }
 
 /*--------------------------------------------------------------
 # Buttons
@@ -497,6 +500,7 @@ li > ol {
   margin-left: 1.5em; }
 
 dl {
+  margin: 0;
   padding-bottom: 10px; }
 
 dt {
@@ -505,10 +509,11 @@ dt {
   font-weight: 500;
   letter-spacing: 0.025em;
   text-transform: uppercase;
-  font-weight: 600; }
+  font-weight: 600;
+  padding-top: 20px; }
 
 dd {
-  margin: 0 0 10px; }
+  margin: 0; }
 
 /*--------------------------------------------------------------
 # Tables
@@ -654,7 +659,10 @@ a {
 --------------------------------------------------------------*/
 .strikebase-card {
   background-color: white;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin: 20px 0; }
+  .strikebase-card + .strikebase-card {
+    margin-top: 40px; }
   @media (max-width: 639px) {
     .strikebase-card {
       margin-left: -20px;
