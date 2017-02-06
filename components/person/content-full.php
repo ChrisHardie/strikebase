@@ -39,6 +39,10 @@
 			<?php the_content(); ?>
 		</div><!-- .entry-content -->
 
+	</div><!-- .strikebase-column -->
+
+	<div class="strikebase-column">
+
 		<section class="strikebase-card strikebase-contact-info">
 			<h2 class="strikebase-card-title">Contact information</h2>
 			<dl class="strikebase-contact-info">
@@ -68,7 +72,6 @@
 				?>
 			</dl>
 		</section>
-
 
 	</div><!-- .strikebase-column -->
 
