@@ -317,7 +317,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Francois One", courier;
   font-weight: normal;
   letter-spacing: -0.025em;
-  line-height: 1.2; }
+  line-height: 1;
+  margin: 0 0 10px; }
 
 h2 {
   font-size: 2.1em; }
@@ -661,8 +662,8 @@ a {
 # Cards
 --------------------------------------------------------------*/
 .strikebase-card {
-  background-color: white;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
   margin: 20px 0;
   padding-bottom: 10px; }
   .strikebase-card + .strikebase-card {
@@ -673,7 +674,7 @@ a {
       width: calc(100% + 40px); } }
   .strikebase-card h2 {
     background: #574a2b;
-    color: white;
+    color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     font-size: 1rem;
@@ -803,6 +804,27 @@ article {
 .strikebase-overdue-check-in {
   background: whitesmoke;
   color: #A6302C; }
+
+/*--------------------------------------------------------------
+# CPTs
+--------------------------------------------------------------*/
+.gravatar {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border: 4px solid #fff;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px; }
+
+.person .entry-header {
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex; }
+  .person .entry-header .gravatar {
+    margin-left: -13.33333px;
+    margin-right: 13.33333px; }
+  .person .entry-header .entry-title {
+    margin-bottom: 0; }
 
 /*--------------------------------------------------------------
 # Media

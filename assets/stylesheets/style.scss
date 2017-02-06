@@ -47,8 +47,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "variables/colors";
 @import "variables/typography";
 @import "variables/structure";
-@import "mixins/typography";
 @import "mixins/breakpoints";
+@import "mixins/typography";
+@import "mixins/effects";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -119,6 +120,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Layout
 --------------------------------------------------------------*/
 @import "layout/layout";
+
+/*--------------------------------------------------------------
+# CPTs
+--------------------------------------------------------------*/
+@import "layout/people";
 
 /*--------------------------------------------------------------
 # Media
