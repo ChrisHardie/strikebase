@@ -21,7 +21,7 @@ abstract class Strikebase_Fields {
 	 *
 	 * @var array
 	 */
-	protected $post_types = null;
+	protected $post_type = null;
 
 	/**
 	 * Creates an instance of this class
@@ -46,7 +46,7 @@ abstract class Strikebase_Fields {
 	 */
 	private function __construct() {
 		// Create the post type
-		add_action( 'init', array( $this, 'create_fields' ) );
+		add_action( 'fm_post_' . $this->post_type, array( $this, 'create_fields' ) );
 	}
 
 	/**
