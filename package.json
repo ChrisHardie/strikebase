@@ -22,6 +22,12 @@
     "url": "https://github.com/a8cteam51/strikebase/issues"
   },
   "homepage": "https://github.com/a8cteam51/strikebase#readme",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-router": "^3.0.2"
+  },
   "devDependencies": {
     "autoprefixer": "^6.5.4",
     "babel-core": "^6.20.0",
@@ -36,9 +42,6 @@
     "path": "^0.12.7",
     "postcss-loader": "^1.2.1",
     "postcss-svg-fragments": "^2.0.1",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-router": "^3.0.2",
     "sass-loader": "^4.1.0",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",

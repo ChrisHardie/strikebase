@@ -4,7 +4,7 @@
 import React from 'react';
 
 
-const PersonList = () => {
+const PersonList = ( props ) => {
 	return (
 		<table className="strikebase-people-list">
 			<thead>
@@ -15,17 +15,23 @@ const PersonList = () => {
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td className="entry-title">
-						<a href="#">Test Name</a>
-					</td>
-					<td className="strikebase-person-organization">
-						<a href="#">Test Org</a>
-					</td>
-					<td className="strikebase-person-project">
-						<a href="#">Test Project</a>
-					</td>
-				</tr>
+				{
+					props.people.map( ( person, i ) => {
+						return (
+							<tr key={ i }>
+								<td className="entry-title">
+									<a href="#">{ person.title.rendered }</a>
+								</td>
+								<td className="strikebase-person-organization">
+									<a href="#">{ person.organization }</a>
+								</td>
+								<td className="strikebase-person-project">
+									<a href="#">Test Project</a>
+								</td>
+							</tr>
+						)
+					} )
+				}
 			</tbody>
 		</table>
 	)

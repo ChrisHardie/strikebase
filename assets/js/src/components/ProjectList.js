@@ -4,7 +4,7 @@
 import React from 'react';
 
 
-const ProjectList = () => {
+const ProjectList = ( props ) => {
 	return (
 		<table className="strikebase-project-list">
 			<thead>
@@ -16,20 +16,26 @@ const ProjectList = () => {
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td className="entry-title">
-						<a href="#">Project Name</a>
-					</td>
-					<td className="strikebase-project-status">
-						<a href="#">Test Status</a>
-					</td>
-					<td className="strikebase-project-launch-date">
-						<a href="#">Test Date</a>
-					</td>
-					<td className="strikebase-project-last-contact">
-						<a href="#">Test Date</a>
-					</td>
-				</tr>
+				{
+					props.projects.map( ( project, i ) => {
+						return (
+							<tr key={ i }>
+								<td className="entry-title">
+									<a href="#">{ project.title.rendered }</a>
+								</td>
+								<td className="strikebase-project-status">
+									<a href="#">{ project.project-status }</a>
+								</td>
+								<td className="strikebase-project-launch-date">
+									<a href="#">Test Date</a>
+								</td>
+								<td className="strikebase-project-last-contact">
+									<a href="#">Test Date</a>
+								</td>
+							</tr>
+						)
+					} )
+				}
 			</tbody>
 		</table>
 	)
