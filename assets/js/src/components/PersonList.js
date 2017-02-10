@@ -23,7 +23,13 @@ const PersonList = ( props ) => {
 									<a href="#">{ person.title.rendered }</a>
 								</td>
 								<td className="strikebase-person-organization">
-									<a href="#">{ person.organization }</a>
+									{
+										props.organizations.map( ( org, i ) => {
+											if ( org.id == person.organization ) {
+												return <a key={ i } href="#">{ org.name }</a>
+											}
+										} )
+									}
 								</td>
 								<td className="strikebase-person-project">
 									<a href="#">Test Project</a>

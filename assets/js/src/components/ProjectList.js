@@ -24,7 +24,13 @@ const ProjectList = ( props ) => {
 									<a href="#">{ project.title.rendered }</a>
 								</td>
 								<td className="strikebase-project-status">
-									<a href="#">{ project.project-status }</a>
+									{
+										props.statuses.map( ( status, i ) => {
+											if ( status.id == project["project-status"][i] ) {
+												return <a key={ i } href="#">{ status.name }</a>
+											}
+										} )
+									}
 								</td>
 								<td className="strikebase-project-launch-date">
 									<a href="#">Test Date</a>

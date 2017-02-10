@@ -20,6 +20,7 @@ class App extends Component {
 		this.state = {
 			people: [],
 			projects: [],
+			statuses: [],
 			organizations: []
 		};
 	}
@@ -29,6 +30,7 @@ class App extends Component {
 				this.setState( {
 					people: data.people,
 					projects: data.projects,
+					statuses: data.statuses,
 					organizations: data.organizations
 				} );
 			} );
@@ -38,6 +40,7 @@ class App extends Component {
 			return React.cloneElement( child, {
 				people: this.state.people,
 				projects: this.state.projects,
+				statuses: this.state.statuses,
 				organizations: this.state.organizations
 			} );
 		} );
