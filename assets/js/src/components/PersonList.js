@@ -26,7 +26,7 @@ const PersonList = ( props ) => {
 									{
 										props.organizations.map( ( org, i ) => {
 											if ( org.id == person.organization ) {
-												return <a key={ i } href="#">{ org.name }</a>
+												return <a key={ i } href="#">{ org.name }</a>;
 											}
 										} )
 									}
@@ -35,7 +35,7 @@ const PersonList = ( props ) => {
 									<a href="#">Test Project</a>
 								</td>
 							</tr>
-						)
+						);
 					} )
 				}
 			</tbody>

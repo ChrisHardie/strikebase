@@ -33,7 +33,7 @@ const OrganizationList = ( props ) => {
 									<a href="#">Test Last Contacted</a>
 								</td>
 							</tr>
-						)
+						);
 					} )
 				}
 			</tbody>

@@ -27,7 +27,7 @@ const ProjectList = ( props ) => {
 									{
 										props.statuses.map( ( status, i ) => {
 											if ( status.id == project["project-status"][i] ) {
-												return <a key={ i } href="#">{ status.name }</a>
+												return <a key={ i } href="#">{ status.name }</a>;
 											}
 										} )
 									}
@@ -39,7 +39,7 @@ const ProjectList = ( props ) => {
 									<a href="#">Test Date</a>
 								</td>
 							</tr>
-						)
+						);
 					} )
 				}
 			</tbody>
