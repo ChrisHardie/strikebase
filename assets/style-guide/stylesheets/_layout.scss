@@ -1,91 +1,71 @@
-@import "../../stylesheets/variables/structure";
+$styleguide__max-width: 1400px;
 
-$this_max-width: 1024px;
-$this_gutter: 40px;
+$styleguide__black: #000;
+$styleguide__white: #fff;
+$styleguide__grey: #ccc;
 
-$this_black: #000;
-$this_white: #fff;
-$this_grey: #ccc;
+$styleguide__sans: 'Hevetica Neue', Arial, sans-serif;
 
-$this_sans: 'Hevetica Neue', Arial, sans-serif;
-
+// Page structure.
 body {
 	margin: 0;
 }
 
-// Page title/header.
-#title {
-	background: $this_black;
-	color: $this_white;
-	padding: $this_gutter/4 $this_gutter/2;
-
-	h1 {
-		font-family: $this_sans;
-		font-size: 21px;
-		font-weight: normal;
-		margin: 0 auto;
-		max-width: $this_max-width;
-
-		span {
-			font-weight: bolder;
-		}
-	}
-}
-
-// Page structure.
-#page {
+.page {
 	margin: 0 auto;
-	max-width: $this_max-width;
-	padding: $this_gutter 0;
+	max-width: $styleguide__max-width;
+	padding: 0;
 	overflow: auto;
 }
 
-@media (min-width: 768px) {
-	.patterns {
-		display: inline-block;
-		text-align: center;
-		vertical-align: top;
-		width: 420px;
+// Navigation.
+.navigation {
+	background: $color__pure-white;
+	text-align: center;
+}
+
+.navigation .logo {
+	padding: $size__site-gutter;
+}
+
+.navigation ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+
+	a {
+		border-top: 1px solid $color__neutral-highlight;
+		color: $color__black;
+		display: block;
+		padding: $size__site-gutter;
+		text-decoration: none;
 	}
 
-	.content {
-		display: inline-block;
-		padding-left: $this_gutter;
-		width: calc(100% - 465px);
+	li:last-of-type a {
+		border-bottom: 1px solid $color__neutral-highlight;
 	}
 }
 
-// Adjust layout for horizontal logo layout.
-.horizontal-logo {
-	#logo {
-		border-bottom: 2px solid $this_grey;
-		padding: $this_gutter/4 0;
-		margin: 0 auto;
-		max-width: $this_max-width;
-		text-align: left;
+// Content.
+.content {
+	padding: $size__site-gutter*2;
+}
 
-		img {
-			max-width: 600px;
-		}
-	} // #logo
 
-	@media (min-width: 768px) {
-		.patterns {
-			width: 200px;
-		}
+// Split into two columns on tablets and above.
+@media (min-width: 768px) {
+	.navigation {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		border-right: 2px solid $styleguide__black;
+		padding-top: 0;
+		width: 15rem;
+	}
 
-		.color-swatch {
-			height: 50px;
-			margin-bottom: 0;
-			width: 100%;
-		}
-
-		button {
-			margin-top: $this_gutter/4;
-		}
-
-		.content {
-			width: calc(100% - 245px);
-		}
-	} // @media (min-width: 768px)
-} // .horizontal-logo
+	.content {
+		margin-left: 15rem;
+		min-height: calc(100vh - 5.375rem);
+	}
+}

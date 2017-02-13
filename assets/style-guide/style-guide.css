@@ -1,59 +1,48 @@
-/*
-Style guide
-*/
+/* Style guide CSS */
 body {
   margin: 0; }
 
-#title {
-  background: #000;
-  color: #fff;
-  padding: 10px 20px; }
-  #title h1 {
-    font-family: "Hevetica Neue", Arial, sans-serif;
-    font-size: 21px;
-    font-weight: normal;
-    margin: 0 auto;
-    max-width: 1024px; }
-    #title h1 span {
-      font-weight: bolder; }
-
-#page {
+.page {
   margin: 0 auto;
-  max-width: 1024px;
-  padding: 40px 0;
+  max-width: 1400px;
+  padding: 0;
   overflow: auto; }
 
+.navigation {
+  background: #fff;
+  text-align: center; }
+
+.navigation .logo {
+  padding: 20px; }
+
+.navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; }
+  .navigation ul a {
+    border-top: 1px solid #DDD3BA;
+    color: #3D3012;
+    display: block;
+    padding: 20px;
+    text-decoration: none; }
+  .navigation ul li:last-of-type a {
+    border-bottom: 1px solid #DDD3BA; }
+
+.content {
+  padding: 40px; }
+
 @media (min-width: 768px) {
-  .patterns {
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    width: 420px; }
+  .navigation {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    border-right: 2px solid #000;
+    padding-top: 0;
+    width: 15rem; }
   .content {
-    display: inline-block;
-    padding-left: 40px;
-    width: calc(100% - 465px); } }
-
-.horizontal-logo #logo {
-  border-bottom: 2px solid #ccc;
-  padding: 10px 0;
-  margin: 0 auto;
-  max-width: 1024px;
-  text-align: left; }
-  .horizontal-logo #logo img {
-    max-width: 600px; }
-
-@media (min-width: 768px) {
-  .horizontal-logo .patterns {
-    width: 200px; }
-  .horizontal-logo .color-swatch {
-    height: 50px;
-    margin-bottom: 0;
-    width: 100%; }
-  .horizontal-logo button {
-    margin-top: 10px; }
-  .horizontal-logo .content {
-    width: calc(100% - 245px); } }
+    margin-left: 15rem;
+    min-height: calc(100vh - 5.375rem); } }
 
 .swatches {
   margin: 0 auto; }
@@ -142,6 +131,3 @@ body {
 
 .headings {
   text-align: left; }
-
-#page {
-  padding-top: 110px; }

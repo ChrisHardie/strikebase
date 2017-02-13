@@ -1,5 +1,3 @@
-@import "../../stylesheets/variables/colors";
-
 .swatches {
   margin: 0 auto;
 }
@@ -16,7 +14,7 @@
 
 .color-swatch .hex-code {
 	display: block;
-	font-family: $this_sans;
+	font-family: $styleguide__sans;
 	font-size: 10pt;
 	font-weight: normal;
 	padding: 10px;

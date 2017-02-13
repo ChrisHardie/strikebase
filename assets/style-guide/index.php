@@ -3,30 +3,34 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Style Prototype</title>
+	<title>Strikebase Style Guide</title>
 	<link rel="stylesheet" href="../../style.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="style-guide.css" type="text/css" media="all" />
 </head>
 
-<body class="color-palette vertical-logo">
+<body>
 
-	<header id="title">
-		<h1>Style Prototype: <span>Strikebase</span></h1>
-	</header>
+	<div class="page">
 
-	<div id="page" class="site">
-
-		<section class="patterns">
-
-			<div id="logo">
-				<div>
-					<?php echo file_get_contents( '../svg/strikebase.svg' );
-
-					?>
-				</div>
+		<aside id="sidebar" class="navigation">
+			<div class="logo">
+				<?php echo file_get_contents( '../svg/strikebase.svg' ); ?>
 			</div>
 
-			<div class="swatches">
+			<ul>
+				<li><a href="#colours">Colours</a></li>
+				<li><a href="#typography">Typography</a></li>
+				<li><a href="#buttons">Buttons</a></li>
+				<li><a href="#forms">Form elements</a></li>
+				<li><a href="#navigation">Navigation</a></li>
+				<li><a href="#content">Content</a></li>
+			</ul>
+
+		</aside>
+
+		<div class="content">
+
+			<section class="swatches">
 
 				<div class="color-swatch color-tertiary">
 					<span class="hex-code"></span>
@@ -52,136 +56,134 @@
 					<span class="hex-code"></span>
 					<span class="description">Highlight</span>
 				</div>
-			</div>
+			</section>
 
-			<div class="buttons">
+			<section class="buttons">
 				<button>Primary</button>
 				<button class="secondary">Secondary</button>
-			</div>
+			</section>
 
-			<div class="adjectives">
+			<section class="adjectives">
 				<h3>adjective</h3>
 				<h3>adjective</h3>
 				<h3>adjective</h3>
-			</div>
+			</section>
 
-			<div class="headings">
+			<section class="headings">
 				<h1>Header one</h1>
 				<h2>Header two</h2>
 				<h3>Header three</h3>
 				<h4>Header four</h4>
 				<h5>Header five</h5>
 				<h6>Header six</h6>
-			</div>
+			</section>
 
+			<section class="text">
 
-		</section>
+				<article id="post-159" class="post-159 post type-post status-publish format-standard hentry category-uncategorized">
+					<header class="entry-header">
+						<h2 class="entry-title"><a href="#" rel="bookmark">Find empty spot in cupboard and sleep all day</a></h2>
+					</header><!-- .entry-header -->
 
-		<section class="content">
+					<div class="entry-content">
+						<p>Kitty loves pigs groom yourself 4 hours - checked, have your beauty sleep 18 hours - checked, be fabulous for the rest of the day - checked! yet has closed eyes but still sees you stare out the window. Sleep on dog bed, <a href="#">force dog to sleep on floor</a> swat at dog meowzer! for leave dead animals as gifts run in circles stare at the wall, play with food and get confused by dust yet scamper.</p>
 
-			<article id="post-159" class="post-159 post type-post status-publish format-standard hentry category-uncategorized">
-				<header class="entry-header">
-					<h2 class="entry-title"><a href="#" rel="bookmark">Find empty spot in cupboard and sleep all day</a></h2>
-				</header><!-- .entry-header -->
+						<p>Massacre a bird in the living room and then look like the cutest and most innocent animal on the planet jumps off balcony gives owner dead mouse at present then poops in litter box snatches yarn and fights with dog cat chases laser then plays in grass finds tiny spot in cupboard and sleeps all day jumps in bathtub and <a href="#">meows when owner fills food dish</a> the cat knocks over the food dish cat slides down the water slide and into pool and swims even though it does not like water yet pee in the shoe sit on the laptop or sit on human. Gate keepers of hell eat the fat cats food milk the cow.</p>
 
-				<div class="entry-content">
-					<p>Kitty loves pigs groom yourself 4 hours - checked, have your beauty sleep 18 hours - checked, be fabulous for the rest of the day - checked! yet has closed eyes but still sees you stare out the window. Sleep on dog bed, <a href="#">force dog to sleep on floor</a> swat at dog meowzer! for leave dead animals as gifts run in circles stare at the wall, play with food and get confused by dust yet scamper.</p>
+						<h2>Dream about hunting birds sit in box</h2>
 
-					<p>Massacre a bird in the living room and then look like the cutest and most innocent animal on the planet jumps off balcony gives owner dead mouse at present then poops in litter box snatches yarn and fights with dog cat chases laser then plays in grass finds tiny spot in cupboard and sleeps all day jumps in bathtub and <a href="#">meows when owner fills food dish</a> the cat knocks over the food dish cat slides down the water slide and into pool and swims even though it does not like water yet pee in the shoe sit on the laptop or sit on human. Gate keepers of hell eat the fat cats food milk the cow.</p>
+						<p>Immediately regret falling into bathtub lick yarn hanging out of own butt so instantly break out into full speed gallop across the house for no reason. Drink water out of the faucet unwrap toilet paper i cry and cry and cry unless you pet me, and then maybe i cry just for fun. Swat turds around the house present belly, scratch hand when stroked scratch the box hunt by meowing loudly at 5am next to human slave food dispenser or purr while eating purrr purr littel cat, little cat purr purr.</p>
 
-					<h2>Dream about hunting birds sit in box</h2>
+						<p><a class="button" href="#">Text button</a></p>
 
-					<p>Immediately regret falling into bathtub lick yarn hanging out of own butt so instantly break out into full speed gallop across the house for no reason. Drink water out of the faucet unwrap toilet paper i cry and cry and cry unless you pet me, and then maybe i cry just for fun. Swat turds around the house present belly, scratch hand when stroked scratch the box hunt by meowing loudly at 5am next to human slave food dispenser or purr while eating purrr purr littel cat, little cat purr purr.</p>
+						<h2>Blockquotes</h2>
+						Single line blockquote:
+						<blockquote>Stay hungry. Stay foolish.</blockquote>
+						Multi line blockquote with a cite reference:
+						<blockquote>People think focus means saying yes to the thing you've got to focus on. But that's not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I'm actually as proud of the things we haven't done as the things I have done. Innovation is saying no to 1,000 things. </blockquote>
+						<cite>Steve Jobs</cite> - Apple Worldwide Developers' Conference, 1997
+						<h2>Tables</h2>
+						<table>
+						<thead>
+						<tr>
+						<th>Employee</th>
+						<th>Salary</th>
+						<th></th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+						<th><a href="http://example.org/">John Doe</a></th>
+						<td>$1</td>
+						<td>Because that's all Steve Jobs needed for a salary.</td>
+						</tr>
+						<tr>
+						<th><a href="http://example.org/">Jane Doe</a></th>
+						<td>$100K</td>
+						<td>For all the blogging she does.</td>
+						</tr>
+						<tr>
+						<th><a href="http://example.org/">Fred Bloggs</a></th>
+						<td>$100M</td>
+						<td>Pictures are worth a thousand words, right? So Jane x 1,000.</td>
+						</tr>
+						<tr>
+						<th><a href="http://example.org/">Jane Bloggs</a></th>
+						<td>$100B</td>
+						<td>With hair like that?! Enough said...</td>
+						</tr>
+						</tbody>
+						</table>
+						<h2>Definition Lists</h2>
+						<dl><dt>Definition List Title</dt><dd>Definition list division.</dd><dt>Startup</dt><dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd><dt>#dowork</dt><dd>Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.</dd><dt>Do It Live</dt><dd>I'll let Bill O'Reilly will <a title="We'll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">explain</a> this one.</dd></dl>
+						<h2>Unordered Lists (Nested)</h2>
+						<ul>
+							<li>List item one
+						<ul>
+							<li>List item one
+						<ul>
+							<li>List item one</li>
+							<li>List item two</li>
+							<li>List item three</li>
+							<li>List item four</li>
+						</ul>
+						</li>
+							<li>List item two</li>
+							<li>List item three</li>
+							<li>List item four</li>
+						</ul>
+						</li>
+							<li>List item two</li>
+							<li>List item three</li>
+							<li>List item four</li>
+						</ul>
+						<h2>Ordered List (Nested)</h2>
+						<ol>
+							<li>List item one
+						<ol>
+							<li>List item one
+						<ol>
+							<li>List item one</li>
+							<li>List item two</li>
+							<li>List item three</li>
+							<li>List item four</li>
+						</ol>
+						</li>
+							<li>List item two</li>
+							<li>List item three</li>
+							<li>List item four</li>
+						</ol>
+						</li>
+							<li>List item two</li>
+							<li>List item three</li>
+							<li>List item four</li>
+						</ol>
+					</div><!-- .entry-content -->
 
-					<p><a class="button" href="#">Text button</a></p>
+				</article><!-- #post-## -->
+			</section><!-- content -->
 
-					<h2>Blockquotes</h2>
-					Single line blockquote:
-					<blockquote>Stay hungry. Stay foolish.</blockquote>
-					Multi line blockquote with a cite reference:
-					<blockquote>People think focus means saying yes to the thing you've got to focus on. But that's not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. I'm actually as proud of the things we haven't done as the things I have done. Innovation is saying no to 1,000 things. </blockquote>
-					<cite>Steve Jobs</cite> - Apple Worldwide Developers' Conference, 1997
-					<h2>Tables</h2>
-					<table>
-					<thead>
-					<tr>
-					<th>Employee</th>
-					<th>Salary</th>
-					<th></th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-					<th><a href="http://example.org/">John Doe</a></th>
-					<td>$1</td>
-					<td>Because that's all Steve Jobs needed for a salary.</td>
-					</tr>
-					<tr>
-					<th><a href="http://example.org/">Jane Doe</a></th>
-					<td>$100K</td>
-					<td>For all the blogging she does.</td>
-					</tr>
-					<tr>
-					<th><a href="http://example.org/">Fred Bloggs</a></th>
-					<td>$100M</td>
-					<td>Pictures are worth a thousand words, right? So Jane x 1,000.</td>
-					</tr>
-					<tr>
-					<th><a href="http://example.org/">Jane Bloggs</a></th>
-					<td>$100B</td>
-					<td>With hair like that?! Enough said...</td>
-					</tr>
-					</tbody>
-					</table>
-					<h2>Definition Lists</h2>
-					<dl><dt>Definition List Title</dt><dd>Definition list division.</dd><dt>Startup</dt><dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd><dt>#dowork</dt><dd>Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.</dd><dt>Do It Live</dt><dd>I'll let Bill O'Reilly will <a title="We'll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">explain</a> this one.</dd></dl>
-					<h2>Unordered Lists (Nested)</h2>
-					<ul>
-						<li>List item one
-					<ul>
-						<li>List item one
-					<ul>
-						<li>List item one</li>
-						<li>List item two</li>
-						<li>List item three</li>
-						<li>List item four</li>
-					</ul>
-					</li>
-						<li>List item two</li>
-						<li>List item three</li>
-						<li>List item four</li>
-					</ul>
-					</li>
-						<li>List item two</li>
-						<li>List item three</li>
-						<li>List item four</li>
-					</ul>
-					<h2>Ordered List (Nested)</h2>
-					<ol>
-						<li>List item one
-					<ol>
-						<li>List item one
-					<ol>
-						<li>List item one</li>
-						<li>List item two</li>
-						<li>List item three</li>
-						<li>List item four</li>
-					</ol>
-					</li>
-						<li>List item two</li>
-						<li>List item three</li>
-						<li>List item four</li>
-					</ol>
-					</li>
-						<li>List item two</li>
-						<li>List item three</li>
-						<li>List item four</li>
-					</ol>
-				</div><!-- .entry-content -->
-
-			</article><!-- #post-## -->
-		</section>
-
-	</div>
+		</div><!-- .content -->
+	</div> <!-- .page -->
 </body>
 </html>
