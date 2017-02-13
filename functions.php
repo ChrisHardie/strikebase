@@ -109,6 +109,49 @@ function strikebase_fonts_url() {
 }
 
 /**
+ * Modify REST API Endpoints
+ */
+// Register Project People meta field with the REST API
+function strikebase_register_project_people() {
+	$schema = array(
+		'type' => 'string',
+		'description' => esc_html__( 'Projects associated with individual' ),
+		'context' => array( 'view', 'edit' ),
+	);
+	register_rest_field( 'project', 'project_people', array(
+		'schema' => $schema,
+		'get_callback' => 'strikebase_project_people_get_cb',
+		'update_callback' => 'strikebase_project_people_update_cb',
+	) );
+}
+add_action( 'rest_api_init', 'strikebase_register_project_people' );
+/**
+ * Modified API endpoint callbacks
+ */
+// Handles adding 'project_people' data to the response
+function strikebase_project_people_get_cb( $post_data ) {
+	$people = strikebase_get_project_meta( $post_data['id'], 'people' );
+
+	return $people['influencers'];
+}
+// Handles updating the 'project_people' meta
+function strikebase_project_people_update_cb( $values, $post ) {
+	$meta = get_post_meta( $post['id'], 'project_info', false );
+	if ( $meta ) {
+		$project_array = $meta[0][ 'people' ]['influencers'];
+	}
+
+	if ( ! is_array( $values ) ) {
+		return new WP_Error( 'rest_meta_project_people_invalid', __( 'Failed to update the People meta. Expected Array.', 'strikebase' ), array( 'status' => 500 ) );
+	}
+
+	$update = update_post_meta( $post->id, $project_array, $values['influencers'] );
+
+	return $update;
+}
+
+
+/**
  * Enqueue scripts and styles.
  */
 function strikebase_scripts() {
