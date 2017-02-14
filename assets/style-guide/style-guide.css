@@ -132,6 +132,11 @@ body {
   .color-accent .hex-code::before {
     content: "#A6302C"; }
 
+.color-accent-alt {
+  background: #F1B51D; }
+  .color-accent-alt .hex-code::before {
+    content: "#F1B51D"; }
+
 .color-highlight {
   background: #f7d47d; }
   .color-highlight .hex-code::before {

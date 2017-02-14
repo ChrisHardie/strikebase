@@ -48,3 +48,16 @@ function styleguide_show_colour_swatch( $variable ) {
 	<?php styleguide_show_colour_swatch( 'primary' ); ?>
 	<?php styleguide_show_colour_swatch( 'primary-light' ); ?>
 </div>
+
+<div class="color-group">
+
+	<div class="copy-text">
+		<h3 class="color-group-title">Accent colours</h3>
+
+		<p>Accent colours are used to highlight important information. Red is generally the colours of links, and yellows are used to highlight important information that isn't a link.</p>
+	</div>
+
+	<?php styleguide_show_colour_swatch( 'accent' ); ?>
+	<?php styleguide_show_colour_swatch( 'accent-alt' ); ?>
+	<?php styleguide_show_colour_swatch( 'highlight' ); ?>
+</div>
