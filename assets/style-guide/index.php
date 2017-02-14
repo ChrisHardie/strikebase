@@ -30,7 +30,8 @@
 
 		<div class="content">
 
-			<section class="swatches">
+			<section class="panel" id="colours">
+				<h2 class="panel-title">Colours</h2>
 
 				<div class="color-swatch color-tertiary">
 					<span class="hex-code"></span>
@@ -58,18 +59,18 @@
 				</div>
 			</section>
 
-			<section class="buttons">
+			<section class="panel" id="buttons">
+				<h2 class="panel-title">Buttons</h2>
 				<button>Primary</button>
 				<button class="secondary">Secondary</button>
 			</section>
 
-			<section class="adjectives">
+			<section class="panel" id="typography">
+				<h2 class="panel-title">Typography</h2>
 				<h3>adjective</h3>
 				<h3>adjective</h3>
 				<h3>adjective</h3>
-			</section>
 
-			<section class="headings">
 				<h1>Header one</h1>
 				<h2>Header two</h2>
 				<h3>Header three</h3>
@@ -78,7 +79,8 @@
 				<h6>Header six</h6>
 			</section>
 
-			<section class="text">
+			<section class="panel" id="components">
+				<h2 class="panel-title">Components</h2>
 
 				<article id="post-159" class="post-159 post type-post status-publish format-standard hentry category-uncategorized">
 					<header class="entry-header">

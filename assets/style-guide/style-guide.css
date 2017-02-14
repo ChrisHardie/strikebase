@@ -8,6 +8,18 @@ body {
   padding: 0;
   overflow: auto; }
 
+@media (min-width: 768px) {
+  .navigation {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid #DDD3BA;
+    padding-top: 0;
+    width: 15rem; }
+  .content {
+    margin-left: 15rem;
+    min-height: calc(100vh - 5.375rem); } }
+
 .navigation {
   background: #fff;
   text-align: center; }
@@ -32,17 +44,12 @@ body {
 .content {
   padding: 40px; }
 
-@media (min-width: 768px) {
-  .navigation {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    border-right: 2px solid #000;
-    padding-top: 0;
-    width: 15rem; }
-  .content {
-    margin-left: 15rem;
-    min-height: calc(100vh - 5.375rem); } }
+.panel {
+  border-bottom: 4px solid #644f1e;
+  padding: 40px 0; }
+
+.panel-title {
+  margin-bottom: 40px; }
 
 .swatches {
   margin: 0 auto; }
