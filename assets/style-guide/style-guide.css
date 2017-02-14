@@ -83,8 +83,8 @@ body {
   bottom: 5px;
   left: 5px;
   text-align: left; }
-  .color-swatch-label span {
-    display: block; }
+  .color-swatch-label dt:first-of-type {
+    padding-top: 0; }
 
 /* Mixin to output classes */
 .color-black {

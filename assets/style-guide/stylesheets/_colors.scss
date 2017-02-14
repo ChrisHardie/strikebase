@@ -28,8 +28,8 @@
 		left: 5px;
 	text-align: left;
 
-	span {
-		display: block;
+	dt:first-of-type {
+		padding-top: 0;
 	}
 }
 
@@ -55,6 +55,7 @@
 @include color-swatch($color__primary, 'primary');
 @include color-swatch($color__primary-light, 'primary-light');
 @include color-swatch($color__primary-dark, 'primary-dark');
+
 @include color-swatch($color__accent, 'accent');
 @include color-swatch($color__highlight, 'highlight');
 
