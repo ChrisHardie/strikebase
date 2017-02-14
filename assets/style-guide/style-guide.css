@@ -54,15 +54,16 @@ body {
 .copy-text {
   width: 100%; }
 
-.copy-text p {
-  max-width: 600px; }
+p {
+  max-width: 640px; }
 
 .swatches {
   margin: 0 auto; }
 
 .color-group {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  padding-bottom: 40px; }
 
 .color-swatch {
   display: inline-block;
@@ -79,9 +80,9 @@ body {
   font-weight: normal;
   padding: 10px;
   position: absolute;
-  right: 5px;
-  bottom: 5px;
-  left: 5px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
   text-align: left; }
   .color-swatch-label dt:first-of-type {
     padding-top: 0; }

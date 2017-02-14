@@ -5,6 +5,7 @@
 .color-group {
 	display: flex;
 	flex-wrap: wrap;
+	padding-bottom: $size__site-gutter*2;
 }
 
 .color-swatch {
@@ -23,9 +24,9 @@
 	font-weight: normal;
 	padding: 10px;
 	position: absolute;
-		right: 5px;
-		bottom: 5px;
-		left: 5px;
+		right: 10px;
+		bottom: 10px;
+		left: 10px;
 	text-align: left;
 
 	dt:first-of-type {

@@ -34,25 +34,16 @@
 				<?php include( 'inc/colours.php' ); ?>
 			</section>
 
+			<section class="panel" id="typography">
+				<?php include( 'inc/typography.php' ); ?>
+			</section>
+
 			<section class="panel" id="buttons">
 				<h2 class="panel-title">Buttons</h2>
 				<button>Primary</button>
 				<button class="secondary">Secondary</button>
 			</section>
 
-			<section class="panel" id="typography">
-				<h2 class="panel-title">Typography</h2>
-				<h3>adjective</h3>
-				<h3>adjective</h3>
-				<h3>adjective</h3>
-
-				<h1>Header one</h1>
-				<h2>Header two</h2>
-				<h3>Header three</h3>
-				<h4>Header four</h4>
-				<h5>Header five</h5>
-				<h6>Header six</h6>
-			</section>
 
 			<section class="panel" id="components">
 				<h2 class="panel-title">Components</h2>

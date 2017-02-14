@@ -1,9 +1,14 @@
 <?php
-/*
- * Colours
+/**
+ * Style guide panel to demonstrate colours used.
  *
+ * @package strikebase
  */
 
+
+/*
+ * Output a formatted swatch for a given colour variable.
+ */
 function styleguide_show_colour_swatch( $variable ) {
 	?>
 	<div class="color-swatch color-<?php echo $variable; ?>">
