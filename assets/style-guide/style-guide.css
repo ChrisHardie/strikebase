@@ -8,7 +8,7 @@ body {
   padding: 0;
   overflow: auto; }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .navigation {
     position: fixed;
     top: 0;
@@ -42,7 +42,10 @@ body {
     border-bottom: 1px solid #DBD4C6; }
 
 .content {
-  padding: 40px; }
+  padding: 20px; }
+  @media (min-width: 640px) {
+    .content {
+      padding: 40px; } }
 
 .panel {
   border-bottom: 4px solid #544A35;
