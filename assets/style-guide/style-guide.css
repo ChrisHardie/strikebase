@@ -117,14 +117,14 @@ body {
   .color-primary .hex-code::before {
     content: "#3B5345"; }
 
-.color-secondary {
+.color-primary-light {
   background: #50715e; }
-  .color-secondary .hex-code::before {
+  .color-primary-light .hex-code::before {
     content: "#50715e"; }
 
-.color-tertiary {
+.color-primary-dark {
   background: #26352c; }
-  .color-tertiary .hex-code::before {
+  .color-primary-dark .hex-code::before {
     content: "#26352c"; }
 
 .color-accent {

@@ -3,11 +3,14 @@ $color__green: #3B5345;
 $color__yellow: #F1B51D;
 
 $color__primary: $color__green;
-$color__secondary: lighten($color__primary, 10%);
-$color__tertiary: darken($color__primary, 10%);
+$color__primary-light: lighten($color__primary, 10%);
+$color__primary-dark: darken($color__primary, 10%);
+
 $color__accent-alt: $color__yellow;
 $color__highlight: lighten($color__accent-alt, 20%);
+
 $color__accent: $color__red;
+
 $color__black: #3D3012;
 $color__neutral: #5E4E25;
 $color__neutral: lighten($color__black, 10%);

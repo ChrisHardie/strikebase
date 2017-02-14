@@ -37,9 +37,9 @@
 				<div class="color-group">
 
 					<div class="copy-text">
-						<h3 class="color-group-title">Base</h3>
+						<h3 class="color-group-title">Base colours</h3>
 
-						<p>To evoke a military-type feeling, Strikebase uses a palette of desaturated browns and sand-coloured beiges. Use for body text, background, separating elements, and anything that doesn't need to have attention drawn to it.</p>
+						<p>To evoke a military-type feeling, Strikebase uses a palette of desaturated browns and sand-coloured beiges as its neutral shades. Use for body text, backgrounds, separating elements, and anything that doesn't need to have attention drawn to it.</p>
 					</div>
 
 					<div class="color-swatch color-black">
@@ -79,32 +79,42 @@
 
 				</div>
 
+				<div class="color-group">
 
+					<div class="copy-text">
+						<h3 class="color-group-title">Primary colours</h3>
 
-				<div class="color-swatch color-tertiary">
-					<span class="hex-code"></span>
-					<span class="description">Tertiary</span>
+						<p>We use a series of olive-ish greens as the primary accent colour. This is used to distinguish elements (like labels) from their surrounding text, as well as for background colours and the colours of less important elements.</p>
+					</div>
+
+					<div class="color-swatch color-primary-dark">
+						<dl class="color-swatch-label">
+							<dt>Hex code</dt>
+							<dd class="hex-code"></dd>
+							<dt>Sass variable</dt>
+							<dd class="sass-code">$color__primary-dark</dd>
+						</dl>
+					</div>
+
+					<div class="color-swatch color-primary">
+						<dl class="color-swatch-label">
+							<dt>Hex code</dt>
+							<dd class="hex-code"></dd>
+							<dt>Sass variable</dt>
+							<dd class="sass-code">$color__primary</dd>
+						</dl>
+					</div>
+
+					<div class="color-swatch color-primary-light">
+						<dl class="color-swatch-label">
+							<dt>Hex code</dt>
+							<dd class="hex-code"></dd>
+							<dt>Sass variable</dt>
+							<dd class="sass-code">$color__primary-light</dd>
+						</dl>
+					</div>
 				</div>
 
-				<div class="color-swatch color-primary">
-					<span class="hex-code"></span>
-					<span class="description">Primary</span>
-				</div>
-
-				<div class="color-swatch color-secondary">
-					<span class="hex-code"></span>
-					<span class="description">Secondary</span>
-				</div>
-
-				<div class="color-swatch color-accent">
-					<span class="hex-code"></span>
-					<span class="description">Accent</span>
-				</div>
-
-				<div class="color-swatch color-highlight">
-					<span class="hex-code"></span>
-					<span class="description">Highlight</span>
-				</div>
 			</section>
 
 			<section class="panel" id="buttons">

@@ -53,8 +53,8 @@
 
 
 @include color-swatch($color__primary, 'primary');
-@include color-swatch($color__secondary, 'secondary');
-@include color-swatch($color__tertiary, 'tertiary');
+@include color-swatch($color__primary-light, 'primary-light');
+@include color-swatch($color__primary-dark, 'primary-dark');
 @include color-swatch($color__accent, 'accent');
 @include color-swatch($color__highlight, 'highlight');
 
