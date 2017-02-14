@@ -14,7 +14,7 @@
 	}
 
 	h2 {
-		background: desaturate($color__neutral, 20%);
+		background: $color__neutral;
 		color: $color__pure-white;
 		font-family: $font__main;
 		@include font-size(1);

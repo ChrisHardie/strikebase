@@ -11,12 +11,11 @@ $color__highlight: lighten($color__accent-alt, 20%);
 
 $color__accent: $color__red;
 
-$color__black: #3D3012;
-$color__neutral: #5E4E25;
-$color__neutral: lighten($color__black, 10%);
-$color__neutral-highlight: #DDD3BA;
-$color__white: #EDE8DF;
-$color__pure-white: #fff;
+$color__black: #302816;
+$color__neutral: #544A35;
+$color__neutral-highlight: #DBD4C6;
+$color__white: #F2EFEB;
+$color__pure-white: #FFFFFD;
 
 // Background & body text
 $color__background-body: $color__white;

@@ -13,7 +13,7 @@ body {
     position: fixed;
     top: 0;
     bottom: 0;
-    border-right: 1px solid #DDD3BA;
+    border-right: 1px solid #DBD4C6;
     padding-top: 0;
     width: 15rem; }
   .content {
@@ -21,7 +21,7 @@ body {
     min-height: calc(100vh - 5.375rem); } }
 
 .navigation {
-  background: #fff;
+  background: #FFFFFD;
   text-align: center; }
 
 .navigation .logo {
@@ -33,19 +33,19 @@ body {
   margin: 0;
   width: 100%; }
   .navigation ul a {
-    border-top: 1px solid #DDD3BA;
-    color: #3D3012;
+    border-top: 1px solid #DBD4C6;
+    color: #302816;
     display: block;
     padding: 20px;
     text-decoration: none; }
   .navigation ul li:last-of-type a {
-    border-bottom: 1px solid #DDD3BA; }
+    border-bottom: 1px solid #DBD4C6; }
 
 .content {
   padding: 40px; }
 
 .panel {
-  border-bottom: 4px solid #644f1e;
+  border-bottom: 4px solid #544A35;
   padding: 40px 0; }
 
 .panel-title {
@@ -75,7 +75,7 @@ p {
   flex-grow: 1; }
 
 .color-swatch-label {
-  background: #fff;
+  background: #FFFFFD;
   font-size: 10pt;
   font-weight: normal;
   padding: 10px;
@@ -89,29 +89,29 @@ p {
 
 /* Mixin to output classes */
 .color-black {
-  background: #3D3012; }
+  background: #302816; }
   .color-black .hex-code::before {
-    content: "#3D3012"; }
+    content: "#302816"; }
 
 .color-neutral {
-  background: #644f1e; }
+  background: #544A35; }
   .color-neutral .hex-code::before {
-    content: "#644f1e"; }
+    content: "#544A35"; }
 
 .color-neutral-highlight {
-  background: #DDD3BA; }
+  background: #DBD4C6; }
   .color-neutral-highlight .hex-code::before {
-    content: "#DDD3BA"; }
+    content: "#DBD4C6"; }
 
 .color-white {
-  background: #EDE8DF; }
+  background: #F2EFEB; }
   .color-white .hex-code::before {
-    content: "#EDE8DF"; }
+    content: "#F2EFEB"; }
 
 .color-pure-white {
-  background: #fff; }
+  background: #FFFFFD; }
   .color-pure-white .hex-code::before {
-    content: "#fff"; }
+    content: "#FFFFFD"; }
 
 .color-primary {
   background: #3B5345; }
@@ -145,11 +145,11 @@ p {
 
 /* Overrides for certain colours. */
 .color-white {
-  border-top: 1px solid #DDD3BA;
-  border-bottom: 1px solid #DDD3BA; }
+  border-top: 1px solid #DBD4C6;
+  border-bottom: 1px solid #DBD4C6; }
 
 .color-pure-white .color-swatch-label {
-  border: 1px solid #DDD3BA; }
+  border: 1px solid #DBD4C6; }
 
 .adjectives h3 {
   display: inline;
