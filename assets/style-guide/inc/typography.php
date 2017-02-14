@@ -21,9 +21,24 @@
 
 <p>Keeping the line height of text consistent helps maintain a balanced baseline. As a general rule, only change the line height if you have a specific reason for doing so.</p>
 
-<h1>Heading one</h1>
-<h2>Heading two</h2>
-<h3>Heading three</h3>
-<h4>Heading four</h4>
-<h5>Heading five</h5>
-<h6>Heading six</h6>
+<h3>Headings</h3>
+
+<div class="typography-headings">
+	<span class="label">Heading one</span>
+	<h1>The quick brown fox jumps over the lazy dog</h1>
+
+	<span class="label">Heading two</span>
+	<h2>Jinxed wizards pluck ivy from the big quilt</h2>
+
+	<span class="label">Heading three</span>
+	<h3>The five boxing wizards jump quickly</h3>
+
+	<span class="label">Heading four</span>
+	<h4>Sphinx of black quartz, judge my vow</h4>
+
+	<span class="label">Heading five</span>
+	<h5>Pack my box with five dozen liquor jugs</h5>
+
+	<span class="label">Heading six</span>
+	<h6>Five quacking zephyrs jolt my wax bed</h6>
+</div>

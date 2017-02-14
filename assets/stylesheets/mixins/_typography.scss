@@ -21,8 +21,9 @@
 
 // Output labels consistently.
 @mixin label() {
-	color: $color__primary-light;
 	@include small-caps;
+	color: $color__primary-light;
+	display: block;
 	font-weight: 600;
 	padding-top: $size__site-gutter;
 	padding-bottom: $size__site-gutter/8;

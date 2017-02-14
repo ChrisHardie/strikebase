@@ -430,11 +430,12 @@ textarea {
 
 label,
 .label {
-  color: #50715e;
   font-size: 0.8em;
   font-weight: 500;
   letter-spacing: 0.025em;
   text-transform: uppercase;
+  color: #50715e;
+  display: block;
   font-weight: 600;
   padding-top: 20px;
   padding-bottom: 2.5px; }
@@ -504,11 +505,12 @@ dl {
   padding-bottom: 10px; }
 
 dt {
-  color: #50715e;
   font-size: 0.8em;
   font-weight: 500;
   letter-spacing: 0.025em;
   text-transform: uppercase;
+  color: #50715e;
+  display: block;
   font-weight: 600;
   padding-top: 20px;
   padding-bottom: 2.5px; }

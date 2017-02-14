@@ -78,3 +78,7 @@ body {
 p {
 	max-width: 640px; // Keeps line lengths readable.
 }
+
+h3 {
+	padding-top: $size__site-gutter;
+}

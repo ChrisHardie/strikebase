@@ -57,6 +57,9 @@ body {
 p {
   max-width: 640px; }
 
+h3 {
+  padding-top: 20px; }
+
 .swatches {
   margin: 0 auto; }
 
@@ -150,6 +153,10 @@ p {
 
 .color-pure-white .color-swatch-label {
   border: 1px solid #DBD4C6; }
+
+.typography-headings h1, .typography-headings h2, .typography-headings h3, .typography-headings h4, .typography-headings h5, .typography-headings h6 {
+  padding: 0 0 20px 0;
+  margin: 0; }
 
 .adjectives h3 {
   display: inline;
