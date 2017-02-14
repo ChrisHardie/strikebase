@@ -51,80 +51,99 @@ body {
 .panel-title {
   margin-bottom: 40px; }
 
+.copy-text {
+  width: 100%; }
+
+.copy-text p {
+  max-width: 600px; }
+
 .swatches {
   margin: 0 auto; }
 
+.color-group {
+  display: flex;
+  flex-wrap: wrap; }
+
 .color-swatch {
   display: inline-block;
-  height: 75px;
+  height: 70vh;
   line-height: 1.2;
-  margin: 0 -5px 20px 0;
+  margin: 0 0 20px 0;
   position: relative;
-  vertical-align: top;
-  width: 75px; }
+  min-width: 100px;
+  flex-grow: 1; }
 
-.color-swatch .hex-code {
-  display: block;
-  font-family: "Hevetica Neue", Arial, sans-serif;
+.color-swatch-label {
+  background: #fff;
   font-size: 10pt;
   font-weight: normal;
   padding: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%; }
-
-.color-swatch .description {
-  background: #fff;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: none;
-  font-size: 10pt;
   position: absolute;
-  text-align: center; }
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  text-align: left; }
+  .color-swatch-label span {
+    display: block; }
 
 /* Mixin to output classes */
-.color-text-main {
+.color-black {
   background: #3D3012; }
-  .color-text-main .hex-code {
-    color: #fff; }
-    .color-text-main .hex-code::before {
-      content: "#3D3012"; }
+  .color-black .hex-code::before {
+    content: "#3D3012"; }
+
+.color-neutral {
+  background: #644f1e; }
+  .color-neutral .hex-code::before {
+    content: "#644f1e"; }
+
+.color-neutral-highlight {
+  background: #DDD3BA; }
+  .color-neutral-highlight .hex-code::before {
+    content: "#DDD3BA"; }
+
+.color-white {
+  background: #EDE8DF; }
+  .color-white .hex-code::before {
+    content: "#EDE8DF"; }
+
+.color-pure-white {
+  background: #fff; }
+  .color-pure-white .hex-code::before {
+    content: "#fff"; }
 
 .color-primary {
   background: #3B5345; }
-  .color-primary .hex-code {
-    color: #fff; }
-    .color-primary .hex-code::before {
-      content: "#3B5345"; }
+  .color-primary .hex-code::before {
+    content: "#3B5345"; }
 
 .color-secondary {
   background: #50715e; }
-  .color-secondary .hex-code {
-    color: #fff; }
-    .color-secondary .hex-code::before {
-      content: "#50715e"; }
+  .color-secondary .hex-code::before {
+    content: "#50715e"; }
 
 .color-tertiary {
   background: #26352c; }
-  .color-tertiary .hex-code {
-    color: #fff; }
-    .color-tertiary .hex-code::before {
-      content: "#26352c"; }
+  .color-tertiary .hex-code::before {
+    content: "#26352c"; }
 
 .color-accent {
   background: #A6302C; }
-  .color-accent .hex-code {
-    color: #000; }
-    .color-accent .hex-code::before {
-      content: "#A6302C"; }
+  .color-accent .hex-code::before {
+    content: "#A6302C"; }
 
 .color-highlight {
   background: #f7d47d; }
-  .color-highlight .hex-code {
-    color: #000; }
-    .color-highlight .hex-code::before {
-      content: "#f7d47d"; }
+  .color-highlight .hex-code::before {
+    content: "#f7d47d"; }
+
+/* Overrides for certain colours. */
+.color-white {
+  border-top: 1px solid #DDD3BA;
+  border-bottom: 1px solid #DDD3BA; }
+
+.color-pure-white .color-swatch-label {
+  border: 1px solid #DDD3BA; }
 
 .adjectives h3 {
   display: inline;

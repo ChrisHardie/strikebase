@@ -31,7 +31,55 @@
 		<div class="content">
 
 			<section class="panel" id="colours">
+
 				<h2 class="panel-title">Colours</h2>
+
+				<div class="color-group">
+
+					<div class="copy-text">
+						<h3 class="color-group-title">Base</h3>
+
+						<p>To evoke a military-type feeling, Strikebase uses a palette of desaturated browns and sand-coloured beiges. Use for body text, background, separating elements, and anything that doesn't need to have attention drawn to it.</p>
+					</div>
+
+					<div class="color-swatch color-black">
+						<div class="color-swatch-label">
+							<span class="hex-code"></span>
+							<span class="sass-code">$color__black</span>
+						</div>
+					</div>
+
+					<div class="color-swatch color-neutral">
+						<div class="color-swatch-label">
+							<span class="hex-code"></span>
+							<span class="sass-code">$color__neutral</span>
+						</div>
+					</div>
+
+					<div class="color-swatch color-neutral-highlight">
+						<div class="color-swatch-label">
+							<span class="hex-code"></span>
+							<span class="sass-code">$color__neutral-highlight</span>
+						</div>
+					</div>
+
+					<div class="color-swatch color-white">
+						<div class="color-swatch-label">
+							<span class="hex-code"></span>
+							<span class="sass-code">$color__white</span>
+						</div>
+					</div>
+
+					<div class="color-swatch color-pure-white">
+						<div class="color-swatch-label">
+							<span class="hex-code"></span>
+							<span class="sass-code">$color__pure-white</span>
+						</div>
+					</div>
+
+				</div>
+
+
 
 				<div class="color-swatch color-tertiary">
 					<span class="hex-code"></span>

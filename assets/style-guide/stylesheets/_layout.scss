@@ -78,3 +78,11 @@ body {
 .panel-title {
 	margin-bottom: $size__site-gutter*2;
 }
+
+.copy-text {
+	width: 100%;
+}
+
+.copy-text p {
+	max-width: 600px; // Keeps line lengths readable.
+}
