@@ -7,7 +7,7 @@
 	height: 100px;
 }
 
-// Arrange Gravatar next to name.
+// Arrange Gravatar next to name on single people pages.
 .person .entry-header {
 	align-items: center;
 	display: flex;
@@ -20,4 +20,13 @@
 	.entry-title {
 		margin-bottom: 0;
 	}
+}
+
+// Colour-code people on archives by person type.
+.person-type-striker .strikebase-card-title {
+	background: $color__accent-alt;
+}
+
+.person-type-contractor .strikebase-card-title {
+	background: $color__accent;
 }

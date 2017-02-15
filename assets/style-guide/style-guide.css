@@ -149,14 +149,14 @@ h3 {
     content: "#A6302C"; }
 
 .color-accent-alt {
-  background: #F1B51D; }
+  background: #E8B136; }
   .color-accent-alt .hex-code::before {
-    content: "#F1B51D"; }
+    content: "#E8B136"; }
 
 .color-highlight {
-  background: #f7d47d; }
+  background: #f2d592; }
   .color-highlight .hex-code::before {
-    content: "#f7d47d"; }
+    content: "#f2d592"; }
 
 /* Overrides for certain colours. */
 .color-white {

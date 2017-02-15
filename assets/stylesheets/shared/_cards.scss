@@ -11,26 +11,8 @@
 		width: calc(100% + #{$size__site-gutter*2});
 	}
 
-	h2 {
-		background: $color__neutral;
-		color: $color__pure-white;
-		font-family: $font__main;
-		@include font-size(1);
-		padding: $size__site-gutter/1.5 $size__site-gutter;
-		text-transform: capitalize;
-	}
-
 	dl {
 		padding: 0 $size__site-gutter $size__site-gutter/2;
-	}
-
-	.strikebase-card-link {
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
 	}
 
 	.gravatar {
@@ -38,4 +20,22 @@
 		top: -$size__site-gutter;
 		right: $size__site-gutter;
 	}
+}
+
+.strikebase-card-title {
+	background: $color__neutral;
+	color: $color__pure-white;
+	font-family: $font__main;
+	@include font-size(1);
+	padding: $size__site-gutter/1.5 $size__site-gutter;
+	text-transform: capitalize;
+}
+
+.strikebase-card-link {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }

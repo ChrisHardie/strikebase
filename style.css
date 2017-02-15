@@ -671,27 +671,29 @@ a {
     .strikebase-card {
       margin-left: -20px;
       width: calc(100% + 40px); } }
-  .strikebase-card h2 {
-    background: #544A35;
-    color: #FFFFFD;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    font-size: 1rem;
-    padding: 13.33333px 20px;
-    text-transform: capitalize; }
   .strikebase-card dl {
     padding: 0 20px 10px; }
-  .strikebase-card .strikebase-card-link {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; }
   .strikebase-card .gravatar {
     position: absolute;
     top: -20px;
     right: 20px; }
+
+.strikebase-card-title {
+  background: #544A35;
+  color: #FFFFFD;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  padding: 13.33333px 20px;
+  text-transform: capitalize; }
+
+.strikebase-card-link {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
 
 /*--------------------------------------------------------------
 # Layout
@@ -733,7 +735,7 @@ body {
   .strikebase-logo .bolt {
     fill: #A6302C; }
   .strikebase-logo .circle {
-    fill: #F1B51D; }
+    fill: #E8B136; }
   .strikebase-logo .logotype {
     font-family: "Francois One", courier;
     font-size: 100px; }
@@ -864,6 +866,12 @@ body {
     margin-right: 13.33333px; }
   .person .entry-header .entry-title {
     margin-bottom: 0; }
+
+.person-type-striker .strikebase-card-title {
+  background: #E8B136; }
+
+.person-type-contractor .strikebase-card-title {
+  background: #A6302C; }
 
 /*--------------------------------------------------------------
 # Media
