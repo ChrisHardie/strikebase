@@ -689,6 +689,10 @@ a {
     right: 0;
     bottom: 0;
     left: 0; }
+  .strikebase-card .gravatar {
+    position: absolute;
+    top: -20px;
+    right: 20px; }
 
 /*--------------------------------------------------------------
 # Layout

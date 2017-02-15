@@ -67,3 +67,14 @@ function strikebase_get_gravatar( $email ) {
 	$hash = md5( strtolower( trim( $email ) ) );
 	return "//www.gravatar.com/avatar/" . $hash;
 }
+
+/*
+ * Show the gravatar for a given user ID, if a gravatar is available.
+ *
+ */
+function strikebase_show_gravatar( $id ) {
+	$contact_info = strikebase_get_person_meta( $id );
+	if ( $contact_info['email'] ) :
+		echo '<img class="gravatar" src="'. strikebase_get_gravatar( $contact_info['email'] ) . '?s=200&&d=mm" />';
+	endif;
+}

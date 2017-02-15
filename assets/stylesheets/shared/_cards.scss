@@ -33,4 +33,10 @@
 		bottom: 0;
 		left: 0;
 	}
+
+	.gravatar {
+		position: absolute;
+		top: -$size__site-gutter;
+		right: $size__site-gutter;
+	}
 }

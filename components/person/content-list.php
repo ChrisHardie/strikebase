@@ -13,6 +13,8 @@
 		<?php the_title(); ?>
 	</h2>
 
+	<?php strikebase_show_gravatar( get_the_ID() ); ?>
+
 	<dl>
 		<dt><?php esc_html_e( 'Organization', 'strikebase' ); ?></dt>
 		<?php strikebase_show_organization( get_the_ID(), 'dd' ); ?>

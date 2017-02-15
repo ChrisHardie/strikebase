@@ -11,13 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">
-		<?php
-			$contact_info = strikebase_get_person_meta( get_the_ID() );
-			if ( $contact_info['email'] ) :
-				echo '<img class="gravatar" src="'. strikebase_get_gravatar( $contact_info['email'] ) . '?s=200&&d=mm" />';
-			endif;
-		?>
-
+		<?php strikebase_show_gravatar( get_the_ID() ); ?>
 		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 	</header><!-- .entry-header -->
 
@@ -47,6 +41,8 @@
 			<h2 class="strikebase-card-title">Contact information</h2>
 			<dl class="strikebase-contact-info">
 				<?php
+				$contact_info = strikebase_get_person_meta( $id );
+
 				if ( $contact_info ) :
 					foreach ( $contact_info as $key => $value ) :
 						if ( $value ) :
