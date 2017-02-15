@@ -293,7 +293,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #544A35;
   font-weight: 300;
   line-height: 1.2;
-  margin: 0 0 10px; }
+  margin: 0 0 20px; }
 
 h1 {
   font-family: "Francois One", courier;
@@ -321,7 +321,7 @@ h6 {
   font-size: 1em; }
 
 p {
-  margin: 0 0 20px; }
+  margin: 0 0 40px; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -437,7 +437,6 @@ label,
   color: #50715e;
   display: block;
   font-weight: 600;
-  padding-top: 20px;
   padding-bottom: 2.5px; }
 
 /*--------------------------------------------------------------
@@ -502,7 +501,7 @@ li > ol {
 
 dl {
   margin: 0;
-  padding-bottom: 10px; }
+  padding-bottom: 40px; }
 
 dt {
   font-size: 0.8em;
@@ -512,11 +511,12 @@ dt {
   color: #50715e;
   display: block;
   font-weight: 600;
-  padding-top: 20px;
   padding-bottom: 2.5px; }
 
 dd {
   margin: 0; }
+  dd + dt {
+    padding-top: 20px; }
 
 /*--------------------------------------------------------------
 # Tables
@@ -677,7 +677,6 @@ a {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     font-size: 1rem;
-    margin: 0;
     padding: 13.33333px 20px;
     text-transform: capitalize; }
   .strikebase-card dl {
@@ -780,7 +779,7 @@ body {
 
 @media (min-width: 640px) {
   .strikebase-column {
-    width: calc(50% - 40px); } }
+    width: calc(50% - 20px); } }
 
 .post-type-archive-person .site-main {
   max-width: 1240px; }

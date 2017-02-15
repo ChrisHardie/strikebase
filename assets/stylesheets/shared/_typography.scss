@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: $color__neutral;
 	font-weight: 300;
 	line-height: $font__line-height-headings;
-	margin: 0 0 $size__site-gutter/2;
+	margin: 0 0 $size__site-gutter;
 }
 
 h1 {
@@ -48,7 +48,7 @@ h6 {
 }
 
 p {
-	margin: 0 0 $size__site-gutter;
+	margin: 0 0 $size__site-gutter*2;
 }
 
 dfn, cite, em, i {

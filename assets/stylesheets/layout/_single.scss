@@ -29,6 +29,6 @@
 
 @include tablet {
 	.strikebase-column {
-		width: calc(50% - #{$size__site-gutter*2});
+		width: calc(50% - #{$size__site-gutter});
 	}
 }

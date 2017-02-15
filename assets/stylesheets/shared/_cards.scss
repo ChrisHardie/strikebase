@@ -16,7 +16,6 @@
 		color: $color__pure-white;
 		font-family: $font__main;
 		@include font-size(1);
-		margin: 0;
 		padding: $size__site-gutter/1.5 $size__site-gutter;
 		text-transform: capitalize;
 	}
