@@ -24,15 +24,25 @@ const PersonList = ( props ) => {
 								</td>
 								<td className="strikebase-person-organization">
 									{
-										props.organizations.map( ( org, i ) => {
+										props.organizations.map( ( org, j ) => {
 											if ( org.id == person.organization ) {
-												return <a key={ i } href="#">{ org.name }</a>;
+												return <a key={ j } href="#">{ org.name }</a>;
 											}
 										} )
 									}
 								</td>
 								<td className="strikebase-person-project">
-									<a href="#">Test Project</a>
+									{
+										props.projects.map( ( project, k ) => {
+											let projectPeople = project['project-people'];
+
+											for ( let l = 0, ll = projectPeople.length; l < ll; l++ ) {
+												if ( projectPeople[l] == person.id ) {
+													return <div key={ k }><a href="#">{ project.title.rendered }</a></div>;
+												}
+											}
+										} )
+									}
 								</td>
 							</tr>
 						);

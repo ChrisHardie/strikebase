@@ -110,15 +110,16 @@ function strikebase_fonts_url() {
 
 /**
  * Modify REST API Endpoints
+ *
+ * Registers Project People meta field with the REST API
  */
-// Register Project People meta field with the REST API
 function strikebase_register_project_people() {
 	$schema = array(
-		'type' => 'string',
+		'type' => 'array',
 		'description' => esc_html__( 'Projects associated with individual' ),
 		'context' => array( 'view', 'edit' ),
 	);
-	register_rest_field( 'project', 'project_people', array(
+	register_rest_field( 'project', 'project-people', array(
 		'schema' => $schema,
 		'get_callback' => 'strikebase_project_people_get_cb',
 		'update_callback' => 'strikebase_project_people_update_cb',
@@ -126,7 +127,7 @@ function strikebase_register_project_people() {
 }
 add_action( 'rest_api_init', 'strikebase_register_project_people' );
 /**
- * Modified API endpoint callbacks
+ * Project-People endpoint callbacks
  */
 // Handles adding 'project_people' data to the response
 function strikebase_project_people_get_cb( $post_data ) {
@@ -146,6 +147,92 @@ function strikebase_project_people_update_cb( $values, $post ) {
 	}
 
 	$update = update_post_meta( $post->id, $project_array, $values['influencers'] );
+
+	return $update;
+}
+
+/**
+ * Modify REST API Endpoints (part 2)
+ *
+ * Registers Launch Date meta field with the REST API
+ */
+function strikebase_register_launch_date() {
+	$schema = array(
+		'type' => 'string',
+		'description' => esc_html__( 'Launch date for a project' ),
+		'context' => array( 'view', 'edit' ),
+	);
+	register_rest_field( 'project', 'launch-date', array(
+		'schema' => $schema,
+		'get_callback' => 'strikebase_launch_date_get_cb',
+		'update_callback' => 'strikebase_launch_date_update_cb',
+	) );
+}
+add_action( 'rest_api_init', 'strikebase_register_launch_date' );
+/**
+ * Launch date endpoint callbacks
+ */
+// Handles adding 'project_people' data to the response
+function strikebase_launch_date_get_cb( $post_data ) {
+	$dates = strikebase_get_project_meta( $post_data['id'], 'dates' );
+
+	return $dates['launch'];
+}
+// Handles updating the 'project_people' meta
+function strikebase_launch_date_update_cb( $value, $post ) {
+	$meta = get_post_meta( $post['id'], 'project_info', false );
+	if ( $meta ) {
+		$project_array = $meta[0][ 'dates' ]['launch'];
+	}
+
+	if ( ! is_numeric( $value ) ) {
+		return new WP_Error( 'rest_meta_project_people_invalid', __( 'Failed to update the People meta. Expected number (date).', 'strikebase' ), array( 'status' => 500 ) );
+	}
+
+	$update = update_post_meta( $post->id, $project_array, $value );
+
+	return $update;
+}
+
+/**
+ * Modify REST API Endpoints (part 3)
+ *
+ * Registers Check-in Date meta field with the REST API
+ */
+function strikebase_register_check_in_date() {
+	$schema = array(
+		'type' => 'string',
+		'description' => esc_html__( 'Last check-in date for a project' ),
+		'context' => array( 'view', 'edit' ),
+	);
+	register_rest_field( 'project', 'last-check-in-date', array(
+		'schema' => $schema,
+		'get_callback' => 'strikebase_check_in_date_get_cb',
+		'update_callback' => 'strikebase_check_in_date_update_cb',
+	) );
+}
+add_action( 'rest_api_init', 'strikebase_register_check_in_date' );
+/**
+ * Check-in date endpoint callbacks
+ */
+// Handles adding 'project_people' data to the response
+function strikebase_check_in_date_get_cb( $post_data ) {
+	$dates = strikebase_get_project_meta( $post_data['id'], 'dates' );
+
+	return $dates['last_check_in'];
+}
+// Handles updating the 'project_people' meta
+function strikebase_check_in_date_update_cb( $value, $post ) {
+	$meta = get_post_meta( $post['id'], 'project_info', false );
+	if ( $meta ) {
+		$project_array = $meta[0][ 'dates' ]['last_check_in'];
+	}
+
+	if ( ! is_numeric( $value ) ) {
+		return new WP_Error( 'rest_meta_project_people_invalid', __( 'Failed to update the People meta. Expected number (date).', 'strikebase' ), array( 'status' => 500 ) );
+	}
+
+	$update = update_post_meta( $post->id, $project_array, $value );
 
 	return $update;
 }
