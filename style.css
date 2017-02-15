@@ -665,9 +665,8 @@ a {
   background-color: #FFFFFD;
   margin: 20px 0;
   max-width: 520px;
-  padding-bottom: 10px; }
-  .strikebase-card + .strikebase-card {
-    margin-top: 40px; }
+  padding-bottom: 10px;
+  position: relative; }
   @media (max-width: 639px) {
     .strikebase-card {
       margin-left: -20px;
@@ -683,6 +682,13 @@ a {
     text-transform: capitalize; }
   .strikebase-card dl {
     padding: 0 20px 10px; }
+  .strikebase-card .strikebase-card-link {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
 
 /*--------------------------------------------------------------
 # Layout
@@ -740,7 +746,8 @@ body {
 /*--------------------------------------------------------------
 ## People & projects CPT
 --------------------------------------------------------------*/
-article {
+.single .person,
+.single .project {
   -ms-flex-line-pack: justify;
   align-content: space-between;
   -ms-flex-align: baseline;
@@ -753,8 +760,12 @@ article {
   flex-wrap: wrap;
   -ms-flex-pack: justify;
   justify-content: space-between; }
-  article .entry-header {
+  .single .person .entry-header,
+  .single .project .entry-header {
     width: 100%; }
+  .single .person .strikebase-card + .strikebase-card,
+  .single .project .strikebase-card + .strikebase-card {
+    margin-top: 40px; }
 
 .entry-content {
   max-width: 100%; }
@@ -766,6 +777,31 @@ article {
 @media (min-width: 640px) {
   .strikebase-column {
     width: calc(50% - 40px); } }
+
+.post-type-archive-person .site-main {
+  max-width: 1240px; }
+
+@media (min-width: 640px) {
+  .strikebase-people-list {
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .strikebase-people-list .person {
+    margin-bottom: 20px;
+    width: calc(50% - 20px); } }
+
+@media (min-width: 1024px) {
+  .strikebase-people-list .person {
+    width: calc(33% - 20px); } }
 
 /*--------------------------------------------------------------
 ## Dashboard

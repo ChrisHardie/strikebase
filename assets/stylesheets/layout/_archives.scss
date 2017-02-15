@@ -1,0 +1,29 @@
+// Extend width of main site column on archive pages so three columns fit well.
+// @todo: Implement a proper grid so these are well-scaled and spaced out consistently.
+.post-type-archive-person .site-main {
+	max-width: $size__site-width + 200;
+}
+
+// Use flexbox to display archive cards on two columns on tablets...
+@include tablet {
+	.strikebase-people-list {
+		align-content: space-between;
+		align-items: baseline;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.strikebase-people-list .person {
+		margin-bottom: $size__site-gutter;
+		width: calc(50% - #{$size__site-gutter});
+	}
+}
+
+// ...and three columns on larger screens.
+@include desktop {
+	.strikebase-people-list .person {
+		width: calc(33% - #{$size__site-gutter});
+	}
+}

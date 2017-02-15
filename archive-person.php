@@ -14,12 +14,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<table class="strikebase-people-list">
-				<thead>
-					<th><?php esc_html_e( 'Name', 'strikebase' ); ?></th>
-					<th><?php esc_html_e( 'Organization', 'strikebase' ); ?></th>
-					<th><?php esc_html_e( 'Projects', 'strikebase' ); ?></th>
-				</thead>
+			<div class="strikebase-people-list">
 
 				<?php
 				/* Start the Loop */
@@ -27,7 +22,7 @@ get_header(); ?>
 					get_template_part( 'components/person/content', 'list' );
 				endwhile;
 				?>
-			</table>
+			</div>
 
 			<?php strikebase_numeric_pagination(); ?>
 
