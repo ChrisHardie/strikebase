@@ -18,8 +18,30 @@ const ProjectList = ( props ) => {
 			<tbody>
 				{
 					props.projects.map( ( project, i ) => {
-						let launchDate = new Date( project['launch-date'] * 1000 );
-						let lastCheckInDate = new Date( project['last-check-in-date'] * 1000 );
+						let launchTimeStamp = new Date( project['launch-date'] * 1000 );
+						let checkInTimeStamp = new Date( project['last-check-in-date'] * 1000 );
+						let lastCheckInDate;
+						let launchDate;
+
+						if ( 0 < launchTimeStamp / 1000 ) {
+							launchDate = (
+								<a href="#">
+									{ launchTimeStamp.getUTCFullYear() + "-" + ( launchTimeStamp.getUTCMonth() + 1 ) + "-" + launchTimeStamp.getUTCDate() }
+								</a>
+							);
+						} else {
+							launchDate = '';
+						}
+
+						if ( 0 < checkInTimeStamp / 1000 ) {
+							lastCheckInDate = (
+								<a href="#">
+									{ checkInTimeStamp.getUTCFullYear() + "-" + ( checkInTimeStamp.getUTCMonth() + 1 ) + "-" + checkInTimeStamp.getUTCDate() }
+								</a>
+							);
+						} else {
+							lastCheckInDate = '';
+						}
 
 						return (
 							<tr key={ i }>
@@ -36,10 +58,10 @@ const ProjectList = ( props ) => {
 									}
 								</td>
 								<td className="strikebase-project-launch-date">
-									<a href="#">{ launchDate.getUTCFullYear() + "-" + ( launchDate.getUTCMonth() + 1 ) + "-" + launchDate.getUTCDate() }</a>
+									{ launchDate }
 								</td>
 								<td className="strikebase-project-last-contact">
-									<a href="#">{ lastCheckInDate.getUTCFullYear() + "-" + ( lastCheckInDate.getUTCMonth() + 1 ) + "-" + lastCheckInDate.getUTCDate() }</a>
+									{ lastCheckInDate }
 								</td>
 							</tr>
 						);
