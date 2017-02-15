@@ -63,6 +63,14 @@
 				return -this.element.clientHeight + 500
 			}
 		});
+
+		// Use scrollTo library to smoothly scroll between panels
+		$navLinks.click( function() {
+			$.scrollTo( $( this ).attr( 'href' ), {
+				duration: 400,
+				offset: { 'top': -10 }
+			} );
+		});
 	}
 
 	// Run our functions on document load

@@ -7,8 +7,9 @@
 	<link rel="stylesheet" href="../../style.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="style-guide.css" type="text/css" media="all" />
 
-	<script src="js/jquery-3.1.1.slim.min.js"></script>
+	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.scrollTo.min.js"></script>
 	<script src="js/scripts.js"></script>
 </head>
 
