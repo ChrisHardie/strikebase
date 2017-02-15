@@ -41,6 +41,7 @@ body {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+	text-align: left;
 	width: 100%;
 
 	a {
@@ -49,6 +50,11 @@ body {
 		display: block;
 		padding: $size__site-gutter;
 		text-decoration: none;
+	}
+
+	a.active {
+		background: $color__white;
+		color: $color__neutral;
 	}
 
 	li:last-of-type a {
@@ -68,6 +74,7 @@ body {
 // Content sections/panels.
 .panel {
 	border-bottom: 4px solid $color__neutral;
+	min-height: 85vh;
 	padding: $size__site-gutter*2 0;
 }
 
