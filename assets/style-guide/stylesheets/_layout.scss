@@ -45,16 +45,22 @@ body {
 	width: 100%;
 
 	a {
-		border-top: 1px solid $color__neutral-highlight;
+		border-top: 1px solid $color__white;
 		color: $color__black;
 		display: block;
 		padding: $size__site-gutter;
 		text-decoration: none;
 	}
 
+	a:hover {
+		background: transparentize($color__white, 0.75);
+	}
+
 	a.active {
-		background: $color__white;
+		background: transparentize($color__white, 0.5);
+		border-right: 4px solid $color__neutral;
 		color: $color__neutral;
+		font-weight: 500;
 	}
 
 	li:last-of-type a {
