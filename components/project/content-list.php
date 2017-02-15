@@ -8,36 +8,25 @@
  */
 ?>
 
-<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'strikebase-card' ); ?>>
 
-	<td class="entry-title">
-		<a href="<?php echo esc_url( get_permalink() ); ?>">
-			<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?>
-		</a>
-	</td>
+	<?php the_title( '<h2 class="strikebase-card-title">', '</h2>' ); ?>
 
-	<td class="strikebase-project-status">
-		<?php strikebase_show_project_status( get_the_ID() ); ?>
-	</td>
+	<dl>
+		<dt><?php esc_html_e( 'Status', 'strikebase' ); ?></dt>
+		<dd><?php strikebase_show_project_status( get_the_ID() ); ?></dd>
 
-	<td class="strikebase-project-launch-date">
 		<?php
 		$dates = strikebase_get_project_meta( get_the_ID(), 'dates' );
-		if ( $dates['launch'] ) :
-			echo strikebase_formatted_date( $dates['launch'] );
-		elseif ( $dates['est_launch'] ) :
-			echo strikebase_formatted_date( $dates['est_launch'] );
-			esc_html_e( ' (estimated)', 'strikebase' );
-		endif;
-		?>
-	</td>
+		if ( $dates['launch'] ) : ?>
+			<dt><?php esc_html_e( 'Launch date', 'strikebase' ); ?></dt>
+			<dd><?php echo strikebase_formatted_date( $dates['launch'] ); ?></dd>
+		<?php elseif ( $dates['est_launch'] ) : ?>
+			<dt><?php esc_html_e( 'Expected launch', 'strikebase' ); ?></dt>
+			<dd><?php echo strikebase_formatted_date( $dates['est_launch'] ); ?></dd>
+		<?php endif; ?>
+	</dl>
 
-	<td class="strikebase-project-last-contact">
-		<?php
-		if ( $dates AND array_key_exists( 'last_check_in', $dates ) ) :
-			echo strikebase_formatted_date( $dates['last_check_in'] );
-		endif;
-		?>
-	</td>
+	<a href="<?php echo esc_url( get_permalink() ); ?>" class="strikebase-card-link"> </a>
 
-</tr><!-- #post-## -->
+</article><!-- #post-## -->

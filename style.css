@@ -783,11 +783,13 @@ body {
   .strikebase-column {
     width: calc(50% - 20px); } }
 
-.post-type-archive-person .site-main {
+.post-type-archive-person .site-main,
+.post-type-archive-project .site-main {
   max-width: 1240px; }
 
 @media (min-width: 640px) {
-  .strikebase-people-list {
+  .strikebase-people-list,
+  .strikebase-projects-list {
     -ms-flex-line-pack: justify;
     align-content: space-between;
     -ms-flex-align: baseline;
@@ -800,12 +802,14 @@ body {
     flex-wrap: wrap;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-  .strikebase-people-list .person {
+  .strikebase-people-list .person,
+  .strikebase-projects-list .project {
     margin-bottom: 20px;
     width: calc(50% - 20px); } }
 
 @media (min-width: 1024px) {
-  .strikebase-people-list .person {
+  .strikebase-people-list .person,
+  .strikebase-projects-list .project {
     width: calc(33% - 20px); } }
 
 /*--------------------------------------------------------------

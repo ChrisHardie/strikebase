@@ -22,5 +22,7 @@
 		<dt><?php esc_html_e( 'Projects', 'strikebase' ); ?></dt>
 		<?php strikebase_list_person_projects( get_the_ID(), 'dd' ); ?>
 	</dl>
-<a href="<?php echo esc_url( get_permalink() ); ?>" class="strikebase-card-link"> </a>
+
+	<a href="<?php echo esc_url( get_permalink() ); ?>" class="strikebase-card-link"> </a>
+	
 </article><!-- #post-## -->

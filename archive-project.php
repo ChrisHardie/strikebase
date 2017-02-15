@@ -14,20 +14,16 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<table class="strikebase-project-list">
-				<thead>
-					<th><?php esc_html_e( 'Project', 'strikebase' ); ?></th>
-					<th><?php esc_html_e( 'Status', 'strikebase' ); ?></th>
-					<th><?php esc_html_e( 'Launch date', 'strikebase' ); ?></th>
-					<th><?php esc_html_e( 'Last check-in', 'strikebase' ); ?></th>
-				</thead>
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-				get_template_part( 'components/project/content', 'list' );
-			endwhile;
-			?>
-			</table>
+			<div class="strikebase-projects-list">
+
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
+					get_template_part( 'components/project/content', 'list' );
+				endwhile;
+				?>
+
+			</div>
 
 			<?php strikebase_numeric_pagination(); ?>
 
