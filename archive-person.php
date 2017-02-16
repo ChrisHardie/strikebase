@@ -11,8 +11,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
+
+			<div class="strikebase-filter-and-sort">
+				<?php strikebase_filters( 'person-type', 'Type' ); ?>
+			</div>
 
 			<div class="strikebase-people-list">
 

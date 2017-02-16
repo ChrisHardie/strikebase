@@ -1,0 +1,59 @@
+.dropdown-container {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.dropdown-label {
+	position: relative;
+}
+
+.dropdown-label > a {
+	@include label;
+	padding: 10px 20px 10px 0;
+	text-decoration: none;
+}
+
+.dropdown {
+	background: $color__pure-white;
+	@include box-shadow;
+	display: inline-block;
+	list-style-type: none;
+	margin: -5px 0 0 0;
+	min-width: 300px;
+	padding: 0;
+	position: absolute;
+		left: -9999em;
+	z-index: 10;
+
+	.dropdown-title,
+	.filter-link {
+		border-bottom: 1px solid $color__white;
+		color: $color__neutral;
+		display: block;
+		@include font-size(0.875);
+		padding: 10px;
+		text-decoration: none;
+	}
+
+	.dropdown-title {
+		background: transparentize($color__white, 0.5);
+	}
+
+	.filter-link:hover {
+		background: transparentize($color__white, 0.75);
+	}
+
+	.filter-link.active {
+		background: transparentize($color__white, 0.5);
+		border-right: 4px solid $color__neutral;
+		color: $color__neutral;
+		font-weight: 500;
+	}
+}
+
+// Show drop-down on hover or tap.
+.dropdown-label:hover .dropdown {
+	left: 0;
+}

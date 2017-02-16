@@ -31,3 +31,9 @@
 		width: calc(33% - #{$size__site-gutter});
 	}
 }
+
+// Filter/sort controls.
+.strikebase-filter-and-sort {
+	border-bottom: 1px solid $color__primary-light;
+	margin-bottom: $size__site-gutter;
+}

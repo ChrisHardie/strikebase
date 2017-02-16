@@ -147,6 +147,11 @@ require get_template_directory() . '/inc/date-and-time.php';
 require get_template_directory() . '/inc/check-ins.php';
 
 /**
+ * Load custom functionality related to filtering archive pages.
+ */
+require get_template_directory() . '/inc/filters.php';
+
+/**
  * Load extra misc functionality.
  */
 require get_template_directory() . '/inc/extras.php';

@@ -12,7 +12,7 @@
 	<h2 class="strikebase-card-title">
 		<?php the_title(); ?>
 	</h2>
-
+	
 	<?php strikebase_show_gravatar( get_the_ID() ); ?>
 
 	<dl>
@@ -24,5 +24,5 @@
 	</dl>
 
 	<a href="<?php echo esc_url( get_permalink() ); ?>" class="strikebase-card-link"> </a>
-	
+
 </article><!-- #post-## -->
