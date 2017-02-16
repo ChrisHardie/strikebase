@@ -42,6 +42,7 @@ class Strikebase_Post_Type_Project extends Strikebase_Post_Type {
 			'show_in_menu'        => true,
 			'show_in_admin_bar'   => true,
 			'show_in_nav_menus'   => false,
+			'show_in_rest'        => true,
 			'publicly_queryable'  => true,
 			'exclude_from_search' => false,
 			'has_archive'         => true,

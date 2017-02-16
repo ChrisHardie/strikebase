@@ -48,6 +48,7 @@ class Strikebase_Taxonomies_Person extends Strikebase_Taxonomies {
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
+			'show_in_rest'      => true,
 			'show_tagcloud'     => true,
 		);
 		register_taxonomy( 'person-type', $this->post_types, $type_args );

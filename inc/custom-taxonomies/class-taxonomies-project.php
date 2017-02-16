@@ -48,6 +48,7 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
+			'show_in_rest'      => true,
 			'show_tagcloud'     => true,
 		);
 		register_taxonomy( 'project-status', $this->post_types, $status_args );
@@ -79,6 +80,7 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
+			'show_in_rest'      => true,
 			'show_tagcloud'     => true,
 		);
 		register_taxonomy( 'project-genre', $this->post_types, $genre_args );
@@ -110,6 +112,7 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
+			'show_in_rest'      => true,
 			'show_tagcloud'     => true,
 		);
 		register_taxonomy( 'project-type', $this->post_types, $type_args );
@@ -141,6 +144,7 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
+			'show_in_rest'      => true,
 			'show_tagcloud'     => true,
 		);
 		register_taxonomy( 'project-host', $this->post_types, $host_args );
