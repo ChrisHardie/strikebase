@@ -638,6 +638,7 @@ tr:nth-of-type(even) {
     position: relative; }
   .main-navigation a {
     display: block;
+    padding: 10px 5px;
     text-decoration: none; }
 
 .strikebase-pagination {
@@ -704,8 +705,9 @@ a {
   margin: 0;
   padding: 0; }
 
-.dropdown-label {
-  position: relative; }
+@media (min-width: 640px) {
+  .dropdown-label {
+    position: relative; } }
 
 .dropdown-label > a {
   font-size: 0.8em;
@@ -725,11 +727,16 @@ a {
   display: inline-block;
   list-style-type: none;
   margin: -5px 0 0 0;
-  min-width: 300px;
   padding: 0;
   position: absolute;
   left: -9999em;
   z-index: 10; }
+  @media (max-width: 639px) {
+    .dropdown {
+      width: 100%; } }
+  @media (min-width: 640px) {
+    .dropdown {
+      min-width: 300px; } }
   .dropdown .dropdown-title,
   .dropdown .filter-link {
     border-bottom: 1px solid #F2EFEB;
@@ -777,7 +784,6 @@ body {
   padding: 20px; }
 
 .site-header {
-  border-bottom: 2px solid;
   padding-bottom: 20px;
   text-align: center; }
 

@@ -5,8 +5,11 @@
 	padding: 0;
 }
 
-.dropdown-label {
-	position: relative;
+// Only give a relative positioning on tablets and above–on smaller devices we want to span the whole screen.
+@include tablet {
+	.dropdown-label {
+		position: relative;
+	}
 }
 
 .dropdown-label > a {
@@ -21,11 +24,18 @@
 	display: inline-block;
 	list-style-type: none;
 	margin: -5px 0 0 0;
-	min-width: 300px;
 	padding: 0;
 	position: absolute;
 		left: -9999em;
 	z-index: 10;
+
+	@include mobile {
+		width: 100%;
+	}
+
+	@include tablet {
+		min-width: 300px;
+	}
 
 	.dropdown-title,
 	.filter-link {
