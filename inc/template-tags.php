@@ -127,31 +127,48 @@ function strikebase_output_person_meta( $section ) {
 
 /*
  * List the projects a given person is attached to.
+ * This is a pretty awkward way to retrieve this information, since
+ * we're looping through all the projects to see if they match our person.
  *
+ * @TODO: Figure out a less backward way of doing this, please!
  */
 function strikebase_list_person_projects( $person, $format = 'dd' ) {
-	// Custom query setup
+
+	// Get the ID of the person we're querying for
 	global $person_page_id;
 	$person_page_id = get_the_id();
+
+	// Create a query to select all projects.
 	$query_args = array( 'post_type' => 'project', 'posts_per_page' => -1 );
 	$project_query = new WP_Query( $query_args );
 
-	// Custom query loop
-	if ( $project_query->have_posts() ) {
-		while ( $project_query->have_posts() ) {
+	// Custom query loop for each project.
+	if ( $project_query->have_posts() ) :
+		while ( $project_query->have_posts() ) :
 			$project_query->the_post();
-			$projects = strikebase_get_project_meta( get_the_ID(), 'people' );
 
-			if ( $projects ) {
-				if ( is_array( $projects['influencers'] ) && in_array( $person_page_id, $projects['influencers'] ) ) {
-					echo '<'. $format .'>' . get_the_title() . '</' . $format . '>';
-				}
-			}
-		}
+			// For each project, we'll need to get all the people attached to that project.
+			$people_types = strikebase_get_project_meta( get_the_ID(), 'people' );
+
+			// Our output above gives us an index of arrays for different types of people.
+			// Let's merge those arrays into a single array instead.
+			$project_people = array();
+
+			foreach ( $people_types as $people_type ) :
+				// Make sure the array isn't empty!
+				if ( is_array( $people_type ) ) :
+					$project_people = array_merge( $project_people, $people_type );
+				endif;
+			endforeach;
+
+			// Now, we'll check to see if our selected person appears in the array of people for this project.
+			if ( in_array( $person_page_id, $project_people ) ) :
+				echo '<'. $format .'>' . get_the_title() . '</' . $format . '>';
+			endif;
+		endwhile;
+
 		wp_reset_postdata();
-	} else {
-		echo '<'. $format .'>' . esc_html_e( 'No associated projects.', 'strikebase' ) . '</' . $format . '>';
-	}
+	endif;
 }
 
 /*
