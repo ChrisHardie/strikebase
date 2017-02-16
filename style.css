@@ -685,8 +685,7 @@ a {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
-  padding: 13.33333px 20px;
-  text-transform: capitalize; }
+  padding: 13.33333px 20px; }
 
 .strikebase-card-link {
   display: block;
@@ -887,36 +886,41 @@ body {
   .widget {
     width: calc(50% - 40px); } }
 
-.widget-title {
-  font-size: 28.8px;
-  font-size: 1.8rem;
-  margin-bottom: 0;
-  text-align: center;
-  text-transform: uppercase; }
+/* Client check-ins widget */
+.strikebase-check-ins-widget {
+  padding-bottom: 0; }
+  .strikebase-check-ins-widget .strikebase-card-title {
+    margin-bottom: 0; }
 
-.strikebase-check-ins-widget ul {
+.strikebase-check-ins-list {
   list-style-type: none;
-  margin-left: 0;
-  padding-left: 0; }
+  margin: 0;
+  padding: 0; }
+  .strikebase-check-ins-list a {
+    color: #302816;
+    border-bottom: 1px solid #DBD4C6;
+    display: block;
+    padding: 20px;
+    text-decoration: none; }
+  .strikebase-check-ins-list li:last-of-type a {
+    border-bottom: none; }
 
-.strikebase-check-ins-widget li {
-  border-bottom: 2px solid;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 10px; }
-  @media (max-width: 639px) {
-    .strikebase-check-ins-widget li {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-      .strikebase-check-ins-widget li span,
-      .strikebase-check-ins-widget li a {
-        width: 100%; } }
+.strikebase-check-in-date {
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: #50715e;
+  display: block;
+  font-weight: 600;
+  padding-bottom: 2.5px; }
 
 .strikebase-overdue-check-in {
-  background: whitesmoke;
-  color: #A6302C; }
+  background: #faf4f4; }
+  .strikebase-overdue-check-in .strikebase-check-in-date {
+    color: #A6302C; }
+  .strikebase-overdue-check-in a {
+    border-color: rgba(166, 48, 44, 0.25); }
 
 /*--------------------------------------------------------------
 # CPTs

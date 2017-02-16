@@ -28,7 +28,6 @@
 	font-family: $font__main;
 	@include font-size(1);
 	padding: $size__site-gutter/1.5 $size__site-gutter;
-	text-transform: capitalize;
 }
 
 .strikebase-card-link {
