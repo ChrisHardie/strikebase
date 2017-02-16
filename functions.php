@@ -133,20 +133,20 @@ add_action( 'rest_api_init', 'strikebase_register_project_people' );
 function strikebase_project_people_get_cb( $post_data ) {
 	$people = strikebase_get_project_meta( $post_data['id'], 'people' );
 
-	return $people['influencers'];
+	return $people;
 }
 // Handles updating the 'project_people' meta
 function strikebase_project_people_update_cb( $values, $post ) {
 	$meta = get_post_meta( $post['id'], 'project_info', false );
 	if ( $meta ) {
-		$project_array = $meta[0][ 'people' ]['influencers'];
+		$project_array = $meta[0][ 'people' ];
 	}
 
 	if ( ! is_array( $values ) ) {
 		return new WP_Error( 'rest_meta_project_people_invalid', __( 'Failed to update the People meta. Expected Array.', 'strikebase' ), array( 'status' => 500 ) );
 	}
 
-	$update = update_post_meta( $post->id, $project_array, $values['influencers'] );
+	$update = update_post_meta( $post->id, $project_array, $values );
 
 	return $update;
 }

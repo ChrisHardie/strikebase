@@ -36,9 +36,11 @@ const PersonList = ( props ) => {
 										props.projects.map( ( project, k ) => {
 											let projectPeople = project['project-people'];
 
-											for ( let l = 0, ll = projectPeople.length; l < ll; l++ ) {
-												if ( projectPeople[l] == person.id ) {
-													return <div key={ k }><a href="#">{ project.title.rendered }</a></div>;
+											for ( let personType in projectPeople ) {
+												for ( let l = 0, ll = projectPeople[personType].length; l < ll; l++ ) {
+													if ( Array.isArray( projectPeople[personType] ) && projectPeople[personType][l] == person.id ) {
+														return <div key={ k }><a href="#">{ project.title.rendered }</a></div>;
+													}
 												}
 											}
 										} )
