@@ -297,7 +297,7 @@ function strikebase_list_terms( $post_ID, $taxonomy, $format = 'comma' ) {
  * This lists the people or projects who/that belong to a specific organisation.
  * @TODO show gravatars!
  */
-function strikebase_list_org_attachments( $organization, $post_type ) {
+function strikebase_list_org_attachments( $organization, $post_type, $format = 'comma' ) {
 
 	// Query posts for the CPTs that belong to the org (taxonomy) specified.
 	$args = array(
@@ -318,13 +318,18 @@ function strikebase_list_org_attachments( $organization, $post_type ) {
 
 		while ( $the_query->have_posts() ) :
 			$the_query->the_post();
-			$return .= '<a href="' . esc_url( get_the_permalink() ) . '">';
-			$return .= get_the_title();
-			$return .= '</a>';
+			$link = '<a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a>';
 
-			// Use a comma as a separator.
-			if ( $the_query->current_post + 1 < $the_query->post_count ) :
-				$return .= ', ';
+			if ( $format === 'comma' ) :
+				// Output the term without any wrapping tags.
+				$return .= $link;
+				// Use a comma as a separator.
+				if ( $the_query->current_post + 1 < $the_query->post_count ) :
+					$return .= ', ';
+				endif;
+			else :
+				// Wrap items in the format selected.
+				$return .= '<'. $format .'>' . $link . '</' . $format . '>';
 			endif;
 
 		endwhile;
