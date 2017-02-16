@@ -170,15 +170,5 @@ h3 {
   padding: 0 0 20px 0;
   margin: 0; }
 
-.adjectives h3 {
-  display: inline;
-  color: #3B5345;
-  font-family: "Francois One", courier;
-  font-size: 2.1rem;
-  padding-right: 0.2em; }
-
-.adjectives h3:nth-of-type(odd) {
-  color: #A6302C; }
-
-.headings {
-  text-align: left; }
+.dropdown-container {
+  margin-top: -20px; }

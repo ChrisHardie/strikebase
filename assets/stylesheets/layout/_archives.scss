@@ -36,4 +36,8 @@
 .strikebase-filter-and-sort {
 	border-bottom: 1px solid $color__primary-light;
 	margin-bottom: $size__site-gutter;
+
+	.dropdown-container {
+		display: inline-block;
+	}
 }

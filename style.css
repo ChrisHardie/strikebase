@@ -700,7 +700,6 @@ a {
 # Dropdowns
 --------------------------------------------------------------*/
 .dropdown-container {
-  display: inline-block;
   list-style-type: none;
   margin: 0;
   padding: 0; }
@@ -878,6 +877,8 @@ body {
 .strikebase-filter-and-sort {
   border-bottom: 1px solid #50715e;
   margin-bottom: 20px; }
+  .strikebase-filter-and-sort .dropdown-container {
+    display: inline-block; }
 
 /*--------------------------------------------------------------
 ## Dashboard

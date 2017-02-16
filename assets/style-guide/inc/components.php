@@ -33,3 +33,27 @@
 		<dd>Often contains definition lists</dd>
 	</dl>
 </section>
+
+<h3>Drop-downs</h3>
+
+<p>Drop-downs are used to show filter and sort options.</p>
+
+<ul class="dropdown-container">
+
+	<li class="dropdown-label">
+		<a href="#">Dropdown label</a>
+
+		<ul class="dropdown">
+			<li class="dropdown-title">[Filter or sort] by [thing]</li>
+
+			<?php
+			// Create an array of terms.
+			$terms = ['Red', 'Yellow', 'Blue'];
+
+			// Loop through the terms and output each as a filter option.
+			foreach ( $terms as $term ) : ?>
+				<li><a class="filter-link" href="#" data-filter="<?php echo $term; ?>"><?php echo $term; ?></a></li>
+			<?php endforeach; ?>
+		</ul> <!-- .dropdown -->
+	</li>
+</ul><!-- .dropdown-container -->
