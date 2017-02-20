@@ -75,7 +75,7 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 		);
 		$genre_args   = array(
 			'labels'            => $genre_labels,
-			'hierarchical'      => false,
+			'hierarchical'      => true,
 			'public'            => true,
 			'show_ui'           => true,
 			'show_admin_column' => true,
