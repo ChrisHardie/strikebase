@@ -72,6 +72,7 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 			'no_terms'                   => __( 'No items', 'strikebase' ),
 			'items_list'                 => __( 'Genres list', 'strikebase' ),
 			'items_list_navigation'      => __( 'Genres list navigation', 'strikebase' ),
+			'parent_item'                => esc_html__( 'Parent genre', 'strikebase' ),
 		);
 		$genre_args   = array(
 			'labels'            => $genre_labels,
