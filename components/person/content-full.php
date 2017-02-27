@@ -11,13 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">
-		<?php
-			$contact_info = strikebase_get_person_meta( get_the_ID() );
-			if ( $contact_info['email'] ) :
-				echo '<img class="gravatar" src="'. strikebase_get_gravatar( $contact_info['email'] ) . '?s=200&&d=mm" />';
-			endif;
-		?>
-
+		<?php strikebase_show_gravatar( get_the_ID() ); ?>
 		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 	</header><!-- .entry-header -->
 
@@ -32,13 +26,23 @@
 
 			<dt><?php esc_html_e( 'Projects', 'strikebase' ); ?></dt>
 			<?php strikebase_list_person_projects( get_the_ID() ); ?>
-
 		</dl>
 
-		<dl class="strikebase-contact-info">
-			<?php
+		<div class="entry-content">
+			<div class="label"><?php esc_html_e( 'Notes', 'strikebase' ); ?></div>
+			<?php the_content(); ?>
+		</div><!-- .entry-content -->
 
-			if ( $contact_info ) :
+	</div><!-- .strikebase-column -->
+
+	<div class="strikebase-column">
+
+		<section class="strikebase-card strikebase-contact-info">
+			<h2 class="strikebase-card-title">Contact information</h2>
+			<dl class="strikebase-contact-info">
+				<?php
+				$contact_info = strikebase_get_person_meta( $id );
+
 				if ( $contact_info ) :
 					foreach ( $contact_info as $key => $value ) :
 						if ( $value ) :
@@ -61,9 +65,9 @@
 						endif;
 					endforeach;
 				endif;
-			endif;
-			?>
-		</dl>
+				?>
+			</dl>
+		</section>
 
 	</div><!-- .strikebase-column -->
 

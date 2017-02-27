@@ -11,22 +11,19 @@
 	margin-right: auto;
 }
 
-// Clearfix
-@mixin clearfix() {
-	content: "";
-	display: table;
-	table-layout: fixed;
-}
-
-// Clear after (not all clearfix need this also)
-@mixin clearfix-after() {
-	clear: both;
-}
-
 // Format text in small-caps. (Mostly used for labels.)
 @mixin small-caps() {
-  font-size: 0.8em;
-  font-weight: 500;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
+	font-size: 0.8em;
+	font-weight: 500;
+	letter-spacing: 0.025em;
+	text-transform: uppercase;
+}
+
+// Output labels consistently.
+@mixin label() {
+	@include small-caps;
+	color: $color__primary-light;
+	display: block;
+	font-weight: 600;
+	padding-bottom: $size__site-gutter/8;
 }

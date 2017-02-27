@@ -26,7 +26,17 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<h1 class="site-title">Strikebase</h1>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<?php
+				$file = get_template_directory_uri() . '/assets/svg/strikebase.svg';
+				if ( function_exists( 'wpcom_is_vip' ) ) :
+					echo wpcom_vip_file_get_contents( esc_url( $file ) );
+				else :
+					echo file_get_contents( esc_url( $file ) );
+				endif;
+
+			?>
+		</a>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<ul>

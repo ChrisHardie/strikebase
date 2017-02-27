@@ -8,23 +8,16 @@
  */
 ?>
 
-<tr id="strikebase-<?php echo $term->slug; ?>">
+<article id="strikebase-<?php echo $term->slug; ?>" class="strikebase-card organization">
 
+	<h2 class="strikebase-card-title"><?php echo $term->name; ?></h2>
 
-	<td class="entry-title">
-		<?php echo $term->name; ?>
-	</td>
+	<dl>
+		<dt><?php esc_html_e( 'People', 'strikebase' ); ?></dt>
+		<?php strikebase_list_org_attachments( $term->slug, 'person', 'dd' ); ?>
 
-	<td class="strikebase-person-organization">
-		<?php strikebase_list_org_attachments( $term->slug, 'person' ); ?>
-	</td>
+		<dt><?php esc_html_e( 'Projects', 'strikebase' ); ?></dt>
+		<?php strikebase_list_org_attachments( $term->slug, 'project', 'dd' ); ?>
+	</dl>
 
-	<td class="strikebase-person-project">
-		<?php strikebase_list_org_attachments( $term->slug, 'project' ); ?>
-	</td>
-
-	<td class="strikebase-person-last-contact">
-		<?php strikebase_show_checkin_date( $term->slug ); ?>
-	</td>
-
-</tr><!-- #post-## -->
+</article><!-- #post-## -->

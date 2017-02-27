@@ -4,38 +4,45 @@
 	}
 }
 
-.widget-title {
-	@include font-size(1.8);
-	margin-bottom: 0;
-	text-align: center;
-	text-transform: uppercase;
+/* Client check-ins widget */
+.strikebase-check-ins-widget {
+	padding-bottom: 0;
+
+	.strikebase-card-title {
+		margin-bottom: 0;
+	}
 }
 
-.strikebase-check-ins-widget {
-	ul {
-		list-style-type: none;
-		margin-left: 0;
-		padding-left: 0;
+.strikebase-check-ins-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	a {
+		color: $color__black;
+		border-bottom: 1px solid $color__neutral-highlight;
+		display: block;
+		padding: $size__site-gutter;
+		text-decoration: none;
 	}
 
-	li {
-		border-bottom: 2px solid;
-		display: flex;
-		justify-content: space-between;
-		padding: $size__site-gutter/2;
-
-			@include mobile {
-				flex-wrap: wrap;
-
-				span,
-				a {
-					width: 100%;
-				}
-			}
+	li:last-of-type a {
+		border-bottom: none;
 	}
+}
+
+.strikebase-check-in-date {
+	@include label;
 }
 
 .strikebase-overdue-check-in {
-	background: lighten( desaturate($color__red, 70%), 55%);
-	color: $color__red;
+	background: $color__warning-background;
+
+	.strikebase-check-in-date {
+		color: $color__warning;
+	}
+
+	a {
+		border-color: transparentize($color__warning, 0.75);
+	}
 }
