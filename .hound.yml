@@ -1,0 +1,8 @@
+eslint:
+  enabled: true
+  esversion: 6
+
+scss:
+  config_file: config/scss.yml
+
+# fail_on_violations: true
