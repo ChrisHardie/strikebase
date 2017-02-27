@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Strikebase Style Guide</title>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Francois+One" type="text/css" media="all" />
 	<link rel="stylesheet" href="../../style.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="style-guide.css" type="text/css" media="all" />
 
