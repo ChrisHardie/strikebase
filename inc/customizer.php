@@ -17,7 +17,7 @@ function strikebase_customize_register( $wp_customize ) {
 	// General settings
 	$wp_customize->add_section( 'strikebase_general_settings', array(
 		'title'           => esc_html__( 'Custom Options', 'strikebase' ),
-		'description'     => __( 'Custom options for the site.', 'strikebase' ),
+		'description'     => esc_html__( 'Custom options for the site.', 'strikebase' ),
 	) );
 	$wp_customize->add_setting( 'strikebase_check_in_interval', array(
 		'type'              => 'theme_mod', // or 'option'
