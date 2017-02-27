@@ -1,0 +1,17 @@
+<svg class="strikebase-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 588 338">
+
+	<text class="logotype" transform="translate(122.98 277.34)"><tspan class="strike">Strike</tspan><tspan class="base">base</tspan></text>
+
+	<path class="mound" d="M84.67,286.75A75.93,75.93,0,0,0,25,316H144.32A75.93,75.93,0,0,0,84.67,286.75Z"/>
+
+	<g class="flagpole">
+		<circle cx="85" cy="20" r="8"/>
+		<path d="M84.67,284.75c1.11,0,2.22,0,3.33.08V29.54a10,10,0,0,1-6,0V284.81C82.89,284.77,83.78,284.75,84.67,284.75Z"/>
+	</g>
+
+	<g class="flag">
+		<path class="flag-shape" d="M90,40.28V172.56C161.29,184,232.59,81.9,303.88,102.19,232.59,37.81,161.29,95.83,90,40.28Z"/>
+		<circle class="circle cls-5" cx="138" cy="111" r="34"/>
+		<polygon class="bolt" points="147.18 108 138.34 108 140.03 89.26 128.96 114 137.79 114 136.1 132.74 147.18 108"/>
+	</g>
+</svg>

@@ -65,44 +65,45 @@ function strikebase_get_project_meta( $post_ID, $key ) {
  */
 function strikebase_output_project_meta( $section ) {
 	$project_metadata = strikebase_get_project_meta( get_the_ID(), $section );
-
 	if ( ! $project_metadata ) {
 		return;
 	}
+	?>
 
-	echo '<dl class="strikebase-"' . $section  . '>';
+	<section class="strikebase-card">
+		<h2 class="strikebase-card-title"><?php echo $section; ?></h2>
 
-	foreach ( $project_metadata as $key => $value ) :
-		if ( $value ) :
-
-		switch( $section ) :
-			case 'people':
-				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
-				if ( is_array( $value ) ) :
-					// If our value is an array, loop through it as well!
-					foreach ( $value as $person ) :
-						echo '<dd>' . get_the_title( $person ) . '</dd>';
-					endforeach;
-				else:
-					echo '<dd>' . $value . '</dd>';
+		<dl class="strikebase-<?php echo $section; ?>">
+			<?php foreach ( $project_metadata as $key => $value ) :
+				if ( $value ) :
+					switch( $section ) :
+						case 'people':
+							echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+							if ( is_array( $value ) ) :
+								// If our value is an array, loop through it as well!
+								foreach ( $value as $person ) :
+									echo '<dd>' . get_the_title( $person ) . '</dd>';
+								endforeach;
+							else:
+								echo '<dd>' . $value . '</dd>';
+							endif;
+							break;
+						case 'dates':
+							echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+							echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
+							break;
+						case 'links':
+							echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
+							echo '<dd><a href="' . $value . '">' . strikebase_simplify_URL( $value ) . '</a></dd>';
+							break;
+						default:
+							echo '<dd>' . $value . '</dd>';
+					endswitch;
 				endif;
-				break;
-			case 'dates':
-				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
-				echo '<dd>' . strikebase_formatted_date( $value ) . '</dd>';
-				break;
-			case 'links':
-				echo '<dt>' . strikebase_nice_key( $key ) . '</dt>';
-				echo '<dd><a href="' . $value . '">' . strikebase_simplify_URL( $value ) . '</a></dd>';
-				break;
-			default:
-				echo '<dd>' . $value . '</dd>';
-		endswitch;
-
-		endif;
-	endforeach;
-
-	echo '</dl>';
+			endforeach; ?>
+		</dl>
+	</section>
+<?php
 }
 
 /*
@@ -296,7 +297,7 @@ function strikebase_list_terms( $post_ID, $taxonomy, $format = 'comma' ) {
  * This lists the people or projects who/that belong to a specific organisation.
  * @TODO show gravatars!
  */
-function strikebase_list_org_attachments( $organization, $post_type ) {
+function strikebase_list_org_attachments( $organization, $post_type, $format = 'comma' ) {
 
 	// Query posts for the CPTs that belong to the org (taxonomy) specified.
 	$args = array(
@@ -317,13 +318,18 @@ function strikebase_list_org_attachments( $organization, $post_type ) {
 
 		while ( $the_query->have_posts() ) :
 			$the_query->the_post();
-			$return .= '<a href="' . esc_url( get_the_permalink() ) . '">';
-			$return .= get_the_title();
-			$return .= '</a>';
+			$link = '<a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a>';
 
-			// Use a comma as a separator.
-			if ( $the_query->current_post + 1 < $the_query->post_count ) :
-				$return .= ', ';
+			if ( $format === 'comma' ) :
+				// Output the term without any wrapping tags.
+				$return .= $link;
+				// Use a comma as a separator.
+				if ( $the_query->current_post + 1 < $the_query->post_count ) :
+					$return .= ', ';
+				endif;
+			else :
+				// Wrap items in the format selected.
+				$return .= '<'. $format .'>' . $link . '</' . $format . '>';
 			endif;
 
 		endwhile;

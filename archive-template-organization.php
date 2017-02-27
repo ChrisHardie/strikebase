@@ -21,13 +21,7 @@ get_header(); ?>
 
 			if ( $terms ) : ?>
 
-			<table class="strikebase-organization-list">
-				<thead>
-					<th><?php esc_html_e( 'Organization', 'strikebase' ); ?></th>
-					<th><?php esc_html_e( 'People', 'strikebase' ); ?></th>
-					<th><?php esc_html_e( 'Projects', 'strikebase' ); ?></th>
-					<th><?php esc_html_e( 'Last contact', 'strikebase' ); ?></th>
-				</thead>
+			<div class="strikebase-organizations-list">
 
 				<?php
 				foreach ( $terms as $term ) :
@@ -37,7 +31,7 @@ get_header(); ?>
 				endforeach;
 				?>
 
-			</table>
+			</div>
 		<?php else :
 			get_template_part( 'components/organization/content', 'none' );
 		endif; ?>

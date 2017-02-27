@@ -8,20 +8,21 @@
  */
 ?>
 
-<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'strikebase-card' ); ?>>
+	<h2 class="strikebase-card-title">
+		<?php the_title(); ?>
+	</h2>
+	
+	<?php strikebase_show_gravatar( get_the_ID() ); ?>
 
-	<td class="entry-title">
-		<a href="<?php echo esc_url( get_permalink() ); ?>">
-			<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?>
-		</a>
-	</td>
+	<dl>
+		<dt><?php esc_html_e( 'Organization', 'strikebase' ); ?></dt>
+		<?php strikebase_show_organization( get_the_ID(), 'dd' ); ?>
 
-	<td class="strikebase-person-organization">
-		<?php strikebase_show_organization( get_the_ID(), 'span' ); ?>
-	</td>
+		<dt><?php esc_html_e( 'Projects', 'strikebase' ); ?></dt>
+		<?php strikebase_list_person_projects( get_the_ID(), 'dd' ); ?>
+	</dl>
 
-	<td class="strikebase-person-project">
-		<?php strikebase_list_person_projects( get_the_ID(), 'span' ); ?>
-	</td>
+	<a href="<?php echo esc_url( get_permalink() ); ?>" class="strikebase-card-link"> </a>
 
-</tr><!-- #post-## -->
+</article><!-- #post-## -->

@@ -1,0 +1,32 @@
+// General Gravatar styles.
+.gravatar {
+	@include box-shadow;
+	border: 4px solid $color__pure-white;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+}
+
+// Arrange Gravatar next to name on single people pages.
+.person .entry-header {
+	align-items: center;
+	display: flex;
+
+	.gravatar {
+		margin-left: -$size__site-gutter/1.5;
+		margin-right: $size__site-gutter/1.5;
+	}
+
+	.entry-title {
+		margin-bottom: 0;
+	}
+}
+
+// Colour-code people on archives by person type.
+.person-type-striker .strikebase-card-title {
+	background: $color__accent-alt;
+}
+
+.person-type-contractor .strikebase-card-title {
+	background: $color__accent;
+}

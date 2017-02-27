@@ -276,29 +276,6 @@ th {
   margin-right: auto; }
 
 /*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after {
-  content: "";
-  display: table;
-  table-layout: fixed; }
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after {
-  clear: both; }
-
-/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 body,
@@ -306,23 +283,45 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
+  color: #302816;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.4; }
 
 h1, h2, h3, h4, h5, h6 {
-  clear: both;
+  color: #544A35;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0 0 20px; }
+
+h1 {
   font-family: "Francois One", courier;
+  font-size: 3.125em;
+  font-weight: normal;
+  letter-spacing: -0.05em;
+  line-height: 1; }
+
+h2 {
+  font-family: "Francois One", courier;
+  font-size: 2.618em;
   font-weight: normal;
   letter-spacing: -0.025em; }
 
-h2 {
-  font-size: 2.1em; }
+h3 {
+  font-size: 1.931em; }
+
+h4 {
+  font-size: 1.618; }
+
+h5 {
+  font-size: 1.194em; }
+
+h6 {
+  font-size: 1em; }
 
 p {
-  margin-bottom: 1.5em; }
+  margin: 0 0 40px; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -434,7 +433,11 @@ label,
   font-size: 0.8em;
   font-weight: 500;
   letter-spacing: 0.025em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #50715e;
+  display: block;
+  font-weight: 600;
+  padding-bottom: 2.5px; }
 
 /*--------------------------------------------------------------
 # Buttons
@@ -497,17 +500,23 @@ li > ol {
   margin-left: 1.5em; }
 
 dl {
-  border-bottom: 2px solid;
-  padding-bottom: 10px; }
+  margin: 0;
+  padding-bottom: 40px; }
 
 dt {
   font-size: 0.8em;
   font-weight: 500;
   letter-spacing: 0.025em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #50715e;
+  display: block;
+  font-weight: 600;
+  padding-bottom: 2.5px; }
 
 dd {
-  margin: 0 0 5px; }
+  margin: 0; }
+  dd + dt {
+    padding-top: 20px; }
 
 /*--------------------------------------------------------------
 # Tables
@@ -629,6 +638,7 @@ tr:nth-of-type(even) {
     position: relative; }
   .main-navigation a {
     display: block;
+    padding: 10px 5px;
     text-decoration: none; }
 
 .strikebase-pagination {
@@ -638,15 +648,114 @@ tr:nth-of-type(even) {
 # Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: #A6302C; }
   a:visited {
-    color: purple; }
+    color: #A6302C; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #3B5345; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
     outline: 0; }
+
+/*--------------------------------------------------------------
+# Cards
+--------------------------------------------------------------*/
+.strikebase-card {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFD;
+  margin: 20px 0;
+  max-width: 520px;
+  padding-bottom: 10px;
+  position: relative; }
+  @media (max-width: 639px) {
+    .strikebase-card {
+      margin-left: -20px;
+      width: calc(100% + 40px); } }
+  .strikebase-card dl {
+    padding: 0 20px 10px; }
+  .strikebase-card .gravatar {
+    position: absolute;
+    top: -20px;
+    right: 20px; }
+
+.strikebase-card-title {
+  background: #544A35;
+  color: #FFFFFD;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  padding: 13.33333px 20px; }
+
+.strikebase-card-link {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+/*--------------------------------------------------------------
+# Dropdowns
+--------------------------------------------------------------*/
+.dropdown-container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+@media (min-width: 640px) {
+  .dropdown-label {
+    position: relative; } }
+
+.dropdown-label > a {
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: #50715e;
+  display: block;
+  font-weight: 600;
+  padding-bottom: 2.5px;
+  padding: 10px 20px 10px 0;
+  text-decoration: none; }
+
+.dropdown {
+  background: #FFFFFD;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  list-style-type: none;
+  margin: -5px 0 0 0;
+  padding: 0;
+  position: absolute;
+  left: -9999em;
+  z-index: 10; }
+  @media (max-width: 639px) {
+    .dropdown {
+      width: 100%; } }
+  @media (min-width: 640px) {
+    .dropdown {
+      min-width: 300px; } }
+  .dropdown .dropdown-title,
+  .dropdown .filter-link {
+    border-bottom: 1px solid #F2EFEB;
+    color: #544A35;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    padding: 10px;
+    text-decoration: none; }
+  .dropdown .dropdown-title {
+    background: rgba(242, 239, 235, 0.5); }
+  .dropdown .filter-link:hover {
+    background: rgba(242, 239, 235, 0.25); }
+  .dropdown .filter-link.active {
+    background: rgba(242, 239, 235, 0.5);
+    border-right: 4px solid #544A35;
+    color: #544A35;
+    font-weight: 500; }
+
+.dropdown-label:hover .dropdown {
+  left: 0; }
 
 /*--------------------------------------------------------------
 # Layout
@@ -661,7 +770,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #fff;
+  background: #F2EFEB;
   /* Fallback for when there is no custom background color defined. */ }
 
 /*--------------------------------------------------------------
@@ -670,15 +779,31 @@ body {
 .site-main {
   margin: 0 auto;
   max-width: 1040px;
-  padding: 10px; }
+  padding: 20px; }
 
 .site-header {
-  border-bottom: 2px solid;
   padding-bottom: 20px;
   text-align: center; }
 
-.site-title {
-  font-size: 3em; }
+.strikebase-logo {
+  max-width: 300px; }
+  .strikebase-logo .mound {
+    fill: #544A35; }
+  .strikebase-logo .flagpole {
+    fill: #302816; }
+  .strikebase-logo .flag-shape {
+    fill: #3B5345; }
+  .strikebase-logo .bolt {
+    fill: #A6302C; }
+  .strikebase-logo .circle {
+    fill: #E8B136; }
+  .strikebase-logo .logotype {
+    font-family: "Francois One", courier;
+    font-size: 100px; }
+  .strikebase-logo .strike {
+    fill: #A6302C; }
+  .strikebase-logo .base {
+    fill: #3B5345; }
 
 /* Center-align page headers on archive pages. */
 .archive .page-header {
@@ -687,7 +812,8 @@ body {
 /*--------------------------------------------------------------
 ## People & projects CPT
 --------------------------------------------------------------*/
-article {
+.single .person,
+.single .project {
   -ms-flex-line-pack: justify;
   align-content: space-between;
   -ms-flex-align: baseline;
@@ -700,15 +826,62 @@ article {
   flex-wrap: wrap;
   -ms-flex-pack: justify;
   justify-content: space-between; }
-  article .entry-header {
+  .single .person .entry-header,
+  .single .project .entry-header {
     width: 100%; }
+  .single .person .strikebase-card + .strikebase-card,
+  .single .project .strikebase-card + .strikebase-card {
+    margin-top: 40px; }
 
 .entry-content {
   max-width: 100%; }
 
+@media (max-width: 639px) {
+  .strikebase-column {
+    width: 100%; } }
+
 @media (min-width: 640px) {
   .strikebase-column {
-    width: calc(50% - 40px); } }
+    width: calc(50% - 20px); } }
+
+.post-type-archive-person .site-main,
+.post-type-archive-project .site-main,
+.page-template-archive-template-organization .site-main {
+  max-width: 1240px; }
+
+@media (min-width: 640px) {
+  .strikebase-people-list,
+  .strikebase-projects-list,
+  .strikebase-organizations-list {
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .strikebase-people-list .person,
+  .strikebase-projects-list .project,
+  .strikebase-organizations-list .organization {
+    margin-bottom: 20px;
+    width: calc(50% - 20px); } }
+
+@media (min-width: 1024px) {
+  .strikebase-people-list .person,
+  .strikebase-projects-list .project,
+  .strikebase-organizations-list .organization {
+    width: calc(33% - 20px); } }
+
+.strikebase-filter-and-sort {
+  border-bottom: 1px solid #50715e;
+  margin-bottom: 20px; }
+  .strikebase-filter-and-sort .dropdown-container {
+    display: inline-block; }
 
 /*--------------------------------------------------------------
 ## Dashboard
@@ -717,36 +890,68 @@ article {
   .widget {
     width: calc(50% - 40px); } }
 
-.widget-title {
-  font-size: 28.8px;
-  font-size: 1.8rem;
-  margin-bottom: 0;
-  text-align: center;
-  text-transform: uppercase; }
+/* Client check-ins widget */
+.strikebase-check-ins-widget {
+  padding-bottom: 0; }
+  .strikebase-check-ins-widget .strikebase-card-title {
+    margin-bottom: 0; }
 
-.strikebase-check-ins-widget ul {
+.strikebase-check-ins-list {
   list-style-type: none;
-  margin-left: 0;
-  padding-left: 0; }
+  margin: 0;
+  padding: 0; }
+  .strikebase-check-ins-list a {
+    color: #302816;
+    border-bottom: 1px solid #DBD4C6;
+    display: block;
+    padding: 20px;
+    text-decoration: none; }
+  .strikebase-check-ins-list li:last-of-type a {
+    border-bottom: none; }
 
-.strikebase-check-ins-widget li {
-  border-bottom: 2px solid;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 10px; }
-  @media (max-width: 639px) {
-    .strikebase-check-ins-widget li {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-      .strikebase-check-ins-widget li span,
-      .strikebase-check-ins-widget li a {
-        width: 100%; } }
+.strikebase-check-in-date {
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: #50715e;
+  display: block;
+  font-weight: 600;
+  padding-bottom: 2.5px; }
 
 .strikebase-overdue-check-in {
-  background: #f6eeee;
-  color: #cc0000; }
+  background: #faf4f4; }
+  .strikebase-overdue-check-in .strikebase-check-in-date {
+    color: #A6302C; }
+  .strikebase-overdue-check-in a {
+    border-color: rgba(166, 48, 44, 0.25); }
+
+/*--------------------------------------------------------------
+# CPTs
+--------------------------------------------------------------*/
+.gravatar {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border: 4px solid #FFFFFD;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px; }
+
+.person .entry-header {
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex; }
+  .person .entry-header .gravatar {
+    margin-left: -13.33333px;
+    margin-right: 13.33333px; }
+  .person .entry-header .entry-title {
+    margin-bottom: 0; }
+
+.person-type-striker .strikebase-card-title {
+  background: #E8B136; }
+
+.person-type-contractor .strikebase-card-title {
+  background: #A6302C; }
 
 /*--------------------------------------------------------------
 # Media

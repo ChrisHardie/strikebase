@@ -73,11 +73,11 @@ function strikebase_get_check_ins( $return='all' ) {
 		wp_reset_postdata();
 
 		// Sort arrays by the check-in date.
-		function compareOrder( $a, $b ) {
+		function compare_order( $a, $b ) {
 			return $a['next_check_in'] - $b['next_check_in'];
 		}
-		usort( $upcoming_check_ins, 'compareOrder' );
-		usort( $overdue_check_ins, 'compareOrder' );
+		usort( $upcoming_check_ins, 'compare_order' );
+		usort( $overdue_check_ins, 'compare_order' );
 
 		// Limit upcoming check-ins to the first three.
 		$upcoming_check_ins = array_slice( $upcoming_check_ins, 0, 3 );

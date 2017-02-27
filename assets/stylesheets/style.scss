@@ -47,8 +47,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "variables/colors";
 @import "variables/typography";
 @import "variables/structure";
-@import "mixins/typography";
 @import "mixins/breakpoints";
+@import "mixins/typography";
+@import "mixins/effects";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -64,11 +65,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Alignments
 --------------------------------------------------------------*/
 @import "shared/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-@import "shared/clearings";
 
 /*--------------------------------------------------------------
 # Typography
@@ -111,9 +107,24 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "shared/links";
 
 /*--------------------------------------------------------------
+# Cards
+--------------------------------------------------------------*/
+@import "components/cards";
+
+/*--------------------------------------------------------------
+# Dropdowns
+--------------------------------------------------------------*/
+@import "components/dropdowns";
+
+/*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
 @import "layout/layout";
+
+/*--------------------------------------------------------------
+# CPTs
+--------------------------------------------------------------*/
+@import "layout/people";
 
 /*--------------------------------------------------------------
 # Media

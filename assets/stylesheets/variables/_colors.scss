@@ -1,22 +1,52 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$color__red: #A6302C;
+$color__green: #3B5345;
+$color__yellow: #E8B136;
 
-$color__text-screen: #21759b;
+$color__primary: $color__green;
+$color__primary-light: lighten($color__primary, 10%);
+$color__primary-dark: darken($color__primary, 10%);
+
+$color__accent-alt: $color__yellow;
+$color__highlight: lighten($color__accent-alt, 20%);
+
+$color__accent: $color__red;
+
+$color__black: #302816;
+$color__neutral: #544A35;
+$color__neutral-highlight: #DBD4C6;
+$color__white: #F2EFEB;
+$color__pure-white: #FFFFFD;
+
+// Background & body text
+$color__background-body: $color__white;
+$color__text-main: $color__black;
+
+// Links
+$color__link: $color__accent;
+$color__link-visited: $color__link;
+$color__link-hover: $color__primary;
+
+// Interface elements
+$color__warning: $color__red;
+$color__warning-background: #faf4f4;
+
+// Inputs
+$color__border-input: #ccc;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
 
+// Buttons
+$color__background-button: #e6e6e6;
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
+
+// Misc HTML elements
+$color__background-hr: #ccc;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
 $color__border-abbr: #666;
 
-$color__red: #cc0000;
+// Screenreader stuff; best to leave be.
+$color__background-screen: #f1f1f1;
+$color__text-screen: #21759b;
