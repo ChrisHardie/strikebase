@@ -91,7 +91,7 @@ linters:
     enabled: true
     allow_non_nested_indentation: false
     character: tab # or 'space'
-    width: 2
+    width: 1
 
   LeadingZero:
     enabled: true
