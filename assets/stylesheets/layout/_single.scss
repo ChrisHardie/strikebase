@@ -32,3 +32,7 @@
 		width: calc(50% - #{$size__site-gutter});
 	}
 }
+
+.entry-content .label {
+	padding-bottom: $size__site-gutter/2;
+}

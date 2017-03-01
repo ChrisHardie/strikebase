@@ -1,19 +1,25 @@
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 $size__site-gutter 0;
+	padding: 0;
 }
 
-ul {
-	list-style: disc;
+.entry-content ul li {
+	list-style: none;
+	position: relative;
 }
 
-ol {
-	list-style: decimal;
+.entry-content ul li::before {
+	content: '\2022';
+	font-size: 0.75em;
+	line-height: 2;
+	position: absolute;
+	right: 100.5%;
 }
 
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: $size__site-gutter;
 }
 
 dl {

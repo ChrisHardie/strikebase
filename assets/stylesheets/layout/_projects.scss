@@ -1,0 +1,4 @@
+// Convert case on card titles on this page, since they look wrong.
+.single-project .strikebase-card-title {
+	text-transform: capitalize;
+}
