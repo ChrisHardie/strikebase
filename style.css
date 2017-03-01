@@ -953,6 +953,9 @@ body {
 .person-type-contractor .strikebase-card-title {
   background: #A6302C; }
 
+.single-project .strikebase-card-title {
+  text-transform: capitalize; }
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
