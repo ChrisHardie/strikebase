@@ -18,23 +18,6 @@ import '../../../style-guide/stylesheets/style-guide.scss';
 class App extends Component {
 	constructor( props ) {
 		super( props );
-		this.state = {
-			people: [],
-			projects: [],
-			statuses: [],
-			organizations: []
-		};
-	}
-	componentWillMount() {
-		getApiData()
-			.then( ( data ) => {
-				this.setState( {
-					people: data.people,
-					projects: data.projects,
-					statuses: data.statuses,
-					organizations: data.organizations
-				} );
-			} );
 	}
 	render() {
 		let children = React.Children.map( this.props.children, ( child ) => {
