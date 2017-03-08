@@ -23,6 +23,7 @@
 	display: inline-block;
 	list-style-type: none;
 	margin: -5px 0 0 0;
+
 	padding: 0;
 	position: absolute;
 		left: -9999em;
@@ -80,6 +81,18 @@
 
 // Filter submenus.
 .dropdown-submenu {
+	background: $color__pure-white;
+	@include box-shadow;
 	list-style-type: none;
-	margin-left: 10px;
+	padding: 0;
+	position: absolute;
+		left: -9999em;
+	width: 200px;
+	z-index: 10;
+}
+
+// Show drop-down on hover or tap.
+.dropdown-submenu-link:hover + .dropdown-submenu {
+	left: 95%;
+	top: -20px;
 }
