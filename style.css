@@ -771,6 +771,10 @@ a {
 .dropdown-label:hover .dropdown {
   left: 0; }
 
+.dropdown-submenu {
+  list-style-type: none;
+  margin-left: 10px; }
+
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
@@ -978,6 +982,9 @@ body {
 
 .single-project .strikebase-card-title {
   text-transform: capitalize; }
+
+.dropdown-container-project-genre .dropdown {
+  left: 0; }
 
 /*--------------------------------------------------------------
 # Media
