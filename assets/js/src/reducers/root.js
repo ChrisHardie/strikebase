@@ -9,7 +9,9 @@ import { routerReducer } from 'react-router-redux';
  */
 import people from './people';
 import projects from './projects';
+import statuses from './statuses';
+import organizations from './organizations';
 
-const rootReducer = combineReducers( { people, projects, routing: routerReducer } );
+const rootReducer = combineReducers( { people, projects, statuses, organizations, routing: routerReducer } );
 
 export default rootReducer;

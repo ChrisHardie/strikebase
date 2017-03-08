@@ -10,15 +10,21 @@ import { browserHistory } from 'react-router';
  */
 import rootReducer from './reducers/root';
 
-// API call for default data
-const defaultState = getApiData().then( ( data ) => {
-	this.setState( {
-		people: data.people,
-		projects: data.projects,
-		statuses: data.statuses,
-		organizations: data.organizations
-	} );
-} );
+// Set default state here, instead of App component constructor
+const defaultState = {
+	people: [],
+	projects: [],
+	statuses: [],
+	organizations: []
+};
+// const defaultState = getApiData().then( ( data ) => {
+// 	return {
+// 		people: data.people,
+// 		projects: data.projects,
+// 		statuses: data.statuses,
+// 		organizations: data.organizations
+// 	};
+// } );
 
 // Create Store
 const store = createStore( rootReducer, defaultState );
