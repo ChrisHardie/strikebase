@@ -2,6 +2,18 @@
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+
+	// Show drop-down when tapped.
+	&.open {
+		.dropdown {
+			left: 0;
+		}
+
+		.dropdown-link {
+			color: $color__primary-dark;
+			outline: none;
+		}
+	}
 }
 
 // Only give a relative positioning on tablets and above–on smaller devices we want to span the whole screen.
@@ -18,16 +30,16 @@
 }
 
 .dropdown {
-	background: $color__pure-white;
 	@include box-shadow;
+	background: $color__pure-white;
 	display: inline-block;
+	left: -9999em;
 	list-style-type: none;
 	margin: -5px 0 0 0;
 	max-height: 380px;
 	overflow: auto;
 	padding: 0;
 	position: absolute;
-		left: -9999em;
 	z-index: 10;
 
 	@include mobile {
@@ -59,8 +71,8 @@
 	.dropdown-submenu-link {
 		padding: 11px 12px 6px;
 		position: absolute;
-			top: 0;
-			right: 0;
+		right: 0;
+		top: 0;
 	}
 
 	.filter-link:hover {
@@ -75,18 +87,6 @@
 	}
 }
 
-// Show drop-down when tapped.
-.dropdown-container.open {
-	.dropdown {
-		left: 0;
-	}
-
-	.dropdown-link {
-		color: $color__primary-dark;
-		outline: none;
-	}
-}
-
 // Filter submenus.
 .dropdown-submenu {
 	background: $color__pure-white;
@@ -94,7 +94,7 @@
 	list-style-type: none;
 	padding: 0;
 	position: absolute;
-		left: -9999em;
+	left: -9999em;
 	width: 200px;
 	z-index: 10;
 }
