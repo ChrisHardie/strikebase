@@ -9,6 +9,7 @@ import { browserHistory } from 'react-router';
  * Internal Dependencies
  */
 import rootReducer from './reducers/root';
+// import { getApiData } from '../data';
 
 // Set default state here, instead of App component constructor
 const defaultState = {
