@@ -75,9 +75,16 @@
 	}
 }
 
-// Show drop-down on hover or tap.
-.dropdown-label:hover .dropdown {
-	left: 0;
+// Show drop-down when tapped.
+.dropdown-container.open {
+	.dropdown {
+		left: 0;
+	}
+
+	.dropdown-link {
+		color: $color__primary-dark;
+		outline: none;
+	}
 }
 
 // Filter submenus.
@@ -94,6 +101,6 @@
 
 // Show drop-down on hover or tap.
 .dropdown-submenu-link:hover + .dropdown-submenu {
-	left: 95%;
-	top: -20px;
+	//left: 95%;
+	//top: -20px;
 }

@@ -14,7 +14,7 @@ function strikebase_filters( $taxonomy, $dropdown_label ) { ?>
 	<ul class="dropdown-container dropdown-container-<?php echo $taxonomy; ?>">
 
 		<li class="dropdown-label">
-			<a href="#"><?php echo esc_html__( $dropdown_label ); ?></a>
+			<a class="dropdown-link" href="#"><?php echo esc_html__( $dropdown_label ); ?></a>
 
 			<ul class="dropdown">
 				<li class="dropdown-title"><?php printf( esc_html__( 'Filter by %1$s', 'strikebase' ), strtolower( get_taxonomy( $taxonomy )->label ) ); ?></li>

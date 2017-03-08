@@ -777,8 +777,12 @@ a {
     color: #544A35;
     font-weight: 500; }
 
-.dropdown-label:hover .dropdown {
+.dropdown-container.open .dropdown {
   left: 0; }
+
+.dropdown-container.open .dropdown-link {
+  color: #26352c;
+  outline: none; }
 
 .dropdown-submenu {
   background: #FFFFFD;
@@ -789,10 +793,6 @@ a {
   left: -9999em;
   width: 200px;
   z-index: 10; }
-
-.dropdown-submenu-link:hover + .dropdown-submenu {
-  left: 95%;
-  top: -20px; }
 
 /*--------------------------------------------------------------
 # Layout
