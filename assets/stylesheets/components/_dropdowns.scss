@@ -50,6 +50,17 @@
 		background: transparentize($color__white, 0.5);
 	}
 
+	li {
+		position: relative;
+	}
+
+	.dropdown-submenu-link {
+		padding: 11px 12px 6px;
+		position: absolute;
+			top: 0;
+			right: 0;
+	}
+
 	.filter-link:hover {
 		background: transparentize($color__white, 0.75);
 	}

@@ -760,6 +760,13 @@ a {
     text-decoration: none; }
   .dropdown .dropdown-title {
     background: rgba(242, 239, 235, 0.5); }
+  .dropdown li {
+    position: relative; }
+  .dropdown .dropdown-submenu-link {
+    padding: 11px 12px 6px;
+    position: absolute;
+    top: 0;
+    right: 0; }
   .dropdown .filter-link:hover {
     background: rgba(242, 239, 235, 0.25); }
   .dropdown .filter-link.active {

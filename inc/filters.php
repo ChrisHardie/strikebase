@@ -37,6 +37,7 @@ function strikebase_filter_terms( $taxonomy, $parent=0 ) {
 
 	if ( $terms ) :
 		if ( 0 !== $parent ) : ?>
+			<a class="dropdown-submenu-link" href="#"><img src='https://icon.now.sh/chevron' alt="Show sub-categories" /></a>
 			<ul class="dropdown-submenu">
 		<?php endif;
 
