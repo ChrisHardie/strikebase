@@ -52,7 +52,7 @@
 		event.stopPropagation();
 
 		// Are there any filters already selected in this group?
-		if ( $( this ).parents( '.dropdown-menu' ).find( '.filter-link.selected' ).length === 0 ) {
+		if ( 0 === $( this ).parents( '.dropdown-menu' ).find( '.filter-link.selected' ).length ) {
 			// No filters already selected. Hide everything except cards that match the clicked-on filter.
 			$( this ).addClass( 'selected' );
 			$( '.site-main' ).find( '.strikebase-card' ).not( '.' + $( this ).data( 'filter' ) ).addClass( 'hidden' );
@@ -63,6 +63,12 @@
 				// Hide the filter if it's visible.
 				$( this ).removeClass( 'selected' );
 				$( '.site-main' ).find( '.' + $( this ).data( 'filter' ) ).addClass( 'hidden' );
+
+				// Did we just accidentally hide all the cards? Let's check.
+				if ( 0 === $( '.site-main' ).find( '.strikebase-card:not(.hidden)' ).length ) {
+					// Show all cards
+					$( '.site-main' ).find( '.strikebase-card' ).removeClass( 'hidden' );
+				}
 			} else {
 				// Otherwise, show the cards.
 				$( this ).addClass( 'selected' );
@@ -73,7 +79,7 @@
 
 	// Listen to all clicks on the body and close any open dropdowns.
 	$( 'body' ).on( 'click', function( event ) {
-		if ( $( event.target ).parents( '.dropdown' ) .length === 0 ) {
+		if ( 0 === $( event.target ).parents( '.dropdown' ).length ) {
 			$( '.dropdown-container' ).removeClass( 'open' );
 		}
 	});
