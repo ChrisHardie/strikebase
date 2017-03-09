@@ -10,7 +10,6 @@ import thunk from 'redux-thunk';
  * Internal Dependencies
  */
 import rootReducer from './reducers/root';
-// import { getApiData } from '../data';
 
 // Set default state here, instead of App component constructor
 const initialState = {
@@ -19,14 +18,6 @@ const initialState = {
 	statuses: [],
 	organizations: []
 };
-// const defaultState = getApiData().then( ( data ) => {
-// 	return {
-// 		people: data.people,
-// 		projects: data.projects,
-// 		statuses: data.statuses,
-// 		organizations: data.organizations
-// 	};
-// } );
 
 // Create Store
 const store = createStore( rootReducer, initialState, applyMiddleware( thunk ) );
