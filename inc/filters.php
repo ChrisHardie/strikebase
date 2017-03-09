@@ -16,18 +16,68 @@ function strikebase_filters( $taxonomy, $dropdown_label ) { ?>
 		<li class="dropdown-label">
 			<a class="dropdown-link" href="#"><?php echo esc_html__( $dropdown_label ); ?></a>
 
-			<ul class="dropdown">
+			<div class="dropdown-wrapper">
+			<ul class="dropdown-menu">
 				<li class="dropdown-title"><?php printf( esc_html__( 'Filter by %1$s', 'strikebase' ), strtolower( get_taxonomy( $taxonomy )->label ) ); ?></li>
 
-				<?php strikebase_filter_terms( $taxonomy ); ?>
-			</ul> <!-- .dropdown -->
+				<?php
+				// Get all terms at the top level of the selected taxonomy.
+				$terms = get_terms( array(
+					'taxonomy'   => $taxonomy,
+					'hide_empty' => false,
+					'parent'     => 0,
+				) );
+
+				if ( $terms ) :
+					// Loop through the terms and output each as a filter option.
+					foreach ( $terms as $term ) : ?>
+						<li><a class="filter-link" href="#" data-filter="<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
+
+						<?php
+						// Get all child terms.
+						$child_terms = strikebase_filter_child_terms( $taxonomy, $term->term_id );
+						if ( $child_terms ) :
+
+							// Save the terms in a new array. We'll output them a little later.
+							$child_term_array[$term->slug] = strikebase_filter_child_terms( $taxonomy, $term->term_id );
+							?>
+
+							<a class="dropdown-submenu-link" href="#"><img src='https://icon.now.sh/chevron' alt="Show sub-categories" /></a>
+
+						<?php endif; ?>
+						</li>
+
+					<?php endforeach;
+				endif; ?>
+			</ul> <!-- .dropdown-menu -->
+
+			<?php
+				// Okay, now it's time to output lists of all the child terms.
+				if ( ! empty( $child_term_array ) ) :
+					foreach ( $child_term_array as $parent_term=>$child_terms ) : ?>
+						<ul class="dropdown-menu dropdown-submenu <?php echo $parent_term; ?>">
+							<li class="dropdown-title">< <?php echo $parent_term; ?></li>
+
+							<?php foreach ( $child_terms as $child_term ) : ?>
+								<li><a class="filter-link" href="#" data-filter="<?php echo $child_term->slug; ?>"><?php echo $child_term->name; ?></a>
+							<?php endforeach; ?>
+
+						</ul><!-- .dropdown-menu -->
+					<?php endforeach;
+				endif;
+			?>
+			</div><!-- .dropdown-wrapper -->
 		</li>
 	</ul><!-- .dropdown-container -->
 
 <?php
 }
 
-function strikebase_filter_terms( $taxonomy, $parent=0 ) {
+/*
+ * Return an array containing all child terms of a parent term.
+ *
+ */
+function strikebase_filter_child_terms( $taxonomy, $parent=0 ) {
 	// Get all terms in our taxonomy.
 	$terms = get_terms( array(
 		'taxonomy'   => $taxonomy,
@@ -36,27 +86,8 @@ function strikebase_filter_terms( $taxonomy, $parent=0 ) {
 	) );
 
 	if ( $terms ) :
-		if ( 0 !== $parent ) : ?>
-			<a class="dropdown-submenu-link" href="#"><img src='https://icon.now.sh/chevron' alt="Show sub-categories" /></a>
-			<ul class="dropdown-submenu">
-		<?php endif;
-
-			// Loop through the terms and output each as a filter option.
-			foreach ( $terms as $term ) : ?>
-				<li><a class="filter-link" href="#" data-filter="<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
-
-				<?php
-				// Check for child terms of the current taxonomy as well!
-				strikebase_filter_terms( $taxonomy, $term->term_id );
-				?>
-
-				</li>
-
-			<?php
-			endforeach;
-
-		if ( 0 !== $parent ) : ?>
-			</ul>
-		<?php endif;
+		return $terms;
+	else :
+		return false;
 	endif;
 }
