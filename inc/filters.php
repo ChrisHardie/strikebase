@@ -33,7 +33,7 @@ function strikebase_filters( $taxonomy, $dropdown_label ) { ?>
 				if ( $terms ) :
 					// Loop through the terms and output each as a filter option.
 					foreach ( $terms as $term ) : ?>
-						<li><a class="filter-link" href="#" data-filter="<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
+						<li><a class="filter-link" href="#" data-filter="<?php echo $term->taxonomy; ?>-<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
 
 						<?php
 						// Get all child terms.

@@ -681,7 +681,8 @@ a {
   margin: 20px 0;
   max-width: 520px;
   padding-bottom: 10px;
-  position: relative; }
+  position: relative;
+  transition: opacity 4s ease-in-out; }
   @media (max-width: 639px) {
     .strikebase-card {
       margin-left: -20px;
@@ -692,6 +693,11 @@ a {
     position: absolute;
     top: -20px;
     right: 20px; }
+  .strikebase-card.hidden {
+    opacity: 0;
+    display: none; }
+    .strikebase-card.hidden .strikebase-card-title {
+      background: #E8B136; }
 
 .strikebase-card-title {
   background: #544A35;
@@ -806,6 +812,9 @@ a {
   border-right: 4px solid #544A35;
   color: #544A35;
   font-weight: 500; }
+
+.filter-link.selected {
+  font-weight: bold; }
 
 .dropdown-submenu-open {
   padding: 11px 12px 6px;

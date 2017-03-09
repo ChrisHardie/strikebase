@@ -5,6 +5,7 @@
 	max-width: $size__site-width/2;
 	padding-bottom: $size__site-gutter/2;
 	position: relative;
+	transition: opacity 4s ease-in-out;
 
 	@include mobile {
 		margin-left: -#{$size__site-gutter};
@@ -19,6 +20,15 @@
 		position: absolute;
 		top: -$size__site-gutter;
 		right: $size__site-gutter;
+	}
+
+	&.hidden {
+		opacity: 0;
+		display: none;
+
+		.strikebase-card-title {
+			background: $color__yellow;
+		}
 	}
 }
 
