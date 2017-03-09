@@ -18,7 +18,9 @@ function strikebase_filters( $taxonomy, $dropdown_label ) { ?>
 
 			<div class="dropdown-wrapper">
 			<ul class="dropdown-menu dropdown-main-menu">
-				<li class="dropdown-title"><?php printf( esc_html__( 'Filter by %1$s', 'strikebase' ), strtolower( get_taxonomy( $taxonomy )->label ) ); ?></li>
+				<li class="dropdown-title"><?php printf( esc_html__( 'Filter by %1$s', 'strikebase' ), strtolower( get_taxonomy( $taxonomy )->label ) ); ?>
+				<a class="dropdown-close" href="#"><img src="https://icon.now.sh/x" alt="Close menu" /></a>
+				</li>
 
 				<?php
 				// Get all terms at the top level of the selected taxonomy.
