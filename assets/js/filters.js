@@ -8,7 +8,10 @@
 
 ( function( $ ) {
 
-	// Listen to all clicks on dropdown links and display drop-downs.
+	/*
+	 * Listen to all clicks on dropdown links and display drop-downs.
+	 * Used to show our drop-down list of filters.
+	 */
 	$( '.dropdown-link' ).on( 'click', function( event ) {
 		// Stop propogation to avoid closing the dropdown.
 		event.stopPropagation();
@@ -26,7 +29,10 @@
 		}
 	});
 
-	// Listen to all clicks on submenu links and open submenus.
+	/*
+	 * Listen to all clicks on submenu links and open submenus.
+	 * This is used to navigate to a sub-menu of the primary filter list.
+	 */
 	$( '.dropdown-submenu-open' ).on( 'click', function( event ) {
 		// Stop propogation to avoid closing the dropdown.
 		event.stopPropagation();
@@ -36,7 +42,10 @@
 		$( this ).parents( '.dropdown-container' ).find( '.dropdown-submenu.' + $( this ).data( 'target') ).addClass( 'open' );
 	});
 
-	// Listen to all clicks on submenu back links and close the submenu.
+	/*
+	 * Listen to all clicks on submenu back links and close submenus.
+	 * This is used to navigate back to the main filter menu from a sub-menu.
+	 */
 	$( '.dropdown-submenu-close' ).on( 'click', function( event ) {
 		// Stop propogation to avoid closing the dropdown.
 		event.stopPropagation();
@@ -46,7 +55,10 @@
 		$( this ).parents( '.dropdown-container' ).find( '.dropdown-submenu.' + $( this ).data( 'target' ) ).removeClass( 'open' );
 	});
 
-	// Listen to all clicks on filter links and show/hide elements accordingly.
+	/*
+	 * Listen to all clicks on filter links and show/hide elements accordingly.
+	 * This handles showing and hiding cards based on which filters are selected.
+	 */
 	$( '.filter-link' ).on( 'click', function( event ) {
 		// Stop propogation to avoid closing the dropdown.
 		event.stopPropagation();
@@ -80,11 +92,31 @@
 		$( this ).parents( '.dropdown-container' ).removeClass( 'open' );
 	});
 
-	// Listen to all clicks on the body and close any open dropdowns.
+	/*
+	 * Listen to all clicks on the body and close any open dropdowns.
+	 * If a dropdown is open, and the user clicks outside the dropdown,
+	 * that dropdown (and any open dropdown!) should close.
+	 */
 	$( 'body' ).on( 'click', function( event ) {
 		if ( 0 === $( event.target ).parents( '.dropdown' ).length ) {
 			$( '.dropdown-container' ).removeClass( 'open' );
 		}
+	});
+
+	/*
+	 * Function to set defaults filters on page load.
+	 * There will be a brief flash where all cards will be visible due to load time.
+	 */
+	function setDefaultFilters( $peopleFilter, $projectsFilter ) {
+		$( '.strikebase-people-list' ).find( '.strikebase-card' ).not( '.' + $peopleFilter ).addClass( 'hidden' );
+		$( '.dropdown-menu' ).find( 'a[data-filter="'+ $peopleFilter +'"]' ).addClass( 'selected' );
+		$( '.strikebase-projects-list' ).find( '.strikebase-card' ).not( '.' + $projectsFilter ).addClass( 'hidden' );
+		$( '.dropdown-menu' ).find( 'a[data-filter="'+ $projectsFilter +'"]' ).addClass( 'selected' );
+	}
+
+	// Once our window has loaded, set our default display parameters.
+	$( window ).on( 'load', function() {
+		setDefaultFilters( 'person-type-influencer', 'project-status-active' );
 	});
 
 } )( jQuery );
