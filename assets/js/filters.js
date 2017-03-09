@@ -15,9 +15,17 @@
 		// Stop propogation to avoid closing the dropdown.
 		event.stopPropagation();
 
-		// Add a class to highlight the link itself.
-		$( '.dropdown-container' ).removeClass( 'open' );
-		$( this ).parents( '.dropdown-container' ).addClass( 'open' );
+		var $parentContainer = $( this ).parents( '.dropdown-container' );
+
+		if ( $parentContainer.hasClass( 'open' ) ) {
+			// If the menu is already open, close it.
+			$parentContainer.removeClass( 'open' );
+		} else {
+			// Hide all open dropdowns.
+			$( '.dropdown-container' ).removeClass( 'open' );
+			// Open the dropdown.
+			$parentContainer.addClass( 'open' );
+		}
 	});
 
 	// Listen to all clicks on submenu links and open submenus.

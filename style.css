@@ -793,7 +793,6 @@ a {
     text-decoration: none; }
 
 .dropdown-close {
-  position: absolute;
   padding: 11px 12px 6px;
   position: absolute;
   right: 0;
