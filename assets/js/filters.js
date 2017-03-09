@@ -75,6 +75,9 @@
 				$( '.site-main' ).find( '.' + $( this ).data( 'filter' ) ).removeClass( 'hidden' );
 			}
 		}
+
+		// Finally, close the drop-down menu.
+		$( this ).parents( '.dropdown-container' ).removeClass( 'open' );
 	});
 
 	// Listen to all clicks on the body and close any open dropdowns.
