@@ -17,7 +17,7 @@ function strikebase_filters( $taxonomy, $dropdown_label ) { ?>
 			<a class="dropdown-link" href="#"><?php echo esc_html__( $dropdown_label ); ?></a>
 
 			<div class="dropdown-wrapper">
-			<ul class="dropdown-menu">
+			<ul class="dropdown-menu dropdown-main-menu">
 				<li class="dropdown-title"><?php printf( esc_html__( 'Filter by %1$s', 'strikebase' ), strtolower( get_taxonomy( $taxonomy )->label ) ); ?></li>
 
 				<?php
@@ -42,7 +42,7 @@ function strikebase_filters( $taxonomy, $dropdown_label ) { ?>
 							$child_term_array[$term->slug] = strikebase_filter_child_terms( $taxonomy, $term->term_id );
 							?>
 
-							<a class="dropdown-submenu-link" href="#"><img src='https://icon.now.sh/chevron' alt="Show sub-categories" /></a>
+							<a class="dropdown-submenu-open" href="#" data-target="<?php echo $term->slug; ?>"><img src="https://icon.now.sh/chevron" alt="Show sub-categories" /></a>
 
 						<?php endif; ?>
 						</li>
@@ -56,7 +56,9 @@ function strikebase_filters( $taxonomy, $dropdown_label ) { ?>
 				if ( ! empty( $child_term_array ) ) :
 					foreach ( $child_term_array as $parent_term=>$child_terms ) : ?>
 						<ul class="dropdown-menu dropdown-submenu <?php echo $parent_term; ?>">
-							<li class="dropdown-title">< <?php echo $parent_term; ?></li>
+							<li class="dropdown-title">
+								<a class="dropdown-submenu-close" href="#" data-target="<?php echo $parent_term; ?>"><img src="https://icon.now.sh/chevron/left" alt="Back to parent category" />
+								<?php echo $parent_term; ?></a></li>
 
 							<?php foreach ( $child_terms as $child_term ) : ?>
 								<li><a class="filter-link" href="#" data-filter="<?php echo $child_term->slug; ?>"><?php echo $child_term->name; ?></a>

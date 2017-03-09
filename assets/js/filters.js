@@ -20,6 +20,26 @@
 		$( this ).parents( '.dropdown-container' ).addClass( 'open' );
 	});
 
+	// Listen to all clicks on submenu links and open submenus.
+	$( '.dropdown-submenu-open' ).on( 'click', function( event ) {
+		// Stop propogation to avoid closing the dropdown.
+		event.stopPropagation();
+
+		// Open the relevant submenu, and hide the main menu.
+		$( this ).parents( '.dropdown-container' ).find( '.dropdown-main-menu' ).addClass( 'hidden' );
+		$( this ).parents( '.dropdown-container' ).find( '.dropdown-submenu.' + $( this ).data( 'target') ).addClass( 'open' );
+	});
+
+	// Listen to all clicks on submenu back links and close the submenu.
+	$( '.dropdown-submenu-close' ).on( 'click', function( event ) {
+		// Stop propogation to avoid closing the dropdown.
+		event.stopPropagation();
+
+		// Close the current submenu, and re-show the main menu.
+		$( this ).parents( '.dropdown-container' ).find( '.dropdown-main-menu' ).removeClass( 'hidden' );
+		$( this ).parents( '.dropdown-container' ).find( '.dropdown-submenu.' + $( this ).data( 'target') ).removeClass( 'open' );
+	});
+
 	// Listen to all clicks on the body and close any open dropdowns.
 	$( 'body' ).on( 'click', function( event ) {
 		if ( $( event.target ).parents( '.dropdown' ) .length === 0 ) {
