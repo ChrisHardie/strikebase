@@ -743,6 +743,7 @@ a {
   background: #FFFFFD;
   display: inline-block;
   left: -9999em;
+  margin-top: -4px;
   max-height: 380px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -774,7 +775,8 @@ a {
     position: relative; }
 
 .dropdown-title,
-a.filter-link {
+.filter-link,
+.filter-link:visited {
   font-size: 14px;
   font-size: 0.875rem;
   border-bottom: 1px solid #F2EFEB;
@@ -787,8 +789,8 @@ a.filter-link {
   background: rgba(242, 239, 235, 0.5);
   vertical-align: middle; }
   .dropdown-title a {
-    text-decoration: none;
-    color: #544A35; }
+    color: #544A35;
+    text-decoration: none; }
 
 .filter-link:hover {
   background: rgba(242, 239, 235, 0.25); }
@@ -806,11 +808,10 @@ a.filter-link {
   top: 0; }
 
 .dropdown-submenu {
-  position: absolute;
-  left: 100%; }
-
-.dropdown-submenu.open {
-  left: 0; }
+  left: 100%;
+  position: absolute; }
+  .dropdown-submenu.open {
+    left: 0; }
 
 .dropdown-submenu-close {
   text-transform: capitalize; }
