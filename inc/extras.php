@@ -15,7 +15,7 @@ function strikebase_adjust_postlimit( $query ) {
 	endif;
 
 	if ( is_post_type_archive() ) :
-		$query->set( 'posts_per_page', 50 );
+		$query->set( 'posts_per_page', 500 );
 		return;
 	endif;
 }
