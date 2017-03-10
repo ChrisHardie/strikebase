@@ -130,12 +130,15 @@
 
 .filter-link.selected {
 	font-weight: bold;
+	position: relative;
 
-	&::before {
-		content: url(https://icon.now.sh/check/10);
+	&::after {
+		content: url('https://icon.now.sh/x/8');
 		display: inline-block;
-		margin-right: 2px;
 		opacity: 0.7;
+		position: absolute;
+		right: 12px;
+		top: 8px;
 	}
 }
 

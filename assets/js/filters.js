@@ -127,11 +127,9 @@
 	 * Note: this doesn't reset our filters to their default state, but rather
 	 * resets to a completely unfiltered view.
 	 */
-	$( '.strikebase-clear-filters' ).on( 'click', function( event ) {
+	$( '.strikebase-clear-filters' ).on( 'click', function() {
 		clearFilters();
 	});
-
-
 
 	/*
 	 * Listen to all clicks on the body and close any open dropdowns.

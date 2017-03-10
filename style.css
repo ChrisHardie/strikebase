@@ -823,12 +823,15 @@ a {
   font-weight: 500; }
 
 .filter-link.selected {
-  font-weight: bold; }
-  .filter-link.selected::before {
-    content: url(https://icon.now.sh/check/10);
+  font-weight: bold;
+  position: relative; }
+  .filter-link.selected::after {
+    content: url("https://icon.now.sh/x/8");
     display: inline-block;
-    margin-right: 2px;
-    opacity: 0.7; }
+    opacity: 0.7;
+    position: absolute;
+    right: 12px;
+    top: 8px; }
 
 .dropdown-submenu-open {
   padding: 9px 12px;
