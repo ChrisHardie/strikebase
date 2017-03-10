@@ -29,6 +29,7 @@
 	text-decoration: none;
 }
 
+// Container for dropdowns.
 .dropdown-wrapper {
 	@include box-shadow;
 	background: $color__pure-white;
@@ -86,6 +87,7 @@
 	text-decoration: none;
 }
 
+// Dropdown title.
 .dropdown-title {
 	background: transparentize($color__white, 0.5);
 	vertical-align: middle;
@@ -103,6 +105,7 @@
 	top: 0;
 }
 
+// Dropdown ilter links.
 .filter-link:hover {
 	background: transparentize($color__white, 0.75);
 }
@@ -145,4 +148,15 @@
 
 .dropdown-main-menu.hidden {
 	margin-left: -100%;
+}
+
+// Clear filters button.
+.strikebase-clear-filters,
+.strikebase-clear-filters:visited {
+	color: $color__neutral;
+	text-decoration: none;
+
+	&.hidden {
+		opacity: 0;
+	}
 }

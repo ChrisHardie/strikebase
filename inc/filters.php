@@ -95,3 +95,12 @@ function strikebase_filter_child_terms( $taxonomy, $parent=0 ) {
 		return false;
 	endif;
 }
+
+/*
+ * Outputs a button to allow for quickly resetting all filters.
+ * This button will be hidden if no filters are currently applied.
+ */
+function strikebase_clear_filters_button() { ?>
+	<a class="strikebase-clear-filters" href="#"><img src="https://icon.now.sh/x" alt="Clear filters" />
+	<?php esc_html_e( 'Clear all filters', 'strikebase' ); ?></a>
+<?php }

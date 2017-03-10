@@ -836,6 +836,14 @@ a {
 .dropdown-main-menu.hidden {
   margin-left: -100%; }
 
+.strikebase-clear-filters,
+.strikebase-clear-filters:visited {
+  color: #544A35;
+  text-decoration: none; }
+  .strikebase-clear-filters.hidden,
+  .strikebase-clear-filters:visited.hidden {
+    opacity: 0; }
+
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
