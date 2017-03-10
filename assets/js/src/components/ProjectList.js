@@ -6,16 +6,23 @@ import React from 'react';
 
 const ProjectList = ( props ) => {
 	return (
-		<table className="strikebase-project-list">
-			<thead>
-				<tr>
-					<th>Project</th>
-					<th>Status</th>
-					<th>Launch Date</th>
-					<th>Last Check-In</th>
-				</tr>
-			</thead>
-			<tbody>
+		<div className="strikebase-projects-wrap">
+			<div className="strikebase-filter-and-sort">
+				<ul className="dropdown-container">
+					<li className="dropdown-label">Status</li>
+				</ul>
+				<ul className="dropdown-container">
+					<li className="dropdown-label">Type</li>
+				</ul>
+				<ul className="dropdown-container">
+					<li className="dropdown-label">Genre</li>
+				</ul>
+				<ul className="dropdown-container">
+					<li className="dropdown-label">Host</li>
+				</ul>
+			</div>
+
+			<div className="strikebase-projects-list">
 				{
 					props.projects.map( ( project, i ) => {
 						let launchTimeStamp = new Date( project['launch-date'] * 1000 );
@@ -44,31 +51,34 @@ const ProjectList = ( props ) => {
 						}
 
 						return (
-							<tr key={ i }>
-								<td className="entry-title">
-									<a href="#">{ project.title.rendered }</a>
-								</td>
-								<td className="strikebase-project-status">
-									{
-										props.statuses.map( ( status, j ) => {
-											if ( status.id == project["project-status"][j] ) {
-												return <a key={ j } href="#">{ status.name }</a>;
-											}
-										} )
-									}
-								</td>
-								<td className="strikebase-project-launch-date">
-									{ launchDate }
-								</td>
-								<td className="strikebase-project-last-contact">
-									{ lastCheckInDate }
-								</td>
-							</tr>
+							<article id={ `post-${ i }` } className="project strikebase-card" key={ i }>
+								<h2 className="strikebase-card-title">{ project.title.rendered }</h2>
+								<dl>
+									<dt>Status</dt>
+									<dd>
+										{
+											props.statuses.map( ( status, j ) => {
+												if ( status.id == project["project-status"][j] ) {
+													return <a key={ j } href="#">{ status.name }</a>;
+												}
+											} )
+										}
+									</dd>
+									<dt>Launch Date</dt>
+									<dd className="strikebase-project-launch-date">
+										{ launchDate }
+									</dd>
+									<dt>Last Check-In Date</dt>
+									<dd className="strikebase-project-last-contact">
+										{ lastCheckInDate }
+									</dd>
+								</dl>
+							</article>
 						);
 					} )
 				}
-			</tbody>
-		</table>
+			</div>
+		</div>
 	)
 };
 

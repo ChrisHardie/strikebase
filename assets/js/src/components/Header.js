@@ -8,7 +8,7 @@ import { Link } from 'react-router';
 const Header = () => {
 	return (
 		<header id="masthead" className="site-header" role="banner">
-			<h1 className="site-title">StrikeBase</h1>
+			<h1 className="site-title"><Link to={ "/" }>Strikebase</Link></h1>
 			<nav id="site-navigation" className="main-navigation" role="navigation">
 				<ul>
 					<li><Link to={ "/" }>Dashboard</Link></li>
