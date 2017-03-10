@@ -16,24 +16,15 @@ import * as actionCreators from '../actions/actioncreators';
  */
 import '../../../stylesheets/style.scss';
 import '../../../style-guide/stylesheets/style-guide.scss';
-import { getApiData } from '../data';
 
 class App extends Component {
-	constructor( props ) {
-		super( props );
-	}
-
-	// componentWillMount() {
-	// 	getApiData()
-	// 		.then( ( data ) => {
-	// 			this.setState( {
-	// 				people: data.people,
-	// 				projects: data.projects,
-	// 				statuses: data.statuses,
-	// 				organizations: data.organizations
-	// 			} );
-	// 		} );
+	// constructor( props ) {
+	// 	super( props );
 	// }
+
+	componentWillMount() {
+		this.props.fetchApiData();
+	}
 
 	render() {
 		return (

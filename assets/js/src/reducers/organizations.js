@@ -2,8 +2,8 @@
  * Reducers for Organizations Taxonomy Data
  */
 const organizations = ( state = [], action ) => {
-	console.log( 'Organizations reducer fired off!' );
-	console.log( state, action );
+	// console.log( 'Organizations reducer fired off!' );
+	// console.log( state, action );
 	return state;
 };
 
