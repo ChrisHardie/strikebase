@@ -11,7 +11,7 @@
  */
 function strikebase_filters( $taxonomy, $dropdown_label ) { ?>
 
-	<ul class="dropdown-container dropdown-container-<?php echo $taxonomy; ?>">
+	<ul class="dropdown-container dropdown-container-<?php echo $taxonomy; ?>" data-taxonomy-group="<?php echo $taxonomy; ?>">
 
 		<li class="dropdown-label">
 			<a class="dropdown-link" href="#"><?php echo esc_html__( $dropdown_label ); ?><img class="strikebase-icon" src="https://icon.now.sh/chevron/down" alt="Show filter options" /></a>

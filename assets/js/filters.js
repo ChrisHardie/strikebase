@@ -79,31 +79,86 @@
 		// Stop propogation to avoid closing the dropdown.
 		event.stopPropagation();
 
-		// Are there any filters already selected in this group?
-		if ( 0 === $( this ).parents( '.dropdown-menu' ).find( '.filter-link.selected' ).length ) {
+		// First, check to see if the filter is already active.
 
-			// No filters already selected. Hide everything except cards that match the clicked-on filter.
-			$( this ).addClass( 'selected' );
-			$( '.site-main' ).find( '.strikebase-card' ).not( '.' + $( this ).data( 'filter' ) ).addClass( 'hidden' );
-			// And update our list of filters.
-			updateFilterList( 'add', $( this ).data( 'filter-name' ) );
+		if ( $( this ).hasClass( 'selected' ) ) {
+			// Are there any filters already selected in this group?
+			if ( 1 === $( this ).parents( '.dropdown-menu' ).find( '.filter-link.selected' ).length ) {
+				// No filters in the current group are selected—only this filter is showing.
+				// Hiding the filter will actually hide all cards, which we don't want.
+				// Instead, let's reset the filtering for the group, and show all filters
+				var $parentTaxonomy = $( this ).parents( '.dropdown-container' ).data( 'taxonomy-group' );
+				console.info( 'Trying to disable the only active filter in a group.' );
+				console.info( 'Clear all filters for ' + $parentTaxonomy );
+				// Un-select the filter link.
+				$( this ).removeClass( 'selected' );
+				// Do other groups have filters applied that we need to respect?
+				var $otherFilters = $( this ).parents( '.dropdown-container' ).siblings( '.dropdown-container' ).find( '.filter-link.selected' );
 
-		} else {
-			// We have filters selected already. Toggle visibility of the filter on click.
+				if ( 0 === $otherFilters.length ) {
+					console.info( 'No other filters anywhere! Let\'s just clear everything.' );
+					clearFilters();
+				} else {
+					console.info( 'We have filters applied in other groups.' );
+					console.log( $otherFilters );
 
-			if ( $( this ).hasClass( 'selected' ) ) {
-				// Hide the filter if it's already selected.
+					// For each group that has filters active, make a list of all the deselected filters.
+					// We need to ensure these are still hidden from view.
+					var $otherFilterGroups = $( this ).parents( '.dropdown-container' ).siblings( '.dropdown-container' );
+
+					$otherFilterGroups.each( function( index ) {
+						if ( 0 !== $( this ).find( '.filter-link.selected' ).length ) {
+							// If there are active filters in a group, we need to respect them.
+							// Select all un-selected filters in groups with active filters.
+							console.log( $( this ).data( 'taxonomy-group' ) + ' has some selected filters.' );
+							var $inactiveFilters = $( this ).find( '.filter-link' ).not( '.selected' );
+
+							// Make a string of all the other filters, so we make sure to continue hiding them.
+							$inactiveFilters.each( function( index ) {
+								if ( 0 === index ) {
+									$hiddenClasses = '.' + $( this ).data( 'filter' );
+								} else {
+									$hiddenClasses = $hiddenClasses + ',.' + $( this ).data( 'filter' );
+								}
+							} );
+
+							console.log( $hiddenClasses );
+						}
+					} );
+
+					// Show everything that doesn't correspond to those filters.
+					$( '.site-main' ).find( '.strikebase-card' ).not( $hiddenClasses ).removeClass( 'hidden' );
+					//$( '.site-main' ).find( '.strikebase-card' ).not( '.project-status-complete,.project-status-launched' ).removeClass( 'hidden' );
+					updateFilterList( 'remove', $( this ).data( 'filter-name' ) );
+				}
+
+			} else {
+				// If it's already active, we're going to disable it.
+				console.info( $( this ).data( 'filter' ) + ' already active. Disabling!' );
 				$( this ).removeClass( 'selected' );
 				$( '.site-main' ).find( '.' + $( this ).data( 'filter' ) ).addClass( 'hidden' );
 				// And update our list of filters.
 				updateFilterList( 'remove', $( this ).data( 'filter-name' ) );
+			}
 
+
+		} else {
+			// Are there any filters already selected in this group?
+			if ( 0 === $( this ).parents( '.dropdown-menu' ).find( '.filter-link.selected' ).length ) {
+				// No filters in the current group are selected—all cards are currently showing.
+				// We're going to hide all cards except those that match our new filter.
+				console.info( 'No filters currently active in this taxonomy group.' );
+				console.info( 'Filter to show ' + $( this ).data( 'filter' ) + ' only.' );
+				$( this ).addClass( 'selected' );
+				$( '.site-main' ).find( '.strikebase-card' ).not( '.' + $( this ).data( 'filter' ) ).addClass( 'hidden' );
+				updateFilterList( 'add', $( this ).data( 'filter-name' ) );
 
 			} else {
-				// Otherwise, show the cards for that filter.
+				// We have other filters in this group selected.
+				// Show cards matching our new filter as well.
+				console.info( 'Active filters in this group. Add filter for ' + $( this ).data( 'filter' ) );
 				$( this ).addClass( 'selected' );
 				$( '.site-main' ).find( '.' + $( this ).data( 'filter' ) ).removeClass( 'hidden' );
-				// And update our list of filters.
 				updateFilterList( 'add', $( this ).data( 'filter-name' ) );
 			}
 		}

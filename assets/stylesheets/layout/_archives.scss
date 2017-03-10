@@ -61,7 +61,7 @@
 // Current filters.
 .strikebase-current-filter {
 	&::after {
-		content: ', ';
+		content: ", ";
 	}
 
 	&:last-of-type::after {
@@ -72,8 +72,6 @@
 // Extra filters text.
 .strikebase-no-filter-matches {
 	margin: 100px auto;
-	//max-width: 300px;
-	//text-align: center;
 
 	&.hidden {
 		display: none;

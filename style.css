@@ -999,7 +999,7 @@ body {
   opacity: 0; }
 
 .strikebase-current-filter::after {
-  content: ', '; }
+  content: ", "; }
 
 .strikebase-current-filter:last-of-type::after {
   content: none; }
