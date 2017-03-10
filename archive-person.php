@@ -17,7 +17,7 @@ get_header(); ?>
 				<?php strikebase_filters( 'person-type', 'Type' ); ?>
 			</div>
 
-			<?php strikebase_clear_filters_button(); ?>
+			<?php strikebase_filter_sort_messaging(); ?>
 
 			<div class="strikebase-people-list">
 

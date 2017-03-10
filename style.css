@@ -854,14 +854,6 @@ a {
 .dropdown-main-menu.hidden {
   margin-left: -100%; }
 
-.strikebase-clear-filters,
-.strikebase-clear-filters:visited {
-  color: #544A35;
-  text-decoration: none; }
-  .strikebase-clear-filters.hidden,
-  .strikebase-clear-filters:visited.hidden {
-    opacity: 0; }
-
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
@@ -987,9 +979,28 @@ body {
 
 .strikebase-filter-and-sort {
   border-bottom: 1px solid #50715e;
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
   .strikebase-filter-and-sort .dropdown-container {
     display: inline-block; }
+
+.strikebase-filter-sort-messaging {
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin-bottom: 20px; }
+
+.strikebase-no-filter-matches {
+  color: #A6302C;
+  margin-right: 4px; }
+  .strikebase-no-filter-matches.hidden {
+    display: none; }
+
+.strikebase-clear-filters,
+.strikebase-clear-filters:visited {
+  color: #544A35;
+  text-decoration: none; }
+  .strikebase-clear-filters.hidden,
+  .strikebase-clear-filters:visited.hidden {
+    opacity: 0; }
 
 /*--------------------------------------------------------------
 ## Dashboard

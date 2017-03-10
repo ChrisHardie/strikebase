@@ -16,8 +16,9 @@
 		$( '.site-main' ).find( '.strikebase-card' ).removeClass( 'hidden' );
 		$( '.site-main' ).find( '.filter-link.selected' ).removeClass( 'selected' );
 
-		// Hide the "clear filters" link when no filters are applied.
+		// Hide the "clear filters" link and the "no matches" text when no filters are applied.
 		$( '.strikebase-clear-filters' ).addClass( 'hidden' );
+		$( '.strikebase-no-filter-matches' ).addClass( 'hidden' );
 	}
 
 	/*
@@ -102,10 +103,7 @@
 				$( this ).removeClass( 'selected' );
 				$( '.site-main' ).find( '.' + $( this ).data( 'filter' ) ).addClass( 'hidden' );
 
-				// Did we just accidentally hide all the cards? Let's check.
-				if ( 0 === $( '.site-main' ).find( '.strikebase-card:not(.hidden)' ).length ) {
-					clearFilters();
-				}
+
 			} else {
 				// Otherwise, show the cards.
 				$( this ).addClass( 'selected' );
@@ -119,6 +117,12 @@
 		// Hide the "clear filters" link when no filters are applied.
 		if ( 0 < $( '.site-main' ).find( '.strikebase-card.hidden' ).length ) {
 			$( '.strikebase-clear-filters' ).removeClass( 'hidden' );
+		}
+
+		// If our combination of filters has hidden all cards, let's give a message to that effect.
+		if ( 0 === $( '.site-main' ).find( '.strikebase-card:not(.hidden)' ).length ) {
+			$( '.strikebase-no-filter-matches' ).removeClass( 'hidden' );
+			//clearFilters();
 		}
 	});
 

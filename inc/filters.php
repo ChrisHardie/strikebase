@@ -100,7 +100,15 @@ function strikebase_filter_child_terms( $taxonomy, $parent=0 ) {
  * Outputs a button to allow for quickly resetting all filters.
  * This button will be hidden if no filters are currently applied.
  */
-function strikebase_clear_filters_button() { ?>
-	<a class="strikebase-clear-filters" href="#"><img class="strikebase-icon" src="https://icon.now.sh/x" alt="Clear filters" />
-	<?php esc_html_e( 'Clear all filters', 'strikebase' ); ?></a>
+function strikebase_filter_sort_messaging() { ?>
+	<div class="strikebase-filter-sort-messaging">
+		<?php //esc_html_e( 'Current filters:', 'strikebase' ); ?>
+
+		<span class="strikebase-no-filter-matches hidden">
+			<?php esc_html_e( 'No results match your selection! Try being a bit less precise.', 'strikebase' ); ?>
+		</span>
+
+		<a class="strikebase-clear-filters" href="#"><img class="strikebase-icon" src="https://icon.now.sh/x" alt="Clear filters" />
+		<?php esc_html_e( 'Clear all', 'strikebase' ); ?></a>
+	</div>
 <?php }

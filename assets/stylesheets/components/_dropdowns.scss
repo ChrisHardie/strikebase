@@ -133,7 +133,7 @@
 	position: relative;
 
 	&::after {
-		content: url('https://icon.now.sh/x/8');
+		content: url("https://icon.now.sh/x/8");
 		display: inline-block;
 		opacity: 0.7;
 		position: absolute;
@@ -169,15 +169,4 @@
 
 .dropdown-main-menu.hidden {
 	margin-left: -100%;
-}
-
-// Clear filters button.
-.strikebase-clear-filters,
-.strikebase-clear-filters:visited {
-	color: $color__neutral;
-	text-decoration: none;
-
-	&.hidden {
-		opacity: 0;
-	}
 }

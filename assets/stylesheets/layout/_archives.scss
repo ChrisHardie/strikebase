@@ -39,9 +39,36 @@
 // Filter/sort controls.
 .strikebase-filter-and-sort {
 	border-bottom: 1px solid $color__primary-light;
-	margin-bottom: $size__site-gutter;
+	margin-bottom: $size__site-gutter/2;
 
 	.dropdown-container {
 		display: inline-block;
+	}
+}
+
+// Filter/sort messaging.
+.strikebase-filter-sort-messaging {
+	@include font-size(0.875);
+	margin-bottom: $size__site-gutter;
+}
+
+// Extra filters text.
+.strikebase-no-filter-matches {
+	color: $color__warning;
+	margin-right: 4px;
+
+	&.hidden {
+		display: none;
+	}
+}
+
+// Clear filters button.
+.strikebase-clear-filters,
+.strikebase-clear-filters:visited {
+	color: $color__neutral;
+	text-decoration: none;
+
+	&.hidden {
+		opacity: 0;
 	}
 }
