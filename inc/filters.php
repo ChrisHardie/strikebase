@@ -32,22 +32,22 @@ function strikebase_filters( $taxonomy, $dropdown_label ) { ?>
 
 				if ( $terms ) :
 					// Loop through the terms and output each as a filter option.
-					foreach ( $terms as $term ) : ?>
-						<li><a class="filter-link" href="#" data-filter="<?php echo $term->taxonomy; ?>-<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
+					foreach ( $terms as $term ) :
 
-						<?php
 						// Get all child terms.
 						$child_terms = strikebase_filter_child_terms( $taxonomy, $term->term_id );
+
 						if ( $child_terms ) :
 
 							// Save the terms in a new array. We'll output them a little later.
 							$child_term_array[$term->slug] = strikebase_filter_child_terms( $taxonomy, $term->term_id );
 							?>
 
-							<a class="dropdown-submenu-open" href="#" data-target="<?php echo $term->slug; ?>"><img class="strikebase-icon" src="https://icon.now.sh/chevron" alt="Show sub-categories" /></a>
+							<li><a class="dropdown-submenu-link" href="#" data-target="<?php echo $term->slug; ?>"><?php echo $term->name; ?><img class="strikebase-icon" src="https://icon.now.sh/chevron" alt="Show sub-categories" /></a></li>
 
+						<?php else: ?>
+							<li><a class="filter-link" href="#" data-filter="<?php echo $term->taxonomy; ?>-<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>
 						<?php endif; ?>
-						</li>
 
 					<?php endforeach;
 				endif; ?>

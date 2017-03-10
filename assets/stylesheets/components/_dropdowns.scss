@@ -142,11 +142,15 @@
 	}
 }
 
-.dropdown-submenu-open {
-	padding: 9px 12px;
-	position: absolute;
-	right: 0;
-	top: 0;
+.dropdown-submenu-link {
+	@extend .filter-link;
+	position: relative;
+
+	.strikebase-icon {
+		position: absolute;
+		right: 12px;
+		top: 16px;
+	}
 }
 
 // Submenus.

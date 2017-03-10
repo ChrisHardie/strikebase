@@ -59,7 +59,7 @@
 	 * Listen to all clicks on submenu links and open submenus.
 	 * This is used to navigate to a sub-menu of the primary filter list.
 	 */
-	$( '.dropdown-submenu-open' ).on( 'click', function( event ) {
+	$( '.dropdown-submenu-link' ).on( 'click', function( event ) {
 		// Stop propogation to avoid closing the dropdown.
 		event.stopPropagation();
 

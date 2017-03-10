@@ -791,7 +791,9 @@ a {
 
 .dropdown-title,
 .filter-link,
-.filter-link:visited {
+.dropdown-submenu-link,
+.filter-link:visited,
+.dropdown-submenu-link:visited {
   font-size: 14px;
   font-size: 0.875rem;
   border-bottom: 1px solid #F2EFEB;
@@ -813,19 +815,19 @@ a {
   right: 0;
   top: 0; }
 
-.filter-link:hover {
+.filter-link:hover, .dropdown-submenu-link:hover {
   background: rgba(242, 239, 235, 0.25); }
 
-.filter-link.active {
+.filter-link.active, .active.dropdown-submenu-link {
   background: rgba(242, 239, 235, 0.5);
   border-right: 4px solid #544A35;
   color: #544A35;
   font-weight: 500; }
 
-.filter-link.selected {
+.filter-link.selected, .selected.dropdown-submenu-link {
   font-weight: bold;
   position: relative; }
-  .filter-link.selected::after {
+  .filter-link.selected::after, .selected.dropdown-submenu-link::after {
     content: url("https://icon.now.sh/x/8");
     display: inline-block;
     opacity: 0.7;
@@ -833,11 +835,12 @@ a {
     right: 12px;
     top: 8px; }
 
-.dropdown-submenu-open {
-  padding: 9px 12px;
-  position: absolute;
-  right: 0;
-  top: 0; }
+.dropdown-submenu-link {
+  position: relative; }
+  .dropdown-submenu-link .strikebase-icon {
+    position: absolute;
+    right: 12px;
+    top: 16px; }
 
 .dropdown-submenu {
   left: 100%;
