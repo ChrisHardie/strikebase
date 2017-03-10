@@ -718,6 +718,10 @@ a {
 /*--------------------------------------------------------------
 # Dropdowns
 --------------------------------------------------------------*/
+.strikebase-icon {
+  height: 10px;
+  opacity: 0.7; }
+
 .dropdown-container {
   list-style-type: none;
   margin: 0;
@@ -820,6 +824,11 @@ a {
 
 .filter-link.selected {
   font-weight: bold; }
+  .filter-link.selected::before {
+    content: url(https://icon.now.sh/check/10);
+    display: inline-block;
+    margin-right: 2px;
+    opacity: 0.7; }
 
 .dropdown-submenu-open {
   padding: 9px 12px;
@@ -846,10 +855,6 @@ a {
   .strikebase-clear-filters.hidden,
   .strikebase-clear-filters:visited.hidden {
     opacity: 0; }
-
-.strikebase-icon {
-  height: 10px;
-  opacity: 0.7; }
 
 /*--------------------------------------------------------------
 # Layout
