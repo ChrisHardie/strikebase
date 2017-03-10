@@ -8,15 +8,10 @@ import { getApiData } from '../data';
  */
 // Fetch success
 // export const fetchSuccess = ( people, projects, statuses, organizations ) => {
-export const fetchSuccess = ( data ) => {
-	console.log( "People data response:" );
-	console.log( data.people );
+export const receiveData = ( data ) => {
 	return {
-		type: 'FETCH_SUCCESS',
-		people: data.people,
-		projects: data.projects,
-		statuses: data.statuses,
-		organizations: data.organizations
+		type: 'RECEIVE_DATA',
+		data
 	};
 };
 // Fetch the API data
@@ -24,9 +19,7 @@ export const fetchApiData = () => {
 	return ( dispatch ) => {
 		return getApiData()
 			.then( ( data ) => {
-				// console.log( "API Response:" );
-				// console.log( data );
-				dispatch( fetchSuccess( data ) );
+				dispatch( receiveData( data ) );
 			} )
 			.catch( ( error ) => {
 				throw( error );

@@ -7,18 +7,16 @@ import { routerReducer } from 'react-router-redux';
 /**
  * Internal Dependencies
  */
-// import people from './people';
-// import projects from './projects';
-// import statuses from './statuses';
-// import organizations from './organizations';
-import { apiData } from './api-data';
+import people from './people';
+import projects from './projects';
+import statuses from './statuses';
+import organizations from './organizations';
 
 const rootReducer = combineReducers( {
-	apiData,
-	// people,
-	// projects,
-	// statuses,
-	// organizations,
+	people,
+	projects,
+	statuses,
+	organizations,
 	routing: routerReducer
 } );
 
