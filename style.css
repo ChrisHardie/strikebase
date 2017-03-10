@@ -988,6 +988,15 @@ body {
   font-size: 0.875rem;
   margin-bottom: 20px; }
 
+.strikebase-current-filters.hidden {
+  opacity: 0; }
+
+.strikebase-current-filter::after {
+  content: ', '; }
+
+.strikebase-current-filter:last-of-type::after {
+  content: none; }
+
 .strikebase-no-filter-matches {
   color: #A6302C;
   margin-right: 4px; }

@@ -52,6 +52,23 @@
 	margin-bottom: $size__site-gutter;
 }
 
+.strikebase-current-filters {
+	&.hidden {
+		opacity: 0;
+	}
+}
+
+// Current filters.
+.strikebase-current-filter {
+	&::after {
+		content: ', ';
+	}
+
+	&:last-of-type::after {
+		content: none;
+	}
+}
+
 // Extra filters text.
 .strikebase-no-filter-matches {
 	color: $color__warning;
