@@ -120,7 +120,9 @@
 		// If our combination of filters has hidden all cards, let's give a message to that effect.
 		if ( 0 === $( '.site-main' ).find( '.strikebase-card:not(.hidden)' ).length ) {
 			$( '.strikebase-no-filter-matches' ).removeClass( 'hidden' );
-			//clearFilters();
+		} else {
+			// Otherwise, make sure the message isn't accidentally showing.
+			$( '.strikebase-no-filter-matches' ).addClass( 'hidden' );
 		}
 	});
 

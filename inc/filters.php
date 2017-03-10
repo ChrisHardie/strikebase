@@ -119,8 +119,10 @@ function strikebase_filter_sort_messaging() { ?>
 
 		<a class="strikebase-clear-filters hidden" href="#">(<?php esc_html_e( 'clear', 'strikebase' ); ?>)</a>
 
-		<div class="strikebase-no-filter-matches hidden">
-			<?php esc_html_e( 'No results match your selection! Try being a bit less precise.', 'strikebase' ); ?>
-		</div>
+	</div>
+
+	<div class="strikebase-card strikebase-card-warning strikebase-no-filter-matches hidden">
+		<h2 class="strikebase-card-title"><?php esc_html_e( 'Oh, shoot!', 'strikebase' ); ?></h2>
+		<p><?php esc_html_e( 'No results match your selection. Try being a bit less precise.', 'strikebase' ); ?></p>
 	</div>
 <?php }

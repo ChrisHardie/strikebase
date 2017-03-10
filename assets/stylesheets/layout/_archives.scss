@@ -49,7 +49,7 @@
 // Filter/sort messaging.
 .strikebase-filter-sort-messaging {
 	@include font-size(0.875);
-	margin-bottom: $size__site-gutter;
+	margin-bottom: $size__site-gutter/2;
 }
 
 .strikebase-current-filters {
@@ -71,8 +71,9 @@
 
 // Extra filters text.
 .strikebase-no-filter-matches {
-	color: $color__warning;
-	margin-right: 4px;
+	margin: 100px auto;
+	//max-width: 300px;
+	//text-align: center;
 
 	&.hidden {
 		display: none;

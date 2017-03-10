@@ -689,13 +689,15 @@ a {
       width: calc(100% + 40px); } }
   .strikebase-card dl {
     padding: 0 20px 10px; }
+  .strikebase-card p {
+    padding: 0 20px; }
   .strikebase-card .gravatar {
     position: absolute;
     top: -20px;
     right: 20px; }
   .strikebase-card.hidden {
-    opacity: 0;
-    display: none; }
+    display: none;
+    opacity: 0; }
     .strikebase-card.hidden .strikebase-card-title {
       background: #E8B136; }
 
@@ -714,6 +716,11 @@ a {
   right: 0;
   bottom: 0;
   left: 0; }
+
+.strikebase-card-warning {
+  background-color: #faf4f4; }
+  .strikebase-card-warning .strikebase-card-title {
+    background-color: #A6302C; }
 
 /*--------------------------------------------------------------
 # Dropdowns
@@ -986,7 +993,7 @@ body {
 .strikebase-filter-sort-messaging {
   font-size: 14px;
   font-size: 0.875rem;
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 .strikebase-current-filters.hidden {
   opacity: 0; }
@@ -998,8 +1005,7 @@ body {
   content: none; }
 
 .strikebase-no-filter-matches {
-  color: #A6302C;
-  margin-right: 4px; }
+  margin: 100px auto; }
   .strikebase-no-filter-matches.hidden {
     display: none; }
 
