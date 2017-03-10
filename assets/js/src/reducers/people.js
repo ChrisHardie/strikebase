@@ -3,7 +3,7 @@
  */
 const people = ( state = [], action ) => {
 	switch ( action.type ) {
-		// GET People from API
+		// Get People from API
 		case 'RECEIVE_DATA':
 			return action.data.people || state;
 		// Add new People

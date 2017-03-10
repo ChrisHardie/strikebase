@@ -7,7 +7,6 @@ import { getApiData } from '../data';
  * Fetch API Data Actions
  */
 // Fetch success
-// export const fetchSuccess = ( people, projects, statuses, organizations ) => {
 export const receiveData = ( data ) => {
 	return {
 		type: 'RECEIVE_DATA',

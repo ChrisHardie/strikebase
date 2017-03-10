@@ -18,10 +18,6 @@ import '../../../stylesheets/style.scss';
 import '../../../style-guide/stylesheets/style-guide.scss';
 
 class App extends Component {
-	// constructor( props ) {
-	// 	super( props );
-	// }
-
 	componentWillMount() {
 		this.props.fetchApiData();
 	}
