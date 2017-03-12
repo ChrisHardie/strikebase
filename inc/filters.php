@@ -117,7 +117,7 @@ function strikebase_filter_sort_messaging() { ?>
 			<?php esc_html_e( 'Filters:', 'strikebase' ); ?>
 		</span>
 
-		<a class="strikebase-clear-filters hidden" href="#">(<?php esc_html_e( 'clear', 'strikebase' ); ?>)</a>
+		<button class="strikebase-clear-filters subtle hidden" href="#"><img class="strikebase-icon" src="https://icon.now.sh/x" alt="Clear filters" /><?php esc_html_e( 'Clear', 'strikebase' ); ?></button>
 
 	</div>
 

@@ -81,10 +81,16 @@
 // Clear filters button.
 .strikebase-clear-filters,
 .strikebase-clear-filters:visited {
-	color: $color__neutral;
-	text-decoration: none;
+	display: inline-block;
+	margin-left: 4px;
 
 	&.hidden {
 		opacity: 0;
+	}
+
+	.strikebase-icon {
+		height: 9px;
+		opacity: 0.5;
+		margin-right: 4px;
 	}
 }
