@@ -11,6 +11,7 @@ input[type="submit"] {
 	color: $color__white;
 	display: inline-block;
 	line-height: 1;
+	margin-bottom: $size__site-gutter;
 	padding: 15px 30px;
 
 	&:hover {
@@ -31,6 +32,7 @@ input[type="submit"] {
 		background: $color__neutral-highlight;
 		border-bottom: 2px solid $color__neutral;
 		color: $color__neutral;
+		margin-bottom: 0;
 		padding: 5px;
 
 		&:hover {

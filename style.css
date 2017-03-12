@@ -462,6 +462,7 @@ input[type="submit"] {
   color: #F2EFEB;
   display: inline-block;
   line-height: 1;
+  margin-bottom: 20px;
   padding: 15px 30px; }
   button:hover,
   input[type="button"]:hover,
@@ -489,6 +490,7 @@ input[type="submit"] {
     background: #DBD4C6;
     border-bottom: 2px solid #544A35;
     color: #544A35;
+    margin-bottom: 0;
     padding: 5px; }
     button.subtle:hover,
     input[type="button"].subtle:hover,
