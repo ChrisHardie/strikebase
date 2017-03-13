@@ -3,6 +3,10 @@
  */
 import React from 'react';
 
+/**
+ * Internal Dependencies
+ */
+import Organization from './Organization';
 
 const OrganizationList = ( props ) => {
 	return (
@@ -23,36 +27,14 @@ const OrganizationList = ( props ) => {
 					}
 
 					return (
-						<article id="strikebase-term-slug" className="strikebase-card organization" key={ i }>
-							<h2 className="strikebase-card-title">{ org.name }</h2>
-
-							<dl>
-								<dt>People</dt>
-								<dd className="strikebase-person-organization">
-									{
-										props.people.map( ( person, j ) => {
-											if ( org.id == person.organization ) {
-												return <div key={ j }><a href="#">{ person.title.rendered }</a></div>;
-											}
-										} )
-									}
-								</dd>
-								<dt>Projects</dt>
-								<dd className="strikebase-person-project">
-									{
-										props.projects.map( ( project, k ) => {
-											if ( org.id == project.organization ) {
-												return <div key={ k }><a href="#">{ project.title.rendered }</a></div>;
-											}
-										} )
-									}
-								</dd>
-								<dt>Last Check-In Date</dt>
-								<dd className="strikebase-person-last-contact">
-									{ lastCheckInDate }
-								</dd>
-							</dl>
-						</article>
+						<Organization
+							key={ i }
+							index={ i }
+							org={ org }
+							projects={ props.projects }
+							people={ props.people }
+							lastCheckInDate={ lastCheckInDate }
+						/>
 					);
 				} )
 			}

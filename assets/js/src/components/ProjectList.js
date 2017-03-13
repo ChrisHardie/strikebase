@@ -3,6 +3,10 @@
  */
 import React from 'react';
 
+/**
+ * Internal Dependencies
+ */
+import Project from './Project';
 
 const ProjectList = ( props ) => {
 	return (
@@ -51,29 +55,14 @@ const ProjectList = ( props ) => {
 						}
 
 						return (
-							<article id={ `post-${ i }` } className="project strikebase-card" key={ i }>
-								<h2 className="strikebase-card-title">{ project.title.rendered }</h2>
-								<dl>
-									<dt>Status</dt>
-									<dd>
-										{
-											props.statuses.map( ( status, j ) => {
-												if ( status.id == project["project-status"][j] ) {
-													return <a key={ j } href="#">{ status.name }</a>;
-												}
-											} )
-										}
-									</dd>
-									<dt>Launch Date</dt>
-									<dd className="strikebase-project-launch-date">
-										{ launchDate }
-									</dd>
-									<dt>Last Check-In Date</dt>
-									<dd className="strikebase-project-last-contact">
-										{ lastCheckInDate }
-									</dd>
-								</dl>
-							</article>
+							<Project
+								key={ i }
+								index={ i }
+								project={ project }
+							    statuses={ props.statuses }
+							    launchdate={ launchDate }
+							    lastCheckInDate={ lastCheckInDate }
+							/>
 						);
 					} )
 				}
