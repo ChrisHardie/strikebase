@@ -455,7 +455,7 @@ input[type="submit"] {
   font-weight: 600;
   padding-bottom: 2.5px;
   background: #A6302C;
-  border: none;
+  border: 0;
   border-bottom: 4px solid #7e2421;
   border-radius: 0;
   box-shadow: none;
@@ -1138,7 +1138,7 @@ img {
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-  border: none;
+  border: 0;
   margin-bottom: 0;
   margin-top: 0;
   padding: 0; }
