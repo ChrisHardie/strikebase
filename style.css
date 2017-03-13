@@ -1044,8 +1044,8 @@ body {
   .strikebase-clear-filters .strikebase-icon,
   .strikebase-clear-filters:visited .strikebase-icon {
     height: 9px;
-    opacity: 0.5;
-    margin-right: 4px; }
+    margin-right: 4px;
+    opacity: 0.5; }
 
 /*--------------------------------------------------------------
 ## Dashboard

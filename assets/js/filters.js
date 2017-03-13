@@ -121,14 +121,11 @@
 									$hiddenClasses = $hiddenClasses + ',.' + $( this ).data( 'filter' );
 								}
 							} );
-
-							console.log( $hiddenClasses );
 						}
 					} );
 
 					// Show everything that doesn't correspond to those filters.
 					$( '.site-main' ).find( '.strikebase-card' ).not( $hiddenClasses ).removeClass( 'hidden' );
-					//$( '.site-main' ).find( '.strikebase-card' ).not( '.project-status-complete,.project-status-launched' ).removeClass( 'hidden' );
 					updateFilterList( 'remove', $( this ).data( 'filter-name' ) );
 				}
 
