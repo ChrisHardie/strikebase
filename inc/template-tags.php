@@ -412,7 +412,6 @@ function strikebase_is_pre_team_project( $post_ID ) {
  * Output a title for the current page, for use in the masthead.
  *
  */
-
 function strikebase_page_title() { ?>
 	<header class="page-header">
 	<?php
@@ -442,6 +441,10 @@ function strikebase_primary_link() {
         // If we're on a person or project page, show the edit link.
         edit_post_link( sprintf( esc_html__( 'Edit %s', 'strikebase' ), get_post_type() ) );
 
+    elseif ( is_page_template( 'archive-template-organization.php' ) ):
+    ?>
+        <a href="/wp-admin/edit-tags.php?taxonomy=organization"><?php esc_html_e( 'Add new organization', 'strikebase' ); ?></a>
+    <?php
     elseif ( is_archive() ):
         // If we're on an archive page, show a link to add a new item.
         // We'll need some text to indicate what kind of thing we're adding or editing. There isn't really an elegant way of doing this.
@@ -449,8 +452,6 @@ function strikebase_primary_link() {
             $type = 'person';
         elseif ( is_post_type_archive( 'project' ) ) :
             $type = 'project';
-        elseif ( is_post_type_archive( 'organization' ) ) :
-            $type = 'organization';
         endif;
         ?>
         <a href="/wp-admin/post-new.php?post_type=<?php echo $type; ?>"><?php printf( esc_html__( 'Add new %s', 'strikebase' ), $type ); ?></a>
