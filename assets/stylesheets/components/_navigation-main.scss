@@ -71,3 +71,34 @@
 	.current-menu-ancestor > a {
 	}
 }
+
+// On mobile devices, anchor nav to the bottom of the screen.
+@include mobile {
+    .main-navigation {
+        background: $color__neutral;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 100;
+        
+        ul {
+            display: flex;
+            justify-content: center;
+        }
+    
+        li {
+            @include font-size(0.8);
+        }
+
+        a {
+            color: $color__white;
+            
+            &:hover {
+                color: $color__pure-white;
+            }
+        }
+    }
+
+}

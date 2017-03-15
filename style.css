@@ -686,6 +686,28 @@ tr:nth-of-type(even) {
     padding: 10px 5px;
     text-decoration: none; }
 
+@media (max-width: 639px) {
+  .main-navigation {
+    background: #544A35;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100; }
+    .main-navigation ul {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+      justify-content: center; }
+    .main-navigation li {
+      font-size: 12.8px;
+      font-size: 0.8rem; }
+    .main-navigation a {
+      color: #F2EFEB; }
+      .main-navigation a:hover {
+        color: #FFFFFD; } }
+
 .strikebase-pagination {
   text-align: center; }
 
