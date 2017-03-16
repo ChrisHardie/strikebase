@@ -10,6 +10,10 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<header class="page-header">
+				<h2 class="page-title"><?php esc_html_e( 'Dashboard', 'strikebase' ); ?></h2>
+			</header><!-- .entry-header -->
+
 			<section class="widget strikebase-check-ins-widget strikebase-card">
 				<h2 class="strikebase-card-title"><?php esc_html_e( 'Client check-ins', 'strikebase' ); ?></h2>
 

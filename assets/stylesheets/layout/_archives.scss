@@ -36,6 +36,10 @@
 	}
 }
 
+.page-header {
+	@include page-title;
+}
+
 // Filter/sort controls.
 .strikebase-filter-and-sort {
 	border-bottom: 1px solid $color__primary-light;
