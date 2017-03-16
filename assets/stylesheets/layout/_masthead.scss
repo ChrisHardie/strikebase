@@ -1,9 +1,10 @@
 .site-header {
-	padding-bottom: $size__site-gutter;
+	//padding-bottom: $size__site-gutter;
 	text-align: center;
 }
 
 .strikebase-logo {
+	display: none;
 	max-width: 300px;
 
 	.mound {

@@ -139,9 +139,9 @@ h3 {
     content: "#50715e"; }
 
 .color-primary-dark {
-  background: #26352c; }
+  background: #203325; }
   .color-primary-dark .hex-code::before {
-    content: "#26352c"; }
+    content: "#203325"; }
 
 .color-accent {
   background: #A6302C; }

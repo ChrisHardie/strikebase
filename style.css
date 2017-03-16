@@ -916,10 +916,10 @@ body {
   padding: 20px; }
 
 .site-header {
-  padding-bottom: 20px;
   text-align: center; }
 
 .strikebase-logo {
+  display: none;
   max-width: 300px; }
   .strikebase-logo .mound {
     fill: #544A35; }
@@ -960,12 +960,35 @@ body {
   flex-wrap: wrap;
   -ms-flex-pack: justify;
   justify-content: space-between; }
-  .single .person .entry-header,
-  .single .project .entry-header {
-    width: 100%; }
   .single .person .strikebase-card + .strikebase-card,
   .single .project .strikebase-card + .strikebase-card {
     margin-top: 40px; }
+
+.entry-header {
+  background: #203325;
+  width: calc(100% + 40px);
+  margin: -20px -20px 20px;
+  padding: 20px;
+  position: relative; }
+  .entry-header::after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    background: url("assets/svg/header-background.svg");
+    background-size: auto 50px;
+    height: 50px;
+    left: 0;
+    right: 0; }
+  .entry-header h1,
+  .entry-header h2 {
+    color: #F2EFEB; }
+    @media (max-width: 639px) {
+      .entry-header h1,
+      .entry-header h2 {
+        font-size: 16px;
+        font-size: 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif; } }
 
 .entry-content {
   max-width: 100%; }

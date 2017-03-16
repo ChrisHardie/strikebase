@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 320 54" style="enable-background:new 0 0 320 54;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#A6302C;}
+	.st1{fill:#F2B600;}
+	.st2{fill:#203325;}
+</style>
+<g>
+	<polygon id="red-polygon" class="st0" points="320,0 0,0 0,19.3 320,47 	"/>
+	<polygon id="yellow-polygon" class="st1" points="0,0 320,0 320,7 0,54 	"/>
+	<polygon id="green-polygon" class="st2" points="0,0 320,0 320,1.1 0,31 	"/>
+</g>
+</svg>

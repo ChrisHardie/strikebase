@@ -8,13 +8,13 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 
-	.entry-header {
-		width: 100%;
-	}
-
 	.strikebase-card + .strikebase-card {
 		margin-top: $size__site-gutter*2;
 	}
+}
+
+.entry-header {
+	@include page-title;
 }
 
 .entry-content {
