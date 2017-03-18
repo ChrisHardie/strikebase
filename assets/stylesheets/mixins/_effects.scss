@@ -4,21 +4,21 @@
 
 @mixin page-title() {
 	background: $color__primary-dark;
-	width: calc(100% + #{$size__site-gutter*2});
 	margin: #{-$size__site-gutter} -$size__site-gutter $size__site-gutter;
 	padding: $size__site-gutter;
 	position: relative;
+	width: calc(100% + #{$size__site-gutter*2});
 
 
 	&::after {
-		display: block;
-		content: '';
-		position: absolute;
-		bottom: -50px;
-		background: url('assets/svg/header-background.svg');
 		background-size: auto 50px;
+		background: url("assets/svg/header-background.svg");
+		bottom: -50px;
+		content: "";
+		display: block;
 		height: 50px;
 		left: 0;
+		position: absolute;
 		right: 0;
 	}
 
