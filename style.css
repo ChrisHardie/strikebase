@@ -476,7 +476,7 @@ input[type="submit"] {
 /*--------------------------------------------------------------
 # Icons
 --------------------------------------------------------------*/
-.strikebase-icon svg {
+.strikebase-icon {
   fill: #3B5345;
   height: 32px;
   width: 32px; }
@@ -917,6 +917,9 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0; }
+  .strikebase-check-ins-list .strikebase-icon {
+    float: left;
+    margin: 5px 5px 0 0; }
   .strikebase-check-ins-list a {
     color: #302816;
     border-bottom: 1px solid #DBD4C6;
@@ -934,12 +937,15 @@ body {
   color: #50715e;
   display: block;
   font-weight: 600;
-  padding-bottom: 2.5px; }
+  padding-bottom: 2.5px;
+  padding-bottom: 0; }
 
 .strikebase-overdue-check-in {
   background: #faf4f4; }
   .strikebase-overdue-check-in .strikebase-check-in-date {
     color: #A6302C; }
+  .strikebase-overdue-check-in .strikebase-icon {
+    fill: #A6302C; }
   .strikebase-overdue-check-in a {
     border-color: rgba(166, 48, 44, 0.25); }
 
