@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:#1d1d1b;}</style></defs><title>plus</title><g id="add"><path class="cls-1" d="M16,27a1,1,0,0,1-1-1V6a1,1,0,0,1,2,0V26A1,1,0,0,1,16,27Z"/><path class="cls-1" d="M26,17H6a1,1,0,0,1,0-2H26a1,1,0,0,1,0,2Z"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:#1d1d1b;}</style></defs><title>plus</title><g id="add"><rect class="cls-1" x="15" y="4" width="2" height="24"/><rect class="cls-1" x="4" y="15" width="24" height="2"/></g></svg>
