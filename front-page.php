@@ -10,10 +10,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<header class="page-header">
-				<h2 class="page-title"><?php esc_html_e( 'Dashboard', 'strikebase' ); ?></h2>
-			</header><!-- .entry-header -->
-
 			<section class="widget strikebase-check-ins-widget strikebase-card">
 				<h2 class="strikebase-card-title"><?php esc_html_e( 'Client check-ins', 'strikebase' ); ?></h2>
 
@@ -30,7 +26,7 @@ get_header(); ?>
 						else :
 							strikebase_icon( 'clock' );
 						endif;
-						
+
 						echo '<span class="strikebase-check-in-date">' . strikebase_formatted_date( $check_in['next_check_in'], 'jS F' ) . '</span>';
 						echo $check_in['title'];
 						echo '</a></li>';

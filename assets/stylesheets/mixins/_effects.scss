@@ -1,34 +1,3 @@
 @mixin box-shadow() {
 	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
-
-@mixin page-title() {
-	background: $color__primary-dark;
-	margin: #{-$size__site-gutter} -$size__site-gutter $size__site-gutter;
-	padding: $size__site-gutter;
-	position: relative;
-	width: calc(100% + #{$size__site-gutter*2});
-
-
-	&::after {
-		background-size: auto 50px;
-		background: url("assets/svg/header-background.svg");
-		bottom: -50px;
-		content: "";
-		display: block;
-		height: 50px;
-		left: 0;
-		position: absolute;
-		right: 0;
-	}
-
-	h1,
-	h2 {
-		color: $color__white;
-
-		@include mobile {
-			@include font-size(1);
-			font-family: $font__main;
-		}
-	}
-}

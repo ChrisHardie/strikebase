@@ -407,3 +407,26 @@ function strikebase_is_pre_team_project( $post_ID ) {
 		return false;
 	endif;
 }
+
+/*
+ * Outputs a title for the current page, for use in the masthead.
+ *
+ */
+
+function strikebase_page_title() { ?>
+	<header class="page-header">
+	<?php
+		if ( is_single() ) :
+			strikebase_show_gravatar( get_the_ID() );
+			the_title( '<h2 class="page-title">', '</h2>' );
+		elseif ( is_post_type_archive( 'person' ) ) : ?>
+			<h2 class="page-title"><?php esc_html_e( 'People', 'strikebase' ); ?></h2>
+		<?php elseif ( is_post_type_archive( 'project' ) ) : ?>
+			<h2 class="page-title"><?php esc_html_e( 'Projects', 'strikebase' ); ?></h2>
+		<?php elseif ( is_page_template( 'archive-template-organization.php' ) ) : ?>
+			<h2 class="page-title"><?php esc_html_e( 'Organizations', 'strikebase' ); ?></h2>
+		<?php else : ?>
+			<h2 class="page-title"><?php esc_html_e( 'Strikebase', 'strikebase' ); ?></h2>
+		<?php endif; ?>
+	</header><!-- .entry-header -->
+<?php }

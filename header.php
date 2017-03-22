@@ -27,15 +27,7 @@
 	<header id="masthead" class="site-header" role="banner">
 
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<?php
-				$file = get_template_directory_uri() . '/assets/svg/strikebase.svg';
-				if ( function_exists( 'wpcom_is_vip' ) ) :
-					echo wpcom_vip_file_get_contents( esc_url( $file ) );
-				else :
-					echo file_get_contents( esc_url( $file ) );
-				endif;
-
-			?>
+			<?php strikebase_svg( get_template_directory_uri() . '/assets/svg/strikebase.svg' ); ?>
 		</a>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -47,6 +39,8 @@
 			</ul>
 		</nav>
 
+		<?php strikebase_page_title(); ?>
 
+		<?php strikebase_svg( get_template_directory_uri() . '/assets/svg/header-background.svg' ); ?>
 	</header>
 	<div id="content" class="site-content">

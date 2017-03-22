@@ -40,3 +40,49 @@
 		fill: $color__green;
 	}
 }
+
+// Header triangles
+.red-polygon {
+	fill: $color__red;
+}
+
+.green-polygon {
+	fill: $color__primary-dark;
+}
+
+.yellow-polygon {
+	fill: $color__yellow;
+}
+
+// Hack to prevent odd outline/border in Firefox.
+.header-background {
+	margin-top: -40px;
+	//z-index: -1;
+}
+
+.page-header {
+	margin: 0 #{-$size__site-gutter};
+	padding: $size__site-gutter $size__site-gutter 0;
+	position: relative;
+	width: calc(100% + #{$size__site-gutter*2});
+
+	&::before {
+		background: $color__primary-dark;
+		content: "";
+		display: block;
+		height: 60px;
+		position: relative;
+		width: 100%;
+		z-index: -1;
+	}
+
+	.page-title {
+		color: $color__white;
+		margin-top: -40px;
+
+		@include mobile {
+			@include font-size(1);
+			font-family: $font__main;
+		}
+	}
+}

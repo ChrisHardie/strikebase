@@ -939,6 +939,40 @@ body {
   .strikebase-logo .base {
     fill: #3B5345; }
 
+.red-polygon {
+  fill: #A6302C; }
+
+.green-polygon {
+  fill: #203325; }
+
+.yellow-polygon {
+  fill: #E8B136; }
+
+.header-background {
+  margin-top: -40px; }
+
+.page-header {
+  margin: 0 -20px;
+  padding: 20px 20px 0;
+  position: relative;
+  width: calc(100% + 40px); }
+  .page-header::before {
+    background: #203325;
+    content: "";
+    display: block;
+    height: 60px;
+    position: relative;
+    width: 100%;
+    z-index: -1; }
+  .page-header .page-title {
+    color: #F2EFEB;
+    margin-top: -40px; }
+    @media (max-width: 639px) {
+      .page-header .page-title {
+        font-size: 16px;
+        font-size: 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif; } }
+
 /* Center-align page headers on archive pages. */
 .archive .page-header {
   text-align: center; }
@@ -963,32 +997,6 @@ body {
   .single .person .strikebase-card + .strikebase-card,
   .single .project .strikebase-card + .strikebase-card {
     margin-top: 40px; }
-
-.entry-header {
-  background: #203325;
-  margin: -20px -20px 20px;
-  padding: 20px;
-  position: relative;
-  width: calc(100% + 40px); }
-  .entry-header::after {
-    background-size: auto 50px;
-    background: url("assets/svg/header-background.svg");
-    bottom: -50px;
-    content: "";
-    display: block;
-    height: 50px;
-    left: 0;
-    position: absolute;
-    right: 0; }
-  .entry-header h1,
-  .entry-header h2 {
-    color: #F2EFEB; }
-    @media (max-width: 639px) {
-      .entry-header h1,
-      .entry-header h2 {
-        font-size: 16px;
-        font-size: 1rem;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif; } }
 
 .entry-content {
   max-width: 100%; }
@@ -1036,32 +1044,6 @@ body {
   .strikebase-projects-list .project,
   .strikebase-organizations-list .organization {
     width: calc(33% - 20px); } }
-
-.page-header {
-  background: #203325;
-  margin: -20px -20px 20px;
-  padding: 20px;
-  position: relative;
-  width: calc(100% + 40px); }
-  .page-header::after {
-    background-size: auto 50px;
-    background: url("assets/svg/header-background.svg");
-    bottom: -50px;
-    content: "";
-    display: block;
-    height: 50px;
-    left: 0;
-    position: absolute;
-    right: 0; }
-  .page-header h1,
-  .page-header h2 {
-    color: #F2EFEB; }
-    @media (max-width: 639px) {
-      .page-header h1,
-      .page-header h2 {
-        font-size: 16px;
-        font-size: 1rem;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif; } }
 
 .strikebase-filter-and-sort {
   border-bottom: 1px solid #50715e;

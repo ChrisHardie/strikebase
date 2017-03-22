@@ -11,10 +11,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<header class="page-header">
-				<h2 class="page-title"><?php esc_html_e( 'Projects', 'strikebase' ); ?></h2>
-			</header><!-- .entry-header -->
-
 		<?php
 		if ( have_posts() ) : ?>
 
