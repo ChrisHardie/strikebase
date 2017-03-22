@@ -13,6 +13,11 @@
 			color: $color__primary-dark;
 			outline: none;
 		}
+
+		.dropdown-link > .strikebase-icon {
+			transform: rotate(180deg);
+			vertical-align: -2px;
+		}
 	}
 
 	// Use smaller icons.
@@ -23,7 +28,7 @@
 }
 
 // Links to open drop-down menus.
-.dropdown-label > a {
+.dropdown-link {
 	@include label;
 	padding: 10px 20px 10px 0;
 	text-decoration: none;
