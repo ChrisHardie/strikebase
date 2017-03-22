@@ -12,15 +12,15 @@
 		.dropdown-link {
 			color: $color__primary-dark;
 			outline: none;
-		}
 
-		.dropdown-link > .strikebase-icon {
-			transform: rotate(180deg);
-			vertical-align: -2px;
+			> .strikebase-icon {
+				transform: rotate(180deg);
+				vertical-align: -2px;
+			}
 		}
 	}
 
-	// Use smaller icons.
+	// Use smaller icons throughout.
 	.strikebase-icon {
 		height: 12px;
 		width: 12px;
@@ -32,11 +32,11 @@
 	@include label;
 	padding: 10px 20px 10px 0;
 	text-decoration: none;
-}
 
-.dropdown-link > .strikebase-icon {
-	margin-left: 4px;
-	vertical-align: -1px;
+	> .strikebase-icon {
+		margin-left: 4px;
+		vertical-align: -1px;
+	}
 }
 
 // Only give a relative positioning on tablets and above–on smaller devices we want to span the whole screen.
