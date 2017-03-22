@@ -688,8 +688,6 @@ tr:nth-of-type(even) {
 --------------------------------------------------------------*/
 a {
   color: #A6302C; }
-  a:visited {
-    color: #A6302C; }
   a:hover, a:focus, a:active {
     color: #3B5345; }
   a:focus {
@@ -820,16 +818,15 @@ a {
     position: relative; }
 
 .dropdown-title,
-.filter-link,
 .dropdown-submenu-link,
-.filter-link:visited,
-.dropdown-submenu-link:visited {
+.filter-link {
   font-size: 14px;
   font-size: 0.875rem;
   border-bottom: 1px solid #F2EFEB;
   color: #544A35;
   display: block;
   padding: 10px;
+  position: relative;
   text-decoration: none; }
 
 .dropdown-title {
@@ -845,34 +842,34 @@ a {
   right: 0;
   top: 0; }
 
-.filter-link:hover, .dropdown-submenu-link:hover {
+.dropdown-submenu-link .strikebase-icon,
+.filter-link .strikebase-icon {
+  position: absolute;
+  right: 12px;
+  top: 14px; }
+
+.dropdown-submenu-link .strikebase-icon {
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
+.filter-link .strikebase-icon {
+  display: none; }
+
+.dropdown-submenu-link:hover,
+.filter-link:hover {
   background: rgba(242, 239, 235, 0.25); }
 
-.filter-link.active, .active.dropdown-submenu-link {
+.filter-link.active {
   background: rgba(242, 239, 235, 0.5);
   border-right: 4px solid #544A35;
   color: #544A35;
   font-weight: 500; }
 
-.filter-link.selected, .selected.dropdown-submenu-link {
+.filter-link.selected {
   font-weight: bold;
   position: relative; }
-  .filter-link.selected::after, .selected.dropdown-submenu-link::after {
-    content: url("https://icon.now.sh/x/8");
-    display: inline-block;
-    opacity: 0.7;
-    position: absolute;
-    right: 12px;
-    top: 8px; }
-
-.dropdown-submenu-link {
-  position: relative; }
-  .dropdown-submenu-link .strikebase-icon {
-    position: absolute;
-    right: 12px;
-    top: 14px;
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg); }
+  .filter-link.selected .strikebase-icon {
+    display: block; }
 
 .dropdown-submenu {
   left: 100%;
@@ -1048,9 +1045,10 @@ body {
     opacity: 0; }
   .strikebase-clear-filters .strikebase-icon,
   .strikebase-clear-filters:visited .strikebase-icon {
-    height: 9px;
+    height: 12px;
     margin-right: 4px;
-    opacity: 0.5; }
+    vertical-align: -2px;
+    width: 12px; }
 
 /*--------------------------------------------------------------
 ## Dashboard

@@ -20,7 +20,7 @@ function strikebase_filters( $taxonomy, $dropdown_label ) { ?>
 			<div class="dropdown-wrapper">
 			<ul class="dropdown-menu dropdown-main-menu">
 				<li class="dropdown-title"><?php printf( esc_html__( 'Filter by %1$s', 'strikebase' ), strtolower( get_taxonomy( $taxonomy )->label ) ); ?>
-				<a class="dropdown-close" href="#"><img class="strikebase-icon" src="https://icon.now.sh/x" alt="Close menu" /></a>
+				<a class="dropdown-close" href="#" title="<?php esc_html_e( 'Close menu', 'strikebase' ); ?>"><?php strikebase_icon( 'x' ); ?></a>
 				</li>
 
 				<?php
@@ -84,7 +84,8 @@ function strikebase_filter_link( $taxonomy, $slug, $name ) { ?>
 	<li><a class="filter-link" href="#"
 		data-filter="<?php echo $taxonomy; ?>-<?php echo $slug; ?>"
 		data-filter-name="<?php echo $name; ?>">
-	<?php echo $name; ?>
+		<?php echo $name; ?>
+		<?php strikebase_icon( 'x' ); ?>
 	</a></li>
 <?php }
 
@@ -118,7 +119,7 @@ function strikebase_filter_sort_messaging() { ?>
 			<?php esc_html_e( 'Filters:', 'strikebase' ); ?>
 		</span>
 
-		<button class="strikebase-clear-filters subtle hidden" href="#"><img class="strikebase-icon" src="https://icon.now.sh/x" alt="Clear filters" /><?php esc_html_e( 'Clear', 'strikebase' ); ?></button>
+		<button class="strikebase-clear-filters subtle hidden" href="#" title="<?php esc_html_e( 'Clear filters', 'strikebase' ); ?>"><?php strikebase_icon( 'x' ); ?><?php esc_html_e( 'Clear', 'strikebase' ); ?></button>
 
 	</div>
 

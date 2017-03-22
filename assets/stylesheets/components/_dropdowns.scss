@@ -89,13 +89,14 @@
 
 // Dropdown menu items (title and links)
 .dropdown-title,
-.filter-link,
-.filter-link:visited {
+.dropdown-submenu-link,
+.filter-link {
 	@include font-size(0.875);
 	border-bottom: 1px solid $color__white;
 	color: $color__neutral;
 	display: block;
 	padding: 10px;
+	position: relative;
 	text-decoration: none;
 }
 
@@ -117,7 +118,26 @@
 	top: 0;
 }
 
-// Dropdown filter links.
+// Icons inside dropdown menu items.
+.dropdown-submenu-link .strikebase-icon,
+.filter-link .strikebase-icon {
+	position: absolute;
+	right: 12px;
+	top: 14px;
+}
+
+// Rotate caret to point to the right to indicate sub,enu
+.dropdown-submenu-link .strikebase-icon {
+	transform: rotate(-90deg);
+}
+
+// Hide close icon by default on filter links (we only display it when the link is selected)
+.filter-link .strikebase-icon {
+	display: none;
+}
+
+// Hovering, active & selected filter links.
+.dropdown-submenu-link:hover,
 .filter-link:hover {
 	background: transparentize($color__white, 0.75);
 }
@@ -133,26 +153,8 @@
 	font-weight: bold;
 	position: relative;
 
-	&::after {
-		content: url("https://icon.now.sh/x/8");
-		display: inline-block;
-		opacity: 0.7;
-		position: absolute;
-		right: 12px;
-		top: 8px;
-	}
-}
-
-// Style filter links that have submenus a bit differently to indicate they'll open a submenu.
-.dropdown-submenu-link {
-	@extend .filter-link;
-	position: relative;
-
 	.strikebase-icon {
-		position: absolute;
-		right: 12px;
-		top: 14px;
-		transform: rotate(-90deg);
+		display: block;
 	}
 }
 
