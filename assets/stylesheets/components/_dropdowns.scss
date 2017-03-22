@@ -1,8 +1,3 @@
-.strikebase-icon {
-	height: 10px;
-	opacity: 0.7;
-}
-
 .dropdown-container {
 	list-style-type: none;
 	margin: 0;
@@ -19,6 +14,24 @@
 			outline: none;
 		}
 	}
+
+	// Use smaller icons.
+	.strikebase-icon {
+		height: 12px;
+		width: 12px;
+	}
+}
+
+// Links to open drop-down menus.
+.dropdown-label > a {
+	@include label;
+	padding: 10px 20px 10px 0;
+	text-decoration: none;
+}
+
+.dropdown-link > .strikebase-icon {
+	margin-left: 4px;
+	vertical-align: -1px;
 }
 
 // Only give a relative positioning on tablets and above–on smaller devices we want to span the whole screen.
@@ -26,18 +39,6 @@
 	.dropdown-label {
 		position: relative;
 	}
-}
-
-.dropdown-label > a {
-	@include label;
-	padding: 10px 20px 10px 0;
-	text-decoration: none;
-}
-
-.dropdown-label .strikebase-icon {
-	height: 8px;
-	margin-left: 4px;
-	vertical-align: 1px;
 }
 
 // Container for dropdowns.
@@ -142,6 +143,7 @@
 	}
 }
 
+// Style filter links that have submenus a bit differently to indicate they'll open a submenu.
 .dropdown-submenu-link {
 	@extend .filter-link;
 	position: relative;
@@ -149,7 +151,8 @@
 	.strikebase-icon {
 		position: absolute;
 		right: 12px;
-		top: 16px;
+		top: 14px;
+		transform: rotate(-90deg);
 	}
 }
 
@@ -165,6 +168,12 @@
 
 .dropdown-submenu-close {
 	text-transform: capitalize;
+
+	.strikebase-icon {
+		margin-right: 2px;
+		transform: rotate(90deg);
+		vertical-align: -1px;
+	}
 }
 
 .dropdown-main-menu.hidden {
