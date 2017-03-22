@@ -152,6 +152,11 @@ require get_template_directory() . '/inc/check-ins.php';
 require get_template_directory() . '/inc/filters.php';
 
 /**
+ * Load functions related to SVG icons.
+ */
+require get_template_directory() . '/inc/icons.php';
+
+/**
  * Load extra misc functionality.
  */
 require get_template_directory() . '/inc/extras.php';
