@@ -686,6 +686,16 @@ tr:nth-of-type(even) {
     padding: 10px 5px;
     text-decoration: none; }
 
+.main-navigation .strikebase-icon {
+  display: block;
+  background: #302816;
+  border-radius: 50%;
+  fill: #DBD4C6;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+  margin: 10px auto; }
+
 @media (max-width: 639px) {
   .main-navigation {
     background: #544A35;
@@ -702,7 +712,8 @@ tr:nth-of-type(even) {
       justify-content: center; }
     .main-navigation li {
       font-size: 12.8px;
-      font-size: 0.8rem; }
+      font-size: 0.8rem;
+      text-align: center; }
     .main-navigation a {
       color: #F2EFEB; }
       .main-navigation a:hover {

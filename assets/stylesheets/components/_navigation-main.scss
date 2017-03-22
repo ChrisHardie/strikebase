@@ -72,6 +72,19 @@
 	}
 }
 
+// Icons should be in circles
+.main-navigation .strikebase-icon {
+	display: block;
+	background: $color__black;
+	border-radius: 50%;
+	fill: $color__neutral-highlight;
+	padding: 10px;
+	height: 40px;
+	width: 40px;
+	margin: $size__site-gutter/2 auto;
+
+}
+
 // On mobile devices, anchor nav to the bottom of the screen.
 @include mobile {
     .main-navigation {
@@ -82,19 +95,20 @@
         right: 0;
         width: 100%;
         z-index: 100;
-        
+
         ul {
             display: flex;
             justify-content: center;
         }
-    
+
         li {
             @include font-size(0.8);
+			text-align: center;
         }
 
         a {
             color: $color__white;
-            
+
             &:hover {
                 color: $color__pure-white;
             }
