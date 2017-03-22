@@ -105,6 +105,7 @@
 					// For each group that has filters active, make a list of all the deselected filters.
 					// We need to ensure these are still hidden from view.
 					var $otherFilterGroups = $( this ).parents( '.dropdown-container' ).siblings( '.dropdown-container' );
+					var $hiddenClasses;
 
 					$otherFilterGroups.each( function() {
 						if ( 0 !== $( this ).find( '.filter-link.selected' ).length ) {
@@ -115,7 +116,6 @@
 
 							// Make a string of all the other filters, so we make sure to continue hiding them.
 							$inactiveFilters.each( function( index ) {
-								var $hiddenClasses;
 								if ( 0 === index ) {
 									$hiddenClasses = '.' + $( this ).data( 'filter' );
 								} else {
