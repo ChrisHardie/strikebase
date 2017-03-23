@@ -648,6 +648,8 @@ tr:nth-of-type(even) {
 # Navigation
 --------------------------------------------------------------*/
 .main-navigation {
+  background: #302816;
+  border-bottom: 1px solid #544A35;
   display: block;
   width: 100%; }
   .main-navigation ul {
@@ -675,7 +677,11 @@ tr:nth-of-type(even) {
   .main-navigation li {
     display: inline-block;
     position: relative; }
+    .main-navigation li:hover > a,
+    .main-navigation li.focus > a {
+      color: #DBD4C6; }
   .main-navigation a {
+    color: #F2EFEB;
     display: block;
     padding: 10px 5px;
     text-decoration: none; }

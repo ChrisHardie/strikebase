@@ -1,4 +1,6 @@
 .main-navigation {
+	background: $color__black;
+	border-bottom: 1px solid $color__neutral;
 	display: block;
 	width: 100%;
 
@@ -52,10 +54,12 @@
 
 		&:hover > a,
 		&.focus > a {
+			color: $color__neutral-highlight;
 		}
 	}
 
 	a {
+		color: $color__white;
 		display: block;
 		padding: 10px 5px;
 		text-decoration: none;
