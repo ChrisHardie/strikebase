@@ -948,25 +948,20 @@ body {
 .yellow-polygon {
   fill: #E8B136; }
 
+.header-background-background {
+  fill: #F2EFEB; }
+
 .header-background {
-  margin-top: -40px; }
+  margin-top: -22px; }
 
 .page-header {
+  background: #203325;
   margin: 0 -20px;
   padding: 20px 20px 0;
   position: relative;
-  width: calc(100% + 40px); }
-  .page-header::before {
-    background: #203325;
-    content: "";
-    display: block;
-    height: 60px;
-    position: relative;
-    width: 100%;
-    z-index: -1; }
+  width: calc(100% + 20px); }
   .page-header .page-title {
-    color: #F2EFEB;
-    margin-top: -40px; }
+    color: #F2EFEB; }
     @media (max-width: 639px) {
       .page-header .page-title {
         font-size: 16px;
