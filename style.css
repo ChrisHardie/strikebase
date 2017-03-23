@@ -1145,15 +1145,17 @@ body {
   width: 100px;
   height: 100px; }
 
-.person .entry-header {
+.single-person .page-header {
   -ms-flex-align: center;
   align-items: center;
   display: -ms-flexbox;
-  display: flex; }
-  .person .entry-header .gravatar {
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .single-person .page-header .gravatar {
     margin-left: -13.33333px;
     margin-right: 13.33333px; }
-  .person .entry-header .entry-title {
+  .single-person .page-header .page-title {
     margin-bottom: 0; }
 
 .person-type-striker .strikebase-card-title {
