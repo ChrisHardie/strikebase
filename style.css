@@ -958,7 +958,12 @@ body {
   fill: #F2EFEB; }
 
 .header-background {
-  margin-top: -22px; }
+  margin-top: -20px;
+  position: relative;
+  z-index: 2; }
+  @media (min-width: 640px) {
+    .header-background {
+      margin-top: -40px; } }
 
 .page-header {
   background: #203325;
@@ -973,6 +978,10 @@ body {
         font-size: 16px;
         font-size: 1rem;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif; } }
+  .page-header .page-title,
+  .page-header .gravatar {
+    position: relative;
+    z-index: 10; }
 
 /* Center-align page headers on archive pages. */
 .archive .page-header {

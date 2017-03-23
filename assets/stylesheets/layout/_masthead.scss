@@ -41,7 +41,7 @@
 	}
 }
 
-// Header triangles
+// Header stripeyness
 .red-polygon {
 	fill: $color__red;
 }
@@ -58,9 +58,15 @@
 	fill: $color__background-body;
 }
 
-// Hack to prevent odd outline/border in Firefox.
+// Pull stripes up a bit.
 .header-background {
-	margin-top: -22px;
+	margin-top: -20px;
+	position: relative;
+	z-index: 2;
+
+	@include tablet {
+		margin-top: -40px;
+	}
 }
 
 .page-header {
@@ -77,5 +83,12 @@
 			@include font-size(1);
 			font-family: $font__main;
 		}
+	}
+
+	// Ensure content sits on top of stripes.
+	.page-title,
+	.gravatar {
+		position: relative;
+		z-index: 10;
 	}
 }
