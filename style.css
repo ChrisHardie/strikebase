@@ -925,8 +925,9 @@ body {
   text-align: center; }
 
 .strikebase-logo {
-  display: none;
-  max-width: 300px; }
+  max-width: 300px;
+  position: relative;
+  z-index: 10; }
   .strikebase-logo .mound {
     fill: #544A35; }
   .strikebase-logo .flagpole {
