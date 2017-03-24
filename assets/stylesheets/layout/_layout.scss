@@ -15,6 +15,11 @@ body {
 /*--------------------------------------------------------------
 ## Basic site structure
 --------------------------------------------------------------*/
+.site {
+	min-height: 84.5vh;
+	position: relative;
+}
+
 .site-main {
 	margin: 0 auto;
 	max-width: $size__site-width;
@@ -39,3 +44,46 @@ body {
 ## Dashboard
 --------------------------------------------------------------*/
 @import "dashboard";
+
+.strikebase-logo {
+	//max-width: 300px;
+	opacity: 0.125;
+	position: absolute;
+	bottom: -75px;
+	z-index:-1;
+
+	.flagpole {
+		fill: $color__neutral;
+	}
+
+	.flag-shape {
+		fill: $color__green;
+	}
+
+	.bolt {
+		fill: $color__red;
+	}
+
+	.circle {
+		fill: $color__yellow;
+	}
+
+	.logotype {
+		display: none;
+	}
+
+	@include tablet {
+		.logotype {
+			font-family: $font__headings;
+			font-size: 100px;
+		}
+
+		.strike {
+			fill: $color__red;
+		}
+
+		.base {
+			fill: $color__green;
+		}
+	}
+}

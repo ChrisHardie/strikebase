@@ -482,7 +482,7 @@ input[type="submit"] {
   input[type="reset"].secondary,
   input[type="submit"].secondary {
     background: #3B5345;
-    border-bottom-color: #26352c; }
+    border-bottom-color: #203325; }
   button.subtle,
   input[type="button"].subtle,
   input[type="reset"].subtle,
@@ -761,7 +761,7 @@ a {
   .dropdown-container.open .dropdown-wrapper {
     left: 0; }
   .dropdown-container.open .dropdown-link {
-    color: #26352c;
+    color: #203325;
     outline: none; }
     .dropdown-container.open .dropdown-link > .strikebase-icon {
       -ms-transform: rotate(180deg);
@@ -916,6 +916,10 @@ body {
 /*--------------------------------------------------------------
 ## Basic site structure
 --------------------------------------------------------------*/
+.site {
+  min-height: 84.5vh;
+  position: relative; }
+
 .site-main {
   margin: 0 auto;
   max-width: 1040px;
@@ -923,28 +927,6 @@ body {
 
 .site-header {
   text-align: center; }
-
-.strikebase-logo {
-  max-width: 300px;
-  position: relative;
-  z-index: 10; }
-  .strikebase-logo .mound {
-    fill: #544A35; }
-  .strikebase-logo .flagpole {
-    fill: #302816; }
-  .strikebase-logo .flag-shape {
-    fill: #3B5345; }
-  .strikebase-logo .bolt {
-    fill: #A6302C; }
-  .strikebase-logo .circle {
-    fill: #E8B136; }
-  .strikebase-logo .logotype {
-    font-family: "Francois One", courier;
-    font-size: 100px; }
-  .strikebase-logo .strike {
-    fill: #A6302C; }
-  .strikebase-logo .base {
-    fill: #3B5345; }
 
 .red-polygon {
   fill: #A6302C; }
@@ -956,6 +938,7 @@ body {
   fill: #E8B136; }
 
 .header-background-background {
+  display: none;
   fill: #F2EFEB; }
 
 .header-background {
@@ -1144,6 +1127,30 @@ body {
     fill: #A6302C; }
   .strikebase-overdue-check-in a {
     border-color: rgba(166, 48, 44, 0.25); }
+
+.strikebase-logo {
+  opacity: 0.125;
+  position: absolute;
+  bottom: -75px;
+  z-index: -1; }
+  .strikebase-logo .flagpole {
+    fill: #544A35; }
+  .strikebase-logo .flag-shape {
+    fill: #3B5345; }
+  .strikebase-logo .bolt {
+    fill: #A6302C; }
+  .strikebase-logo .circle {
+    fill: #E8B136; }
+  .strikebase-logo .logotype {
+    display: none; }
+  @media (min-width: 640px) {
+    .strikebase-logo .logotype {
+      font-family: "Francois One", courier;
+      font-size: 100px; }
+    .strikebase-logo .strike {
+      fill: #A6302C; }
+    .strikebase-logo .base {
+      fill: #3B5345; } }
 
 /*--------------------------------------------------------------
 # CPTs
