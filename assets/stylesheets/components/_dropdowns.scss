@@ -2,6 +2,41 @@
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+
+	// Show drop-down when tapped.
+	&.open {
+		.dropdown-wrapper {
+			left: 0;
+		}
+
+		.dropdown-link {
+			color: $color__primary-dark;
+			outline: none;
+
+			> .strikebase-icon {
+				transform: rotate(180deg);
+				vertical-align: -2px;
+			}
+		}
+	}
+
+	// Use smaller icons throughout.
+	.strikebase-icon {
+		height: 12px;
+		width: 12px;
+	}
+}
+
+// Links to open drop-down menus.
+.dropdown-link {
+	@include label;
+	padding: 10px 20px 10px 0;
+	text-decoration: none;
+
+	> .strikebase-icon {
+		margin-left: 4px;
+		vertical-align: -1px;
+	}
 }
 
 // Only give a relative positioning on tablets and above–on smaller devices we want to span the whole screen.
@@ -11,21 +46,18 @@
 	}
 }
 
-.dropdown-label > a {
-	@include label;
-	padding: 10px 20px 10px 0;
-	text-decoration: none;
-}
-
-.dropdown {
-	background: $color__pure-white;
+// Container for dropdowns.
+.dropdown-wrapper {
 	@include box-shadow;
+	background: $color__pure-white;
 	display: inline-block;
-	list-style-type: none;
-	margin: -5px 0 0 0;
+	left: -9999em;
+	margin-top: -4px;
+	max-height: 380px;
+	overflow-x: hidden;
+	overflow-y: auto;
 	padding: 0;
 	position: absolute;
-		left: -9999em;
 	z-index: 10;
 
 	@include mobile {
@@ -33,36 +65,124 @@
 	}
 
 	@include tablet {
-		min-width: 300px;
-	}
-
-	.dropdown-title,
-	.filter-link {
-		border-bottom: 1px solid $color__white;
-		color: $color__neutral;
-		display: block;
-		@include font-size(0.875);
-		padding: 10px;
-		text-decoration: none;
-	}
-
-	.dropdown-title {
-		background: transparentize($color__white, 0.5);
-	}
-
-	.filter-link:hover {
-		background: transparentize($color__white, 0.75);
-	}
-
-	.filter-link.active {
-		background: transparentize($color__white, 0.5);
-		border-right: 4px solid $color__neutral;
-		color: $color__neutral;
-		font-weight: 500;
+		width: 300px;
 	}
 }
 
-// Show drop-down on hover or tap.
-.dropdown-label:hover .dropdown {
-	left: 0;
+// Dropdown menus
+.dropdown-menu {
+	display: inline-block;
+	float: left;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	transition: all 200ms ease-in-out;
+	vertical-align: top;
+
+	@include mobile {
+		width: 100%;
+	}
+
+	@include tablet {
+		width: 300px;
+	}
+
+	li {
+		position: relative;
+	}
+}
+
+// Dropdown menu items (title and links)
+.dropdown-title,
+.dropdown-submenu-link,
+.filter-link {
+	@include font-size(0.875);
+	border-bottom: 1px solid $color__white;
+	color: $color__neutral;
+	display: block;
+	padding: 10px;
+	position: relative;
+	text-decoration: none;
+}
+
+// Dropdown title.
+.dropdown-title {
+	background: transparentize($color__white, 0.5);
+	vertical-align: middle;
+
+	a {
+		color: $color__neutral;
+		text-decoration: none;
+	}
+}
+
+.dropdown-close {
+	padding: 11px 12px 6px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+// Icons inside dropdown menu items.
+.dropdown-submenu-link .strikebase-icon,
+.filter-link .strikebase-icon {
+	position: absolute;
+	right: 12px;
+	top: 14px;
+}
+
+// Rotate caret to point to the right to indicate sub,enu
+.dropdown-submenu-link .strikebase-icon {
+	transform: rotate(-90deg);
+}
+
+// Hide close icon by default on filter links (we only display it when the link is selected)
+.filter-link .strikebase-icon {
+	display: none;
+}
+
+// Hovering, active & selected filter links.
+.dropdown-submenu-link:hover,
+.filter-link:hover {
+	background: transparentize($color__white, 0.75);
+}
+
+.filter-link.active {
+	background: transparentize($color__white, 0.5);
+	border-right: 4px solid $color__neutral;
+	color: $color__neutral;
+	font-weight: 500;
+}
+
+.filter-link.selected {
+	font-weight: bold;
+	position: relative;
+
+	.strikebase-icon {
+		display: block;
+	}
+}
+
+// Submenus.
+.dropdown-submenu {
+	left: 100%;
+	position: absolute;
+
+	&.open {
+		left: 0;
+	}
+}
+
+.dropdown-submenu-close {
+	text-transform: capitalize;
+
+	.strikebase-icon {
+		margin-right: 2px;
+		transform: rotate(90deg);
+		vertical-align: -1px;
+	}
+}
+
+.dropdown-main-menu.hidden {
+	margin-left: -100%;
 }

@@ -39,9 +39,59 @@
 // Filter/sort controls.
 .strikebase-filter-and-sort {
 	border-bottom: 1px solid $color__primary-light;
-	margin-bottom: $size__site-gutter;
+	margin-bottom: $size__site-gutter/2;
 
 	.dropdown-container {
 		display: inline-block;
+	}
+}
+
+// Filter/sort messaging.
+.strikebase-filter-sort-messaging {
+	@include font-size(0.875);
+	margin-bottom: $size__site-gutter/2;
+}
+
+.strikebase-current-filters {
+	&.hidden {
+		opacity: 0;
+	}
+}
+
+// Current filters.
+.strikebase-current-filter {
+	&::after {
+		content: ", ";
+	}
+
+	&:last-of-type::after {
+		content: none;
+	}
+}
+
+// Extra filters text.
+.strikebase-no-filter-matches {
+	margin: 100px auto;
+
+	&.hidden {
+		display: none;
+	}
+}
+
+// Clear filters button.
+.strikebase-clear-filters,
+.strikebase-clear-filters:visited {
+	display: inline-block;
+	margin-left: 4px;
+
+	&.hidden {
+		opacity: 0;
+	}
+
+	.strikebase-icon {
+		height: 12px;
+		margin-right: 4px;
+		vertical-align: -2px;
+		width: 12px;
 	}
 }
