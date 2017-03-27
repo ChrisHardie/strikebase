@@ -959,7 +959,7 @@ body {
   .page-header .page-title {
     color: #F2EFEB; }
     @media (max-width: 639px) {
-      .page-header .page-title {
+      .page-header .page-title:not(.strikebase-title) {
         font-size: 16px;
         font-size: 1rem;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif; } }
@@ -967,6 +967,16 @@ body {
   .page-header .gravatar {
     position: relative;
     z-index: 10; }
+  .page-header .strike {
+    height: 40px;
+    margin-left: -5px;
+    margin-right: -5px;
+    vertical-align: -4px;
+    width: 40px; }
+    .page-header .strike .bolt {
+      fill: #A6302C; }
+    .page-header .strike .circle {
+      fill: #E8B136; }
 
 /* Center-align page headers on archive pages. */
 .archive .page-header {

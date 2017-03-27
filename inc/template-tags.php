@@ -426,7 +426,9 @@ function strikebase_page_title() { ?>
 		<?php elseif ( is_page_template( 'archive-template-organization.php' ) ) : ?>
 			<h2 class="page-title"><?php esc_html_e( 'Organizations', 'strikebase' ); ?></h2>
 		<?php else : ?>
-			<h2 class="page-title"><?php esc_html_e( 'Strikebase', 'strikebase' ); ?></h2>
+			<h2 class="page-title strikebase-title"><?php esc_html_e( 'Strike', 'strikebase' ); ?>
+			<?php strikebase_svg( get_template_directory_uri() . '/assets/svg/strike.svg' ); ?>
+			<?php esc_html_e( 'base', 'strikebase' ); ?></h2>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 <?php }

@@ -41,9 +41,11 @@
 	.page-title {
 		color: $color__white;
 
-		@include mobile {
-			@include font-size(1);
-			font-family: $font__main;
+		&:not(.strikebase-title) {
+			@include mobile {
+				@include font-size(1);
+				font-family: $font__main;
+			}
 		}
 	}
 
@@ -52,5 +54,21 @@
 	.gravatar {
 		position: relative;
 		z-index: 10;
+	}
+
+	.strike {
+		height: 40px;
+		margin-left: -5px;
+		margin-right: -5px;
+		vertical-align: -4px;
+		width: 40px;
+
+		.bolt {
+			fill: $color__red;
+		}
+
+		.circle {
+			fill: $color__yellow;
+		}
 	}
 }
