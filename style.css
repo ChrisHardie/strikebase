@@ -911,7 +911,8 @@ html {
 
 body {
   background: #F2EFEB;
-  /* Fallback for when there is no custom background color defined. */ }
+  /* Fallback for when there is no custom background color defined. */
+  background-image: url("assets/img/whitenoise.png"); }
 
 /*--------------------------------------------------------------
 ## Basic site structure
