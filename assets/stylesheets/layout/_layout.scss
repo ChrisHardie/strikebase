@@ -37,7 +37,6 @@ body {
 /*--------------------------------------------------------------
 ## People & projects CPT
 --------------------------------------------------------------*/
-
 @import "single";
 @import "archives";
 
@@ -47,11 +46,25 @@ body {
 @import "dashboard";
 
 .strikebase-logo {
-	//max-width: 300px;
+	bottom: -75px;
 	opacity: 0.125;
 	position: absolute;
-	bottom: -75px;
-	z-index:-1;
+	z-index: -1;
+
+	@include tablet {
+		.logotype {
+			font-family: $font__headings;
+			font-size: 100px;
+		}
+
+		.strike {
+			fill: $color__red;
+		}
+
+		.base {
+			fill: $color__green;
+		}
+	}
 
 	.flagpole {
 		fill: $color__neutral;
@@ -71,20 +84,5 @@ body {
 
 	.logotype {
 		display: none;
-	}
-
-	@include tablet {
-		.logotype {
-			font-family: $font__headings;
-			font-size: 100px;
-		}
-
-		.strike {
-			fill: $color__red;
-		}
-
-		.base {
-			fill: $color__green;
-		}
 	}
 }

@@ -1130,10 +1130,18 @@ body {
     border-color: rgba(166, 48, 44, 0.25); }
 
 .strikebase-logo {
+  bottom: -75px;
   opacity: 0.125;
   position: absolute;
-  bottom: -75px;
   z-index: -1; }
+  @media (min-width: 640px) {
+    .strikebase-logo .logotype {
+      font-family: "Francois One", courier;
+      font-size: 100px; }
+    .strikebase-logo .strike {
+      fill: #A6302C; }
+    .strikebase-logo .base {
+      fill: #3B5345; } }
   .strikebase-logo .flagpole {
     fill: #544A35; }
   .strikebase-logo .flag-shape {
@@ -1144,14 +1152,6 @@ body {
     fill: #E8B136; }
   .strikebase-logo .logotype {
     display: none; }
-  @media (min-width: 640px) {
-    .strikebase-logo .logotype {
-      font-family: "Francois One", courier;
-      font-size: 100px; }
-    .strikebase-logo .strike {
-      fill: #A6302C; }
-    .strikebase-logo .base {
-      fill: #3B5345; } }
 
 /*--------------------------------------------------------------
 # CPTs
