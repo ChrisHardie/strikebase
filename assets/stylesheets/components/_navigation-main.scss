@@ -54,12 +54,16 @@
 
 		&:hover > a,
 		&.focus > a {
-			color: $color__neutral-highlight;
+			color: $color__white;
+
+			svg {
+				fill: $color__white;
+			}
 		}
 	}
 
 	a {
-		color: $color__white;
+		color: $color__neutral-highlight;
 		display: block;
 		padding: 10px 5px;
 		text-decoration: none;
@@ -75,20 +79,30 @@
 // Icons should be in circles
 .main-navigation .strikebase-icon {
 	display: block;
-	background: $color__black;
-	border-radius: 50%;
 	fill: $color__neutral-highlight;
+	height: 40px;
+	width: 40px;
+	margin: 0 auto;
+}
+
+.context-link .strikebase-icon {
+	display: block;
+	background: $color__accent;
+	border-radius: 50%;
+	fill: $color__white;
 	padding: 10px;
 	height: 40px;
 	width: 40px;
-	margin: $size__site-gutter/2 auto;
+	margin: 0 auto $size__site-gutter/4;
+}
 
+.context-link a {
+	margin-top: -$size__site-gutter;
 }
 
 // On mobile devices, anchor nav to the bottom of the screen.
 @include mobile {
     .main-navigation {
-        background: $color__neutral;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -97,21 +111,15 @@
         z-index: 100;
 
         ul {
+			align-items: flex-start;
             display: flex;
             justify-content: center;
         }
 
         li {
             @include font-size(0.8);
+			max-width: 100px;
 			text-align: center;
-        }
-
-        a {
-            color: $color__white;
-
-            &:hover {
-                color: $color__pure-white;
-            }
         }
     }
 
