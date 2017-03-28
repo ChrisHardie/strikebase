@@ -439,6 +439,7 @@ function strikebase_primary_link() {
 
     if ( is_single() ):
         // If we're on a person or project page, show the edit link.
+		strikebase_icon( 'pencil' );
         edit_post_link( sprintf( esc_html__( 'Edit %s', 'strikebase' ), get_post_type() ) );
 
     elseif ( is_page_template( 'archive-template-organization.php' ) ):
