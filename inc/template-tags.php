@@ -442,11 +442,13 @@ function strikebase_primary_link() {
 		strikebase_icon( 'pencil' );
         edit_post_link( sprintf( esc_html__( 'Edit %s', 'strikebase' ), get_post_type() ) );
 
-    elseif ( is_page_template( 'archive-template-organization.php' ) ):
-    ?>
-        <a href="/wp-admin/edit-tags.php?taxonomy=organization"><?php esc_html_e( 'Add new organization', 'strikebase' ); ?></a>
-    <?php
- 	elseif ( is_archive() ):
+    elseif ( is_page_template( 'archive-template-organization.php' ) ): ?>
+        <a href="/wp-admin/edit-tags.php?taxonomy=organization">
+			<?php strikebase_icon( 'plus' ); ?>
+			<?php esc_html_e( 'Add new organization', 'strikebase' ); ?>
+		</a>
+
+    <?php elseif ( is_archive() ):
         // If we're on an archive page, show a link to add a new item.
         // We'll need some text to indicate what kind of thing we're adding or editing. There isn't really an elegant way of doing this.
         if ( is_post_type_archive( 'person' ) ) :
