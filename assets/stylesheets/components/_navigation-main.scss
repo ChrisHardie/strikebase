@@ -16,15 +16,6 @@
 
 	li {
 		text-align: center;
-
-		&:hover > a,
-		&.focus > a {
-			color: $color__white;
-
-			svg {
-				fill: $color__white;
-			}
-		}
 	}
 
 	a {
@@ -32,6 +23,15 @@
 		display: block;
 		padding: 10px 5px;
 		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $color__white;
+
+			svg {
+				fill: $color__white;
+			}
+		}
 	}
 
 	.current_page_item > a,
@@ -61,10 +61,6 @@
 	margin: 0 auto $size__site-gutter/4;
 }
 
-.context-link a {
-	margin-top: -$size__site-gutter;
-}
-
 // On mobile devices, anchor nav to the bottom of the screen.
 @include mobile {
     .main-navigation {
@@ -77,8 +73,11 @@
 
         li {
             @include font-size(0.75);
-
         }
     }
 
+	// Pull the contextual action button up so it overlaps the nav bar.
+	.context-link a {
+		margin-top: -$size__site-gutter;
+	}
 }

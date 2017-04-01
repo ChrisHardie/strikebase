@@ -665,17 +665,15 @@ tr:nth-of-type(even) {
     padding-left: 0; }
   .main-navigation li {
     text-align: center; }
-    .main-navigation li:hover > a,
-    .main-navigation li.focus > a {
-      color: #F2EFEB; }
-      .main-navigation li:hover > a svg,
-      .main-navigation li.focus > a svg {
-        fill: #F2EFEB; }
   .main-navigation a {
     color: #DBD4C6;
     display: block;
     padding: 10px 5px;
     text-decoration: none; }
+    .main-navigation a:hover, .main-navigation a:focus {
+      color: #F2EFEB; }
+      .main-navigation a:hover svg, .main-navigation a:focus svg {
+        fill: #F2EFEB; }
 
 .main-navigation .strikebase-icon {
   display: block;
@@ -694,9 +692,6 @@ tr:nth-of-type(even) {
   width: 40px;
   margin: 0 auto 5px; }
 
-.context-link a {
-  margin-top: -20px; }
-
 @media (max-width: 639px) {
   .main-navigation {
     position: fixed;
@@ -707,7 +702,9 @@ tr:nth-of-type(even) {
     z-index: 100; }
     .main-navigation li {
       font-size: 12px;
-      font-size: 0.75rem; } }
+      font-size: 0.75rem; }
+  .context-link a {
+    margin-top: -20px; } }
 
 .strikebase-pagination {
   text-align: center; }
