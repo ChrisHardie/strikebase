@@ -29,6 +29,7 @@
 			color: $color__white;
 
 			svg {
+				color: $color__black;
 				fill: $color__white;
 			}
 		}
@@ -43,6 +44,7 @@
 
 // Icons should be in circles
 .main-navigation .strikebase-icon {
+	color: $color__neutral;
 	display: block;
 	fill: $color__neutral-highlight;
 	height: 40px;

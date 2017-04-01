@@ -51,7 +51,6 @@ gulp.task( 'icons', function() {
 		.pipe( cheerio( {
 		run: function( $, file ) {
 			$( 'svg' ).addClass( 'hide' );
-			$( '[fill]' ).removeAttr( 'fill' );
 		},
 		parserOptions: { xmlMode: true }
 		}))

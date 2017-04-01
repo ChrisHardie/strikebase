@@ -673,9 +673,11 @@ tr:nth-of-type(even) {
     .main-navigation a:hover, .main-navigation a:focus {
       color: #F2EFEB; }
       .main-navigation a:hover svg, .main-navigation a:focus svg {
+        color: #302816;
         fill: #F2EFEB; }
 
 .main-navigation .strikebase-icon {
+  color: #544A35;
   display: block;
   fill: #DBD4C6;
   height: 40px;
