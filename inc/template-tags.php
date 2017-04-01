@@ -445,7 +445,7 @@ function strikebase_primary_link() {
     elseif ( is_page_template( 'archive-template-organization.php' ) ): ?>
         <a href="/wp-admin/edit-tags.php?taxonomy=organization">
 			<?php strikebase_icon( 'plus' ); ?>
-			<?php esc_html_e( 'Add new organization', 'strikebase' ); ?>
+			<?php esc_html_e( 'New organization', 'strikebase' ); ?>
 		</a>
 
     <?php elseif ( is_archive() ):
@@ -459,7 +459,7 @@ function strikebase_primary_link() {
         ?>
         <a href="/wp-admin/post-new.php?post_type=<?php echo $type; ?>">
 			<?php strikebase_icon( 'plus' ); ?>
-			<?php printf( esc_html__( 'Add new %s', 'strikebase' ), $type ); ?>
+			<?php printf( esc_html__( 'New %s', 'strikebase' ), $type ); ?>
 		</a>
     <?php
     endif;
