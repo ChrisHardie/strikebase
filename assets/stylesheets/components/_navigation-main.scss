@@ -28,58 +28,59 @@
 		&:focus {
 			color: $color__white;
 
-			svg {
+			strikebase-icon {
 				color: $color__black;
 				fill: $color__white;
 			}
 		}
 	}
 
+	// Icons styling.
+	.strikebase-icon {
+		color: $color__neutral;
+		display: block;
+		fill: $color__neutral-highlight;
+		height: 40px;
+		margin: 0 auto;
+		width: 40px;
+	}
+
+	// Styling of active tabs.
 	.selected {
 		color: $color__white;
 
-		svg {
+		.strikebase-icon {
 			color: $color__black;
 			fill: $color__white;
 		}
 	}
 }
 
-// Icons should be in circles
-.main-navigation .strikebase-icon {
-	color: $color__neutral;
-	display: block;
-	fill: $color__neutral-highlight;
-	height: 40px;
-	width: 40px;
-	margin: 0 auto;
-}
-
 .context-link .strikebase-icon {
-	display: block;
 	background: $color__accent;
 	border-radius: 50%;
+	display: block;
 	fill: $color__white;
-	padding: 10px;
 	height: 40px;
-	width: 40px;
 	margin: 0 auto $size__site-gutter/4;
+	padding: 10px;
+	width: 40px;
 }
 
 // On mobile devices, anchor nav to the bottom of the screen.
 @include mobile {
-    .main-navigation {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        z-index: 100;
+	.main-navigation {
+		bottom: 0;
+		left: 0;
+		position: fixed;
+		right: 0;
+		width: 100%;
+		z-index: 100;
 
-        li {
-            @include font-size(0.75);
-        }
-    }
+		li {
+		    @include font-size(0.75);
+		}
+	}
 
 	// Pull the contextual action button up so it overlaps the nav bar.
 	.context-link a {
