@@ -10,11 +10,17 @@ html {
 
 body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background-image: url("assets/img/whitenoise.png");
 }
 
 /*--------------------------------------------------------------
 ## Basic site structure
 --------------------------------------------------------------*/
+.site {
+	min-height: 84.5vh;
+	position: relative;
+}
+
 .site-main {
 	margin: 0 auto;
 	max-width: $size__site-width;
@@ -31,7 +37,6 @@ body {
 /*--------------------------------------------------------------
 ## People & projects CPT
 --------------------------------------------------------------*/
-
 @import "single";
 @import "archives";
 
@@ -39,3 +44,45 @@ body {
 ## Dashboard
 --------------------------------------------------------------*/
 @import "dashboard";
+
+.strikebase-logo {
+	bottom: -75px;
+	opacity: 0.125;
+	position: absolute;
+	z-index: -1;
+
+	@include tablet {
+		.logotype {
+			font-family: $font__headings;
+			font-size: 100px;
+		}
+
+		.strike {
+			fill: $color__red;
+		}
+
+		.base {
+			fill: $color__green;
+		}
+	}
+
+	.flagpole {
+		fill: $color__neutral;
+	}
+
+	.flag-shape {
+		fill: $color__green;
+	}
+
+	.bolt {
+		fill: $color__red;
+	}
+
+	.circle {
+		fill: $color__yellow;
+	}
+
+	.logotype {
+		display: none;
+	}
+}

@@ -1,0 +1,89 @@
+.main-navigation {
+	background: $color__black;
+	border-bottom: 1px solid $color__neutral;
+	display: block;
+	width: 100%;
+
+	ul {
+		align-items: flex-start;
+		display: flex;
+		justify-content: space-around;
+		list-style: none;
+		margin: 0 auto;
+		max-width: $size__site-width/1.5;
+		padding-left: 0;
+	}
+
+	li {
+		text-align: center;
+	}
+
+	a {
+		color: $color__neutral-highlight;
+		display: block;
+		padding: 10px 5px;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $color__white;
+
+			strikebase-icon {
+				color: $color__black;
+				fill: $color__white;
+			}
+		}
+	}
+
+	// Icons styling.
+	.strikebase-icon {
+		color: $color__neutral;
+		display: block;
+		fill: $color__neutral-highlight;
+		height: 40px;
+		margin: 0 auto;
+		width: 40px;
+	}
+
+	// Styling of active tabs.
+	.selected {
+		color: $color__white;
+
+		.strikebase-icon {
+			color: $color__black;
+			fill: $color__white;
+		}
+	}
+}
+
+.context-link .strikebase-icon {
+	background: $color__accent;
+	border-radius: 50%;
+	display: block;
+	fill: $color__white;
+	height: 40px;
+	margin: 0 auto $size__site-gutter/4;
+	padding: 10px;
+	width: 40px;
+}
+
+// On mobile devices, anchor nav to the bottom of the screen.
+@include mobile {
+	.main-navigation {
+		bottom: 0;
+		left: 0;
+		position: fixed;
+		right: 0;
+		width: 100%;
+		z-index: 100;
+
+		li {
+			@include font-size(0.75);
+		}
+	}
+
+	// Pull the contextual action button up so it overlaps the nav bar.
+	.context-link a {
+		margin-top: -$size__site-gutter;
+	}
+}

@@ -26,7 +26,7 @@ get_header(); ?>
 						else :
 							strikebase_icon( 'clock' );
 						endif;
-						
+
 						echo '<span class="strikebase-check-in-date">' . strikebase_formatted_date( $check_in['next_check_in'], 'jS F' ) . '</span>';
 						echo $check_in['title'];
 						echo '</a></li>';

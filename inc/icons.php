@@ -128,6 +128,18 @@ function strikebase_social_menu( $items ) {
 	return $items;
 }
 add_filter( 'wp_nav_menu_objects', 'strikebase_social_menu' );
+
+/*
+ * Output an inline SVG.
+ * This just inserts an SVG as an inline element.
+ */
+ function strikebase_svg( $file ) {
+	if ( function_exists( 'wpcom_is_vip' ) ) :
+		echo wpcom_vip_file_get_contents( esc_url( $file ) );
+	else :
+		echo file_get_contents( esc_url( $file ) );
+	endif;
+ }
 /*
  * Register a custom shortcode to allow users to insert SVGs.
  * This is used to insert a regular inline SVG.

@@ -8,16 +8,17 @@
 }
 
 // Arrange Gravatar next to name on single people pages.
-.person .entry-header {
+.single-person .page-header {
 	align-items: center;
 	display: flex;
+	justify-content: center;
 
 	.gravatar {
 		margin-left: -$size__site-gutter/1.5;
 		margin-right: $size__site-gutter/1.5;
 	}
 
-	.entry-title {
+	.page-title {
 		margin-bottom: 0;
 	}
 }

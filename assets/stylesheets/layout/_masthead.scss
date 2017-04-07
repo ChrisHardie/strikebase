@@ -1,41 +1,74 @@
 .site-header {
-	padding-bottom: $size__site-gutter;
 	text-align: center;
 }
 
-.strikebase-logo {
-	max-width: 300px;
+// Header stripeyness
+.red-polygon {
+	fill: $color__red;
+}
 
-	.mound {
-		fill: $color__neutral;
+.green-polygon {
+	fill: $color__primary-dark;
+}
+
+.yellow-polygon {
+	fill: $color__yellow;
+}
+
+.header-background-background {
+	display: none;
+	fill: $color__background-body;
+}
+
+// Pull stripes up a bit.
+.header-background {
+	margin-top: -20px;
+	position: relative;
+	z-index: 2;
+
+	@include tablet {
+		margin-top: -40px;
+	}
+}
+
+.page-header {
+	background: $color__primary-dark;
+	margin: 0 #{-$size__site-gutter};
+	padding: $size__site-gutter $size__site-gutter 0;
+	position: relative;
+	width: calc(100% + #{$size__site-gutter});
+
+	.page-title {
+		color: $color__white;
+
+		&:not(.strikebase-title) {
+			@include mobile {
+				@include font-size(1);
+				font-family: $font__main;
+			}
+		}
 	}
 
-	.flagpole {
-		fill: $color__black;
-	}
-
-	.flag-shape {
-		fill: $color__green;
-	}
-
-	.bolt {
-		fill: $color__red;
-	}
-
-	.circle {
-		fill: $color__yellow;
-	}
-
-	.logotype {
-		font-family: $font__headings;
-		font-size: 100px;
+	// Ensure content sits on top of stripes.
+	.page-title,
+	.gravatar {
+		position: relative;
+		z-index: 10;
 	}
 
 	.strike {
-		fill: $color__red;
-	}
+		height: 40px;
+		margin-left: -5px;
+		margin-right: -5px;
+		vertical-align: -4px;
+		width: 40px;
 
-	.base {
-		fill: $color__green;
+		.bolt {
+			fill: $color__red;
+		}
+
+		.circle {
+			fill: $color__yellow;
+		}
 	}
 }

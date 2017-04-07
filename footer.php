@@ -11,7 +11,9 @@
 
 ?>
 	</div><!-- #content -->
+	<?php strikebase_svg( get_template_directory_uri() . '/assets/svg/strikebase.svg' ); ?>
 </div><!-- #page -->
+
 
 <?php wp_footer(); ?>
 
