@@ -4,7 +4,7 @@ $color__yellow: #E8B136;
 
 $color__primary: $color__green;
 $color__primary-light: lighten($color__primary, 10%);
-$color__primary-dark: darken($color__primary, 10%);
+$color__primary-dark: #203325;
 
 $color__accent-alt: $color__yellow;
 $color__highlight: lighten($color__accent-alt, 20%);

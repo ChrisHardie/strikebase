@@ -37,9 +37,7 @@ gulp.task( 'scripts', function() {
 	return gulp.src( 'assets/js/*.js' )
 		.pipe( jshint() )
 		.pipe( jshint.reporter( 'default' ) )
-		//.pipe( concat( 'main.js' ) )
-		//.pipe( gulp.dest( 'assets/js' ) );
-		//.pipe( notify( { message: 'Scripts task complete' } ) );
+		.pipe( livereload() );
 });
 
 // Minify our icons and make them into an inline sprite
@@ -53,7 +51,6 @@ gulp.task( 'icons', function() {
 		.pipe( cheerio( {
 		run: function( $, file ) {
 			$( 'svg' ).addClass( 'hide' );
-			$( '[fill]' ).removeAttr( 'fill' );
 		},
 		parserOptions: { xmlMode: true }
 		}))

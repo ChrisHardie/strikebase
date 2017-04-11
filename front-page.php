@@ -20,6 +20,13 @@ get_header(); ?>
 					foreach ( $check_ins as $check_in ) :
 						echo '<li class="strikebase-' . $check_in['class'] . '-check-in">';
 						echo '<a href="'. $check_in['permalink'] .'">';
+
+						if ( 'overdue' === $check_in['class'] ) :
+							strikebase_icon( 'alert' );
+						else :
+							strikebase_icon( 'clock' );
+						endif;
+
 						echo '<span class="strikebase-check-in-date">' . strikebase_formatted_date( $check_in['next_check_in'], 'jS F' ) . '</span>';
 						echo $check_in['title'];
 						echo '</a></li>';

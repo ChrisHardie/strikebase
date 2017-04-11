@@ -18,6 +18,12 @@
 	margin: 0;
 	padding: 0;
 
+	.strikebase-icon {
+		color: $color__primary-light;
+		float: left;
+		margin: $size__site-gutter/4 $size__site-gutter/4 0 0;
+	}
+
 	a {
 		color: $color__black;
 		border-bottom: 1px solid $color__neutral-highlight;
@@ -33,6 +39,7 @@
 
 .strikebase-check-in-date {
 	@include label;
+	padding-bottom: 0;
 }
 
 .strikebase-overdue-check-in {
@@ -40,6 +47,10 @@
 
 	.strikebase-check-in-date {
 		color: $color__warning;
+	}
+
+	.strikebase-icon {
+		fill: $color__warning;
 	}
 
 	a {

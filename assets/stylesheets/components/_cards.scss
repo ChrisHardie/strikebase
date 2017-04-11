@@ -5,6 +5,7 @@
 	max-width: $size__site-width/2;
 	padding-bottom: $size__site-gutter/2;
 	position: relative;
+	transition: opacity 4s ease-in-out;
 
 	@include mobile {
 		margin-left: -#{$size__site-gutter};
@@ -15,10 +16,23 @@
 		padding: 0 $size__site-gutter $size__site-gutter/2;
 	}
 
+	p {
+		padding: 0 $size__site-gutter;
+	}
+
 	.gravatar {
 		position: absolute;
 		top: -$size__site-gutter;
 		right: $size__site-gutter;
+	}
+
+	&.hidden {
+		display: none;
+		opacity: 0;
+
+		.strikebase-card-title {
+			background: $color__yellow;
+		}
 	}
 }
 
@@ -37,4 +51,13 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
+}
+
+// Variant for errors messages.
+.strikebase-card-warning {
+	background-color: $color__warning-background;
+
+	.strikebase-card-title {
+		background-color: $color__warning;
+	}
 }

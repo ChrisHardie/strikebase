@@ -26,27 +26,11 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<?php
-				$file = get_template_directory_uri() . '/assets/svg/strikebase.svg';
-				if ( function_exists( 'wpcom_is_vip' ) ) :
-					echo wpcom_vip_file_get_contents( esc_url( $file ) );
-				else :
-					echo file_get_contents( esc_url( $file ) );
-				endif;
+		<?php get_template_part( 'components/navigation/navigation', 'main' ); ?>
 
-			?>
-		</a>
+		<?php strikebase_page_title(); ?>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<ul>
-				<li><a href="/"><?php esc_html_e( 'Dashboard' ); ?></a></li>
-				<li><a href="/projects"><?php esc_html_e( 'Projects' ); ?></a></li>
-				<li><a href="/people"><?php esc_html_e( 'People' ); ?></a></li>
-				<li><a href="/organizations"><?php esc_html_e( 'Organizations' ); ?></a></li>
-			</ul>
-		</nav>
-
-
+		<?php strikebase_svg( get_template_directory_uri() . '/assets/svg/header-background.svg' ); ?>
+		
 	</header>
 	<div id="content" class="site-content">

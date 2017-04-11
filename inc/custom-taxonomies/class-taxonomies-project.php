@@ -137,10 +137,11 @@ class Strikebase_Taxonomies_Project extends Strikebase_Taxonomies {
 			'no_terms'                   => esc_html__( 'No items', 'strikebase' ),
 			'items_list'                 => esc_html__( 'Hosts list', 'strikebase' ),
 			'items_list_navigation'      => esc_html__( 'Hosts list navigation', 'strikebase' ),
+			'parent_item'                => esc_html__( 'Parent host', 'strikebase' ),
 		);
 		$host_args   = array(
 			'labels'            => $host_labels,
-			'hierarchical'      => false,
+			'hierarchical'      => true,
 			'public'            => true,
 			'show_ui'           => true,
 			'show_admin_column' => true,

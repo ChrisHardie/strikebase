@@ -8,10 +8,6 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 
-	.entry-header {
-		width: 100%;
-	}
-
 	.strikebase-card + .strikebase-card {
 		margin-top: $size__site-gutter*2;
 	}
@@ -31,4 +27,8 @@
 	.strikebase-column {
 		width: calc(50% - #{$size__site-gutter});
 	}
+}
+
+.entry-content .label {
+	padding-bottom: $size__site-gutter/2;
 }

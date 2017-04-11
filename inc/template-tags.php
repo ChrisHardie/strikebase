@@ -407,3 +407,59 @@ function strikebase_is_pre_team_project( $post_ID ) {
 		return false;
 	endif;
 }
+
+/*
+ * Output a title for the current page, for use in the masthead.
+ *
+ */
+function strikebase_page_title() { ?>
+	<header class="page-header">
+	<?php
+		if ( is_single() ) :
+			strikebase_show_gravatar( get_the_ID() );
+			the_title( '<h2 class="page-title">', '</h2>' );
+		elseif ( is_post_type_archive( 'person' ) ) : ?>
+			<h2 class="page-title"><?php esc_html_e( 'People', 'strikebase' ); ?></h2>
+		<?php elseif ( is_post_type_archive( 'project' ) ) : ?>
+			<h2 class="page-title"><?php esc_html_e( 'Projects', 'strikebase' ); ?></h2>
+		<?php elseif ( is_page_template( 'archive-template-organization.php' ) ) : ?>
+			<h2 class="page-title"><?php esc_html_e( 'Organizations', 'strikebase' ); ?></h2>
+		<?php else : ?>
+			<h2 class="page-title strikebase-title"><?php esc_html_e( 'Strike', 'strikebase' ); ?>
+			<?php strikebase_svg( get_template_directory_uri() . '/assets/svg/strike.svg' ); ?>
+			<?php esc_html_e( 'base', 'strikebase' ); ?></h2>
+		<?php endif; ?>
+	</header><!-- .entry-header -->
+<?php }
+
+/*
+ * Output a context-sensitive primary function link for use in our navigation.
+ */
+function strikebase_primary_link() {
+
+    if ( is_single() ):
+        // If we're on a person or project page, show the edit link.
+        edit_post_link( sprintf( esc_html__( '%2$s Edit %1$s', 'strikebase' ), get_post_type(), strikebase_get_icon( 'pencil' ) ) );
+
+    elseif ( is_page_template( 'archive-template-organization.php' ) ): ?>
+        <a href="/wp-admin/edit-tags.php?taxonomy=organization">
+			<?php strikebase_icon( 'plus' ); ?>
+			<?php esc_html_e( 'New organization', 'strikebase' ); ?>
+		</a>
+
+    <?php elseif ( is_archive() ):
+        // If we're on an archive page, show a link to add a new item.
+        // We'll need some text to indicate what kind of thing we're adding or editing. There isn't really an elegant way of doing this.
+        if ( is_post_type_archive( 'person' ) ) :
+            $type = 'person';
+        elseif ( is_post_type_archive( 'project' ) ) :
+            $type = 'project';
+        endif;
+        ?>
+        <a href="/wp-admin/post-new.php?post_type=<?php echo $type; ?>">
+			<?php strikebase_icon( 'plus' ); ?>
+			<?php printf( esc_html__( 'New %s', 'strikebase' ), $type ); ?>
+		</a>
+    <?php
+    endif;
+}

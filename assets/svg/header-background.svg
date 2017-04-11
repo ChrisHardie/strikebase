@@ -1,0 +1,9 @@
+<svg class="header-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 54">
+
+<rect class="header-background-background" width="320" height="54"/>
+<g>
+	<polygon class="red-polygon" points="320,0 0,0 0,19.3 320,47"/>
+	<polygon class="yellow-polygon" points="0,0 320,0 320,7 0,54"/>
+	<polygon class="green-polygon" points="0,-1 320,0 320,0 0,31"/>
+</g>
+</svg>
