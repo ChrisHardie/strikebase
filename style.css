@@ -1163,7 +1163,7 @@ html {
 body {
   background: #F2EFEB;
   /* Fallback for when there is no custom background color defined. */
-  background-image: url("/assets/img/whitenoise.png");
+  background-image: url("/wp-content/themes/strikebase-react/assets/img/whitenoise.png");
 }
 
 /*--------------------------------------------------------------
