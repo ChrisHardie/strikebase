@@ -17,8 +17,6 @@ get_header(); ?>
 				<?php strikebase_filters( 'person-type', 'Type' ); ?>
 			</div>
 
-			<?php strikebase_filter_sort_messaging(); ?>
-
 			<div class="strikebase-people-list">
 
 				<?php

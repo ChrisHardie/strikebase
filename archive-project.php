@@ -21,8 +21,6 @@ get_header(); ?>
 				<?php strikebase_filters( 'project-host', 'Host' ); ?>
 			</div>
 
-			<?php strikebase_filter_sort_messaging(); ?>
-
 			<div class="strikebase-projects-list">
 
 				<?php
