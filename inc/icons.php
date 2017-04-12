@@ -72,12 +72,15 @@ function strikebase_get_icon( $name, $id = null ) {
 	endif;
 	$return = '<svg '. $attr.'>';
 	if ( $strikebase_sprite_external ) :
-		if ( function_exists( 'wpcom_is_vip' ) ) :
-			$path = wpcom_vip_noncdn_uri( get_template_directory() );
+		if ( defined( 'IS_WPCOM' ) && IS_WPCOM ) :
+			// "use" doesn't currently work with cross-origin requests in any browsers so we need to un-staticize it
+			// https://codereview.chromium.org/1036323002
+			remove_filter( 'theme_root_uri', 'staticize_subdomain' );
+			$return .= '<use xlink:href="' . esc_url( get_theme_file_uri( '/assets/svg/icons.svg#' ) ) . $name . '" />';
+			add_filter( 'theme_root_uri', 'staticize_subdomain' );
 		else :
-			$path = get_template_directory_uri();
+			$return .= '<use xlink:href="' . esc_url( get_theme_file_uri( '/assets/svg/icons.svg#' ) ) . $name . '" />';
 		endif;
-		$return .= '<use xlink:href="' . esc_url( $path ) . '/assets/svg/icons.svg#' . $name . '" />';
 	else :
 		$return .= '<use xlink:href="#' . $name . '" />';
 	endif;
