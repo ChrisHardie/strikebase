@@ -664,7 +664,9 @@ tr:nth-of-type(even) {
     max-width: 693.33333px;
     padding-left: 0; }
   .main-navigation li {
-    text-align: center; }
+    text-align: center;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
   .main-navigation a {
     color: #DBD4C6;
     display: block;
