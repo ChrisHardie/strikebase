@@ -33,7 +33,7 @@
 
 		<div class="entry-content">
 			<div class="label"><?php esc_html_e( 'Notes', 'strikebase' ); ?></div>
-			<?php echo make_clickable( get_the_content() ); ?>
+			<?php the_content(); ?>
 		</div><!-- .entry-content -->
 
 	</div><!-- .strikebase-column -->
