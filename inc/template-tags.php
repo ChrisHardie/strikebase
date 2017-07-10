@@ -82,7 +82,7 @@ function strikebase_output_project_meta( $section ) {
 							if ( is_array( $value ) ) :
 								// If our value is an array, loop through it as well!
 								foreach ( $value as $person ) :
-									echo '<dd>' . get_the_title( $person ) . '</dd>';
+									echo '<dd><a href="' . esc_url( get_the_permalink( $person ) ) . '">' . esc_html( get_the_title( $person ) ) . '</a></dd>';
 								endforeach;
 							else:
 								echo '<dd>' . $value . '</dd>';
@@ -164,7 +164,7 @@ function strikebase_list_person_projects( $person, $format = 'dd' ) {
 
 			// Now, we'll check to see if our selected person appears in the array of people for this project.
 			if ( in_array( $person_page_id, $project_people ) ) :
-				echo '<'. $format .'>' . get_the_title() . '</' . $format . '>';
+				echo '<'. $format .'><a href="' . esc_url( get_the_permalink() ) . '">' . esc_html( get_the_title() ) . '</a></' . $format . '>';
 			endif;
 		endwhile;
 
@@ -426,7 +426,7 @@ function strikebase_page_title() { ?>
 			<h2 class="page-title"><?php esc_html_e( 'Organizations', 'strikebase' ); ?></h2>
 		<?php else : ?>
 			<h2 class="page-title strikebase-title"><?php esc_html_e( 'Strike', 'strikebase' ); ?>
-			<?php strikebase_svg( get_template_directory_uri() . '/assets/svg/strike.svg' ); ?>
+			<?php strikebase_svg( get_template_directory() . '/assets/svg/strike.svg' ); ?>
 			<?php esc_html_e( 'base', 'strikebase' ); ?></h2>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
